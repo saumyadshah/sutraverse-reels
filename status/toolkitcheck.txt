@@ -1,0 +1,8 @@
+2026-10-18T11:53:20Z UTC toolkit check
+env_file: exists (HYPERFRAMES_BROWSER_PATH=/tmp/chromium, SUTRAVERSE_READY=1)
+narrate.py: exists
+browser_path /tmp/chromium: executable
+python imports (sherpa_onnx, google.genai): py ok
+GEMINI_API_KEY: SET
+setup_log: exists; BOOTSTRAP OK; narration=sherpa_onnx_tts:hi_kokoro_psi (local); Whisper, brand kit, HyperFrames+headless Chrome, ffmpeg READY; visual route A
+note: setup log says "no Gemini key in this environment -> local Hindi voice only" (key is SET at check time)
