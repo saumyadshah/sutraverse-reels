@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+# SutraVerse environment setup, meant for the claude.ai/code environment's "Setup script".
+# Runs once when a session's container starts, before any scheduled run begins, so the
+# runs themselves never need to download or install anything.
+#
+# Paste this into the Default environment's setup script:
+#   git clone -q --depth 1 https://github.com/saumyadshah/sutraverse-reels "$HOME/sutraverse-reels" 2>/dev/null \
+#     || git -C "$HOME/sutraverse-reels" pull -q
+#   bash "$HOME/sutraverse-reels/toolkit/env_setup.sh"
+#
+# Result: $HOME/OpenMontage ready, and $HOME/.sutraverse_env with the HYPERFRAMES_BROWSER_PATH export.
+# Never prints any key.
+set -uo pipefail
+REPO="$HOME/sutraverse-reels"
+OM="$HOME/OpenMontage"
+LOG="$HOME/.sutraverse_setup.log"
+
+{
+  echo "== SutraVerse env setup $(date -u +%FT%TZ)"
+  bash "$REPO/toolkit/bootstrap.sh" "$REPO/toolkit/sutraverse-skill.zip" "$OM"
+} >"$LOG" 2>&1
+status=$?
+
+LINE="$(grep '^export HYPERFRAMES_BROWSER_PATH=' "$LOG" | tail -1)"
+if [ $status -eq 0 ] && [ -n "$LINE" ]; then
+  printf '%s\nexport SUTRAVERSE_READY=1\n' "$LINE" > "$HOME/.sutraverse_env"
+  echo "SutraVerse toolkit ready ($HOME/.sutraverse_env)"
+else
+  echo "SutraVerse toolkit setup FAILED (status $status); see $LOG"
+fi
+exit 0
