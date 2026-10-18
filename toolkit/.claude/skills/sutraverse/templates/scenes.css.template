@@ -1,0 +1,3 @@
+/* Scene art. Use brand tokens: var(--sv-gold), var(--sv-midnight), calc(N * var(--sv-u)) for sizes. */
+.layer { position: absolute; inset: -6%; }
+.title-block { position: absolute; left: var(--sv-safe-side); right: var(--sv-safe-side); top: calc(var(--sv-safe-top) + 40 * var(--sv-u)); text-align: center; }

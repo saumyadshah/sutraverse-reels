@@ -1,0 +1,9 @@
+<!-- One <section> per scene id used in sv_script.json. build_composition.py injects timing.
+     Frame 0 must already be moving; keep the badge zone (top ~200 px, first 1.8 s) and the
+     subtitle band (bottom safe area) clear of important art and text. -->
+<section class="clip sv-scene" data-scene="S1">
+  <div class="layer far"></div>
+  <div class="layer mid"></div>
+  <div class="layer near"></div>
+  <div class="title-block"><div class="sv-kicker">Kicker</div><div class="sv-display">Short <em>phrase</em></div></div>
+</section>

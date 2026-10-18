@@ -1,0 +1,113 @@
+# SutraVerse channel configuration — the ONE place to change brand, voice and format defaults.
+# Every script in ../scripts reads this file. Edit values here; do not hardcode them elsewhere.
+
+brand:
+  name: "SutraVerse"
+  tagline: "Ancient Wisdom. Modern Life."
+  end_card_text: "SutraVerse — Ancient Wisdom. Modern Life."
+  cta_default: "Follow for more ancient wisdom, explained for modern life."
+  handle: ""                      # e.g. "@sutraverse" — shown on end card when set
+  colors:                         # "Bright" palette (v2). Source of truth for brand-kit/brand.css tokens.
+    royal: "#2340B8"              # primary field (bright royal indigo)
+    royal_deep: "#0E1A5A"
+    saffron: "#FF7A1A"            # energy, chips, caption edge, end-card sunrise
+    marigold: "#FFB22E"           # logo, key words, light
+    sun: "#FFD36B"                # highlights, emphasis words
+    ivory: "#FFF6E6"              # text on dark, caption cards
+    ink: "#1A1240"                # text on bright surfaces
+    rose: "#FF5C8A"               # bindu accent (sparingly)
+    ember: "#FF4D2E"              # conflict beats only
+  fonts:                          # all vendored in ../brand-kit/fonts (SIL OFL)
+    logotype: "Cinzel"
+    display: "Cormorant Garamond"
+    ui: "Inter"                   # subtitles, labels — maximum legibility
+    sanskrit: "Tiro Devanagari Sanskrit"   # ONLY for a verified verse shown in original script
+  watermark:
+    enabled: true
+    position: "top-right"         # kept clear of subtitles and platform UI
+    opacity: 0.55
+  intro:
+    short_form: "badge"           # badge = compact mark+wordmark at the top, already visible at frame 0, gone by 1.8 s;
+                                  # the hook owns frame 0 (virality rule: never open on a logo). "overlay" = bigger flourish
+    long_form: "badge"            # cold open first (hook in the first seconds); place a full brand sting after the cold open inside scenes if wanted. "sting" = 3 s identity BEFORE the hook (not recommended)
+  end_card_seconds:
+    short_form: 3.0
+    long_form: 6.0
+
+language:                         # NON-NEGOTIABLE defaults. Change only on explicit user request.
+  narration: "hi"                 # spoken Hindi (Devanagari script for TTS)
+  on_screen: "en"                 # every rendered glyph is English (except a verified Sanskrit verse, paired with English)
+  subtitles: "en"                 # English subtitles translated from the Hindi narration
+  metadata: "en"
+
+voice:
+  # Ordered preference. The first one that is AVAILABLE in the registry is used.
+  # Cloud entries are skipped automatically when their key is not configured.
+  # For truly natural Hindi use one of the first three (needs a key); the local voices are the free fallback.
+  preference:
+    - { tool: "gemini_tts",      voice: "Charon", model: "gemini-3.8-flash-tts", fallback_models: ["gemini-3.1-flash-tts-preview", "gemini-2.5-flash-preview-tts"], note: "MOST NATURAL, style-directable (needs GOOGLE_API_KEY / GEMINI_API_KEY). Other models: gemini-3.8-flash-tts, gemini-2.5-flash-preview-tts" }
+    - { tool: "elevenlabs_tts",  voice: "",                   note: "very expressive; set a Hindi voice_id here (needs ELEVENLABS_API_KEY)" }
+    - { tool: "azure_tts",       voice: "hi-IN-MadhurNeural", note: "clean neural Hindi; free F0 tier (needs AZURE_SPEECH_KEY). Female: hi-IN-SwaraNeural" }
+    - { tool: "google_tts",      voice: "hi-IN-Chirp3-HD-Charon", note: "Cloud TTS Chirp 3 HD Hindi (needs GOOGLE_API_KEY)" }
+    - { tool: "sherpa_onnx_tts", voice: "hi_kokoro_psi",      note: "LOCAL, free, Apache-2.0. Best local intelligibility in back-translation tests." }
+    - { tool: "sherpa_onnx_tts", voice: "hi_rohan",           note: "LOCAL, free. Native Hindi male (IndicTTS)." }
+  # Delivery direction for style-directable voices (Gemini). Plain English instructions.
+  style_prompt: >-
+    Speak natural, conversational Hindi like a warm, wise storyteller talking to one friend.
+    Relaxed pace, a gentle smile in the voice, curious on questions, quieter and slower on the key insight.
+    Take a real breath at every "…". Never sound like a news reader or a sermon.
+  tempo: 1.0                      # pitch-preserving post speed-up (sv_script "tempo" overrides; 1.03–1.07 is inaudible)
+  speed: 1.0                      # 1.0 = natural rate; drop to 0.9–0.95 for slower, weightier delivery
+  pause_after_line_s: 0.26        # default breath between lines
+  pause_after_section_s: 0.42     # longer beat at scene changes
+  delivery:                       # phrase-level performance (all providers)
+    phrase_level: auto            # auto: local voices synthesize each beat separately (real pauses); natural cloud voices
+                                  # perform the whole line and the beats are located in the audio afterwards
+    max_internal_pause_s: 0.34    # cloud voices: trim any pause inside a line longer than this
+    single_take: true             # cloud voices: perform the whole script in one call (consistent voice, natural flow), then cut into lines
+    phrase_breaks: ["…", "—"]
+    beat_pause_s: { "…": 0.3, "—": 0.22 }
+    question_rate: 0.95           # questions slightly slower
+    punch_rate: 0.93              # 1–3 word punch lines slower, weightier
+    long_rate: 1.03               # long connective phrases a touch quicker
+  local_tuning:                   # Piper/VITS voices only: livelier intonation than the defaults (0.667 / 0.8)
+    noise_scale: 0.75
+    noise_scale_w: 0.9
+  # Broadcast-style voice chain applied to the full narration (FFmpeg -af). Set to "" to disable.
+  polish: "highpass=f=70,equalizer=f=180:t=q:w=1.0:g=2,equalizer=f=3200:t=q:w=1.2:g=2.5,equalizer=f=7500:t=q:w=2:g=-2,acompressor=threshold=-20dB:ratio=3:attack=8:release=120:makeup=2,aecho=0.8:0.5:28|44:0.10|0.06"
+
+formats:
+  short:
+    width: 1080
+    height: 1920
+    fps: 30
+    target_seconds: [45, 60]
+    loudness_lufs: -14
+    caption_max_chars_per_line: 34
+    caption_max_lines: 2
+    safe_area: { top: 220, bottom: 420, side: 80 }   # Reels/Shorts UI clearance in px
+  long:
+    width: 1920
+    height: 1080
+    fps: 30
+    target_seconds: [360, 600]
+    loudness_lufs: -14
+    caption_max_chars_per_line: 48
+    caption_max_lines: 2
+    safe_area: { top: 80, bottom: 120, side: 140 }
+
+music:
+  library_dir: "music_library"    # OpenMontage convention; checked first
+  local_fallback: "tanpura_drone" # scripts/music_bed.py — original, royalty-free, generated locally
+  drone_key: "C#"                 # Sa of the drone
+  bed_volume_db: -22              # bed level before ducking
+  duck_to: 0.12                   # music gain while narration speaks (audio_mixer ducking)
+
+budget:
+  approval_threshold_usd: 0.50    # mirrors config.yaml single_action_approval_usd — ask before exceeding
+  per_short_cap_usd: 3.00
+  per_long_cap_usd: 15.00
+
+paths:
+  projects_dir: "projects"        # OpenMontage workspace convention: projects/<id>/
+  browser_env: "HYPERFRAMES_BROWSER_PATH"   # optional override when Chrome Headless Shell can't be fetched

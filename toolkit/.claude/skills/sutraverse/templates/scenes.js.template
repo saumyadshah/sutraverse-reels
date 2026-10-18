@@ -1,0 +1,11 @@
+/* Build all scene motion on the shared timeline at GLOBAL time.
+   T.scenes.S1.start / .end, T.lines.L01.start / .end, T.u (px unit), T.W, T.H.
+   Use SV.drift / SV.particles / SV.drawOn / SV.revealWords / SV.sceneFade (brand-kit/sv-lib.js). */
+window.SV_BUILD_SCENES = function (tl, T) {
+  const ids = Object.keys(T.scenes);
+  ids.forEach((id, i) => {
+    const el = document.getElementById("scene-" + id), s = T.scenes[id];
+    SV.sceneFade(tl, el, s.start, s.end, { first: i === 0, last: i === ids.length - 1 });
+    SV.drift(tl, el.querySelector(".far"), s.start, s.end - s.start, { toScale: 1.06 });
+  });
+};

@@ -1,0 +1,26 @@
+{
+  "title": "Working title",
+  "format": "short",
+  "topic": "What the video teaches, in one line",
+  "cta": "Follow for more ancient wisdom, explained for modern life.",
+  "lead_in_seconds": 0.35,
+  "lines": [
+    {
+      "id": "L01",
+      "scene": "S1",
+      "role": "hook",
+      "hi": "हिंदी नैरेशन, देवनागरी में — बोलचाल की आसान हिंदी।",
+      "hi_tts": "(optional) the same line respelled for better TTS pronunciation",
+      "en": "English subtitle: faithful meaning, natural English.",
+      "claim_type": "modern_application",
+      "source_ref": "",
+      "pause_after": 0.3
+    }
+  ],
+  "_notes": {
+    "role": "hook | problem | connection | context | teaching | misunderstanding | application | close | cta",
+    "claim_type": "direct_quote | faithful_paraphrase | traditional_interpretation | philosophical_inference | modern_application | story_retelling",
+    "source_ref": "Exact reference for any scriptural claim, e.g. 'Bhagavad Gita 2.62' — must exist in artifacts/sources.json",
+    "pause_after": "optional seconds; defaults come from config.voice"
+  }
+}
