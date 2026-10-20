@@ -22,7 +22,13 @@ LOG="$HOME/.sutraverse_setup.log"
 status=$?
 
 LINE="$(grep '^export HYPERFRAMES_BROWSER_PATH=' "$LOG" | tail -1)"
-if [ $status -eq 0 ] && [ -n "$LINE" ]; then
+if [ -z "$LINE" ]; then
+  # bootstrap stopped before printing it: fall back to the npm Chromium if it was installed
+  BIN="$(cd "$HOME/sv-chromium" 2>/dev/null && node -e "require('@sparticuz/chromium').default.executablePath().then(p=>console.log(p)).catch(()=>require('@sparticuz/chromium').executablePath().then(p=>console.log(p)))" 2>/dev/null)"
+  [ -n "$BIN" ] && [ -x "$BIN" ] && LINE="export HYPERFRAMES_BROWSER_PATH=$BIN"
+fi
+if [ -f "$OM/.claude/skills/sutraverse/scripts/narrate.py" ] && [ -n "$LINE" ] \
+   && python3 -c "from PIL import Image; Image.new('RGB',(1,1))" 2>/dev/null; then
   printf '%s\nexport SUTRAVERSE_READY=1\n' "$LINE" > "$HOME/.sutraverse_env"
   echo "SutraVerse toolkit ready ($HOME/.sutraverse_env)"
 else

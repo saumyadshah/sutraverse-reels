@@ -16,6 +16,10 @@ cd "$OM"
 unzip -qo "$ZIP"
 
 PIP="python3 -m pip install -q"
+# Some base images ship a broken system Pillow (_imaging won't import); install a clean one first.
+python3 -c "from PIL import Image; Image.new('RGB',(1,1))" 2>/dev/null \
+  || $PIP --break-system-packages --ignore-installed --force-reinstall pillow 2>/dev/null \
+  || $PIP --ignore-installed --force-reinstall pillow || true
 $PIP --break-system-packages -r requirements.txt 2>/dev/null || $PIP -r requirements.txt
 $PIP --break-system-packages sherpa-onnx soundfile google-genai jsonschema numpy pillow pyyaml 2>/dev/null \
   || $PIP sherpa-onnx soundfile google-genai jsonschema numpy pillow pyyaml
@@ -39,7 +43,7 @@ if [ -n "$KEY" ] && ! grep -q "GEMINI_API_KEY=" .env 2>/dev/null; then
   printf 'GEMINI_API_KEY=%s\nGOOGLE_API_KEY=%s\n' "$KEY" "$KEY" >> .env
 fi
 
-python3 .claude/skills/sutraverse/scripts/setup_check.py | tail -25
+python3 .claude/skills/sutraverse/scripts/setup_check.py 2>&1 | tail -25 || echo "setup_check reported a problem (non-fatal)"
 echo "BOOTSTRAP OK"
 echo "export HYPERFRAMES_BROWSER_PATH=$HYPERFRAMES_BROWSER_PATH"
 [ -n "$KEY" ] && echo "VOICE: Gemini key found" || echo "VOICE: no Gemini key in this environment -> local Hindi voice only"
