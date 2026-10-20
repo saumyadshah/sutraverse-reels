@@ -75,9 +75,21 @@ def main():
     a = ap.parse_args()
 
     tok, scope = access_token()
+    channel = None
+    if "youtube.readonly" in scope or "auth/youtube " in scope + " ":
+        r = json.load(req("https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true",
+                          headers={"Authorization": f"Bearer {tok}"}))
+        items = r.get("items", [])
+        if items:
+            channel = {"id": items[0]["id"], "title": items[0]["snippet"]["title"],
+                       "handle": items[0]["snippet"].get("customUrl", "")}
     if a.check:
         print("auth ok; scope:", scope)
+        print("channel:", json.dumps(channel))
         return
+    want = os.environ.get("YT_EXPECT_CHANNEL", "UCXQb7m5Icgt99dv_ZQGk1fA")
+    if channel and channel["id"] != want:
+        sys.exit(f"refusing to upload: token belongs to channel {channel['title']} ({channel['id']}), expected {want}")
 
     meta = json.load(open(a.meta, encoding="utf-8"))
     title = meta["title"].strip()
