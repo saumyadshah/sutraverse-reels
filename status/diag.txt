@@ -1,0 +1,201 @@
+Tue Oct 20 10:00:07 UTC 2026
+root
+HOME=/root
+/home/user/sutraverse-reels
+ 10:00:07 up 0 min,  0 user,  load average: 0.13, 0.03, 0.01
+total 168
+drwx------ 21 root root  4096 Oct 20 10:00 .
+drwxr-xr-x 22 root root  4096 Oct 20 09:59 ..
+drwx------  2 root root  4096 Oct 20 09:59 .aws
+-rw-r--r--  1 root root  3207 Oct 18 02:25 .bashrc
+-rw-r--r--  1 root root    55 Oct 20 09:59 .boto
+drwxr-xr-x  3 root root  4096 Oct 18 02:29 .bun
+drwxr-xr-x  7 root root  4096 Oct 20 09:59 .cache
+drwxr-xr-x  3 root root  4096 Oct 18 02:25 .cargo
+drwxr-xr-x  2 root root  4096 Oct 20 09:59 .ccr
+drwxr-xr-x 11 root root  4096 Oct 20 10:00 .claude
+-rw-------  1 root root 57947 Oct 20 10:00 .claude.json
+drwxr-xr-x  5 root root  4096 Oct 18 02:30 .config
+-rw-r--r--  1 root root   398 Oct 20 09:59 .gitconfig
+drwxr-xr-x  4 root root  4096 Oct 18 02:25 .gradle
+drwx------  3 root root  4096 Oct 20 09:33 .hyperframes
+drwxr-xr-x  5 root root  4096 Oct 18 02:29 .local
+drwxr-xr-x  2 root root  4096 Oct 18 02:29 .nix-defexpr
+lrwxrwxrwx  1 root root    43 Oct 18 02:29 .nix-profile -> /nix/var/nix/profiles/per-user/root/profile
+drwxr-xr-x  5 root root  4096 Oct 20 09:33 .npm
+drwxr-xr-x  3 root root  4096 Oct 20 09:30 .openmontage
+drwxr-xr-x  3 root root  4096 Oct 20 09:59 .pki
+-rw-r--r--  1 root root   161 Apr 22  2024 .profile
+drwxr-xr-x  6 root root  4096 Oct 18 02:25 .rustup
+drwx------  2 root root  4096 Oct 18 02:23 .ssh
+-rw-r--r--  1 root root    72 Oct 20 09:33 .sutraverse_env
+-rw-r--r--  1 root root  1942 Oct 20 09:33 .sutraverse_setup.log
+drwxr-xr-x 21 root root  4096 Oct 20 09:29 OpenMontage
+drwxr-xr-x  9 root root  4096 Oct 20 09:29 sutraverse-reels
+drwxr-xr-x  3 root root  4096 Oct 20 09:33 sv-chromium
+total 168
+drwx------ 21 root root  4096 Oct 20 10:00 .
+drwxr-xr-x 22 root root  4096 Oct 20 09:59 ..
+drwx------  2 root root  4096 Oct 20 09:59 .aws
+-rw-r--r--  1 root root  3207 Oct 18 02:25 .bashrc
+-rw-r--r--  1 root root    55 Oct 20 09:59 .boto
+drwxr-xr-x  3 root root  4096 Oct 18 02:29 .bun
+drwxr-xr-x  7 root root  4096 Oct 20 09:59 .cache
+drwxr-xr-x  3 root root  4096 Oct 18 02:25 .cargo
+drwxr-xr-x  2 root root  4096 Oct 20 09:59 .ccr
+drwxr-xr-x 11 root root  4096 Oct 20 10:00 .claude
+-rw-------  1 root root 57947 Oct 20 10:00 .claude.json
+drwxr-xr-x  5 root root  4096 Oct 18 02:30 .config
+-rw-r--r--  1 root root   398 Oct 20 09:59 .gitconfig
+drwxr-xr-x  4 root root  4096 Oct 18 02:25 .gradle
+drwx------  3 root root  4096 Oct 20 09:33 .hyperframes
+drwxr-xr-x  5 root root  4096 Oct 18 02:29 .local
+drwxr-xr-x  2 root root  4096 Oct 18 02:29 .nix-defexpr
+lrwxrwxrwx  1 root root    43 Oct 18 02:29 .nix-profile -> /nix/var/nix/profiles/per-user/root/profile
+drwxr-xr-x  5 root root  4096 Oct 20 09:33 .npm
+drwxr-xr-x  3 root root  4096 Oct 20 09:30 .openmontage
+drwxr-xr-x  3 root root  4096 Oct 20 09:59 .pki
+-rw-r--r--  1 root root   161 Apr 22  2024 .profile
+drwxr-xr-x  6 root root  4096 Oct 18 02:25 .rustup
+drwx------  2 root root  4096 Oct 18 02:23 .ssh
+-rw-r--r--  1 root root    72 Oct 20 09:33 .sutraverse_env
+-rw-r--r--  1 root root  1942 Oct 20 09:33 .sutraverse_setup.log
+drwxr-xr-x 21 root root  4096 Oct 20 09:29 OpenMontage
+drwxr-xr-x  9 root root  4096 Oct 20 09:29 sutraverse-reels
+drwxr-xr-x  3 root root  4096 Oct 20 09:33 sv-chromium
+total 20
+drwxr-xr-x  5 root   root   4096 Oct 20 09:28 .
+drwxr-xr-x 22 root   root   4096 Oct 20 09:59 ..
+drwxr-xr-x  7 claude claude 4096 Oct 20 09:29 claude
+drwxr-x---  2 ubuntu ubuntu 4096 Sep 30 14:12 ubuntu
+drwxr-xr-x  3 root   root   4096 Oct 20 09:28 user
+== /root/.sutraverse_env
+-rw-r--r-- 1 root root 72 Oct 20 09:33 /root/.sutraverse_env
+== /root/.sutraverse_env
+-rw-r--r-- 1 root root 72 Oct 20 09:33 /root/.sutraverse_env
+== /root/.sutraverse_setup.log
+-rw-r--r-- 1 root root 1942 Oct 20 09:33 /root/.sutraverse_setup.log
+== /root/.sutraverse_setup.log
+-rw-r--r-- 1 root root 1942 Oct 20 09:33 /root/.sutraverse_setup.log
+== head/tail /root/.sutraverse_setup.log
+== SutraVerse env setup 2026-10-20T09:29:17Z
+OPENMONTAGE CAPABILITIES
+  tts                1/14 configured  sherpa_onnx
+...
+== SutraVerse env setup 2026-10-20T09:29:17Z
+OPENMONTAGE CAPABILITIES
+  tts                1/14 configured  sherpa_onnx
+  image_generation   0/23 configured  -
+  video_generation   0/31 configured  -
+  music_generation   0/5 configured  -
+  music_search       1/2 configured  pixabay_music
+  music_library      0/1 configured  -
+  subtitle           2/2 configured  openmontage, remotion
+  video_post         9/10 configured  ffmpeg, hyperframes
+  runtimes           {'ffmpeg': True, 'remotion': False, 'hyperframes': True}
+
+SUTRAVERSE CHECKS
+  Hindi voice  no     gemini_tts:Charon  (MOST NATURAL, style-directable (needs GOOGLE_API_KEY / GEMINI_API_KEY). Other models: gemini-3.8-flash-tts, gemini-2.5-flash-preview-tts)
+  Hindi voice  no     elevenlabs_tts:-  (very expressive; set a Hindi voice_id here (needs ELEVENLABS_API_KEY))
+  Hindi voice  no     azure_tts:hi-IN-MadhurNeural  (clean neural Hindi; free F0 tier (needs AZURE_SPEECH_KEY). Female: hi-IN-SwaraNeural)
+  Hindi voice  no     google_tts:hi-IN-Chirp3-HD-Charon  (Cloud TTS Chirp 3 HD Hindi (needs GOOGLE_API_KEY))
+  Hindi voice  READY  sherpa_onnx_tts:hi_kokoro_psi  (LOCAL, free, Apache-2.0. Best local intelligibility in back-translation tests.)
+  Hindi voice  READY  sherpa_onnx_tts:hi_rohan  (LOCAL, free. Native Hindi male (IndicTTS).)
+  -> narration will use: sherpa_onnx_tts:hi_kokoro_psi
+  Whisper verifier READY
+  brand kit        READY (GSAP + fonts vendored, offline-safe)
+  HyperFrames      READY; headless Chrome READY
+  ffmpeg           READY
+  visual route     A (hand-authored SVG/GSAP animation)
+  upgrades (1-min env var): ARK_API_KEY, ATLASCLOUD_API_KEY, CARTESIA_API_KEY, FAL_KEY, FISH_AUDIO_API_KEY, IDEOGRAM_API_KEY, INWORLD_API_KEY, KLING_API_KEY, LTX_API_KEY, MINIMAX_API_KEY, REPLICATE_API_TOKEN, TENCENT_TOKENHUB_API_KEY
+BOOTSTRAP OK
+export HYPERFRAMES_BROWSER_PATH=/tmp/chromium
+VOICE: no Gemini key in this environment -> local Hindi voice only
+== head/tail /root/.sutraverse_setup.log
+== SutraVerse env setup 2026-10-20T09:29:17Z
+OPENMONTAGE CAPABILITIES
+  tts                1/14 configured  sherpa_onnx
+...
+== SutraVerse env setup 2026-10-20T09:29:17Z
+OPENMONTAGE CAPABILITIES
+  tts                1/14 configured  sherpa_onnx
+  image_generation   0/23 configured  -
+  video_generation   0/31 configured  -
+  music_generation   0/5 configured  -
+  music_search       1/2 configured  pixabay_music
+  music_library      0/1 configured  -
+  subtitle           2/2 configured  openmontage, remotion
+  video_post         9/10 configured  ffmpeg, hyperframes
+  runtimes           {'ffmpeg': True, 'remotion': False, 'hyperframes': True}
+
+SUTRAVERSE CHECKS
+  Hindi voice  no     gemini_tts:Charon  (MOST NATURAL, style-directable (needs GOOGLE_API_KEY / GEMINI_API_KEY). Other models: gemini-3.8-flash-tts, gemini-2.5-flash-preview-tts)
+  Hindi voice  no     elevenlabs_tts:-  (very expressive; set a Hindi voice_id here (needs ELEVENLABS_API_KEY))
+  Hindi voice  no     azure_tts:hi-IN-MadhurNeural  (clean neural Hindi; free F0 tier (needs AZURE_SPEECH_KEY). Female: hi-IN-SwaraNeural)
+  Hindi voice  no     google_tts:hi-IN-Chirp3-HD-Charon  (Cloud TTS Chirp 3 HD Hindi (needs GOOGLE_API_KEY))
+  Hindi voice  READY  sherpa_onnx_tts:hi_kokoro_psi  (LOCAL, free, Apache-2.0. Best local intelligibility in back-translation tests.)
+  Hindi voice  READY  sherpa_onnx_tts:hi_rohan  (LOCAL, free. Native Hindi male (IndicTTS).)
+  -> narration will use: sherpa_onnx_tts:hi_kokoro_psi
+  Whisper verifier READY
+  brand kit        READY (GSAP + fonts vendored, offline-safe)
+  HyperFrames      READY; headless Chrome READY
+  ffmpeg           READY
+  visual route     A (hand-authored SVG/GSAP animation)
+  upgrades (1-min env var): ARK_API_KEY, ATLASCLOUD_API_KEY, CARTESIA_API_KEY, FAL_KEY, FISH_AUDIO_API_KEY, IDEOGRAM_API_KEY, INWORLD_API_KEY, KLING_API_KEY, LTX_API_KEY, MINIMAX_API_KEY, REPLICATE_API_TOKEN, TENCENT_TOKENHUB_API_KEY
+BOOTSTRAP OK
+export HYPERFRAMES_BROWSER_PATH=/tmp/chromium
+VOICE: no Gemini key in this environment -> local Hindi voice only
+-rwx------ 1 root root 209022176 Oct 20 09:33 /tmp/chromium
+/root/OpenMontage
+/root/OpenMontage
+/root/sutraverse-reels
+/root/sutraverse-reels
+pil ok
+GEMINI_API_KEY=SET
+YT_CLIENT_ID=SET
+YT_CLIENT_SECRET=SET
+YT_REFRESH_TOKEN=SET
+/root/.sutraverse_setup.log
+total 212144
+drwxrwxrwt 10 root root      4096 Oct 20 09:59 .
+drwxr-xr-x 22 root root      4096 Oct 20 09:59 ..
+-rw-r--r--  1 root root        51 Oct 18 02:29 .ses
+drwxr-xr-x  3 root root      4096 Oct 18 02:29 147.0.7727.24
+drwx------  2 root root      4096 Oct 20 09:59 cc-socks
+-rwx------  1 root root 209022176 Oct 20 09:33 chromium
+drwx------  4 root root      4096 Oct 20 10:00 claude-0
+-rw-------  1 root root     25723 Oct 20 09:59 claude-append-system-prompt.txt
+-rw-------  1 root root     12369 Oct 20 09:59 claude-code-1340666938.diag.log
+-rw-------  1 root root         0 Oct 20 09:28 claude-code-1904351266.diag.log
+-rw-------  1 root root     77153 Oct 20 10:00 claude-code.log
+-rw-------  1 root root       796 Oct 20 09:59 claude-command
+-rw-------  1 root root     71422 Oct 20 09:59 claude-system-prompt.txt
+lrwxrwxrwx  1 root root        35 Oct 20 09:59 code-sign -> /opt/env-runner/environment-manager
+-rw-------  1 root root        76 Oct 20 09:59 codesign-mcp-config.json
+-rw-r--r--  1 root root     53722 Oct 20 09:59 env-manager.log
+-rw-------  1 root root      2175 Oct 20 09:33 environment-manager-1414713676.diag.log
+-rw-------  1 root root      2222 Oct 20 09:59 environment-manager-2049383914.diag.log
+-rw-r--r--  1 root root         0 Oct 20 09:59 environment-manager-cse_01JxRGVFH1v7kJ2BrJ8XneuQ.lock
+-rw-r--r--  1 root root         0 Oct 20 09:28 environment-manager-cse_01S3a97bZiMtoDADKg3LfM9A.lock
+-rw-r--r--  1 root root     48513 Oct 20 09:59 environment-manager.out
+drwxr-xr-x  3 1001 1001      4096 Oct 20 09:33 fonts
+drwxr-xr-x  2 root root      4096 Oct 20 09:59 hsperfdata_root
+drwx------  2 root root      4096 Oct 18 02:30 initgoogle_syslog_dir.0
+-rwxr-xr-x  1 root root    318768 Sep  9 10:36 libEGL.so
+-rwxr-xr-x  1 root root    318768 Sep  9 10:36 libGLESv2.so
+-rwxr-xr-x  1 root root   6004808 Sep  9 10:36 libvk_swiftshader.so
+-rwxr-xr-x  1 root root    833304 Sep  9 10:36 libvulkan.so.1
+-rw-r--r--  1 root root         0 Oct 18 02:29 mat-debug-924.log
+-rw-------  1 root root      7591 Oct 20 09:59 mcp-config-cse_01JxRGVFH1v7kJ2BrJ8XneuQ.json
+drwxr-xr-x  3 root root      4096 Oct 18 02:29 node-compile-cache
+-rw-r--r--  1 root root    166267 Oct 18 02:26 ruby-build.20261018022551.543.log
+-rw-r--r--  1 root root     90899 Oct 18 02:27 ruby-build.20261018022655.12507.log
+-rw-r--r--  1 root root     88860 Oct 18 02:29 ruby-build.20261018022757.24689.log
+-rw-rw-rw-  1 root root         0 Oct 18 02:29 uv-bcb837755ba79986.lock
+drwxr-xr-x  3 root root      4096 Oct 18 02:29 v8-compile-cache-0
+-rw-r--r--  1 root root       107 Sep  9 10:36 vk_swiftshader_icd.json
+
+== yt_upload.py --check (from /root/sutraverse-reels)
+dbd2f16
+auth ok; scope: https://www.googleapis.com/auth/youtube.upload
+channel: null
