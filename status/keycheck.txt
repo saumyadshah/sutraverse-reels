@@ -1,0 +1,9 @@
+2026-10-20T12:01:16Z UTC
+GEMINI_API_KEY: SET len=53 whitespace=no quotes=no
+YT_CLIENT_ID: SET len=72 whitespace=no quotes=no
+YT_CLIENT_SECRET: SET len=35 whitespace=no quotes=no
+YT_REFRESH_TOKEN: SET len=103 whitespace=no quotes=no
+gemini models endpoint HTTP: 200
+yt_upload.py --check:
+auth ok; scope: https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtube.upload
+channel: {"id": "UClp0hIIwbvwByw7_UQrJmhQ", "title": "SutraVerse | Hindu Scriptures", "handle": "@sutraversehindu"}
