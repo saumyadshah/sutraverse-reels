@@ -21,6 +21,11 @@ LOG="$HOME/.sutraverse_setup.log"
 } >"$LOG" 2>&1
 status=$?
 
+# Free 3D for optional Three.js scenes: vendor three.js locally so renders never need a CDN.
+# Runs copy $HOME/sv-three/node_modules/three/build/three.module.min.js into the composition.
+( [ -f "$HOME/sv-three/node_modules/three/build/three.module.min.js" ] \
+  || npm install -s --prefix "$HOME/sv-three" three@0.169.0 ) >>"$LOG" 2>&1 || true
+
 LINE="$(grep '^export HYPERFRAMES_BROWSER_PATH=' "$LOG" | tail -1)"
 if [ -z "$LINE" ]; then
   # bootstrap stopped before printing it: fall back to the npm Chromium if it was installed
