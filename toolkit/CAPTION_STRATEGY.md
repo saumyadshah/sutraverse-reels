@@ -1,6 +1,6 @@
 # SutraVerse Reel caption & Instagram SEO strategy
 
-Applies to every SutraVerse Reel caption and its metadata. Goal: a recognisable SutraVerse identity plus relevant organic discovery, watch time, saves, shares, meaningful comments and follows. Relevance and readability beat volume: no keyword stuffing, no misleading clickbait, no irrelevant trending terms, no promises of virality.
+Applies to every SutraVerse Reel AND carousel caption and its metadata (carousel differences in "Carousels" below). Goal: a recognisable SutraVerse identity plus relevant organic discovery, watch time, saves, shares, meaningful comments and follows. Relevance and readability beat volume: no keyword stuffing, no misleading clickbait, no irrelevant trending terms, no promises of virality.
 
 ## Caption structure (in this order)
 
@@ -70,6 +70,14 @@ One easy, specific question that invites a real answer (not "thoughts?"). Differ
 ## On-screen and in-video SEO
 - The cover title and the first on-screen English text state the topic clearly in plain words (e.g. "Krishna's 1 Rule for Overthinking"), so Instagram and viewers understand it.
 - Subtitles stay English; key terms (the character, scripture or the life lesson) appear on screen at least once.
+
+## Carousels (same strategy, adapted)
+Everything above applies to carousel posts too, with these differences:
+- No narration, so there is no spoken keyword. Instead the COVER slide title carries the search phrase's topic words in plain English (e.g. "Gita's Fix for Overthinking"), and the topic words appear again on at least one inside slide.
+- Caption line 1 contains the search phrase naturally; the takeaway can point to the slides ("Slide 4 is the one to screenshot").
+- Engagement prompt leans on SAVE and SHARE (carousels are saved and sent more than Reels), plus one easy comment question and the follow line.
+- Same keyword line (always starting "SutraVerse · Ancient Wisdom · Life Lessons") and exactly 5 hashtags from the same pools; no hashtags in the first comment.
+- Add alt text per slide when the tool allows it (plain description + the topic words).
 
 ## Tone
 Engaging, insightful, modern, culturally respectful, accessible to a broad audience (not only devotees). Deities and scriptures are always described with respect; the lesson is framed for everyone's daily life.
