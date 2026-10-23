@@ -22,9 +22,47 @@ Applies to every SutraVerse Reel caption and its metadata. Goal: a recognisable 
    - #SutraVerse (always first);
    - 1–2 topic-specific tags (the story, character, scripture or theme, e.g. #BhagavadGita, #Karma, #Hanuman);
    - 2–3 broad discovery tags (e.g. #LifeLessons, #AncientWisdom, #SelfImprovement, #Mindset, #MotivationalReels, #DailyMotivation, #PersonalGrowth).
-   - No banned, spammy or unrelated tags; never more or fewer than 5.
+   - Choose them from the pools in "Hashtag & keyword research" below. No banned, spammy or unrelated tags; never more or fewer than 5.
 
 Length: total under 2,200 characters; aim for about 500–1,100. Short paragraphs, 1–3 tasteful emojis at most. English, with a Hinglish phrase only when it makes a line more relatable.
+
+## Hashtag & keyword research (applies to every Reel)
+
+Instagram enforces a maximum of 5 hashtags per post/Reel (since Dec 2025), counting caption and first comment together. So hashtags never go in the first comment, and the real discovery levers are the words Instagram indexes: the caption (especially line 1), the on-screen English text, and the spoken audio.
+
+### 1. The search we're trying to win
+Before writing anything, write down the ONE phrase a real person would type into Instagram search that this Reel should answer, e.g.:
+"bhagavad gita life lessons", "how to stop overthinking", "krishna motivation", "mahabharata story", "karna story", "hanuman story", "chanakya niti", "ancient wisdom for modern life", "life lessons in hindi", "gita quotes for anxiety".
+Pick by the Reel's real topic. Prefer a specific problem + source ("gita for overthinking") over a generic one ("motivation").
+
+### 2. Caption keyword (line 1)
+The searchable phrase appears naturally in the first line or the first sentence, e.g. "The Bhagavad Gita's fix for overthinking at 2 a.m. 🪔". Never a bare keyword list as the hook.
+
+### 3. Spoken keyword (in the narration)
+Within the first 5 seconds of the Hindi voice-over, say the searchable phrase out loud, clearly, in natural Hinglish, e.g. "Bhagavad Gita ka ye ek shloka overthinking ka ilaaj hai…", "Mahabharat ki ye kahani…". Say the character's and scripture's names clearly at least once more later. Transcripts are indexed.
+
+### 4. On-screen keyword
+The first on-screen English text and the cover title contain the topic words ("Gita's Fix for Overthinking"), and the subtitle line that carries the spoken keyword shows it in English.
+
+### 5. Hashtags: CORE + ROTATING, exactly 5
+- CORE (every Reel): #SutraVerse
+- BROAD discovery (pick 2–3 that fit; rotate, don't reuse the same trio every day):
+  #LifeLessons #AncientWisdom #SelfImprovement #Mindset #PersonalGrowth #DailyMotivation #Spirituality #MotivationalReels #Wisdom #PositiveThinking
+- TOPIC / niche (pick 1–2 that genuinely match):
+  - Gita: #BhagavadGita #GitaWisdom #Krishna #KarmaYoga
+  - Mahabharata: #Mahabharata #Mahabharat #Karna #Arjuna
+  - Ramayana: #Ramayana #Ramayan #Hanuman #JaiShriRam
+  - Upanishads / Vedas: #Upanishads #Vedanta #Vedas #VedicWisdom
+  - Puranas: #HinduMythology #BhagavataPurana #Shiva #Vishnu
+  - Niti / Yoga: #ChanakyaNiti #Chanakya #YogaSutras #Patanjali
+  - Broad faith tag only when the Reel is devotional: #SanatanDharma #HinduDharma
+  - Festival tags (#Diwali, #Navratri…) only on the festival's Reel.
+- Order: #SutraVerse, then topic tag(s), then broad tags.
+
+### 6. AVOID
+- Generic, low-intent or engagement-bait tags: #fyp #viral #explorepage #explore #reels #reelsinstagram #trending #instagood #follow4follow #like4like #foryou.
+- Off-topic trending tags, tags about other creators/brands, misspelled or banned tags, and political or communal tags.
+- More or fewer than 5 hashtags; hashtags in the first comment.
 
 ## Pinned first comment
 One easy, specific question that invites a real answer (not "thoughts?"). Different from the caption's question.
