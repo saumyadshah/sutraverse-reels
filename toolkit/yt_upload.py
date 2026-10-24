@@ -87,7 +87,7 @@ def main():
         print("auth ok; scope:", scope)
         print("channel:", json.dumps(channel))
         return
-    want = os.environ.get("YT_EXPECT_CHANNEL", "UCXQb7m5Icgt99dv_ZQGk1fA")
+    want = os.environ.get("YT_EXPECT_CHANNEL", "UClp0hIIwbvwByw7_UQrJmhQ")
     if channel and channel["id"] != want:
         sys.exit(f"refusing to upload: token belongs to channel {channel['title']} ({channel['id']}), expected {want}")
 
