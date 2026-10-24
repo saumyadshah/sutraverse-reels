@@ -6,7 +6,7 @@
 # Paste this into the Default environment's setup script:
 #   git clone -q --depth 1 https://github.com/saumyadshah/sutraverse-reels "$HOME/sutraverse-reels" 2>/dev/null \
 #     || git -C "$HOME/sutraverse-reels" pull -q
-#   bash "$HOME/sutraverse-reels/toolkit/env_setup.sh"   (returns at once; the install continues in the background)
+#   bash "$HOME/sutraverse-reels/toolkit/env_setup.sh"   
 #
 # Result: $HOME/OpenMontage ready, and $HOME/.sutraverse_env with the HYPERFRAMES_BROWSER_PATH export.
 # Never prints any key.
@@ -15,10 +15,11 @@ REPO="$HOME/sutraverse-reels"
 OM="$HOME/OpenMontage"
 LOG="$HOME/.sutraverse_setup.log"
 
-# The environment's setup script has a time limit, and a full install can run past it (exit -1 kills the
-# session). So by default this script only starts the install in the background and returns at once.
-# Every scheduled run already waits for $HOME/.sutraverse_env before it starts work.
-if [ "${1:-}" != "--foreground" ]; then
+# Runs in the foreground (a background install is killed when the setup script exits, so it never
+# finished). Kept fast: three.js is bundled in the repo instead of downloaded. --background is kept
+# only as an option and is not used by the environment.
+if [ -f "$HOME/.sutraverse_env" ]; then echo "SutraVerse toolkit already ready"; exit 0; fi
+if [ "${1:-}" = "--background" ]; then
   if [ -f "$HOME/.sutraverse_env" ]; then echo "SutraVerse toolkit already ready"; exit 0; fi
   if [ -f "$HOME/.sutraverse_setup.pid" ] && kill -0 "$(cat "$HOME/.sutraverse_setup.pid")" 2>/dev/null; then
     echo "SutraVerse setup already running"; exit 0
@@ -37,8 +38,8 @@ status=$?
 
 # Free 3D for optional Three.js scenes: vendor three.js locally so renders never need a CDN.
 # Runs copy $HOME/sv-three/node_modules/three/build/three.module.min.js into the composition.
-( [ -f "$HOME/sv-three/node_modules/three/build/three.module.min.js" ] \
-  || npm install -s --prefix "$HOME/sv-three" three@0.169.0 ) >>"$LOG" 2>&1 || true
+mkdir -p "$HOME/sv-three/node_modules/three/build" \
+  && cp -f "$REPO/toolkit/vendor/three/three.module.min.js" "$HOME/sv-three/node_modules/three/build/" 2>>"$LOG" || true
 
 LINE="$(grep '^export HYPERFRAMES_BROWSER_PATH=' "$LOG" | tail -1)"
 if [ -z "$LINE" ]; then
