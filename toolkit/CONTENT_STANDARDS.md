@@ -127,6 +127,7 @@ Vendored in toolkit/.claude/skills/yt-* (MIT; see YT-AGENT-PACK.md) and installe
 - **yt-audit (weekly review, first Saturday of each month):** run it on the YouTube channel and report its ONE fix.
 - **yt-comment:** only when comments are pasted in or a tool can read them; replies are drafts for Saumya, never posted automatically.
 - **yt-plan, yt-shorts, yt-edit, yt-chapters:** available on request; they target long videos and on-camera creators, so the scheduled tasks don't use them.
+- **Captions + playlists (Reel runs + publisher):** every Reel run copies renders/final.en.srt to reels/<slot id>-<topic>.en.srt in the commit, and stores "caption_url" (its raw GitHub URL) and "yt_playlist" on the slot. Playlist by source: Bhagavad Gita → "Bhagavad Gita Explained"; Ramayana → "Ramayana Stories"; Mahabharata → "Mahabharata Lessons"; Vedas or Upanishads → "Vedas & Upanishads"; Puranas / Bhagavatam / Devi Mahatmya → "Puranas & Bhagavatam"; Niti, Yoga Sutras or other single-verse explainers → "Shlokas Explained"; a festival Reel → "Festival Stories". The publisher passes `--playlist "<yt_playlist>" --captions <caption_url>` to yt_upload.py.
 - Every yt-* skill ends with "ship it, or change it?". In unattended runs, treat that as a self-check, not a question to wait on; nothing in the pack publishes.
 
 ## 13. Skill pipeline (mandatory, Saumya 24 Oct)

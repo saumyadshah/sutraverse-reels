@@ -18,6 +18,9 @@ Usage:
   python yt_upload.py --update <video id> --meta meta.json
       Rewrite an existing video's title, description, tags, category, languages and Hindi
       translation in place (needs the youtube.force-ssl scope on the refresh token).
+  Extra options for --url/--file and --update (both need youtube.force-ssl):
+      --playlist "Ramayana Stories"   add the video to that playlist (created, public, if missing)
+      --captions <file.srt | url>     upload an English caption track (400 quota units)
   python yt_upload.py --meta meta.json --dry-run
       Print the final title, description and tags without uploading (no keys needed).
       Prints JSON: {"id": ..., "url": "https://youtube.com/shorts/<id>", "privacy": ...}
@@ -139,6 +142,92 @@ def access_token():
     return j["access_token"], j.get("scope", "")
 
 
+PLAYLIST_DESC = {
+    "Bhagavad Gita Explained": "One Bhagavad Gita verse at a time: the Sanskrit shloka, its exact reference, a faithful English translation, what it means and how to use it today.",
+    "Ramayana Stories": "Lesser-known moments from the Valmiki Ramayana, told as short animated stories with the original shloka and a life lesson for today.",
+    "Mahabharata Lessons": "Hard choices and moral dilemmas from the Mahabharata, with the verse behind each one and what it teaches about modern life.",
+    "Vedas & Upanishads": "Hymns and dialogues from the Vedas and Upanishads, explained simply with exact references and one practical lesson each.",
+    "Puranas & Bhagavatam": "Stories from the Bhagavata and other Puranas, with the shloka, what the text says and what tradition adds.",
+    "Shlokas Explained": "Famous Sanskrit shlokas explained word by word, with context and a practical takeaway.",
+    "Festival Stories": "The scripture behind Hindu festivals, told on the day, with the verse and its meaning.",
+}
+
+
+def ensure_playlist(tok, name):
+    h = {"Authorization": f"Bearer {tok}"}
+    page = ""
+    while True:
+        r = json.load(req("https://www.googleapis.com/youtube/v3/playlists?part=snippet&mine=true&maxResults=50"
+                          + (f"&pageToken={page}" if page else ""), headers=h))
+        for it in r.get("items", []):
+            if it["snippet"]["title"].strip().lower() == name.strip().lower():
+                return it["id"]
+        page = r.get("nextPageToken")
+        if not page:
+            break
+    body = {"snippet": {"title": name, "description": PLAYLIST_DESC.get(name, "") +
+                        "\n\nSutraVerse: ancient wisdom for modern life.", "defaultLanguage": "en"},
+            "status": {"privacyStatus": "public"}}
+    r = json.load(req("https://www.googleapis.com/youtube/v3/playlists?part=snippet,status",
+                      data=json.dumps(body).encode("utf-8"), method="POST",
+                      headers={**h, "Content-Type": "application/json; charset=UTF-8"}))
+    return r["id"]
+
+
+def add_to_playlist(tok, video_id, name):
+    pid = ensure_playlist(tok, name)
+    h = {"Authorization": f"Bearer {tok}"}
+    r = json.load(req(f"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId={pid}"
+                      f"&videoId={video_id}&maxResults=5", headers=h))
+    if r.get("items"):
+        return pid
+    body = {"snippet": {"playlistId": pid, "resourceId": {"kind": "youtube#video", "videoId": video_id}}}
+    req("https://www.googleapis.com/youtube/v3/playlistItems?part=snippet",
+        data=json.dumps(body).encode("utf-8"), method="POST",
+        headers={**h, "Content-Type": "application/json; charset=UTF-8"})
+    return pid
+
+
+def upload_captions(tok, video_id, src):
+    if src.startswith("http"):
+        with req(src) as r:
+            data = r.read()
+    else:
+        data = open(src, "rb").read()
+    h = {"Authorization": f"Bearer {tok}"}
+    existing = json.load(req(f"https://www.googleapis.com/youtube/v3/captions?part=snippet&videoId={video_id}",
+                             headers=h))
+    for c in existing.get("items", []):
+        if c["snippet"].get("language") == "en" and c["snippet"].get("trackKind") != "asr":
+            return c["id"]
+    boundary = "svcaptions7f3a"
+    meta = json.dumps({"snippet": {"videoId": video_id, "language": "en", "name": "English", "isDraft": False}})
+    body = (f"--{boundary}\r\nContent-Type: application/json; charset=UTF-8\r\n\r\n{meta}\r\n"
+            f"--{boundary}\r\nContent-Type: application/octet-stream\r\n\r\n").encode("utf-8") + data + \
+           f"\r\n--{boundary}--\r\n".encode("utf-8")
+    r = json.load(req("https://www.googleapis.com/upload/youtube/v3/captions?part=snippet&uploadType=multipart",
+                      data=body, method="POST",
+                      headers={**h, "Content-Type": f"multipart/related; boundary={boundary}"}))
+    return r.get("id")
+
+
+def extras(tok, scope, video_id, a):
+    out = {}
+    if not (a.playlist or a.captions):
+        return out
+    if "youtube.force-ssl" not in scope and "auth/youtube " not in scope + " ":
+        out["extras_error"] = "token lacks youtube.force-ssl; playlist/captions skipped"
+        return out
+    for key, fn, arg in (("playlist_id", add_to_playlist, a.playlist), ("caption_id", upload_captions, a.captions)):
+        if not arg:
+            continue
+        try:
+            out[key] = fn(tok, video_id, arg)
+        except SystemExit as e:
+            out[key + "_error"] = str(e)[:300]
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
@@ -148,6 +237,8 @@ def main():
     ap.add_argument("--privacy", default="public", choices=["public", "private", "unlisted"])
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--update", metavar="VIDEO_ID")
+    ap.add_argument("--playlist")
+    ap.add_argument("--captions")
     a = ap.parse_args()
 
     if a.dry_run:
@@ -192,8 +283,8 @@ def main():
                             data=json.dumps(body).encode("utf-8"), method="PUT",
                             headers={"Authorization": f"Bearer {tok}",
                                      "Content-Type": "application/json; charset=UTF-8"}))
-        print(json.dumps({"id": res.get("id"), "updated": True, "title": res["snippet"]["title"]},
-                         ensure_ascii=False))
+        print(json.dumps({"id": res.get("id"), "updated": True, "title": res["snippet"]["title"],
+                          **extras(tok, scope, a.update, a)}, ensure_ascii=False))
         return
     title = meta["title"].strip()
     if len(title) > 100:
@@ -232,7 +323,8 @@ def main():
             "Content-Length": str(size)}))
     print(json.dumps({"id": res["id"], "url": f"https://youtube.com/shorts/{res['id']}",
                       "privacy": res.get("status", {}).get("privacyStatus"),
-                      "upload_status": res.get("status", {}).get("uploadStatus")}))
+                      "upload_status": res.get("status", {}).get("uploadStatus"),
+                      **extras(tok, scope, res["id"], a)}))
 
 
 if __name__ == "__main__":
