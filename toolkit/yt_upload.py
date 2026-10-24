@@ -15,6 +15,9 @@ Usage:
          "hi_title", "hi_description" (optional Hindi translations)}
       A legacy {"title", "description", "tags"} meta still works: the fixed brand block,
       links and #SutraVerse are added if missing.
+  python yt_upload.py --update <video id> --meta meta.json
+      Rewrite an existing video's title, description, tags, category, languages and Hindi
+      translation in place (needs the youtube.force-ssl scope on the refresh token).
   python yt_upload.py --meta meta.json --dry-run
       Print the final title, description and tags without uploading (no keys needed).
       Prints JSON: {"id": ..., "url": "https://youtube.com/shorts/<id>", "privacy": ...}
@@ -144,6 +147,7 @@ def main():
     ap.add_argument("--meta")
     ap.add_argument("--privacy", default="public", choices=["public", "private", "unlisted"])
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--update", metavar="VIDEO_ID")
     a = ap.parse_args()
 
     if a.dry_run:
@@ -171,6 +175,26 @@ def main():
         sys.exit(f"refusing to upload: token belongs to channel {channel['title']} ({channel['id']}), expected {want}")
 
     meta = json.load(open(a.meta, encoding="utf-8"))
+    if a.update:
+        if "youtube.force-ssl" not in scope and "auth/youtube " not in scope + " ":
+            sys.exit("cannot update: the refresh token lacks the youtube.force-ssl scope "
+                     "(re-authorize with youtube.upload + youtube.readonly + youtube.force-ssl)")
+        snippet = {"title": meta["title"].strip()[:100], "description": build_description(meta)[:4900],
+                   "tags": build_tags(meta), "categoryId": "27",
+                   "defaultLanguage": "en", "defaultAudioLanguage": "hi"}
+        body = {"id": a.update, "snippet": snippet}
+        parts = "snippet"
+        if meta.get("hi_title"):
+            body["localizations"] = {"hi": {"title": meta["hi_title"].strip()[:100],
+                                            "description": meta.get("hi_description", "").strip()[:4900]}}
+            parts += ",localizations"
+        res = json.load(req(f"https://www.googleapis.com/youtube/v3/videos?part={parts}",
+                            data=json.dumps(body).encode("utf-8"), method="PUT",
+                            headers={"Authorization": f"Bearer {tok}",
+                                     "Content-Type": "application/json; charset=UTF-8"}))
+        print(json.dumps({"id": res.get("id"), "updated": True, "title": res["snippet"]["title"]},
+                         ensure_ascii=False))
+        return
     title = meta["title"].strip()
     if len(title) > 100:
         sys.exit("title over 100 characters")
