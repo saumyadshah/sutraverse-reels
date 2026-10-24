@@ -116,3 +116,15 @@ All must be true, or the Reel goes to "needs_review" instead of posting:
 
 ## 11. Learning loop
 The weekly growth review compares each Reel's 3-second hold, average watch time and watch percentage, completion, shares and saves per 1,000 reached, comments and follows, against the format, hook type, length and words-per-second recorded on its slot. Repeat what beats the median; change one variable at a time.
+
+## 12. YouTube agent pack (yt-* skills)
+Vendored in toolkit/.claude/skills/yt-* (MIT; see YT-AGENT-PACK.md) and installed to ~/.claude/skills by env_setup.sh, with the voice profile at ~/.claude/youtube/voice.md. Run the scripts from the repo so they work in any workspace: `python3 $HOME/sutraverse-reels/toolkit/.claude/skills/<skill>/<script>.py` (read the skill's SKILL.md from the same folder). These standards win where the pack disagrees (e.g. its "3 uploads a week" and "presenter on camera" assumptions don't apply to us). Use them like this:
+- **yt-script / hookscore.py (Reel runs):** score the 3 story-first hooks with hookscore.py as a SECOND opinion next to the virality checklist. It is tuned for English talking-head hooks and rated our Dhruva-style wound-first opener "WEAK" although it earned 5.8x our median, so never drop a story-first hook on its score alone; use its "weakest" line to sharpen wording.
+- **yt-package / title.py (Reel runs + publisher):** write 5 YouTube Short titles, lint them with title.py together with the cover's 2–5 words (`--thumb`), keep the best (no truncation at 60, cover words not repeating the title), and store it on the slot as "yt_title". The publisher uses "yt_title" for the Short.
+- **yt-seo (Reel runs + publisher):** for the Short's description apply its "query test": name the 3 searches the Short should win and make sure the title and first two description lines contain those words. Tags only for spellings and names (≤ 15).
+- **yt-viral / swipe.py (weekly plan, when YouTube is reachable):** collect ≥ 4 recent videos per channel for 3–5 similar scripture/mythology channels (public listings only, via web fetch or the vidIQ tools; never a logged-in session), rank with swipe.py, and use the top multiples as topic or format ideas. Skip quietly if listings can't be fetched.
+- **yt-retention / retention.py (weekly review):** if Saumya has dropped a YouTube Studio retention export into the repo under analytics/retention/*.csv, run it and report the hook leak and biggest cliff for that Short.
+- **yt-audit (weekly review, first Saturday of each month):** run it on the YouTube channel and report its ONE fix.
+- **yt-comment:** only when comments are pasted in or a tool can read them; replies are drafts for Saumya, never posted automatically.
+- **yt-plan, yt-shorts, yt-edit, yt-chapters:** available on request; they target long videos and on-camera creators, so the scheduled tasks don't use them.
+- Every yt-* skill ends with "ship it, or change it?". In unattended runs, treat that as a self-check, not a question to wait on; nothing in the pack publishes.

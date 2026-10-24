@@ -38,6 +38,11 @@ status=$?
 
 # Free 3D for optional Three.js scenes: vendor three.js locally so renders never need a CDN.
 # Runs copy $HOME/sv-three/node_modules/three/build/three.module.min.js into the composition.
+# YouTube agent pack (MIT, vendored): skills + the SutraVerse voice profile they read.
+mkdir -p "$HOME/.claude/skills" "$HOME/.claude/youtube" \
+  && cp -rf "$REPO"/toolkit/.claude/skills/yt-* "$HOME/.claude/skills/" \
+  && cp -f "$REPO/toolkit/youtube/voice.md" "$HOME/.claude/youtube/voice.md" 2>>"$LOG" || true
+
 mkdir -p "$HOME/sv-three/node_modules/three/build" \
   && cp -f "$REPO/toolkit/vendor/three/three.module.min.js" "$HOME/sv-three/node_modules/three/build/" 2>>"$LOG" || true
 
