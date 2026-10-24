@@ -128,3 +128,19 @@ Vendored in toolkit/.claude/skills/yt-* (MIT; see YT-AGENT-PACK.md) and installe
 - **yt-comment:** only when comments are pasted in or a tool can read them; replies are drafts for Saumya, never posted automatically.
 - **yt-plan, yt-shorts, yt-edit, yt-chapters:** available on request; they target long videos and on-camera creators, so the scheduled tasks don't use them.
 - Every yt-* skill ends with "ship it, or change it?". In unattended runs, treat that as a self-check, not a question to wait on; nothing in the pack publishes.
+
+## 13. Skill pipeline (mandatory, Saumya 24 Oct)
+Every plan, Reel, title, cover/thumbnail, caption, carousel and review uses ALL the skills listed for its stage. Load each with the Skill tool (account skills, e.g. `going-viral`), or read its SKILL.md from $HOME/sutraverse-reels/toolkit/.claude/skills/<name>/ when it isn't listed. Apply each one briefly (a few lines of output each, not a full essay) to save Claude usage. These standards and CAPTION_STRATEGY.md win when a skill disagrees. Record the skills actually used as "skills_used" on the slot (or in the review's insights) and in the log line; if a skill can't be loaded, say which and why.
+
+| Stage | Skills (all of them, every time) |
+| --- | --- |
+| Weekly plan | trend-spotter, yt-viral (skip only if YouTube listings can't be fetched), series-planner, content-calendar, going-viral, viral-hook-writer, yt-plan (as a capacity/structure check; our 9-Reel cadence wins), story-sequencer, hashtag-keyword-research; content-pillar-builder on the first Saturday of the month |
+| Reel: idea, hook, script | sutraverse, virality, going-viral, viral-hook-writer, ab-hook-tester (two genuinely different hooks; keep the runner-up on the slot as "alt_hook"), yt-script (hookscore.py as a second opinion only, §12), reel-scripter, reel-builder, youtube-scriptwriting (the retention-beat checks), on-screen-text-writer, cta-writer |
+| Title, cover, thumbnail | cover-thumbnail-brief, yt-package (title.py on 5 titles with the cover words), youtube-thumbnail (use its high-CTR principles for frame 0 ONLY; never its image-generation step, which needs paid Gemini image models), youtube-seo, yt-seo (the query test) |
+| Caption, keywords, first comment | CAPTION_STRATEGY.md, hashtag-keyword-research, caption-and-hashtags (structure check only), cta-writer |
+| YouTube Short version | cross-platform-reformatter (title/description adaptation; the video stays the same), yt-package, yt-seo |
+| Carousel | carousel-builder, viral-carousel, cover-thumbnail-brief, on-screen-text-writer, cta-writer, hashtag-keyword-research |
+| Stories (plan only) | story-sequencer |
+| Weekly review | analytics-readout, content-audit, social-analytics-report, best-time-scheduler, hashtag-keyword-research, trend-spotter, competitor-teardown (if credits allow), reel-analyzer or content-research on the week's best outlier in our niche, comment-mining (if comments are readable), yt-retention (if a CSV exists), yt-audit (first Saturday of the month) |
+
+Not used, on purpose: comment-responder (Saumya declined auto-replies), content-factory (duplicates this pipeline), outreach/collab/influencer/UGC/paid/UTM/LinkedIn/X skills and office-file skills (no role in an organic Instagram + Shorts channel), yt-edit/yt-chapters/yt-shorts (long-form only; available on request).
