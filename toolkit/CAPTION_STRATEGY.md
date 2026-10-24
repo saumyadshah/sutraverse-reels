@@ -1,5 +1,7 @@
 # SutraVerse Reel caption & Instagram SEO strategy
 
+> Also read toolkit/CONTENT_STANDARDS.md (hooks, story structure, shloka explanations, visuals, carousels, Stories). It overrides older instructions where they conflict.
+
 Applies to every SutraVerse Reel AND carousel caption and its metadata (carousel differences in "Carousels" below). Goal: a recognisable SutraVerse identity plus relevant organic discovery, watch time, saves, shares, meaningful comments and follows. Relevance and readability beat volume: no keyword stuffing, no misleading clickbait, no irrelevant trending terms, no promises of virality.
 
 ## Caption structure (in this order)
