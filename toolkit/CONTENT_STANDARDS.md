@@ -1,10 +1,24 @@
-# SutraVerse content standards v2 (Reels, carousels, Stories)
+# SutraVerse content standards v3 (Reels, carousels, Stories)
 
 Read this before writing any SutraVerse script, carousel or plan. It works together with CAPTION_STRATEGY.md (captions, keywords, hashtags). Where an older instruction in a task prompt or the skill conflicts with this file, this file wins.
 
 **v2, 24 Oct 2026.** Saumya rejected the Rigveda 10.191 Reel ("The Rigveda's Last Hymn") as rushed and unclear. Its faults, which v2 exists to prevent: about 19 separate ideas in 57 s (a new idea every ~3 s); a trivia detour (Agni is the first and last word) that pulled focus from the message; up to three text layers on screen at once (headline + verse card + boxed subtitles); the "assembly that won't agree" was announced but never dramatised; the verse card was not on screen long enough to read; flat cut-out characters. **Fewer ideas, more time per idea, a real story, one clear message.**
 
-Data behind the hook rule (weekly growth review, 18–24 Oct 2026): the top 3 Reels (Ravana 4,346 plays, Dhruva 1,322, Prahlada 1,092) opened on a scripture character in conflict; the 4 that opened on a modern scene or an abstract "you" line averaged 179 plays and lost 76–88% of viewers in the first 3 s.
+**v3, 28 Oct 2026: REAL-LIFE FIRST (Saumya's direction, overrides anything below that conflicts).** Every Reel now starts from a real-life situation people genuinely live through, and SutraVerse's scripture lens is the twist and the answer, not the starting point. The viewer must think "this happens in my life too!" in the first 3 seconds, then "I never thought of it that way" at the verse. Topic territory (rotate across the week; never two from the same territory in a row):
+- **Corporate life & office politics:** the colleague who takes credit, the boss who praises you in private and blames you in public, the appraisal that went to the loudest person, the 9 p.m. "quick call", the team-lunch you weren't invited to, quitting vs staying, the friend who became your manager.
+- **Workplace struggles:** burnout, comparison with a batchmate's salary, imposter feeling in a new job, layoffs, the side-hustle guilt.
+- **Family dynamics:** "log kya kahenge", parents comparing you with cousins, the sibling who gets away with everything, marriage pressure at 27, the joint-family kitchen politics, the parent who never says "proud of you".
+- **Relationships & friendships:** the friend who only calls when they need something, the group chat that went quiet, ghosting, jealousy when a friend succeeds, the partner who never apologises, the ex who comes back.
+- **Social expectations & everyday problems:** the wedding-season questions, Instagram comparison, saying no to relatives, money borrowed and never returned, the neighbour, the auto-wala, the landlord.
+- **Real incidents:** a specific, believable moment (a WhatsApp message, a meeting, a dinner-table line) rather than a vague feeling. Never use a real private person; composites only.
+
+**How the scripture fits (brand promise kept):** the modern scene is the story; at the turn, a scripture character who faced the SAME problem appears (e.g. credit-stealing colleague → Karna denied credit at the tournament; family comparison → Dhruva and his stepmother; friend who only calls in need → Sudama and Krishna; boss who manipulates → Manthara and Kaikeyi), and one verified verse lands as the answer. Every verse still follows §4 exactly. The modern characters are named composites (Riya, Kabir, Neha, Arjun-from-accounts), shown as an illustrative scene, never as scripture.
+
+**Why this is not the old "modern mirror" opener that failed:** the 4 Reels that opened on an abstract "you" line ("your stress, your scrolling", "the strongest one in the room") averaged 179 plays. What worked (Ravana 19x, Dhruva 5.8x, Prahlada 4.8x) was a NAMED person in a CONCRETE conflict with a stake. v3 keeps that rule and applies it to modern people: "Riya's manager presented her slides in the CEO meeting… and didn't say her name." is a story hook; "Ever felt unappreciated at work?" is not, and is banned.
+
+**Quality targets (watch until the end, share, comment):** a pattern-interrupt first frame (a face mid-reaction or an object that matters, never a title card); the stake clear by second 3; an open loop by second 8 that is only closed at the verse; one "send this to…" share moment that names a specific person ("the colleague who…"); a comment question with a side to pick. Retention is the scoreboard: the weekly review reports 3-second hold, average watch % and completion per Reel, and the next week changes one variable to beat the median.
+
+(v2 data, kept for reference) Data behind the hook rule (weekly growth review, 18–24 Oct 2026): the top 3 Reels (Ravana 4,346 plays, Dhruva 1,322, Prahlada 1,092) opened on a scripture character in conflict; the 4 that opened on a modern scene or an abstract "you" line averaged 179 plays and lost 76–88% of viewers in the first 3 s.
 
 ## 0. Publishing strategy: fewer, better
 - **9 Reels a week:** 1 each weekday (Mon–Fri, 10:00) and 2 on Saturday and Sunday (10:00 and 18:00). Never make a Reel just to fill a slot: if a Reel can't meet the quality bar (§10), it waits for review rather than posting.
@@ -33,22 +47,22 @@ Write `renders/beat_sheet.md` and check it before building scenes:
 ## 3. Story and formats
 Every Reel tells a story with a person in it: someone wants something, something stands in the way, they choose, and the verse is the answer to that choice. For hymns and teachings without a narrative (Vedas, Upanishad dialogues, Niti), build the story from the text's own setting (the rishi, the assembly, the student and teacher) or from a clearly labelled illustrative scene ("Imagine a family argument at dinner…"); never present an illustration as scripture.
 
-Default spine (60–85 s):
-1. **Hook (0–3 s):** named character + conflict + stake, shown in motion. Hold a beat of silence after it.
-2. **Mirror (3–10 s):** one line linking it to the viewer's life. Say the search phrase here if it wasn't in the hook.
-3. **The story (10–35 s):** 2 escalating beats, each a full scene with a character speaking one short line. Show the conflict happening; don't just announce it.
-4. **The turn (35–42 s):** the decision or the surprising detail, with a pause after it.
-5. **The verse (42–60 s):** recited, translated, 1–2 key words glossed, and its context (who says it, to whom, when) in one sentence (§4).
-6. **Takeaway + close (60–80 s):** ONE concrete thing to try today, then one comment question, then a last line that echoes the hook. One ending only: no stacked CTAs.
+Default spine v3 (60–85 s):
+1. **Hook (0–3 s):** a named modern character in a specific, recognisable moment + the stake, shown in motion (Riya's slides on the CEO's screen, her name missing). Hold a beat of silence after it. The search phrase is spoken here or by second 5.
+2. **Escalation (3–15 s):** it gets worse in one more concrete beat (the manager's "great teamwork, everyone"), with one line of real dialogue. Open the loop: "Riya had two choices…"
+3. **The parallel (15–35 s):** the turn to the scripture character who faced the same thing ("Karna stood in that arena, and no one would even say his name…"), 2 short scenes, the conflict shown, not announced.
+4. **The verse (35–55 s):** recited, translated, 1–2 key words glossed, context in one sentence (§4), the card up throughout.
+5. **Back to the modern character (55–70 s):** what she does now, ONE concrete action the viewer can copy tomorrow at work/at home.
+6. **Close (70–85 s):** a comment question with a side to pick ("Speak up in the meeting or talk to the boss after? 👇") and a share line naming a person ("Send this to the colleague who…"). One ending only.
 
 Formats to rotate (one per Reel; never the same twice in a row):
-- **Story drama:** the default spine above.
-- **Verse explained slowly:** one famous line taken apart word by word, with what it does NOT mean ("Everyone quotes it. Almost no one knows the second half.").
-- **Myth vs text:** a popular belief, then what the scripture actually says, with the reference.
-- **Dilemma:** two choices, the character's choice, "What would you do?" (comments).
-- **Numbered list:** "3 things Vidura said…" (saves); at most 3 items in a Reel.
-- **Then and now:** the same human problem in two eras, one verse.
-- **Character speaks:** one character's monologue in the first person, at a turning point.
+- **Office/family drama → scripture answer:** the default spine above.
+- **"POV" scene:** first-person modern moment ("POV: your mom compares you with Sharma ji's son… again"), then the scripture answer.
+- **Dilemma:** a real two-way choice (quit or stay; tell your friend or not), the scripture character's choice, "What would you do?" (comments).
+- **Numbered list from life:** "3 types of colleagues the Mahabharata warned you about" (saves); at most 3 items, each a recognisable person with a scripture match.
+- **Then and now:** the same human problem in two eras side by side (Manthara whispering to Kaikeyi / the office gossip on Slack), one verse.
+- **Myth vs text:** a common saying people use in family arguments ("Karma will get them"), then what the text actually says.
+- **Character speaks:** a scripture character talks directly to the modern viewer about the exact situation ("Dear Riya, from Karna").
 
 ## 4. Shloka standard (every verse shown)
 Each shloka appears with Devanagari + IAST + a faithful English translation + the exact reference (text, book/chapter.verse, and the edition if numbering varies). Never show a verse without helping the viewer understand it.
@@ -59,10 +73,11 @@ Each shloka appears with Devanagari + IAST + a faithful English translation + th
 - No unsupported claims (no "science proves", no invented dates, no miracle promises). Depict deities respectfully; no gore.
 
 ## 5. Story research (planner + Reel runs)
-- Prefer lesser-known incidents, sharp decisions and moral dilemmas over the most famous summaries: e.g. Hanuman forgetting his power (Kishkindha 65–66), Manthara's whisper (Ayodhya 7–9), Satyakama's honesty (Chandogya 4.4), Ashtavakra in Janaka's court (Vana Parva 132–134), Gajendra's long fight (Bhagavata 8.2–3), Savitri's argument with Yama (Vana Parva 277–283), the Yaksha's questions, Shvetaketu and the banyan seed (Chandogya 6.12), Da-Da-Da (Brihadaranyaka 5.2).
+- **Start from the real-life moment, then find the scripture match.** For each Reel write: the modern incident (who, where, the exact line someone says), why it's universal (who will tag whom), and the scripture character who lived the same problem (exact section). Use comment-mining, trend-spotter and content-research to find the situations people are actually talking about this week (comments, trending Reels in corporate-life, family-humour and relationship niches); prefer a fresh, specific angle over a generic one ("boss takes credit" → "boss takes credit in the meeting YOU prepared at 2 a.m.").
+- Good scripture matches: Karna (credit and respect denied), Ekalavya (talent ignored by the system), Manthara/Kaikeyi (office or family gossip), Dhruva (comparison, stepmother's words), Sudama (the friend you hesitate to ask), Vidura (the honest employee no one listens to), Yudhishthira's dice (one bad decision under peer pressure), Draupadi (being humiliated in front of everyone), Kumbhakarna (burnout and sleep), Hanuman forgetting his strength (imposter feeling), Arjuna on the battlefield (quitting vs staying), Savitri (standing firm against family pressure), Satyakama (honesty about your background).
 - Every story: name the exact section; note one surprising detail viewers won't know, and use it only if it serves the one message; note what is text vs tradition.
-- Festival tie-ins on the day or the day before (Dussehra was our best Reel).
-- Rotate sources across the week; never repeat a topic already used (check the board).
+- Festival tie-ins on the day or the day before, told through a modern family moment (Karwa Chauth → the husband who also fasts; Diwali → the relative's salary question at the party).
+- Rotate topic territories (v3 list above) and sources across the week; never repeat a modern situation or a scripture story already used (check the board).
 
 ## 6. Typography v2
 Fonts (all free, OFL). Max 2 families per frame, plus Sanskrit when a verse is shown.
@@ -84,7 +99,8 @@ Rules:
 - **Look:** premium illustrated storybook (2.5D), one consistent world per Reel, with cinematic compositions: a clear focal point, foreground framing, depth (4–6 layers), and light that tells the mood. Hand-authored SVG/HyperFrames only (free); optional Three.js environments for scale shots. No paid image/video generation.
 - **Fewer, richer scenes:** 8–12 scenes per Reel, each a full environment, instead of 20 quick cards. Each scene earns its place by moving the story forward.
 - **Characters:** shaded, not flat (form shadows, rim light, cloth folds); consistent design across scenes; they act: blink, breathe, gesture, lip-move when speaking, and react to each other. Faces show emotion clearly.
-- **No generic UI or icon visuals** (phone mockups, emoji faces, floating avatars, infographic dots) unless the story is literally about that object. Show people, places and objects from the story.
+- **Modern scenes look as premium as the mythic ones:** real Indian settings drawn in the same storybook style (open-plan office, glass meeting room, metro, kitchen of a 2BHK, wedding hall, chai tapri), with believable modern Indian characters (kurta + sneakers, lanyard, office bag) who act and react. A phone, laptop or WhatsApp screen is allowed when the story is literally about that message, drawn in the storybook style (never a generic stock mockup). No emoji faces, floating avatars or infographic dots.
+- **Two worlds, one look:** keep the modern and the scripture scenes in one colour family, and link them with a motivated match-cut (Riya's lanyard → Karna's armour; the office gossip's lips → Manthara's).
 - **Colour grading:** one palette per Reel moving through the story (e.g. tense dusk → firelit night → calm dawn for the resolution), inside the brand family: royal #2340B8 / royal-deep #0E1A5A fields, saffron #FF7A1A energy, marigold #FFB22E / sun #FFD36B light, ivory #FFF6E6 text, ink #1A1240, ember #FF4D2E only for conflict beats, rose #FF5C8A sparingly.
 - **Motion:** slow, eased camera moves (no linear motion); parallax between layers; particles, smoke and light sparingly. No random spinning, excessive glow, stacked effects or stock-template transitions.
 - **Transitions:** motivated and gentle: match-cuts, a push through a doorway, light flaring into the next scene, a slow dissolve on a pause. No wipes or zoom-blurs.
@@ -108,7 +124,7 @@ All must be true, or the Reel goes to "needs_review" instead of posting:
 - length 60–85 s; narration ≤ 2.2 words/s overall and ≤ 2.6 in any beat (from the Whisper word timings); the four pauses are present;
 - no scene under 4 s; the verse beat ≥ 15 s with the card up throughout; the takeaway held ≥ 3 s;
 - never more than 2 text elements on screen; subtitles follow §6;
-- hook = named character + conflict in the first 3 s; one concrete takeaway; one ending;
+- hook = a named (modern or scripture) character in a specific conflict with a stake in the first 3 s, no abstract "you" question; an open loop closed at the verse; one concrete takeaway; a share line naming a person; one ending;
 - every verse verified on two editions; text vs tradition vs application labelled; nothing claimed that the text doesn't say;
 - narration natural (Whisper check); music royalty-free with its licence recorded;
 - QA has no FAIL; the cover is readable at grid size; the caption follows CAPTION_STRATEGY.md.
@@ -145,3 +161,8 @@ Every plan, Reel, title, cover/thumbnail, caption, carousel and review uses ALL 
 | Weekly review | analytics-readout, content-audit, social-analytics-report, best-time-scheduler, hashtag-keyword-research, trend-spotter, competitor-teardown (if credits allow), reel-analyzer or content-research on the week's best outlier in our niche, comment-mining (if comments are readable), yt-retention (if a CSV exists), yt-audit (first Saturday of the month) |
 
 Not used, on purpose: comment-responder (Saumya declined auto-replies), content-factory (duplicates this pipeline), outreach/collab/influencer/UGC/paid/UTM/LinkedIn/X skills and office-file skills (no role in an organic Instagram + Shorts channel), yt-edit/yt-chapters/yt-shorts (long-form only; available on request).
+
+## 14. Schedule discipline (Saumya, 28 Oct)
+- Every Reel is made the day BEFORE it posts (Reel runs claim the next open slot at least 3 hours ahead), posted at its planned time (10:00, plus 18:00 at weekends), with the YouTube Short straight after.
+- If a production run fails, the next run picks the slot up; the publisher's 12:55 and 20:55 runs check that tomorrow's 10:00 Reel is being made and start a Reel run if it isn't (see the publisher prompt). Late is better than missing, but on time is the standard: a Reel that misses its slot by more than 3 hours moves to the next open slot rather than posting in a batch.
+- Quality still gates publishing (§10); a weak Reel goes to needs_review, and Saumya is told the same day.

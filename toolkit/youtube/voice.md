@@ -40,8 +40,9 @@ promises of results. Deities are always shown and described with respect.
 ## My format
 
 Animated 2.5D illustrated storybook Reels and YouTube Shorts, 60–85 s, 1080x1920, no presenter on
-camera. Opens on a named scripture character in conflict (never on a modern scene), mirrors the
-viewer's life in beat 2, tells the story, lands the verse slowly, ends with one action and one
-question. No channel intro, no swearing. 9 Reels a week (one each weekday at 10:00, two on Saturday
+camera. Since 28 Oct (v3): opens on a named modern character in a specific real-life moment (office
+politics, family pressure, friendships, social expectations), turns to the scripture character who
+lived the same problem, lands the verse slowly, and ends with one action, one comment question and a
+share line naming a person. Never an abstract "you" opener. No channel intro, no swearing. 9 Reels a week (one each weekday at 10:00, two on Saturday
 and Sunday at 10:00 and 18:00), plus 4 carousels. Channels: Instagram @sutraverselife and YouTube
 @sutraversehindu ("SutraVerse | Hindu Scriptures").
