@@ -21,7 +21,12 @@ HERE = pathlib.Path(__file__).resolve().parent
 JS = r"""
 () => {
   const W = 1080, H = 1920, out = [];
-  const vis = (e) => { for (let n = e; n && n.nodeType === 1; n = n.parentElement) { const cs = getComputedStyle(n);
+  // clip windows (the HyperFrames runtime hides a clip outside data-start..+data-duration) and cumulative
+  // opacity (EX.focus dims non-current items to 0.25 on purpose: dimmed text is not reading text)
+  const vis = (e) => { let op = 1; for (let n = e; n && n.nodeType === 1; n = n.parentElement) { const cs = getComputedStyle(n);
+      if (n.classList && n.classList.contains("clip") && n.dataset.start !== undefined && window.__lc_t !== undefined) {
+        const s0 = parseFloat(n.dataset.start), d0 = parseFloat(n.dataset.duration); if (window.__lc_t < s0 || window.__lc_t >= s0 + d0) return false; }
+      op *= parseFloat(cs.opacity); if (op < 0.35) return false;
       if (cs.display === "none" || cs.visibility === "hidden" || parseFloat(cs.opacity) < 0.2) return false;
       const cp = cs.clipPath || ""; const m = cp.match(/inset\(([^)]*)\)/);
       if (m && m[1].split(/\s+/).some((v) => v.endsWith("%") && parseFloat(v) >= 99)) return false; } return true; };
@@ -93,7 +98,7 @@ async def run(index, step, outdir):
         dur = await pg.evaluate("window.__timelines.main.duration()")
         t = 0.05
         while t < dur:
-            await pg.evaluate(f"void window.__timelines.main.seek({t}, false)"); await pg.wait_for_timeout(40)
+            await pg.evaluate(f"void (window.__lc_t = {t}, window.__timelines.main.seek({t}, false))"); await pg.wait_for_timeout(40)
             boxes = await pg.evaluate(JS)
             png = await pg.screenshot(); img = Image.open(io.BytesIO(png)).convert("RGB")
             issues = []

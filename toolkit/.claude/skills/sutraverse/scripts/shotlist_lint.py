@@ -55,6 +55,7 @@ def main():
     if not SL.get("message"): F("-", "no one-line 'message' at the top")
     locs = SL.get("locations", {})
     lines_t = (T or {}).get("lines", {})
+    if isinstance(lines_t, list): lines_t = {l["id"]: l for l in lines_t}  # timing.json stores lines as a list
     total = (T or {}).get("total_duration")
 
     # --- cast ---
@@ -81,7 +82,7 @@ def main():
         purpose = s.get("purpose", "")
         if len(purpose.split()) < 4: F(sid, "no clear 'purpose' (what this shot tells the viewer, in a sentence)")
         if not s.get("key_visual"): F(sid, "no 'key_visual' (the one thing the viewer must see)")
-        if not s.get("lines") and (s.get("end", 0) - s.get("start", 0)) > 1.2: F(sid, "not tied to any narration line")
+        if not s.get("lines") and s.get("world") != "brand" and (s.get("end", 0) - s.get("start", 0)) > 1.2: F(sid, "not tied to any narration line")
         for ln in s.get("lines", []):
             if lines_t and ln not in lines_t: F(sid, f"line {ln} not in timing.json")
             elif ln in lines_t:
