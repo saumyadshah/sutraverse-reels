@@ -13,7 +13,11 @@ Read this before writing any SutraVerse script, carousel or plan. It works toget
 - **Visual mode chosen by subject** (§7): Night Cinema (modern scenes), Mithila Panel (ancient scenes), Paper Diorama 3D (Blender, for hero/portal shots), Chandan Explainer (diagrams). Never one template for everything.
 - **Series** (one per Reel, shown as the chip at the top): Office ka Mahabharat (work, haldi), Ghar ki Ramayan (family, palash), Dosti & Dharma (friends & relationships, mor), Log Kya Kahenge (social pressure, kumkum), SutraVerse Explains (explainers, chandan). Recurring series build return viewers and profile follows.
 - **Explainers** ("SutraVerse Explains"): at least 2 of the 9 weekly Reels. A real phenomenon ("why your manager listens to the loudest person", "why family WhatsApp fights escalate") explained with an animated thread diagram + one scripture parallel + one takeaway.
-- **Sound:** a clear voice first (-14 LUFS master, -1 dBTP), a light room tone under modern scenes, a tanpura or flute colour under ancient scenes, and a soft paper or ink whoosh on every world transition (synthesised or royalty-free; record the source).
+- **Sound (v5, Saumya 30 Oct: "change the background sound and music"):** a clear voice first (-14 LUFS master, ≤ -1 dBTP; speech ≥ 12 dB, aim 15 dB, above the bed in pauses). The background is designed per Reel with `scripts/sound_design.py`, never one drone under everything:
+  - **Music follows the story:** soft modern "warm keys" (chords + a muted pluck pulse) under modern scenes, minor/tense before the verse, major/warm after it; tanpura + bansuri-style flute under ancient scenes in the same key; a riser and a gentle swell into the turn; near-silence under the shloka; a held chord that resolves under the end card.
+  - **Ambience per scene:** room, dinner, office, street, night, fire, air, temple, river or rain, chosen in the shot list for every scene, about 25 dB under the voice.
+  - **Story SFX, 2–5 per Reel:** an automatic whoosh at every modern↔ancient change, plus a few cues on story moments (a spoon clink, a phone notification, a door, a temple bell, paper for a manuscript). Never on every cut.
+  - **Sources:** original synthesis by default (royalty-free, no licence needed). A royalty-free track Saumya drops in the repo's `music_library/<mood>/` (tense, warm, calm), each with a `.json` licence sidecar (title, artist, source_url, licence), may replace the score. Never paid music generation; never a track without its licence recorded. Record `artifacts/sound_plan.json` on the slot's log line.
 
 **v2, 24 Oct 2026.** Saumya rejected the Rigveda 10.191 Reel ("The Rigveda's Last Hymn") as rushed and unclear. Its faults, which v2 exists to prevent: about 19 separate ideas in 57 s (a new idea every ~3 s); a trivia detour (Agni is the first and last word) that pulled focus from the message; up to three text layers on screen at once (headline + verse card + boxed subtitles); the "assembly that won't agree" was announced but never dramatised; the verse card was not on screen long enough to read; flat cut-out characters. **Fewer ideas, more time per idea, a real story, one clear message.**
 
@@ -139,7 +143,7 @@ All must be true, or the Reel goes to "needs_review" instead of posting:
 - never more than 2 text elements on screen; typography, palette, series chip, transitions and cover follow v4 (§6–8);
 - hook = a named (modern or scripture) character in a specific conflict with a stake in the first 3 s, no abstract "you" question; an open loop closed at the verse; one concrete takeaway; a share line naming a person; one ending;
 - every verse verified on two editions; text vs tradition vs application labelled; nothing claimed that the text doesn't say;
-- narration natural (Whisper check); music royalty-free with its licence recorded;
+- narration natural (Whisper check); music royalty-free with its licence recorded; sound designed per scene (sound_design.py: music changes between modern and ancient worlds, an ambience per scene, 2–5 story SFX, near-silence under the shloka);
 - QA has no FAIL; the cover is readable at grid size; the caption follows CAPTION_STRATEGY.md.
 - Final self-review: watch the whole render once at normal speed, as a first-time viewer, and write down anything that felt rushed, unclear or disconnected. Fix it before publishing.
 - v5 (§17): shotlist_lint has no FAIL; layout_check has no FAIL; the model sheets were checked; the independent review passed (accuracy 5, every other category ≥ 4).
@@ -186,7 +190,7 @@ Not used, on purpose: comment-responder (Saumya declined auto-replies), content-
 2. **Brief + beat sheet:** one message, the braided spine (§2–3), word counts, the shot list with the visual mode per shot (§7), transitions, the cover line.
 3. **Script + voice:** Hinglish script ≤ 2.4 w/s; Gemini TTS single take; Whisper listen-check.
 4. **Cast + shot list + storyboard (§17):** registry entries for every character and model sheets checked; `artifacts/shotlist.json` passes shotlist_lint; then render one still per shot and check them as a contact sheet BEFORE animating (composition, readability, palette, continuity, the key visual of each shot).
-5. **Assets:** Night Cinema / Mithila SVG scenes, Chandan diagrams, the Blender portal or one 3D hero plate (§16), and sound (voice, room tone, tanpura, transition whooshes).
+5. **Assets:** Night Cinema / Mithila SVG scenes, Chandan diagrams, the Blender portal or one 3D hero plate (§16), and sound (voice, then `sound_design.py`: scored music per world, ambience per scene, story SFX and transition whooshes).
 6. **Animate + edit:** HyperFrames composition; camera moves, character acting, signature transitions, subtitles v4.
 7. **QA:** layout_check.py (before the high-quality render), then qa_check.py + linecheck.py + the §10 bar, then review_sheet.py and the independent review (§17.5).
 8. **Package:** cover (§8, cover.py), caption + keywords + 5 hashtags + comment-to-DM line (CAPTION_STRATEGY v4), YouTube title/description (§12).
