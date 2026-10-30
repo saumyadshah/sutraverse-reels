@@ -1,8 +1,17 @@
-# SutraVerse Reel caption & Instagram SEO strategy (v3, 28 Oct 2026: real-life first)
+# SutraVerse Reel caption & Instagram SEO strategy (v4, 30 Oct 2026: real-life first + series + comment-to-DM)
 
 > Also read toolkit/CONTENT_STANDARDS.md (hooks, story structure, shloka explanations, visuals, carousels, Stories). It overrides older instructions where they conflict.
 
 Applies to every SutraVerse Reel AND carousel caption and its metadata (carousel differences in "Carousels" below). Goal: a recognisable SutraVerse identity plus relevant organic discovery, watch time, saves, shares, meaningful comments and follows. Relevance and readability beat volume: no keyword stuffing, no misleading clickbait, no irrelevant trending terms, no promises of virality.
+
+## v4 additions (30 Oct 2026; override the sections below where they differ)
+- **Line 1 is the Reel's first line, in writing:** the exact modern moment with a name and a stake, ≤ 110 characters, with the search phrase inside it. Write 3 versions and keep the one a friend would forward.
+- **Series line** after the story: "Part of Office ka Mahabharat: real office politics, 3,000-year-old answers." (Use the slot's series.)
+- **Comment-to-DM CTA** (Instagram; Meta Business Suite automation, COMMENT_PLAYBOOK.md): "Comment VERSE and I'll DM you the full shloka with its meaning." Use it in at most every other caption, rotating with a side-picking question ("Team speak-up or team stay-quiet? 👇") and a named share line ("Send this to the colleague who…"). The CTA order is comment, then share. Never more than 2 CTAs.
+- **Hashtags (still exactly 5):** #SutraVerse, the **series tag** (#OfficeKaMahabharat, #GharKiRamayan, #DostiAurDharma, #LogKyaKahenge, #SutraVerseExplains), 2 situation tags from the pools, and 1 scripture tag. The series tag replaces the broad tag. We own it, so it builds a browsable series.
+- **Keywords:** 10–15, starting "SutraVerse · Ancient Wisdom · Life Lessons", then the series name, then 4–7 phrases people actually type about the problem (Hinglish is fine), then 1–2 scripture words. Never repeat the same keyword line two Reels in a row.
+- **Pinned first comment:** a question that invites a personal story ("What's the worst credit-stealing moment you've seen at work?"). Reply to the first 10 comments within the hour when Saumya can; the YouTube task replies automatically.
+- **YouTube title:** the problem first, then the parallel, ≤ 60 characters + " #Shorts" ("Boss Took Your Credit? Karna's 3,000-Year-Old Answer #Shorts").
 
 ## Caption structure (in this order)
 
