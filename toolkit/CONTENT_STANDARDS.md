@@ -95,7 +95,7 @@ Each shloka appears with Devanagari + IAST + a faithful English translation + th
 ## 6. Typography v4 ("Mithila Night")
 Fonts in `toolkit/brand-v4/fonts/` (all SIL OFL, free). Tokens in `toolkit/brand-v4/brand.css`.
 - **Display / hooks / covers / chips:** Anek Latin, width 75%, weight 800, UPPERCASE, tight leading (0.9). Designed by Ek Type in India; condensed, so 3–5 big words fit a phone screen.
-- **Subtitles (burned in):** Anek Latin, width 100%, weight 600, 56–62 px, chandan #F4EADB with a soft ink shadow; max 2 lines, about 32 characters per line; ONE highlighted word in haldi #F2B33D. No boxes or pills.
+- **Subtitles (burned in), updated 30 Oct per Saumya ("clearly visible, with a background"):** ALWAYS on a solid plate: kajal at 88% opacity (rgba(16,14,23,.88)), radius 14 px, a 3 px haldi rule along the bottom edge, soft drop shadow. Text Anek Latin 700, 46–50 px (42 px for long lines), chandan #F4EADB (contrast ≈ 15:1 on the plate), max 2 lines, about 32 characters per line, bottom of the safe area (420 px clear of the Instagram/Shorts UI). ONE word per line may light up kajal-on-haldi as it is spoken. This is built into the pipeline's brand-kit/brand.css (.sv-cap) and build_composition.py, so use the standard captions; never draw subtitles without the plate, and never lower its opacity. QA: check one frame over the brightest scene and one over the darkest.
 - **The ancient voice** (translations, quotes, the scripture character's lines): Fraunces Italic (SOFT 100), 56–64 px.
 - **Sanskrit:** Tiro Devanagari Sanskrit. **IAST:** Fraunces Italic (it has every diacritic). **Hindi titles / graphics:** Anek Devanagari.
 - **Wordmark:** "sutraverse" in lowercase Anek 85% / 700, with the double-line haldi underline (the Mithila double outline). It sits at the bottom of the cover and the end card only.
@@ -121,6 +121,8 @@ Template: `toolkit/brand-v4/cover.py` (samples: `samples/cover_office.png`, `sam
 - YouTube Shorts use the same frame (frame 0); the title (§12) carries the search words.
 
 ## 9. Carousels and Stories
+
+**v4 (30 Oct):** carousels render in Mithila Night automatically: make_post.py draws the night base with the Mithila double outline, Anek display, Fraunces italic, the chandan verse card and the double-rule wordmark. Put "series": "office|family|friends|social|explains" at the top of the spec for the series chip and accent. Save the spec as posts/<slot id>/spec.json next to the slides so a post can be re-rendered later. Lead with a real-life moment where the format allows (cover sub-line or slide 2).
 Carousels (goal: saves and shares), only formats with clear value:
 - "Shloka explained" (§4): cover → verse → word by word → context → deeper meaning → use it today → CTA.
 - Numbered list from a text: "Vidura's 6 habits that shorten life", "Patanjali's 5 rules before any pose".

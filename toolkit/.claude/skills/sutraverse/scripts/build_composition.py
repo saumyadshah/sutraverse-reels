@@ -246,7 +246,7 @@ def main():
   // ---- word-synced caption emphasis ----
   document.querySelectorAll(".sv-hl").forEach((sp) => {{
     const t = parseFloat(sp.dataset.t);
-    tl.fromTo(sp, {{ color: "#1A1240", backgroundColor: "rgba(255,178,46,0)" }}, {{ color: "#FFFFFF", backgroundColor: "rgba(255,122,26,1)", duration: 0.08 }}, t);
+    tl.fromTo(sp, {{ color: "#F4EADB", backgroundColor: "rgba(242,179,61,0)" }}, {{ color: "#100E17", backgroundColor: "rgba(242,179,61,1)", duration: 0.08 }}, t);
     tl.fromTo(sp, {{ scale: 1 }}, {{ scale: 1.12, duration: 0.1, yoyo: true, repeat: 1, ease: "power2.out" }}, t);
   }});
   // ---- shloka cards: slide in, light each word as it is recited ----
@@ -256,8 +256,8 @@ def main():
     tl.to(card, {{ opacity: 0, y: -16 * T.u, duration: 0.25 }}, s + d - 0.25);
     card.querySelectorAll(".sv-sw").forEach((w) => {{
       const t = parseFloat(w.dataset.t);
-      tl.fromTo(w, {{ color: "rgba(26,18,64,.38)" }}, {{ color: "#FF6A00", duration: 0.12 }}, t);
-      tl.to(w, {{ color: "#1A1240", duration: 0.35 }}, t + 0.45);
+      tl.fromTo(w, {{ color: "rgba(16,14,23,.38)" }}, {{ color: "#D63E2A", duration: 0.12 }}, t);
+      tl.to(w, {{ color: "#100E17", duration: 0.35 }}, t + 0.45);
       tl.fromTo(w, {{ y: 0 }}, {{ y: -6 * T.u, duration: 0.12, yoyo: true, repeat: 1 }}, t);
     }});
   }});

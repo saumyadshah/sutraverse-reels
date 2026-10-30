@@ -2,8 +2,9 @@
 """Render a SutraVerse Instagram post (single image or carousel, 1080x1350, 4:5) from a JSON spec.
 
 Usage: python make_post.py spec.json out_dir
-Spec:
+Spec (v4: optional "series": office|family|friends|social|explains puts the series chip on the cover and CTA slides):
 {
+  "series": "office",
   "slides": [
     {"type": "cover", "kicker": "UPANISHAD WISDOM", "title": "Arise. Awake.", "sub": "The 3-word line that...", "ref": "Katha Upanishad 1.3.14"},
     {"type": "shloka", "deva": "उत्तिष्ठत जाग्रत ...", "iast": "uttiṣṭhata jāgrata ...", "meaning": "Arise, awake ...", "ref": "Katha Upanishad 1.3.14"},
@@ -28,35 +29,44 @@ FONTS = KIT / "fonts"
 LOGO = (KIT / "logo.svg").read_text(encoding="utf-8")
 
 CSS = f"""
-@font-face{{font-family:Cinzel;font-weight:700;src:url({FONTS.as_uri()}/cinzel-latin-700-normal.woff2)}}
-@font-face{{font-family:Corm;font-weight:600;src:url({FONTS.as_uri()}/cormorant-garamond-latin-600-normal.woff2)}}
-@font-face{{font-family:Corm;font-weight:600;font-style:italic;src:url({FONTS.as_uri()}/cormorant-garamond-latin-600-italic.woff2)}}
-@font-face{{font-family:Inter;font-weight:600;src:url({FONTS.as_uri()}/inter-latin-600-normal.woff2)}}
-@font-face{{font-family:Inter;font-weight:700;src:url({FONTS.as_uri()}/inter-latin-700-normal.woff2)}}
+@font-face{{font-family:Anek;font-weight:100 800;font-stretch:75% 125%;src:url({FONTS.as_uri()}/anek-latin-var.ttf)}}
+@font-face{{font-family:Fraunces;font-weight:100 900;src:url({FONTS.as_uri()}/fraunces-var.ttf)}}
+@font-face{{font-family:Fraunces;font-style:italic;font-weight:100 900;src:url({FONTS.as_uri()}/fraunces-italic-var.ttf)}}
 @font-face{{font-family:Tiro;src:url({FONTS.as_uri()}/tiro-devanagari-sanskrit-devanagari-400-normal.woff2)}}
+/* v4 "Mithila Night" (CONTENT_STANDARDS.md v4 §6-7, §9): kajal/neel night, chandan paper, haldi accent, Mithila double outline */
 html,body{{margin:0;background:#000}}
-.s{{width:1080px;height:1350px;position:relative;overflow:hidden;box-sizing:border-box;padding:110px 96px;color:#FFF6E6;
-  background:radial-gradient(circle at 50% 38%,#3A5BE0 0%,#2340B8 46%,#16247A 100%);font-family:Inter,sans-serif;display:flex;flex-direction:column;justify-content:center;gap:34px}}
-.s::before{{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 30%,rgba(255,178,46,.22),rgba(255,122,26,0) 48%);pointer-events:none}}
-.s.light{{background:#FFF6E6;color:#1A1240}} .s.light::before{{background:radial-gradient(circle at 50% 20%,rgba(255,178,46,.35),rgba(255,178,46,0) 55%)}}
-.kick{{font:700 30px/1 Inter;letter-spacing:.22em;color:#FFB22E;text-transform:uppercase}}
-.title{{font:700 104px/1.04 Cinzel;letter-spacing:.01em;text-wrap:balance}}
-.title em{{font-style:normal;color:#FFB22E}}
-.sub{{font:600 46px/1.3 Corm;font-style:italic;color:#FFE6A6;text-wrap:balance}}
-.light .sub{{color:#3B2E8E}}
-.ref{{align-self:flex-start;font:700 26px/1 Inter;letter-spacing:.08em;text-transform:uppercase;background:#FF7A1A;color:#fff;padding:14px 22px;border-radius:999px}}
-.deva{{font:400 76px/1.45 Tiro;color:#1A1240;text-wrap:balance}}
-.iast{{font:600 40px/1.35 Corm;font-style:italic;color:#3B2E8E}}
-.mean{{font:600 40px/1.4 Inter;color:#1A1240}}
-.card{{background:#FFF6E6;border-radius:36px;padding:70px 64px;display:flex;flex-direction:column;gap:30px;box-shadow:0 30px 80px rgba(10,16,70,.45);border-top:12px solid #FF7A1A}}
-.n{{font:700 150px/1 Cinzel;color:#FFB22E}}
-.pt{{font:700 70px/1.12 Cinzel;text-wrap:balance}}
-.body{{font:600 44px/1.42 Inter;color:#E8E3FF;text-wrap:pretty}}
-.foot{{position:absolute;left:96px;right:96px;bottom:56px;display:flex;justify-content:space-between;align-items:center;font:700 24px/1 Inter;letter-spacing:.18em;color:rgba(255,246,230,.8)}}
-.light .foot{{color:#3B2E8E}}
-.foot svg{{width:56px;height:56px}}
-.swipe{{color:#FFB22E}}
+.s{{--acc:#F2B33D;width:1080px;height:1350px;position:relative;overflow:hidden;box-sizing:border-box;padding:120px 104px;color:#F4EADB;
+  background:radial-gradient(120% 80% at 50% 25%,#2A2F6B 0%,#1A1D47 48%,#100E17 100%);font-family:Anek,sans-serif;display:flex;flex-direction:column;justify-content:center;gap:34px}}
+.s::before{{content:"";position:absolute;inset:34px;border:5px solid var(--acc);outline:2px solid var(--acc);outline-offset:-16px;pointer-events:none;opacity:.9}}
+.s::after{{content:"";position:absolute;inset:0;pointer-events:none;opacity:.07;
+  background:repeating-linear-gradient(135deg,#F4EADB 0 2px,transparent 2px 9px)}}
+.s.light{{background:#F4EADB;color:#100E17}} .s.light::after{{background:repeating-linear-gradient(135deg,#100E17 0 2px,transparent 2px 11px);opacity:.05}}
+.chip{{align-self:flex-start;display:inline-flex;gap:14px;align-items:center;font:700 26px/1 Anek;font-stretch:85%;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--acc);border:2px solid var(--acc);outline:3px solid var(--acc);outline-offset:5px;padding:12px 20px 10px}}
+.chip i{{width:12px;height:12px;background:currentColor;transform:rotate(45deg);display:inline-block}}
+.kick{{font:700 28px/1 Anek;font-stretch:85%;letter-spacing:.2em;color:var(--acc);text-transform:uppercase}}
+.title{{font:800 112px/.95 Anek;font-stretch:75%;text-transform:uppercase;letter-spacing:-.005em;text-wrap:balance}}
+.title em{{font-style:normal;color:var(--acc)}}
+.sub{{font:italic 500 48px/1.25 Fraunces;color:#D9CBB4;text-wrap:balance}}
+.light .sub{{color:#2A2F6B}}
+.ref{{align-self:flex-start;font:700 24px/1 Anek;font-stretch:85%;letter-spacing:.14em;text-transform:uppercase;background:#100E17;color:#F2B33D;padding:14px 20px 12px}}
+.deva{{font:400 62px/1.4 Tiro;color:#100E17;text-wrap:balance}}
+.iast{{font:italic 500 34px/1.32 Fraunces;color:#2A2F6B}}
+.mean{{font:600 40px/1.34 Anek;color:#100E17;padding-top:22px;border-top:3px double #F2B33D}}
+.card{{background:#F4EADB;padding:54px 56px;display:flex;flex-direction:column;gap:20px;box-shadow:inset 0 0 0 5px #F2B33D,inset 0 0 0 12px #F4EADB,inset 0 0 0 15px #100E17,0 30px 80px rgba(0,0,0,.5)}}
+.n{{font:800 160px/1 Anek;font-stretch:75%;color:var(--acc)}}
+.pt{{font:800 76px/1 Anek;font-stretch:75%;text-transform:uppercase;text-wrap:balance}}
+.pt em{{font-style:normal;color:var(--acc)}}
+.body{{font:500 44px/1.4 Anek;color:#F4EADB;text-wrap:pretty}}
+.foot{{position:absolute;left:104px;right:104px;bottom:66px;display:flex;justify-content:space-between;align-items:center;font:700 24px/1 Anek;font-stretch:85%;letter-spacing:.16em;color:rgba(244,234,219,.8)}}
+.light .foot{{color:#2A2F6B}}
+.wm{{font:700 30px/1 Anek;font-stretch:85%;letter-spacing:.02em;text-transform:lowercase;color:#F4EADB;padding-bottom:9px;border-bottom:6px double #F2B33D}}
+.light .wm{{color:#100E17}}
+.swipe{{color:var(--acc)}}
 """
+SERIES = {"office": ("Office ka Mahabharat", "#F2B33D"), "family": ("Ghar ki Ramayan", "#EE7A2E"),
+          "friends": ("Dosti &amp; Dharma", "#2FB3A8"), "social": ("Log Kya Kahenge", "#E85A7F"),
+          "explains": ("SutraVerse Explains", "#F2B33D")}
 
 
 def esc(t):
@@ -71,13 +81,15 @@ def rich(t):
     return "".join(out)
 
 
-def slide(s, i, n):
+def slide(s, i, n, series=None):
     t = s.get("type", "point")
     last = i == n
-    foot = (f'<div class="foot"><span style="display:flex;gap:14px;align-items:center">{LOGO}SUTRAVERSE</span>'
+    name, acc = SERIES.get(series or "", (None, "#F2B33D"))
+    chip = f'<div class="chip"><i></i>{name}<i></i></div>' if name else ""
+    foot = (f'<div class="foot"><span class="wm">sutraverse</span>'
             f'<span class="swipe">{"" if last else "SWIPE →"}</span><span>{i}/{n}</span></div>')
     if t == "cover":
-        inner = (f'<div class="kick">{esc(s.get("kicker"))}</div><div class="title">{rich(s.get("title"))}</div>'
+        inner = (chip + (f'<div class="kick">{esc(s["kicker"])}</div>' if s.get("kicker") else "") + f'<div class="title">{rich(s.get("title"))}</div>'
                  f'<div class="sub">{esc(s.get("sub"))}</div>' + (f'<div class="ref">{esc(s["ref"])}</div>' if s.get("ref") else ""))
         cls = "s"
     elif t == "shloka":
@@ -86,14 +98,14 @@ def slide(s, i, n):
                  f'<div class="mean">{esc(s.get("meaning"))}</div><div class="ref">{esc(s.get("ref"))}</div></div>')
         cls = "s"
     elif t == "cta":
-        inner = (f'<div class="kick">{esc(s.get("kicker", "ANCIENT WISDOM. MODERN LIFE."))}</div>'
+        inner = (chip + f'<div class="kick">{esc(s.get("kicker", "ANCIENT WISDOM. MODERN LIFE."))}</div>'
                  f'<div class="title">{rich(s.get("title"))}</div><div class="sub">{esc(s.get("sub"))}</div>')
         cls = "s light"
     else:
         inner = (f'<div class="n">{esc(s.get("n", ""))}</div><div class="pt">{rich(s.get("title"))}</div>'
                  f'<div class="body">{esc(s.get("body"))}</div>' + (f'<div class="ref">{esc(s["ref"])}</div>' if s.get("ref") else ""))
         cls = "s"
-    return f'<div class="{cls}" id="sl{i}">{inner}{foot}</div>'
+    return f'<div class="{cls}" id="sl{i}" style="--acc:{acc if cls == "s" else "#9E2348"}">{inner}{foot}</div>'
 
 
 def main():
@@ -111,7 +123,7 @@ def main():
             sys.exit("shloka slide needs a ref")
     page = out / "_post.html"
     page.write_text(f"<!doctype html><meta charset=utf-8><style>{CSS}</style>" +
-                    "".join(slide(s, i + 1, len(slides)) for i, s in enumerate(slides)), encoding="utf-8")
+                    "".join(slide(s, i + 1, len(slides), spec.get("series")) for i, s in enumerate(slides)), encoding="utf-8")
     from playwright.sync_api import sync_playwright
     exe = os.environ.get("HYPERFRAMES_BROWSER_PATH")
     with sync_playwright() as p:

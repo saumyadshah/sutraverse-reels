@@ -19,14 +19,22 @@
 @font-face { font-family: "Inter"; font-weight: 700; src: url("fonts/inter-latin-700-normal.woff2") format("woff2"); }
 @font-face { font-family: "Tiro Devanagari Sanskrit"; font-weight: 400; src: url("fonts/tiro-devanagari-sanskrit-devanagari-400-normal.woff2") format("woff2"); }
 
+@font-face { font-family: "Anek Latin"; font-weight: 100 800; font-stretch: 75% 125%; src: url("fonts/anek-latin-var.ttf") format("truetype"); }
+@font-face { font-family: "Anek Devanagari"; font-weight: 100 800; font-stretch: 75% 125%; src: url("fonts/anek-devanagari-var.ttf") format("truetype"); }
+@font-face { font-family: "Fraunces"; font-weight: 100 900; src: url("fonts/fraunces-var.ttf") format("truetype"); }
+@font-face { font-family: "Fraunces"; font-style: italic; font-weight: 100 900; src: url("fonts/fraunces-italic-var.ttf") format("truetype"); }
+
 :root {
-  /* SutraVerse "Bright" palette (v2): royal indigo lit by saffron + marigold sunrise. Token names kept for compatibility. */
-  --sv-royal: #2340B8; --sv-royal-deep: #142477; --sv-midnight: #182A86; --sv-midnight-deep: #0E1A5A; --sv-indigo: #2B3FA0;
-  --sv-saffron: #FF7A1A; --sv-marigold: #FFB22E; --sv-sun: #FFD36B; --sv-ivory: #FFF6E6; --sv-rose: #FF5C8A;
-  --sv-gold: #FFB22E; --sv-gold-light: #FFD36B; --sv-amber: #FF9A2E;
-  --sv-parchment: #FFF6E6; --sv-ink: #1A1240; --sv-ember: #FF4D2E;
-  --sv-font-logo: "Cinzel", serif; --sv-font-display: "Cormorant Garamond", serif; --sv-font-ui: "Inter", sans-serif;
-  --sv-font-sanskrit: "Tiro Devanagari Sanskrit", serif;
+  /* SutraVerse v4 "Mithila Night" (CONTENT_STANDARDS.md v4 §6-7). Old token names kept so every script still works:
+     royal/midnight = neel/kajal night base, saffron = palash, marigold/sun/gold = haldi, ivory/parchment = chandan, ink = kajal, ember = sindoor. */
+  --sv-royal: #2A2F6B; --sv-royal-deep: #1A1D47; --sv-midnight: #1A1D47; --sv-midnight-deep: #100E17; --sv-indigo: #2A2F6B;
+  --sv-saffron: #EE7A2E; --sv-marigold: #F2B33D; --sv-sun: #F2B33D; --sv-ivory: #F4EADB; --sv-rose: #E85A7F;
+  --sv-gold: #F2B33D; --sv-gold-light: #F7CE73; --sv-amber: #EE7A2E;
+  --sv-parchment: #F4EADB; --sv-ink: #100E17; --sv-ember: #D63E2A;
+  --sv-kajal: #100E17; --sv-neel: #1A1D47; --sv-neel2: #2A2F6B; --sv-chandan: #F4EADB; --sv-chandan2: #D9CBB4;
+  --sv-haldi: #F2B33D; --sv-sindoor: #D63E2A; --sv-mor: #137C77; --sv-palash: #EE7A2E; --sv-kumkum: #9E2348;
+  --sv-font-logo: "Anek Latin", sans-serif; --sv-font-display: "Fraunces", serif; --sv-font-ui: "Anek Latin", sans-serif;
+  --sv-font-sanskrit: "Tiro Devanagari Sanskrit", serif; --sv-font-hindi: "Anek Devanagari", sans-serif;
   /* set per format by build_composition.py */
   --sv-w: 1080px; --sv-h: 1920px; --sv-u: 1px;          /* 1 unit = 1px at 1080 short side */
   --sv-safe-top: 220px; --sv-safe-bottom: 420px; --sv-safe-side: 80px;
@@ -117,3 +125,57 @@ html, body { margin: 0; background: var(--sv-midnight-deep); }
 .sv-shloka .sv-sw { display: inline-block; }
 .sv-shloka-ref { display: inline-block; margin-top: calc(16 * var(--sv-u)); padding: calc(8 * var(--sv-u)) calc(18 * var(--sv-u)); border-radius: 999px;
   background: linear-gradient(90deg, var(--sv-saffron), var(--sv-marigold)); font: 700 calc(22 * var(--sv-u))/1 var(--sv-font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--sv-ink); }
+
+
+/* =====================================================================================
+   v4 "Mithila Night" overrides (30 Oct 2026). Later rules win; class names unchanged.
+   ===================================================================================== */
+.sv-sky { background: radial-gradient(80% 40% at 50% 100%, rgba(242,179,61,.22) 0%, rgba(242,179,61,0) 70%),
+                      radial-gradient(120% 70% at 50% 20%, #2A2F6B 0%, #1A1D47 45%, #100E17 100%); }
+.sv-scene::after, .sv-vignette { background: radial-gradient(95% 80% at 50% 45%, transparent 60%, rgba(16,14,23,.6) 100%); }
+.sv-intro.sv-sting { background: #100E17; }
+.sv-intro .sv-word { font-weight: 700; font-stretch: 85%; letter-spacing: .02em; text-transform: lowercase; color: var(--sv-chandan); text-shadow: none; }
+.sv-intro .sv-tag { font-family: var(--sv-font-display); font-style: italic; letter-spacing: .02em; color: var(--sv-haldi); }
+.sv-watermark span { font: 700 calc(24 * var(--sv-u))/1 var(--sv-font-logo); font-stretch: 85%; letter-spacing: .02em; text-transform: lowercase;
+  color: var(--sv-chandan); text-shadow: 0 1px 6px rgba(16,14,23,.7); }
+
+/* ---------- SUBTITLES v4: always on a solid plate, readable on any scene (Saumya, 30 Oct) ----------
+   Chandan text, Anek Latin 700, on a near-opaque kajal plate with a thin haldi rule; one word lights haldi.
+   Contrast chandan on kajal ≈ 15:1. Never place subtitles without the plate. */
+.sv-cap p { background: rgba(16,14,23,.88); color: var(--sv-chandan);
+  border-radius: calc(14 * var(--sv-u)); padding: calc(16 * var(--sv-u)) calc(30 * var(--sv-u)) calc(14 * var(--sv-u));
+  box-shadow: inset 0 calc(-3 * var(--sv-u)) 0 var(--sv-haldi), 0 calc(10 * var(--sv-u)) calc(34 * var(--sv-u)) rgba(0,0,0,.45);
+  font: 700 calc(48 * var(--sv-u))/1.22 var(--sv-font-ui); font-stretch: 95%; letter-spacing: .005em; }
+.sv-cap.sv-long p { font-size: calc(42 * var(--sv-u)); }
+.sv-cap .sv-hl { color: var(--sv-chandan); }
+
+/* reference chip + kicker */
+.sv-ref { background: transparent; color: var(--sv-haldi); box-shadow: none; border-radius: 0;
+  outline: calc(3 * var(--sv-u)) solid var(--sv-haldi); outline-offset: calc(5 * var(--sv-u)); border: calc(2 * var(--sv-u)) solid var(--sv-haldi);
+  font: 700 calc(26 * var(--sv-u))/1 var(--sv-font-ui); font-stretch: 85%; letter-spacing: .16em; }
+.sv-kicker { font-family: var(--sv-font-ui); font-stretch: 85%; color: var(--sv-haldi); }
+.sv-display { font-family: var(--sv-font-display); font-style: italic; font-weight: 500; }
+.sv-display em { color: var(--sv-haldi); }
+.sv-translit { font-family: var(--sv-font-display); color: var(--sv-chandan2); }
+.sv-sanskrit { color: var(--sv-chandan); }
+
+/* shloka card: chandan paper inside the Mithila double outline (haldi + kajal) */
+.sv-shloka { border-radius: calc(6 * var(--sv-u)); background: #F4EADB;
+  box-shadow: inset 0 0 0 calc(5 * var(--sv-u)) var(--sv-haldi), inset 0 0 0 calc(12 * var(--sv-u)) #F4EADB, inset 0 0 0 calc(15 * var(--sv-u)) var(--sv-kajal),
+              0 calc(24 * var(--sv-u)) calc(60 * var(--sv-u)) rgba(0,0,0,.5); }
+.sv-shloka-who { font-family: var(--sv-font-ui); font-stretch: 85%; color: var(--sv-sindoor); }
+.sv-shloka .sv-iast { font-family: var(--sv-font-display); font-style: italic; font-weight: 500; color: #2A2F6B; }
+.sv-shloka-ref { background: var(--sv-kajal); color: var(--sv-haldi); font-family: var(--sv-font-ui); font-stretch: 85%; border-radius: 0; }
+.sv-shloka-en { margin-top: calc(14 * var(--sv-u)); padding-top: calc(14 * var(--sv-u)); border-top: calc(2 * var(--sv-u)) solid rgba(242,179,61,.7);
+  font: 600 calc(36 * var(--sv-u))/1.32 var(--sv-font-ui); color: var(--sv-kajal); }
+
+/* end card: kajal night, chandan wordmark with the haldi double rule */
+.sv-end { background: radial-gradient(70% 45% at 50% 42%, #2A2F6B 0%, #1A1D47 50%, #100E17 100%); }
+.sv-end .sv-word { font: 700 calc(96 * var(--sv-u))/1 var(--sv-font-logo); font-stretch: 85%; letter-spacing: .02em; text-transform: lowercase; color: var(--sv-chandan); }
+.sv-end .sv-rule { width: calc(300 * var(--sv-u)); height: calc(12 * var(--sv-u)); background: none;
+  border-top: calc(3 * var(--sv-u)) solid var(--sv-haldi); border-bottom: calc(3 * var(--sv-u)) solid var(--sv-haldi); box-sizing: border-box; }
+.sv-end .sv-tag { font-family: var(--sv-font-display); font-style: italic; color: var(--sv-haldi); }
+.sv-end .sv-cta { color: var(--sv-chandan2); font-family: var(--sv-font-ui); }
+.sv-end .sv-handle { color: var(--sv-chandan); font-family: var(--sv-font-ui); }
+.sv-end .sv-mark [stroke^="url"] { stroke: var(--sv-haldi); }
+.sv-end .sv-bindu { fill: var(--sv-sindoor); }
