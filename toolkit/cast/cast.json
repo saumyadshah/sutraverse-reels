@@ -1,0 +1,29 @@
+{
+  "_doc": "SutraVerse cast registry (CONTENT_STANDARDS §17). One entry per character; every Reel builds characters from here with CAST.build(name). Reuse a returning character exactly; add a new one here (and commit it) before using it. Fields: rig (modern | m_human | m_elephant | m_crocodile | m_cow | m_snake | m_bird | m_sun | m_moon | m_chakra | m_tree | m_fish | m_lotus), role, series, first_reel, then the rig's look params.",
+  "characters": {
+    "kabir":   { "rig": "modern", "role": "Dosti & Dharma lead, late 20s, software engineer", "series": "friends", "first_reel": "2026-10-30-r1", "gender": "m", "skin": 3, "hair": "side", "stubble": true, "outfit": { "style": "hoodie", "color": "#2A2F6B", "color2": "#1A1D47" } },
+    "riya":    { "rig": "modern", "role": "Office ka Mahabharat lead, 27, marketing associate", "series": "office", "gender": "f", "skin": 2, "hair": "long", "earrings": "stud", "bindi": false, "lanyard": "#F2B33D", "outfit": { "style": "shirt", "color": "#137C77", "color2": "#F4EADB" } },
+    "arjun_m": { "rig": "modern", "role": "Office ka Mahabharat manager, 40s", "series": "office", "gender": "m", "skin": 2, "hair": "short", "glasses": true, "outfit": { "style": "blazer", "color": "#1A1D47", "color2": "#D9CBB4" }, "tie": "#9E2348" },
+    "meera":   { "rig": "modern", "role": "Ghar ki Ramayan lead, 30, daughter-in-law", "series": "family", "gender": "f", "skin": 3, "hair": "bun_low", "earrings": "jhumka", "bindi": true, "mangalsutra": true, "outfit": { "style": "saree", "color": "#9E2348", "color2": "#EE7A2E" } },
+    "maa":     { "rig": "modern", "role": "Ghar ki Ramayan mother / mother-in-law, 55", "series": "family", "gender": "f", "age": "elder", "skin": 3, "hair": "bun", "bindi": true, "glasses": "#8A6A3A", "outfit": { "style": "saree", "color": "#137C77", "color2": "#F2B33D" } },
+    "papa":    { "rig": "modern", "role": "Father, 58", "series": "family", "gender": "m", "age": "elder", "skin": 3, "hair": "short", "mustache": true, "glasses": true, "outfit": { "style": "kurta", "color": "#D9CBB4", "color2": "#9E2348" } },
+    "dev":     { "rig": "modern", "role": "Dosti & Dharma best friend, late 20s", "series": "friends", "gender": "m", "skin": 4, "hair": "curly", "outfit": { "style": "tshirt", "color": "#EE7A2E" } },
+    "tara":    { "rig": "modern", "role": "Log Kya Kahenge lead, 24, just graduated", "series": "social", "gender": "f", "skin": 4, "hair": "braid", "earrings": "stud", "outfit": { "style": "kurta", "color": "#E85A7F", "color2": "#F4EADB" }, "dupatta": "#F2B33D" },
+
+    "gajendra":  { "rig": "m_elephant", "role": "King of elephants (Bhagavata Purana 8.2-8.4)", "body": "#F4EADB", "cloth": "#D63E2A", "accent": "#F2B33D", "first_reel": "2026-10-30-r1" },
+    "graha":     { "rig": "m_crocodile", "role": "The crocodile that seizes Gajendra (BhP 8.2)", "body": "#137C77", "belly": "#F2B33D" },
+    "karna":     { "rig": "m_human", "role": "Karna, warrior, Mahabharata", "gender": "m", "crown": true, "skin": "#C98E62", "robe": "#F2B33D", "robe2": "#D63E2A" },
+    "arjuna":    { "rig": "m_human", "role": "Arjuna, Mahabharata", "gender": "m", "crown": true, "skin": "#D9A27A", "robe": "#137C77", "robe2": "#F2B33D" },
+    "draupadi":  { "rig": "m_human", "role": "Draupadi, Mahabharata", "gender": "f", "skin": "#B9825C", "robe": "#9E2348", "robe2": "#EE7A2E" },
+    "kaikeyi":   { "rig": "m_human", "role": "Queen Kaikeyi, Ramayana", "gender": "f", "crown": true, "skin": "#E2AE86", "robe": "#D63E2A", "robe2": "#F2B33D" },
+    "manthara":  { "rig": "m_human", "role": "Manthara, Ramayana (shown with dignity, no mockery of her body)", "gender": "f", "skin": "#C08A62", "robe": "#2A2F6B", "robe2": "#D9CBB4" },
+    "vidura":    { "rig": "m_human", "role": "Vidura, Mahabharata", "variant": "sage", "gender": "m", "skin": "#D2A07A", "robe2": "#F4EADB" },
+    "rishi":     { "rig": "m_human", "role": "A generic rishi / teacher (Upanishads)", "variant": "sage", "gender": "m", "skin": "#C98E62", "robe2": "#F2B33D", "pose": "namaskar" },
+    "sudama":    { "rig": "m_human", "role": "Sudama, Krishna's friend (Bhagavata Purana)", "gender": "m", "skin": "#B9825C", "robe": "#D9CBB4", "robe2": "#D9CBB4", "necklace": false },
+
+    "vishnu_chakra": { "rig": "m_chakra", "role": "Vishnu's presence, shown as the Sudarshana chakra (deities shown as symbols unless the scene needs a form)" },
+    "lotus":   { "rig": "m_lotus", "role": "Offering / surrender / refuge" },
+    "sun":     { "rig": "m_sun", "role": "Day, hope, Surya" },
+    "moon":    { "rig": "m_moon", "role": "Night, waiting" }
+  }
+}

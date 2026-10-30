@@ -48,6 +48,8 @@ Use `--full-run-approved` when the user asked for the finished video (the normal
 
 **6. Scene plan** (stage `scene_plan`) — `reel-builder` beat table + `on-screen-text-writer` mute pass; timestamped storyboard from `timing.json` (cut on `lines[id].phrases[k].start`) (`templates/storyboard.md`): visuals, animation, camera, on-screen English phrase, SFX/music cues per scene; plus the character/visual bible for any recurring figure. → `references/visual-direction.md`
 
+**6b. Cast + shot list (v5, mandatory — CONTENT_STANDARDS §17)** — every character from `toolkit/cast/cast.json` (new ones first go in `artifacts/cast_local.json`, then into the registry in the same commit); `python $S/model_sheet.py --names <cast> --extra projects/<id>/artifacts/cast_local.json --out projects/<id>/qa/cast` and LOOK at the sheets; write `artifacts/shotlist.json` (`templates/shotlist.example.json`: purpose, key visual, cast with expression/action/side, location, size, transition, story elements) and run `python $S/shotlist_lint.py <id>` until there is no FAIL. Build scenes FROM the shot list, shot by shot.
+
 **7. Assets** (stage `assets`) — visual route by availability (`references/visual-direction.md` §Provider routing):
  - *Always available:* hand-authored SVG/CSS/GSAP scenes in HyperFrames (atelier).
  - *If image providers are configured* (`image_selector`): painterly plates per the visual bible, animated with parallax/camera moves; sample one frame before batching.
@@ -59,7 +61,11 @@ Use `--full-run-approved` when the user asked for the finished video (the normal
 `python $S/finalize.py <id>` (HyperFrames `render_existing` with lint/runtime/layout gates → `audio_mixer full_mix` ducking + loudness → mux → `renders/final.mp4` + `final.en.srt` + `render_report`).
 Iterate with `--quality draft`; deliver with `high`.
 
+**8b. Layout gate (v5)** — `python $S/layout_check.py <id>` on the built composition (before the high-quality render): no FAIL (text ≥ 30 px, inside margins and safe zones, no overlaps, WCAG contrast, no subtitle over a face).
+
 **9. QA** — `python $S/qa_check.py <id>` then **look at** `qa/contact_sheet.jpg` and individual frames (Read the PNGs). Fix every FAIL, judge every WARN, re-render, re-run. Checklist and fixes: `references/quality-gates.md`.
+
+**9b. Independent final review (v5)** — `python $S/review_sheet.py <id>`, then a separate reviewer agent (Agent tool, general-purpose) gets ONLY the files listed in `templates/review.md` plus that template and writes `qa/review.md` (8 categories, 1–5, evidence by shot id). Pass = accuracy 5 and all others ≥ 4; else fix by shot id, re-render, re-review (max 2 rounds), then needs_review.
 
 **Static posts (image or carousel):** write a slide spec and run `python $S/make_post.py spec.json renders/post/` (1080×1350, brand look; Devanagari only on a verified `shloka` slide). Same caption rules as Reels.
 
@@ -77,7 +83,9 @@ Default for mythology/story topics (and whenever the user asks for "story" or "c
 - **Show the shloka you quote.** Every quoted verse is a line with `claim_type: direct_quote`, a `source_ref` in `sources.json`, and `shloka: {deva, iast, meaning, ref, speaker}` — `ref` is the exact edition reference shown on the card (e.g. "Valmiki Ramayana · Yuddha Kanda 10.22"). `build_composition.py` renders it as a shloka card (Devanagari + IAST + English translation + reference chip), lighting each word as it is spoken; it refuses Devanagari anywhere else. Note edition-numbering differences in `sources.json`.
 - **Words aligned to the voice.** `narrate.py` records ONE Gemini take of the whole script (natural flow), locates line starts (Gemini audio understanding, cached in `_line_starts.json`, snapped to silences), cuts, then aligns every word (`align.py`). `timing.json` lines carry `words[{w,start,end}]`. Verify cuts by Whisper back-translation of each line clip before composing; a line that contains its neighbour's words means bad cuts — fix the starts, never ship.
 - **Animate on words, not seconds.** In `scenes.js`, place beats with `SV.word(T, "L05", "token").start` (token, index or `"token#2"`); captions highlight English words via the script's `sync` pairs (`[["सुनी","listen"]]`).
-- **Virtual characters** (`brand-kit/characters.js`, `SVC`): `SVC.make(kind, svgParent, {x, y, s, flip, kneel})` for ravana, maricha, vibhishana, malyavan, mandodari, rohan (modern). Verbs: `idle, blink, talk(tl, rig, words)` (lip-flap on aligned words), `emote(mood)` (calm, smirk, angry, sad, shock, worried), `gesture(pose)` (rest, point, dismiss, plead, raise, fist, shrug, wipe), `lookAt, tremble, cry, walkOut, headsNod`. Add new kinds in the same rig shape. Depict deities respectfully (Rama as light/arrow), no gore — show a fall by a falling crown.
+- **Cast v5 (`brand-kit/cast.js`, `CAST`) replaces hand-drawn per-shot characters:** `CAST.build(name, svg)` from the registry; `CAST.frame(rig, "ECU|CU|MCU|MS|WS", {x|side})` for shot sizes (same rig, never redrawn; place with svgOrigin "0 0"); `CAST.emote / idle / blink / talk / look / phone`; Mithila verbs `CAST.trunk / jaw / struggle`; rigs: modern, m_human, m_elephant, m_crocodile, m_cow, m_snake, m_bird + symbols m_sun, m_moon, m_lotus, m_chakra, m_tree, m_fish. Add a new rig to cast.js (same shape) when a story needs a creature that isn't there, and render its model sheet.
+- **Explainer kit (`brand-kit/explainer.js` + `explainer.css`, `EX`):** `EX.stage / head / node / thread / compare / steps / bars / stat / cycle / callout / source`, motion `EX.in / pop / draw / grow / count / focus / out`. All diagrams use it (grid x 72–1008, y 250–1400; type ≥ 30 px).
+- **Legacy virtual characters** (`brand-kit/characters.js`, `SVC`, v3 look; don't use for new Reels): `SVC.make(kind, svgParent, {x, y, s, flip, kneel})` for ravana, maricha, vibhishana, malyavan, mandodari, rohan (modern). Verbs: `idle, blink, talk(tl, rig, words)` (lip-flap on aligned words), `emote(mood)` (calm, smirk, angry, sad, shock, worried), `gesture(pose)` (rest, point, dismiss, plead, raise, fist, shrug, wipe), `lookAt, tremble, cry, walkOut, headsNod`. Add new kinds in the same rig shape. Depict deities respectfully (Rama as light/arrow), no gore — show a fall by a falling crown.
 - Keep Shorts within 45–60 s where the story allows; if verified shlokas make it longer, say so in the delivery and offer a tighter cut.
 
 ## Series requests
@@ -93,7 +101,7 @@ Missing provider/credential/capability → finish everything else, then report: 
 - `config/sutraverse.yaml` — every tunable value (brand, voice order, formats, music, budget)
 - `references/` — scripture-research, hindi-narration, english-text-and-subtitles, storytelling, **engagement**, visual-direction, brand-identity, quality-gates, publishing
 - Vendored engagement skills in `.claude/skills/` (from Ootto-AI/claude-content-skills, MIT): virality, going-viral, viral-hook-writer, ab-hook-tester, reel-analyzer, reel-scripter, reel-builder, on-screen-text-writer, story-sequencer, cta-writer, caption-and-hashtags, cover-thumbnail-brief, series-planner, content-calendar, content-pillar-builder, content-research, trend-spotter, comment-mining, youtube-scriptwriting, youtube-thumbnail, youtube-seo, cross-platform-reformatter, content-repurposer
-- `templates/` — sv_script, creative brief, storyboard, scene skeletons, publish package
-- `scripts/` — setup_check, new_project, narrate, music_bed, build_composition, finalize, qa_check, checkpoint_stage
-- `brand-kit/` — brand.css, logo.svg, sv-lib.js motion helpers, vendored GSAP and OFL fonts (renders offline)
+- `templates/` — sv_script, creative brief, storyboard, scene skeletons, publish package, **shotlist.example.json, review.md** (v5)
+- `scripts/` — setup_check, new_project, narrate, music_bed, build_composition, finalize, qa_check, checkpoint_stage, **model_sheet, shotlist_lint, layout_check, review_sheet** (v5)
+- `brand-kit/` — brand.css, logo.svg, sv-lib.js motion helpers, **cast.js (CAST), explainer.js/.css (EX)**, vendored GSAP and OFL fonts (renders offline)
 - OpenMontage additions: `tools/audio/sherpa_onnx_tts.py` (offline Hindi TTS provider in `tts_selector`), `styles/sutraverse.yaml` (style playbook)

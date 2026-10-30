@@ -32,3 +32,6 @@ Use image-to-video from approved plates for hero beats (chariot moving, banners 
 
 ## Scene-plan template per scene
 `id, start–end, narration lines, purpose (hook/teaching/…), visual description, layers, motion & camera, character action/expression, light, on-screen English phrase, transition in/out, SFX, music cue, negative constraints (no distorted hands, no text in generated images, no anachronisms)`.
+
+## v5 (CONTENT_STANDARDS §17)
+Characters come only from the cast registry via CAST (brand-kit/cast.js); shot sizes are CAST.frame of the same rig. Diagrams come only from the explainer kit (EX). Build scenes from artifacts/shotlist.json, shot by shot: the key visual of each shot is the thing the narration names at that moment.

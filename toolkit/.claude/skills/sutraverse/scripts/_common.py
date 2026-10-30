@@ -28,6 +28,19 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 
+def cast_registry(project: Path | None = None) -> dict:
+    """The shared cast (toolkit/cast/cast.json) merged with the Reel's own artifacts/cast_local.json."""
+    reg = {}
+    for p in [Path.home() / "sutraverse-reels/toolkit/cast/cast.json", Path("/root/sutraverse-reels/toolkit/cast/cast.json"),
+              SKILL_DIR.parents[2] / "cast" / "cast.json"]:
+        if p.is_file():
+            reg = json.loads(p.read_text(encoding="utf-8"))["characters"]
+            break
+    if project is not None and (project / "artifacts" / "cast_local.json").is_file():
+        reg.update(json.loads((project / "artifacts" / "cast_local.json").read_text(encoding="utf-8")).get("characters", {}))
+    return reg
+
+
 def load_config() -> dict:
     import yaml
 

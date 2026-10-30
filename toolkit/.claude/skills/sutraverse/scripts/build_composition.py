@@ -23,7 +23,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _common import SKILL_DIR, has_devanagari, load_config, project_dir, read_json  # noqa: E402
+from _common import SKILL_DIR, cast_registry, has_devanagari, load_config, project_dir, read_json  # noqa: E402
 
 KIT = SKILL_DIR / "brand-kit"
 OVERLAP = 0.45  # scene crossfade overlap (seconds) on each side
@@ -54,7 +54,7 @@ def main():
             sys.exit(f"Missing {src / f}. Author the scenes first (see references/visual-direction.md).")
 
     # --- copy brand kit + media into the workspace ---
-    for name in ("brand.css", "sv-lib.js", "characters.js"):
+    for name in ("brand.css", "sv-lib.js", "characters.js", "cast.js", "explainer.js", "explainer.css"):
         shutil.copy2(KIT / name, comp / name)
     shutil.copy2(KIT / "vendor" / "gsap.min.js", comp / "gsap.min.js")
     shutil.copytree(KIT / "fonts", comp / "fonts", dirs_exist_ok=True)
@@ -193,7 +193,11 @@ def main():
 <script src="gsap.min.js"></script>
 <script src="sv-lib.js"></script>
 <script src="characters.js"></script>
+<script src="cast.js"></script>
+<script src="explainer.js"></script>
+<script>CAST.load({json.dumps({"characters": cast_registry(pdir)})});</script>
 <link rel="stylesheet" href="brand.css" />
+<link rel="stylesheet" href="explainer.css" />
 <style>
 :root {{ --sv-w: {W}px; --sv-h: {H}px; --sv-u: {u:.4f}px; --sv-safe-top: {sa['top']}px; --sv-safe-bottom: {sa['bottom']}px; --sv-safe-side: {sa['side']}px; }}
 .sv-scene {{ position: absolute; inset: 0; overflow: hidden; }}

@@ -29,3 +29,11 @@ Run `python .claude/skills/sutraverse/scripts/qa_check.py <id>` after every fina
 - Scripture reference chips match `sources.json` exactly.
 
 Max two fix rounds per issue (OpenMontage reviewer protocol); then deliver with the remaining warnings stated plainly.
+
+## v5 gates (CONTENT_STANDARDS §17)
+| Gate | Script | Pass |
+|---|---|---|
+| cast | model_sheet.py | every character from the registry; sheets checked: same face/hair/outfit in every cell |
+| story flow | shotlist_lint.py | no FAIL: every shot has a purpose + key visual; story elements shown when spoken; signature transition between worlds; one panel style and screen direction per location |
+| layout | layout_check.py | no FAIL: text ≥ 30 px, inside margins/safe zones, no overlaps, WCAG contrast, no subtitle over a face |
+| final review | review_sheet.py + independent reviewer (templates/review.md) | accuracy 5, all other categories ≥ 4 |

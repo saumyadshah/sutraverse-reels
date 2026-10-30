@@ -1,4 +1,4 @@
-# SutraVerse content standards v4 (Reels, carousels, Stories)
+# SutraVerse content standards v4 + v5 craft (Reels, carousels, Stories)
 
 Read this before writing any SutraVerse script, carousel or plan. It works together with CAPTION_STRATEGY.md (captions, keywords, hashtags). Where an older instruction in a task prompt or the skill conflicts with this file, this file wins.
 
@@ -142,6 +142,7 @@ All must be true, or the Reel goes to "needs_review" instead of posting:
 - narration natural (Whisper check); music royalty-free with its licence recorded;
 - QA has no FAIL; the cover is readable at grid size; the caption follows CAPTION_STRATEGY.md.
 - Final self-review: watch the whole render once at normal speed, as a first-time viewer, and write down anything that felt rushed, unclear or disconnected. Fix it before publishing.
+- v5 (§17): shotlist_lint has no FAIL; layout_check has no FAIL; the model sheets were checked; the independent review passed (accuracy 5, every other category ≥ 4).
 
 ## 11. Learning loop
 The weekly growth review compares each Reel's 3-second hold, average watch time and watch percentage, completion, shares and saves per 1,000 reached, comments and follows, against the format, hook type, length and words-per-second recorded on its slot. Repeat what beats the median; change one variable at a time.
@@ -184,10 +185,10 @@ Not used, on purpose: comment-responder (Saumya declined auto-replies), content-
 1. **Research (planner):** trend scan, comment mining and the insights; pick the real-life moment, the series and the scripture match (§5).
 2. **Brief + beat sheet:** one message, the braided spine (§2–3), word counts, the shot list with the visual mode per shot (§7), transitions, the cover line.
 3. **Script + voice:** Hinglish script ≤ 2.4 w/s; Gemini TTS single take; Whisper listen-check.
-4. **Storyboard frames:** render one still per shot (HyperFrames snapshot) and check them as a contact sheet BEFORE animating: composition, readability, palette, continuity.
+4. **Cast + shot list + storyboard (§17):** registry entries for every character and model sheets checked; `artifacts/shotlist.json` passes shotlist_lint; then render one still per shot and check them as a contact sheet BEFORE animating (composition, readability, palette, continuity, the key visual of each shot).
 5. **Assets:** Night Cinema / Mithila SVG scenes, Chandan diagrams, the Blender portal or one 3D hero plate (§16), and sound (voice, room tone, tanpura, transition whooshes).
 6. **Animate + edit:** HyperFrames composition; camera moves, character acting, signature transitions, subtitles v4.
-7. **QA:** qa_check.py + linecheck.py + the §10 bar; watch the whole thing once as a first-time viewer.
+7. **QA:** layout_check.py (before the high-quality render), then qa_check.py + linecheck.py + the §10 bar, then review_sheet.py and the independent review (§17.5).
 8. **Package:** cover (§8, cover.py), caption + keywords + 5 hashtags + comment-to-DM line (CAPTION_STRATEGY v4), YouTube title/description (§12).
 9. **Publish:** the publisher posts on time (Instagram, then YouTube); the comment task replies (COMMENT_PLAYBOOK.md).
 10. **Learn:** the weekly review reads the owner insights (skip rate, average watch seconds and %, shares and saves per 1,000) and the YouTube retention, and changes one variable a week.
@@ -196,3 +197,56 @@ Not used, on purpose: comment-responder (Saumya declined auto-replies), content-
 - Installed on demand by the Reel run that needs it: `[ -x $HOME/sv-bpy/bin/python ] || (python3 -m venv $HOME/sv-bpy && $HOME/sv-bpy/bin/pip install -q bpy==5.2.3)` in one Bash call with timeout 900000 (about 3–5 minutes, once per workspace). Cycles on CPU works headless here; EEVEE needs a GPU and is slower.
 - **Budgets on this workspace (2 CPUs):** about 30 s per frame at 540×960 and 32 samples with denoising; about 50 s per frame at 720×1280 and 16 samples. So: never render a whole Reel in 3D. Use (a) the pre-rendered portal transition, (b) ONE 3D still plate per Reel at full resolution, animated with 2.5D camera moves, or (c) at most a 2 s 3D hero move at 720×1280 (≤ 60 frames, ≈ 50 minutes; only if the run has time).
 - Look: paper layers in brand pigments, a warm key light from the upper left, a cool rim, f/2–2.8 depth of field, AgX view transform. Scripts live in `toolkit/brand-v4/blender/`.
+
+## 17. Craft standard v5: characters, story flow, explainers, final review (Saumya, 30 Oct)
+Saumya's review of the v4 Gajendra Reel: the look and direction are right, but faces and characters changed between shots, scenes didn't always follow from each other, and the layout and transitions felt random. From the next Reel on, every Reel meets this section. The Gajendra Reel itself stays as it is. If this section and an earlier one disagree, this section wins.
+
+**17.1 Cast: one design per character, reused everywhere.**
+- Every character comes from the cast registry `toolkit/cast/cast.json`, built with `CAST.build(name, svg)` from `brand-kit/cast.js`. Modern series leads (Kabir, Riya, Meera, Maa, Papa, Dev, Tara…) use the Night Cinema rig; scripture figures and animals (Gajendra, the crocodile, Karna, Draupadi, rishis…) use the Mithila rigs. Deities appear as symbols (chakra, lotus, light) unless the scene truly needs a form.
+- Never redraw a character for one shot. Close-up, medium and wide are the SAME rig framed with `CAST.frame(rig, "ECU|CU|MCU|MS|WS")`. Faces always sit above the subtitle plate.
+- A new character gets a registry entry FIRST (in `artifacts/cast_local.json` for the Reel, then copied into `toolkit/cast/cast.json` in the same commit), so they look identical if they return. A returning character is reused exactly: same face, skin, hair, outfit and colours.
+- Before animating, render the model sheets (`scripts/model_sheet.py --names … --extra artifacts/cast_local.json --out qa/cast`) and look at them: same face, hair and proportions in every cell; expressions fit the story.
+- Acting: `CAST.emote` with the beat's emotion (neutral, smile, hopeful, sad, worried, shock, angry, tired), blinks and breathing (`CAST.idle`), lip movement on the words (`CAST.talk`), and eyelines toward who or what they react to (`CAST.look`). The emotion changes only when something in the story causes it.
+
+**17.2 Shot list: every scene earns its place.**
+Write `artifacts/shotlist.json` (template `templates/shotlist.example.json`) after timing and before building any scene, then run `scripts/shotlist_lint.py <id>` until it shows no FAIL. For every shot record: the narration lines it covers; its **purpose** (what it tells the viewer); the **key visual** (the one thing they must see); world, location, framing size and the transition in; and each character's expression, action, screen side and facing direction.
+- **Story elements** (the crocodile, the phone, the lotus…) are visible in the shot where the narration names them. If the voice says it, the picture shows it.
+- **Cause, then effect:** the shot order follows the story logic: setup → problem → escalation → parallel → verse → choice → result. No shot exists just to fill time.
+- **Continuity:** describe each location once, then keep it (light direction, props, palette). Keep screen direction within a location; a deliberate reversal is marked `"reverse": true`. Use one Mithila panel style (framed or full) per location. Avoid jump cuts (same size, same subjects); vary the framing.
+- **Transitions:** within a world, use cut, match, push, rack focus or dissolve. Between the modern and ancient worlds, ALWAYS use a signature transition (thread, portal, bloom), placed on a phrase boundary.
+
+**17.3 Explainers and infographics (the priority format).**
+Build every diagram with the explainer kit (`brand-kit/explainer.js` + `explainer.css`), not ad-hoc shapes:
+- Use the kit's components: head (kicker + title), node, thread, compare, steps, bars, stat, cycle and callout. Its motion vocabulary (`EX.in / pop / draw / grow / count / focus / out`) reveals the idea in the order it is spoken.
+- **Grid and hierarchy:** content stays inside x 72–1008 and y 250–1400 on the 12-column grid. Type scale: kicker 30, label 40, body 42, title 88, stat 150. Nothing is smaller than 30 px. One accent colour per screen; palette tokens only.
+- **One idea per screen:** at most 3 nodes, 4 bars or 4 steps. Each explainer shot in the shot list states what it `teaches` and the `diagram` it uses. Labels name things in the viewer's words.
+- **Accuracy:** every number, chart and claim cites its source on screen (`EX.source`) and is backed by `sources.json`. Verse references are exact. Never invent data. A labelled illustration ("Illustrative") is fine; a fake statistic is not.
+- **Animation explains:** each reveal lands on the word that names it, and `EX.focus` dims what isn't being discussed. No decorative motion that competes with the idea.
+
+**17.4 Layout gate (automatic).**
+After `build_composition.py`, run `scripts/layout_check.py <id>`. It seeks the real timeline every 0.5 s and fails on:
+- text smaller than 30 px;
+- text outside the frame or its margins;
+- story text in the platform UI zones;
+- overlapping text;
+- contrast below WCAG (4.5, or 3 for large text);
+- a subtitle covering a face.
+
+It warns on crowding. Fix every FAIL before rendering high quality; it writes red-boxed frames to `qa/layout_*.png`.
+
+**17.5 Final review by an independent reviewer (every Reel, before it can be "ready").**
+After the high-quality render, `qa_check.py` and `linecheck.py`:
+1. Run `scripts/review_sheet.py <id>`. It writes `qa/review_shots.jpg` (start, middle and end of every shot, with its purpose), `qa/review_cast.jpg` (each character across all their shots, next to their model sheet) and `qa/review_strip.jpg` (one frame per second).
+2. Start a **separate reviewer agent** (Agent tool, general-purpose) that did not make the Reel. Give it ONLY the file paths listed in `templates/review.md` and that template. It reads every sheet, judges as a first-time viewer, and writes `qa/review.md` with scores 1–5 for:
+   - character consistency
+   - factual accuracy
+   - storytelling
+   - continuity and transitions
+   - infographics
+   - layout and readability
+   - animation
+   - overall polish
+
+   Each score cites evidence by shot id. If the Agent tool isn't available, do the review yourself in a fresh pass using only those files, and say so in the log.
+3. **Pass:** factual accuracy = 5 and every other category ≥ 4. Otherwise fix the listed issues (by shot id), re-render, and review again. Allow at most 2 rounds; if it still fails, set the slot to "needs_review" with `qa/review.md` attached, and tell Saumya the same day.
+4. Record the scores on the slot as "review" and in the log line, so the weekly review can link craft scores to retention.

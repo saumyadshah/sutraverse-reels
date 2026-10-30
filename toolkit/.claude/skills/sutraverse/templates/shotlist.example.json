@@ -1,0 +1,40 @@
+{
+  "_doc": "artifacts/shotlist.json (CONTENT_STANDARDS §17). Written BEFORE any scene is built, checked with scripts/shotlist_lint.py. Times come from artifacts/timing.json. One entry per shot; a shot is one camera set-up.",
+  "message": "When everyone goes quiet, one call to the person who truly holds you is enough.",
+  "cast": ["kabir", "papa", "gajendra", "graha", "vishnu_chakra", "lotus"],
+  "locations": {
+    "kabir_room": "Kabir's rented room at night: desk by the window, city bokeh, laptop glow from screen-left",
+    "lake": "The lotus lake on Mount Trikuta, one Mithila panel style for every shot (framed, sindoor ground, mor water)"
+  },
+  "story_elements": [
+    { "name": "phone", "must_show_at": ["L01", "L02"] },
+    { "name": "graha", "must_show_at": ["L07"], "why": "the crocodile seizing the leg is the conflict; it must be clearly visible when spoken" },
+    { "name": "lotus", "must_show_at": ["L13"] }
+  ],
+  "shots": [
+    {
+      "id": "S01", "start": 0.0, "end": 3.1, "lines": ["L01", "L02"], "beat": "hook",
+      "purpose": "Kabir posts that he lost his job and the group of 23 goes silent",
+      "world": "modern", "location": "kabir_room", "size": "CU",
+      "characters": [{ "name": "kabir", "expression": "worried", "action": "reads phone, thumb hovering", "side": "center", "facing": "camera" }],
+      "props": ["phone"],
+      "key_visual": "phone screen: 'Got laid off today' · Seen by 23 · 0 replies (large, readable)",
+      "text": ["23 people…"],
+      "transition_in": "cut",
+      "continuity": "same hoodie, same window on screen-right in every kabir_room shot"
+    },
+    {
+      "id": "S04", "start": 11.8, "end": 14.6, "lines": ["L06", "L07"], "beat": "parallel",
+      "purpose": "Graha the crocodile seizes Gajendra's leg in the lake",
+      "world": "mithila", "location": "lake", "size": "MS", "panel": "framed",
+      "characters": [
+        { "name": "gajendra", "expression": "struggle", "action": "rears, trunk raised in pain", "side": "left", "facing": "right" },
+        { "name": "graha", "expression": "jaw open", "action": "jaws clamp on the front-left leg", "side": "right", "facing": "left" }
+      ],
+      "props": [],
+      "key_visual": "the crocodile's jaws on Gajendra's leg, both animals fully in frame",
+      "text": [],
+      "transition_in": "thread"
+    }
+  ]
+}
