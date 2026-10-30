@@ -18,7 +18,10 @@ LOG="$HOME/.sutraverse_setup.log"
 # Runs in the foreground (a background install is killed when the setup script exits, so it never
 # finished). Kept fast: three.js is bundled in the repo instead of downloaded. --background is kept
 # only as an option and is not used by the environment.
-if [ -f "$HOME/.sutraverse_env" ]; then echo "SutraVerse toolkit already ready"; exit 0; fi
+# Workspaces are reused between runs: refresh the sutraverse skill from the repo's zip every time,
+# so brand/pipeline updates (e.g. v4 Mithila Night, 30 Oct) reach OpenMontage without a reinstall.
+refresh_skill() { [ -d "$OM" ] && [ -f "$REPO/toolkit/sutraverse-skill.zip" ] && (cd "$OM" && unzip -qo "$REPO/toolkit/sutraverse-skill.zip") || true; }
+if [ -f "$HOME/.sutraverse_env" ]; then refresh_skill; echo "SutraVerse toolkit already ready (skill refreshed)"; exit 0; fi
 if [ "${1:-}" = "--background" ]; then
   if [ -f "$HOME/.sutraverse_env" ]; then echo "SutraVerse toolkit already ready"; exit 0; fi
   if [ -f "$HOME/.sutraverse_setup.pid" ] && kill -0 "$(cat "$HOME/.sutraverse_setup.pid")" 2>/dev/null; then
