@@ -226,6 +226,44 @@
       "role": "Krishna's presence in the Gita (charioteer), shown as the Sudarshana chakra with a peacock-feather prop; deities as symbols",
       "r": 110,
       "first_reel": "2026-10-31-r1"
+    },
+    "rohit": {
+      "rig": "modern",
+      "role": "Ghar ki Ramayan / SutraVerse Explains: Meera's husband, 32, sales manager who day-trades F&O at night",
+      "series": "family",
+      "first_reel": "2026-10-31-r2",
+      "gender": "m",
+      "skin": 3,
+      "hair": "short",
+      "stubble": true,
+      "outfit": {
+        "style": "tshirt",
+        "color": "#3B3F6E"
+      }
+    },
+    "kitava": {
+      "rig": "m_human",
+      "role": "The gambler (kitava) of Rigveda 10.34, Vedic householder, no crown or jewels",
+      "gender": "m",
+      "skin": "#B9825C",
+      "robe": "#D9CBB4",
+      "robe2": "#EE7A2E",
+      "necklace": false,
+      "first_reel": "2026-10-31-r2"
+    },
+    "kitava_wife": {
+      "rig": "m_human",
+      "role": "The gambler's devoted wife (Rigveda 10.34.2)",
+      "gender": "f",
+      "skin": "#C08A62",
+      "robe": "#9E2348",
+      "robe2": "#137C77",
+      "first_reel": "2026-10-31-r2"
+    },
+    "cow": {
+      "rig": "m_cow",
+      "role": "Cow of the household field (Rigveda 10.34.13 'there are your cows')",
+      "first_reel": "2026-10-31-r2"
     }
   }
 }
