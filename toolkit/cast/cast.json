@@ -264,6 +264,47 @@
       "rig": "m_cow",
       "role": "Cow of the household field (Rigveda 10.34.13 'there are your cows')",
       "first_reel": "2026-10-31-r2"
+    },
+    "ishaan": {
+      "rig": "modern",
+      "role": "Ghar ki Ramayan son, 26, software engineer just made Team Lead; lives with his mother",
+      "series": "family",
+      "first_reel": "2026-11-01-r1",
+      "gender": "m",
+      "skin": 3,
+      "hair": "side",
+      "outfit": {
+        "style": "tshirt",
+        "color": "#9E2348"
+      }
+    },
+    "yashoda": {
+      "rig": "m_human",
+      "role": "Yashoda, Krishna's foster mother in Gokul (Bhagavata Purana 10.8)",
+      "first_reel": "2026-11-01-r1",
+      "gender": "f",
+      "skin": "#C98E62",
+      "robe": "#137C77",
+      "robe2": "#F2B33D"
+    },
+    "bal_krishna": {
+      "rig": "m_child",
+      "role": "Bal Krishna (Kanha) as a small child in Gokul; form used only where the story needs it (the open mouth, BhP 10.8), shown with respect",
+      "first_reel": "2026-11-01-r1",
+      "skin": "#3F63B0",
+      "robe": "#F2B33D",
+      "robe2": "#D63E2A",
+      "feather": true,
+      "tilak": true
+    },
+    "balarama": {
+      "rig": "m_child",
+      "role": "Balarama, Krishna's elder brother, as a child in Gokul (BhP 10.8.32)",
+      "first_reel": "2026-11-01-r1",
+      "skin": "#E9C9A0",
+      "robe": "#1A1D47",
+      "robe2": "#F2B33D",
+      "beads": "#D63E2A"
     }
   }
 }
