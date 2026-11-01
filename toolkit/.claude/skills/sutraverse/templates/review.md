@@ -25,7 +25,7 @@ and what is the one message? (If this doesn't match the shot list's "message", S
 ## 3. Verdict
 - PASS only if: Factual accuracy = 5 and every other category ≥ 4.
 - Otherwise list the fixes in priority order (max 8), each tied to a shot id and a concrete change.
-- After fixes, re-render and run the review again (max 2 rounds). Still below the bar → slot status "needs_review" with this file attached.
+- After fixes, re-render and run the review again (max 2 rounds). Still below the bar → fix any factual issue by cutting or rewording it, log the remaining scores on the slot, and post anyway (AUTO-PUBLISH, Saumya 1 Nov). Never "needs_review".
 
 **Verdict:** PASS / FIX
 **Top fixes:**

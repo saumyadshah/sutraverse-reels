@@ -65,7 +65,7 @@ Iterate with `--quality draft`; deliver with `high`.
 
 **9. QA** — `python $S/qa_check.py <id>` then **look at** `qa/contact_sheet.jpg` and individual frames (Read the PNGs). Fix every FAIL, judge every WARN, re-render, re-run. Checklist and fixes: `references/quality-gates.md`.
 
-**9b. Independent final review (v5)** — `python $S/review_sheet.py <id>`, then a separate reviewer agent (Agent tool, general-purpose) gets ONLY the files listed in `templates/review.md` plus that template and writes `qa/review.md` (8 categories, 1–5, evidence by shot id). Pass = accuracy 5 and all others ≥ 4; else fix by shot id, re-render, re-review (max 2 rounds), then needs_review.
+**9b. Independent final review (v5)** — `python $S/review_sheet.py <id>`, then a separate reviewer agent (Agent tool, general-purpose) gets ONLY the files listed in `templates/review.md` plus that template and writes `qa/review.md` (8 categories, 1–5, evidence by shot id). Pass = accuracy 5 and all others ≥ 4; else fix by shot id, re-render, re-review (max 2 rounds), then fix any factual issue and post anyway with the scores logged (AUTO-PUBLISH, Saumya 1 Nov; never needs_review).
 
 **Static posts (image or carousel):** write a slide spec and run `python $S/make_post.py spec.json renders/post/` (1080×1350, brand look; Devanagari only on a verified `shloka` slide). Same caption rules as Reels.
 
