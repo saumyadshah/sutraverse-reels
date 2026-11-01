@@ -348,6 +348,21 @@
       "gender": "m",
       "skin": "#A26E4A",
       "robe2": "#9E2348"
+    },
+    "arnav": {
+      "rig": "modern",
+      "role": "Dosti & Dharma: Dev's school friend, 29, now a VP of Product; the friend Dev is too shy to ask",
+      "series": "friends",
+      "first_reel": "2026-11-02-r1",
+      "gender": "m",
+      "skin": 2,
+      "hair": "side",
+      "glasses": true,
+      "outfit": {
+        "style": "shirt",
+        "color": "#D9CBB4",
+        "color2": "#1A1D47"
+      }
     }
   }
 }
