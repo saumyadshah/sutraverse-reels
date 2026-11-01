@@ -305,6 +305,49 @@
       "robe": "#1A1D47",
       "robe2": "#F2B33D",
       "beads": "#D63E2A"
+    },
+    "ashtavakra": {
+      "rig": "m_human",
+      "role": "Ashtavakra as a boy of ten at King Janaka's gate (Mahabharata, Vana Parva 132-134); born bent, shown with dignity and a walking staff; drawn at child scale (s 0.72)",
+      "first_reel": "2026-11-01-r2",
+      "gender": "m",
+      "child": true,
+      "staff": true,
+      "necklace": false,
+      "tilak": true,
+      "skin": "#B9825C",
+      "robe": "#F4EADB",
+      "robe2": "#F2B33D"
+    },
+    "dvarapala": {
+      "rig": "m_human",
+      "role": "The gatekeeper (dvarapala) of King Janaka's sacrifice, holds a spear (Mahabharata, Vana Parva 133)",
+      "first_reel": "2026-11-01-r2",
+      "gender": "m",
+      "skin": "#C98E62",
+      "robe": "#1A1D47",
+      "robe2": "#D63E2A",
+      "staff": "#5A3A20",
+      "spear": true
+    },
+    "janaka": {
+      "rig": "m_human",
+      "role": "King Janaka of Videha, host of the sacrifice and debate (Mahabharata, Vana Parva 133-134)",
+      "first_reel": "2026-11-01-r2",
+      "gender": "m",
+      "crown": true,
+      "skin": "#D9A27A",
+      "robe": "#137C77",
+      "robe2": "#F2B33D"
+    },
+    "bandi": {
+      "rig": "m_human",
+      "role": "Bandi (Vandin), the court's champion debater in Janaka's court (Mahabharata, Vana Parva 132-134)",
+      "first_reel": "2026-11-01-r2",
+      "variant": "sage",
+      "gender": "m",
+      "skin": "#A26E4A",
+      "robe2": "#9E2348"
     }
   }
 }
