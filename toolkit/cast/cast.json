@@ -363,6 +363,36 @@
         "color": "#D9CBB4",
         "color2": "#1A1D47"
       }
+    },
+    "ekalavya": {
+      "rig": "m_human",
+      "role": "Ekalavya, the Nishada prince who learned archery alone before a clay image of Drona (Mahabharata, Adi Parva, CE 1.123); forest youth, no crown, holds his bow",
+      "first_reel": "2026-11-03-r1",
+      "gender": "m",
+      "skin": "#8E5D3B",
+      "robe": "#137C77",
+      "robe2": "#5A3A20",
+      "necklace": false,
+      "bow": "#8A5A2B"
+    },
+    "drona": {
+      "rig": "m_human",
+      "role": "Drona (Dronacharya), the Kuru princes' archery teacher (Mahabharata, Adi Parva); a Brahmin acharya with white beard",
+      "first_reel": "2026-11-03-r1",
+      "variant": "sage",
+      "gender": "m",
+      "skin": "#C98E62",
+      "robe2": "#D9CBB4"
+    },
+    "drona_clay": {
+      "rig": "m_human",
+      "role": "The clay image of Drona that Ekalavya made in the forest (Adi Parva, CE 1.123): the drona rig in unfired clay colours",
+      "first_reel": "2026-11-03-r1",
+      "variant": "sage",
+      "gender": "m",
+      "skin": "#A86F45",
+      "robe2": "#B9804F",
+      "statue": true
     }
   }
 }
