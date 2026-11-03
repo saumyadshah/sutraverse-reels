@@ -1,10 +1,56 @@
-{"series":"family","slides":[
-{"type":"cover","kicker":"Two days before Diwali","title":"Family WhatsApp group *fight?*","sub":"Chachu just left the family group. A prayer from the Rigveda, one of the world's oldest books, shows a better way.","ref":"Rigveda 1.89.1"},
-{"type":"point","n":"","title":"How it *blew up*","body":"Someone forwarded a message. Chachu replied in CAPITALS. Mummy took sides. By night, Chachu had left the group. Sound familiar?"},
-{"type":"shloka","kicker":"What the Rigveda says","deva":"आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।","iast":"ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ","meaning":"Let good thoughts come to us from every side, with nothing stopping them, breaking through. (First half of the verse.)","ref":"Rigveda 1.89.1, Rishi Gotama Rahugana, to all the gods"},
-{"type":"point","n":"","title":"Word by word: *4 key words*","body":"Bhadrāḥ = good, kind. Kratavaḥ = thoughts, ideas. Yantu = let them come. Viśvataḥ = from every side."},
-{"type":"point","n":"","title":"Who said it, and *to whom*","body":"The text says: Rishi Gotama sang this to all the gods together. It opens a hymn asking for a long, good and safe life."},
-{"type":"point","n":"","title":"Every side means *every side*","body":"For us today: a good idea can come from anyone, even the chachu you disagree with. Keep the door open. You don't have to win."},
-{"type":"point","n":"","title":"Before you post in the *family group*","body":"Screenshot this. Ask: Is it true? Is it kind? Does it help anyone here? If not, don't send it. Call Chachu instead."},
-{"type":"cta","kicker":"Your turn","title":"Send this to your *family group admin*","sub":"Save it for the next family WhatsApp group fight, and share it with the one who keeps the peace. Follow @sutraverselife for real-life lessons from ancient wisdom."}
-]}
+{
+ "series": "family",
+ "slides": [
+  {
+   "type": "cover",
+   "kicker": "Diwali week",
+   "title": "Family WhatsApp group *fight?*",
+   "sub": "Chachu just left the family group. A prayer from the Rigveda, one of the world's oldest books, shows a better way.",
+   "ref": "Rigveda 1.89.1"
+  },
+  {
+   "type": "point",
+   "n": "",
+   "title": "How it *blew up*",
+   "body": "Someone forwarded a message. Chachu replied in CAPITALS. Mummy took sides. By night, Chachu had left the group. Sound familiar?"
+  },
+  {
+   "type": "shloka",
+   "kicker": "What the Rigveda says",
+   "deva": "आ नो भद्राः क्रतवो यन्तु विश्वतोऽदब्धासो अपरीतास उद्भिदः ।",
+   "iast": "ā no bhadrāḥ kratavo yantu viśvato 'dabdhāso aparītāsa udbhidaḥ",
+   "meaning": "Let good thoughts come to us from every side, and let nothing block them. (First half of the verse.)",
+   "ref": "Rigveda 1.89.1, Rishi Gotama Rahugana, to all the gods"
+  },
+  {
+   "type": "point",
+   "n": "",
+   "title": "Word by word: *4 key words*",
+   "body": "Bhadrāḥ = good, kind. Kratavaḥ = thoughts, ideas. Yantu = let them come. Viśvataḥ = from every side."
+  },
+  {
+   "type": "point",
+   "n": "",
+   "title": "Who said it, and *to whom*",
+   "body": "The text says: Rishi Gotama sang this to all the gods together. It opens a hymn asking for a long, good and safe life."
+  },
+  {
+   "type": "point",
+   "n": "",
+   "title": "Every side means *every side*",
+   "body": "For us today: a good idea can come from anyone, even the Chachu you disagree with. Keep the door open. You don't have to win."
+  },
+  {
+   "type": "point",
+   "n": "",
+   "title": "Before you post in the *family group*",
+   "body": "Screenshot this. Ask: Is it true? Is it kind? Does it help anyone here? If not, don't send it. Call Chachu instead."
+  },
+  {
+   "type": "cta",
+   "kicker": "Your turn",
+   "title": "Send this to your *family group admin*",
+   "sub": "Save it for the next family WhatsApp group fight, and share it with the one who keeps the peace. Follow @sutraverselife for real-life lessons from ancient wisdom."
+  }
+ ]
+}
