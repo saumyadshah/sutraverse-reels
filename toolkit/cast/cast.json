@@ -393,6 +393,34 @@
       "skin": "#A86F45",
       "robe2": "#B9804F",
       "statue": true
+    },
+    "karan": {
+      "rig": "modern",
+      "role": "Ghar ki Ramayan: Ishaan's elder brother, 31, works in Bengaluru; hasn't come home for two Diwalis",
+      "series": "family",
+      "first_reel": "2026-11-04-r1",
+      "gender": "m",
+      "skin": 3,
+      "hair": "short",
+      "stubble": true,
+      "glasses": true,
+      "outfit": {
+        "style": "shirt",
+        "color": "#2A2F6B",
+        "color2": "#D9CBB4"
+      }
+    },
+    "bharata": {
+      "rig": "m_human",
+      "role": "Bharata, Rama's younger brother, who ruled from Nandigrama in bark garments in Rama's name, with Rama's sandals installed (Valmiki Ramayana, Ayodhya Kanda 2.115 = CE 2.107); in bark garments with matted hair (jata), no crown or jewels (ascetic: true)",
+      "first_reel": "2026-11-04-r1",
+      "gender": "m",
+      "skin": "#A26E4A",
+      "robe": "#8A5A2B",
+      "robe2": "#6B4A2A",
+      "necklace": false,
+      "tilak": true,
+      "ascetic": true
     }
   }
 }
