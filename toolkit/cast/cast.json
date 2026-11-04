@@ -421,6 +421,43 @@
       "necklace": false,
       "tilak": true,
       "ascetic": true
+    },
+    "kunal": {
+      "rig": "modern",
+      "role": "Office ka Mahabharat: finance analyst, 31, quarter-close before the Diwali review",
+      "series": "office",
+      "first_reel": "2026-11-05-r1",
+      "gender": "m",
+      "skin": 4,
+      "hair": "side",
+      "stubble": true,
+      "lanyard": "#F2B33D",
+      "outfit": {
+        "style": "shirt",
+        "color": "#4F6B8A",
+        "color2": "#F4EADB"
+      }
+    },
+    "dhritarashtra": {
+      "rig": "m_human",
+      "role": "Dhritarashtra, the blind Kuru king (Mahabharata, Sabha and Udyoga Parva); crowned, eyes shown closed",
+      "first_reel": "2026-11-05-r1",
+      "gender": "m",
+      "crown": true,
+      "eyes_closed": true,
+      "skin": "#D9A27A",
+      "robe": "#1A1D47",
+      "robe2": "#F2B33D"
+    },
+    "duryodhana": {
+      "rig": "m_human",
+      "role": "Duryodhana, eldest Kaurava prince (Mahabharata, Sabha Parva dice game)",
+      "first_reel": "2026-11-05-r1",
+      "gender": "m",
+      "crown": true,
+      "skin": "#C98E62",
+      "robe": "#D63E2A",
+      "robe2": "#9E2348"
     }
   }
 }
