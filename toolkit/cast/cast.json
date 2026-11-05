@@ -458,6 +458,40 @@
       "skin": "#C98E62",
       "robe": "#D63E2A",
       "robe2": "#9E2348"
+    },
+    "vasuki": {
+      "rig": "m_snake",
+      "role": "Vasuki, the serpent king used as the churning rope around Mount Mandara (Bhagavata Purana 8.7); one hood, no face drama",
+      "first_reel": "2026-11-06-r1",
+      "body": "#137C77",
+      "accent": "#F2B33D",
+      "heads": 1
+    },
+    "dhanvantari_sym": {
+      "rig": "m_sun",
+      "role": "Dhanvantari's presence as he rises from the churned ocean (Bhagavata Purana 8.8.31-35), shown as a radiant haldi light (deities as symbols); the amrita kalasha is drawn inside the same rig group as what he holds",
+      "first_reel": "2026-11-06-r1",
+      "r": 100
+    },
+    "deva": {
+      "rig": "m_human",
+      "role": "A deva (god) pulling Vasuki's tail end at the churning (Bhagavata Purana 8.7); stands for the gods' side",
+      "first_reel": "2026-11-06-r1",
+      "gender": "m",
+      "crown": true,
+      "skin": "#D9A27A",
+      "robe": "#F2B33D",
+      "robe2": "#137C77"
+    },
+    "asura": {
+      "rig": "m_human",
+      "role": "An asura pulling Vasuki's hood end at the churning (Bhagavata Purana 8.7: the asuras chose the head); same human dignity, different colours",
+      "first_reel": "2026-11-06-r1",
+      "gender": "m",
+      "crown": true,
+      "skin": "#C98E62",
+      "robe": "#9E2348",
+      "robe2": "#D63E2A"
     }
   }
 }
