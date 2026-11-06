@@ -492,6 +492,51 @@
       "skin": "#C98E62",
       "robe": "#9E2348",
       "robe2": "#D63E2A"
+    },
+    "bua": {
+      "rig": "modern",
+      "role": "Log Kya Kahenge: Bua ji, 60, Tara's father's sister, hosts the Chhoti Diwali puja; loud, means well, says 'log kya kahenge'",
+      "series": "social",
+      "first_reel": "2026-11-07-r1",
+      "gender": "f",
+      "age": "elder",
+      "skin": 2,
+      "hair": "bun",
+      "hair_color": "grey",
+      "bindi": true,
+      "earrings": "jhumka",
+      "outfit": {
+        "style": "saree",
+        "color": "#D63E2A",
+        "color2": "#F2B33D"
+      }
+    },
+    "dadi": {
+      "rig": "modern",
+      "role": "Log Kya Kahenge / Ghar ki Ramayan: Dadi, 80, Tara's grandmother; quiet, decisive, white hair, cream saree with a mor border",
+      "series": "social",
+      "first_reel": "2026-11-07-r1",
+      "gender": "f",
+      "age": "elder",
+      "skin": 3,
+      "hair": "bun",
+      "hair_color": "white",
+      "bindi": true,
+      "earrings": "stud",
+      "outfit": {
+        "style": "saree",
+        "color": "#D9CBB4",
+        "color2": "#137C77"
+      }
+    },
+    "rajkanya": {
+      "rig": "m_human",
+      "role": "One of the 16,100 princesses freed from Naraka's palace (Bhagavata Purana 10.59.33-36); one design, shown as a group of three; dressed in spotless chandan clothes (10.59.36); shown with dignity, never as victims in chains",
+      "first_reel": "2026-11-07-r1",
+      "gender": "f",
+      "skin": "#C08A62",
+      "robe": "#F4EADB",
+      "robe2": "#F2B33D"
     }
   }
 }
