@@ -20,7 +20,7 @@ LOG="$HOME/.sutraverse_setup.log"
 # only as an option and is not used by the environment.
 # Workspaces are reused between runs: refresh the sutraverse skill from the repo's zip every time,
 # so brand/pipeline updates (e.g. v4 Mithila Night, 30 Oct) reach OpenMontage without a reinstall.
-refresh_skill() { [ -d "$OM" ] && [ -f "$REPO/toolkit/sutraverse-skill.zip" ] && (cd "$OM" && unzip -qo "$REPO/toolkit/sutraverse-skill.zip") || true; }
+refresh_skill() { bash "$REPO/toolkit/opuscar_setup.sh" >/dev/null 2>&1 || true; [ -d "$OM" ] && [ -f "$REPO/toolkit/sutraverse-skill.zip" ] && (cd "$OM" && unzip -qo "$REPO/toolkit/sutraverse-skill.zip") || true; }
 if [ -f "$HOME/.sutraverse_env" ]; then refresh_skill; echo "SutraVerse toolkit already ready (skill refreshed)"; exit 0; fi
 if [ "${1:-}" = "--background" ]; then
   if [ -f "$HOME/.sutraverse_env" ]; then echo "SutraVerse toolkit already ready"; exit 0; fi
