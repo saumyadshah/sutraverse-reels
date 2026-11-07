@@ -18,7 +18,7 @@ Kit: `toolkit/brand2/` (brand2.css, fonts, cast2.js + cast2.json, TREATMENTS.md,
 | **Panchatantra Reloaded** | Fables for adults | Lamp Theatre → cel | `FABLE NN` | Panchatantra, Hitopadesha, Jataka |
 
 **Cadence: 5 Reels a week, quality first** (data: volume didn't buy reach; 17 of 24 Reels died in the test pool). Mon 10:00 Office Shastra · Wed 10:00 Mind Games · Fri 10:00 Chanakya Files · Sat 18:00 Ghar Ki Baat or Panchatantra Reloaded (alternate) · Sun 10:00 Turning Points. At least 3 of 5 are explainer-led (a diagram, timeline or framework carries the idea). Festivals are told through the week's series, never as a separate "festival Reel" unless the story is genuinely strong.
-**Carousels are paused** (30-day data: 4–32 accounts reached each, all followers). Revisit at 1,000 followers.
+**Carousels are paused** (30-day data: 4–32 accounts reached each, all followers). Revisit at 1,000 followers. When they return: render with `brand2/carousel2.py` (same spec as v4 make_post.py + "series"/"format"). **Music on carousels:** Instagram supports it only in the app; neither the Instagram Graph API, Metricool (its audio option is Reels-only) nor vidIQ can attach music to a carousel. So either (a) Saumya adds a track from the app after it posts (Edit → Add music), or (b) the carousel is also cut as a slideshow Reel with our own original score (sampler/pluck/synth), which can publish automatically.
 **Continuity:** the modern cast recurs (Riya, Kabir, Malhotra sir, Maa…); Office Shastra and Ghar Ki Baat are numbered episodes; Chanakya's rules are numbered; a Reel may call back an earlier one ("Rule 07 again"). The knowledge base (`toolkit/kb/`) tracks what was told, so nothing repeats and arcs build.
 
 ## 3. Storytelling framework (every Reel is a short film)
@@ -63,7 +63,15 @@ Independent review (separate agent, CONTENT_STANDARDS §17.5 + `templates/review
 
 ## 9. Captions, SEO, comments
 - Line 1: the conflict in the viewer's words + the search phrase (≤ 110 chars). Then the idea and its source, the move, the either/or question.
-- 6–10 specific keywords woven into sentences (no repeated boilerplate keyword line). 3–5 hashtags chosen for *this* Reel from the series pool; never the same set twice in a row.
+- Weave the main search words naturally into the sentences too. 3–5 hashtags chosen for *this* Reel from the series pool; never the same set twice in a row.
+- **SEO keyword section (mandatory on every Reel, Short and post; Saumya, 7 Nov 2026).** One dedicated line, after the follow line and before the hashtags, in exactly this format: `[keyword one, keyword two, keyword three]` — square brackets, comma + space between keywords, no hashtags or emojis inside. 10–15 keywords, researched for *this* piece, never a reused generic set:
+  1. the search phrase first (what a real person types into Instagram search for this problem);
+  2. the conflict in the viewer's own words, including the Hinglish/Hindi spellings people actually type ("boss credit le gaya", "log kya kahenge");
+  3. the named idea (bias, rule, concept) and its plain-English synonym;
+  4. the source / character / text (e.g. "chanakya niti", "duryodhana envy", "bhagavad gita 2.14");
+  5. the situation and audience (e.g. "office politics india", "desi family", "corporate life");
+  6. the series name, and "SutraVerse" last.
+  Research: hashtag-keyword-research skill, Instagram search autocomplete phrases visible in the week's outliers' captions, and the planner's search_phrase. Lower-case except proper nouns; each keyword 1–4 words; no duplicates or near-duplicates. Store the list on the slot as `seo_keywords`. YouTube descriptions carry the same list in the same bracket format (yt_upload.py builds it from meta "keywords").
 - Pinned first comment: the either/or question restated with two numbered options.
 - Comment-to-DM keyword per series (after Saumya enables Meta automations): RULE (Chanakya Files), FILE (Mind Games), EP (Office Shastra / Ghar Ki Baat), YEAR (Turning Points), FABLE (Panchatantra).
 

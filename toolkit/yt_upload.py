@@ -88,8 +88,11 @@ def build_description(m):
     parts += [BRAND, LINKS]
     if m.get("sources"):
         parts.append("Sources: " + m["sources"].strip())
-    kws = BRAND_KEYWORDS + [k for k in m.get("keywords", []) if k.lower() not in {b.lower() for b in BRAND_KEYWORDS}]
-    parts.append(" \u00b7 ".join(kws[:15]))
+    # SEO keyword section (Saumya, 7 Nov 2026): content-specific keywords, comma-separated inside [ ]
+    kws = [k.strip() for k in m.get("keywords", []) if k.strip()]
+    if not any(k.lower() == "sutraverse" for k in kws):
+        kws.append("SutraVerse")
+    parts.append("[" + ", ".join(kws[:15]) + "]")
     tags = ["#SutraVerse"] + [h if h.startswith("#") else "#" + h for h in m.get("hashtags", [])
                               if h.lstrip("#").lower() != "sutraverse"][:2]
     parts.append(" ".join(tags))
