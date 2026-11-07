@@ -1,0 +1,10 @@
+{
+  "_doc": "SutraVerse 2.0 character bible (rig: brand2/cast2.js). One entry per character. Never redraw a registered character by hand; add new characters here first and render their sheet with sheet2.py.",
+  "characters": {
+    "chanakya": {"role": "Chanakya Files host: the strategist (c. 4th century BCE). Teacher, minister to Chandragupta Maurya. Lean, intense, shaved head with the untied shikha of his vow (tradition), ochre cloth, sacred thread.", "series": "chanakya", "skin": 4, "hair": "shikha", "shikhaOpen": true, "headW": 0.37, "jaw": 0.235, "age": 55, "eyeOpen": 0.88, "browW": 0.03, "stubble": true, "hairCol": "#1A1410", "janeu": true, "shoulders": 0.9, "outfit": {"style": "angavastram", "color": "#A06E48", "cloth": "#B8662A"}},
+    "riya": {"role": "Office Shastra lead, 27, product analyst in Bengaluru. Sharp, fair-minded, gets talked over.", "series": "office", "skin": 2, "hair": "long", "headW": 0.39, "jaw": 0.25, "age": 27, "hairCol": "#16100E", "lanyard": "#F2A93B", "outfit": {"style": "shirt", "color": "#2C6E6A", "collar": "#F1E8D6"}},
+    "kabir": {"role": "Office Shastra / Ghar Ki Baat, 29, backend engineer. People-pleaser learning to say no.", "series": "office", "skin": 3, "hair": "side", "headW": 0.41, "jaw": 0.29, "age": 29, "stubble": true, "hairCol": "#14100D", "outfit": {"style": "hoodie", "color": "#3D4C91"}},
+    "malhotra": {"role": "Office Shastra boss, 52, VP. Charming in meetings, takes credit, plays favourites.", "series": "office", "skin": 2, "hair": "receding", "greyTemples": true, "headW": 0.43, "jaw": 0.31, "age": 52, "moustache": true, "glasses": "#C9A45A", "hairCol": "#2A2420", "shoulders": 1.05, "outfit": {"style": "blazer", "color": "#D9D4C7", "jacket": "#1E2433", "collar": "#EDE8DC"}},
+    "maa": {"role": "Ghar Ki Baat mother, 54. Loves through food, never says it.", "series": "family", "skin": 3, "hair": "bun_low", "greyTemples": true, "headW": 0.41, "jaw": 0.28, "age": 54, "bindi": "#C0302A", "hairCol": "#1C1513", "outfit": {"style": "saree", "color": "#E2C9A0", "pallu": "#7A2E3A", "border": "#F2A93B"}}
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html><html><head><meta charset="utf-8">
+<!-- SutraVerse 2.0 Reel template (Lemo-Opuscar page contract: DUR, render(t), READY, EV, TEXTS).
+     Copy this folder into the Reel's project, replace shots.js with the Reel's shot list, run build.sh. -->
+<link rel="stylesheet" href="brand2.css">
+<style>html,body{margin:0;background:#0F0E12;overflow:hidden}#stage{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden}
+canvas{position:absolute;inset:0}.ov{position:absolute;inset:0}.card{position:absolute;background:#F1E8D6;color:#0F0E12;border-radius:16px;padding:22px 26px;font:600 34px/1.25 var(--ui);box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.card .m{font:600 22px/1 var(--mono);color:#5A5348;margin-bottom:10px;letter-spacing:.06em}.opt{position:absolute;left:90px;right:90px;padding:22px 26px;border:3px solid currentColor;font:700 40px/1.2 var(--ui);background:rgba(15,14,18,.88)}
+.opt .k{font:600 24px/1 var(--mono);letter-spacing:.12em;display:block;margin-bottom:10px}</style></head>
+<body><div id="stage" class="sv2-vignette"><canvas id="c" width="1080" height="1920"></canvas><div class="ov" id="ov"></div></div>
+<script src="cast2.js"></script>
+<script type="module">
+import { seg, ss, eo, back, clamp, lerp, env } from '/core/lib.js';
+import { SHOTS, SUBS, DUR, CAST, EV } from './shots.js';
+CAST2.load(CAST);
+const g = document.getElementById('c').getContext('2d'), ov = document.getElementById('ov');
+const H = { g, seg, ss, eo, back, clamp, lerp, env, CAST2,
+  glow(x, y, r, col, a) { const gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, col); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.globalAlpha = a; g.fillStyle = gr; g.fillRect(0, 0, 1080, 1920); g.globalAlpha = 1; },
+  grain(a, seed) { let s = 11 + (seed | 0); const R = () => ((s = (s * 16807) % 2147483647) / 2147483647); g.globalAlpha = a; for (let i = 0; i < 5000; i++) { g.fillStyle = R() < .5 ? '#000' : '#fff'; g.fillRect(R() * 1080, R() * 1920, 1.5, 1.5); } g.globalAlpha = 1; },
+  // the "plate prints" transition: hatching sweeps across, then paper flashes (Chanakya Files native move)
+  printWipe(p) { if (p <= 0 || p >= 1) return; const x = lerp(-200, 1280, ss(p)); g.save(); g.beginPath(); g.rect(0, 0, x, 1920); g.clip(); g.fillStyle = '#EFE5CF'; g.fillRect(0, 0, 1080, 1920);
+    g.strokeStyle = '#0F0E12'; g.lineWidth = 2; g.beginPath(); for (let k = -1920; k < 1080; k += 10) { g.moveTo(k, 0); g.lineTo(k + 1920, 1920); } g.stroke(); g.restore(); g.fillStyle = '#F2A93B'; g.fillRect(x - 6, 0, 12, 1920); },
+};
+let BUILT = null;
+function overlay(html) { if (BUILT !== html) { ov.innerHTML = html; BUILT = html; } }
+window.DUR = DUR; window.EV = EV;
+window.render = (t) => {
+  g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, 1080, 1920);
+  const shot = SHOTS.find(s => t >= s.t0 && t < s.t1) || SHOTS[SHOTS.length - 1];
+  const lt = t - shot.t0, T = shot.t1 - shot.t0;
+  shot.draw(H, lt, T, t);
+  // overlay: shot's own DOM + chapter tag + subtitle
+  let html = shot.html ? shot.html(lt, T) : '';
+  if (shot.tag) html += `<div class="sv2-tag ${shot.tag.kind || ''}" style="opacity:${ss(seg(lt, 0, .35))}"><span class="n">${shot.tag.n}</span><span class="t">${shot.tag.t}</span></div>`;
+  if (shot.chip) html += `<div style="position:absolute;top:300px;left:72px;color:${shot.chip.col};opacity:${ss(seg(lt, .1, .5))}"><span class="sv2-chip">${shot.chip.name}</span></div>`;
+  const sub = SUBS.find(s => t >= s.t0 && t < s.t1);
+  if (sub) html += `<div class="sv2-sub ${sub.kind || ''}"><p>${sub.text}</p></div>`;
+  ov.innerHTML = html;
+};
+// every visible text with its box, for core/render/readcheck.mjs
+window.TEXTS = (t) => { window.render(t); return [...ov.querySelectorAll('p, .sv2-tag, .card, .opt, .sv2-principle')].map((el, i) => { const r = el.getBoundingClientRect(); return { id: (el.className || 'p') + i, text: el.textContent.trim(), x0: r.left, y0: r.top, x1: r.right, y1: r.bottom }; }); };
+document.fonts.load('700 50px "Anek Latin"').then(() => document.fonts.load('600 20px "Plex Mono"')).then(() => document.fonts.load('700 90px Fraunces')).then(() => { window.READY = true; });
+</script></body></html>
