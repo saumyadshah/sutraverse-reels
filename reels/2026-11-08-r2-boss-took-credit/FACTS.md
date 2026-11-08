@@ -1,0 +1,16 @@
+# FACTS — 2026-11-08-r2 · Office Shastra EP 01 · "The boss presented your slide as his"
+
+Reading taken (unattended run): the slot's planned story (pilot in toolkit/brand2/template/shots.js) told in full: Riya's deck presented by Malhotra sir as "team" work, two bad options, Chanakya Niti 2.7 as the crossover, Option C = put your name and a timestamp on the work before the meeting.
+
+| # | Claim | Source | Exact on-screen wording | Label |
+|---|---|---|---|---|
+| 1 | Riya, Malhotra sir, the deck, the 9:47 pm chat and the CXO review are a fictional composite scene | SutraVerse cast2.json (registered characters) | "Great idea team 👏 Presenting this to the CXO myself." (9:47 PM); Riya's earlier private chat "Sir, Q3 plan attached" (9:31 PM); email card removed | Fiction / composite |
+| 2 | Chanakya Niti chapter 2, verse 7 reads: मनसा चिन्तितं कार्यं वाचा नैव प्रकाशयेत् । मन्त्रेण रक्षयेद्गूढं कार्ये चापि नियोजयेत् ॥ | (a) Chanakya Niti Darpana, adhyāya 2, śloka 7 — vedapath.app/en/chanakya-niti/adhyaya-2-virtuous-company/7 (Sanskrit + IAST + word meanings); (b) Chanakya Neeti, Jaico edition, ch. 2 ("An action contemplated shouldn't ever be advertised; but kept a secret like a mantra, and revealed in time"); (c) the widely reprinted 19th-c. English rendering ("Do not reveal what you have thought upon doing, but by wise council keep it secret being determined to carry it into execution") | Devanagari (2 lines) + IAST "manasā cintitaṁ kāryaṁ vācā naiva prakāśayet / mantreṇa rakṣayed gūḍhaṁ kārye cāpi niyojayet" + "What you plan in your mind, don't broadcast it. Guard it like secret counsel, and put it to work." (card and subtitle use this exact wording) + "CHANAKYA NITI 2.7 · ATTRIBUTED TO CHANAKYA · NUMBERING VARIES BY EDITION" | Text (translation is ours, faithful to (b)/(c)) |
+| 3 | Gloss: मन्त्र (mantra) here = counsel / strategy; गूढम् (gūḍham) = hidden | vedapath word-by-word breakdown (2.7) | "mantra = counsel · gūḍham = hidden" | Text |
+| 4 | Chanakya Niti is attributed to Chanakya (Kautilya), minister to Chandragupta Maurya, c. 4th century BCE → "about 2,300 years old" | Standard attribution; authorship of the niti collection is traditional and debated | VO "about 2,300 years old" · on screen "CHANAKYA NITI · c. 4TH CENTURY BCE (ATTRIBUTED)" | Tradition holds |
+| 5 | Option C (name on the file, a one-line email to the team before the meeting, answer the numbers question yourself) and "Don't argue for credit. Timestamp it." | SutraVerse's own modern application, not a claim about any study | "Don't argue for credit. Timestamp it." · source line "SUTRAVERSE · APPLYING CHANAKYA NITI 2.7" | For us today (application) |
+| 6 | "Work that changes hands without a record changes credit too" | Narrative observation inside the story, not a statistic | (subtitle only) | Application |
+
+No studies, numbers or quotes beyond the verse are used. The verse's English is a faithful rendering, cross-checked against two published translations.
+
+| 7 | Bridge (application): Riya handed the plan over unguarded before it was in motion; "guard it" = a record with your name, "put it to work" = you present it | SutraVerse reading of 2.7 for today | "UNGUARDED: HANDED OVER BEFORE IT WAS IN MOTION" · "GUARD IT = A RECORD WITH YOUR NAME / PUT IT TO WORK = YOU PRESENT IT" | For us today (application) |

@@ -32,3 +32,4 @@ Old era (v1–v5, 21 Oct – 6 Nov 2026) for continuity: don't retell these stor
 ## SutraVerse 2.0 (from 8 Nov 2026)
 | Date | Series | Tag | Named idea | Sources | Cast | Views | Skip % | Shares/1k |
 |---|---|---|---|---|---|---|---|---|
+| 11-08 | Office Shastra | EP 01 | Don't argue for credit, timestamp it (Chanakya Niti 2.7 crossover) | Chanakya Niti 2.7 (vedapath; Jaico) | riya, malhotra, chanakya | | | |
