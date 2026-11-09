@@ -91,6 +91,8 @@ Keep SutraVerse's identity (animated cast, Indian wisdom + verse, Hinglish). Ado
 6. **Numbered-course covers (test from week of 16 Nov):** a series-coloured card with the series tag + number and a 3–4 word Hinglish question in the viewer's words (one amber word), the same template every time, so the grid reads like a course. A/B against the face cover; keep the winner (see §10).
 7. **End card with a value promise:** "Roz ek kahaani, ek shloka — follow @sutraverselife" (≤ 2 s, after the either/or). No mid-video CTA.
 8. **Shares and saves over comments:** a viral Reel can have almost no comments; judge Reels on skip rate, watch %, shares/1k and saves/1k.
+10. **YouTube = text seasons (from Balakheji's book seasons; @BalakheJi grew to 756 subscribers in 30 days on Shorts alone, 3.5 a day).** Every Short is numbered by the source text of its verse (kb/seasons.md: Bhagavad Gita - Lesson NN, Chanakya Niti - Rule NN, Panchatantra - Fable NN, Itihaas - Chapter NN). yt_title = "<emotional Hinglish hook with an ellipsis…> | <Text> - <Lesson/Rule/Fable/Chapter> NN #Shorts", ≤ 95 characters, problem first (supersedes the "≤ 60" title limit in the Reel and publisher task prompts; Saumya, 9 Nov). yt_playlist = the season's playlist. The Reel run takes the next number and records it in kb/seasons.md in its commit.
+11. **Emotional beats productivity.** On both his platforms the relationship book (Courage to Be Disliked) out-performed habits and power books 5–10×. Prefer relationship/family/self-worth angles inside every series.
 9. **Volume ramps with quality:** 1 a day now; 2 a day only once three weeks in a row hit skip ≤ 33% and watch ≥ 40%.
 
 ## 11. Skills (lean set; load only these)
