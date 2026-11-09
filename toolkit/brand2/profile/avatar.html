@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset=utf-8><style>
+@import url('../brand2.css');
+html,body{margin:0;width:1080px;height:1080px;background:#0F0E12}
+.wrap{position:relative;width:1080px;height:1080px;overflow:hidden;
+ background:radial-gradient(60% 60% at 47% 44%, rgba(242,169,59,.30), rgba(242,169,59,.06) 55%, transparent 75%), #0F0E12}
+svg{position:absolute;inset:0}
+</style></head><body><div class=wrap>
+<svg viewBox="75 30 1000 1000" width="1080" height="1080">
+ <defs>
+  <radialGradient id="fl" cx="50%" cy="70%" r="60%"><stop offset="0" stop-color="#FFF4D6"/><stop offset=".45" stop-color="#F7C25E"/><stop offset="1" stop-color="#F2A93B"/></radialGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+ </defs>
+ <!-- thin ring (reads as a seal, stays inside the circle crop) -->
+ <circle cx="575" cy="530" r="440" fill="none" stroke="#F2A93B" stroke-opacity=".55" stroke-width="6"/>
+ <circle cx="575" cy="530" r="414" fill="none" stroke="#F1E8D6" stroke-opacity=".12" stroke-width="2"/>
+ <!-- flame glow + flame -->
+ <path id="flame" d="M540 228 C590 330 640 392 640 470 C640 540 595 590 540 590 C485 590 440 540 440 470 C440 392 492 330 540 228 Z" fill="#F2A93B" filter="url(#glow)" opacity=".75"/>
+ <path d="M540 228 C590 330 640 392 640 470 C640 540 595 590 540 590 C485 590 440 540 440 470 C440 392 492 330 540 228 Z" fill="url(#fl)"/>
+ <path d="M540 380 C560 425 578 452 578 488 C578 520 561 545 540 545 C519 545 502 520 502 488 C502 452 520 425 540 380 Z" fill="#FFF8E8" opacity=".9"/>
+ <!-- diya bowl with spout -->
+ <path d="M282 632 L742 632 C790 632 838 612 880 572 C872 640 826 690 770 716 C716 790 636 828 540 828 C420 828 318 762 282 632 Z" fill="#F1E8D6"/>
+ <path d="M318 682 C370 750 448 784 540 784 C628 784 700 754 748 700" fill="none" stroke="#0F0E12" stroke-width="9" stroke-linecap="round" opacity=".45"/>
+ <!-- wick -->
+ <rect x="533" y="586" width="14" height="56" rx="7" fill="#2C2933"/>
+</svg></div><script>window.READY=true</script></body></html>
