@@ -31,7 +31,13 @@ Updated by the weekly growth review (Saturday). Facts are marked **[verified]** 
   3. The exact sentence at the end is usable tomorrow, so it gets saved and shared.
   4. A numbered course grid invites binge-watching and a follow.
   5. Volume (about 3 a day) gives the algorithm many tries; most land at 30K–150K and a few break out.
-- **YouTube:** no channel could be found through vidIQ or web search — ask Saumya for the URL.
+- **YouTube @BalakheJi (UCXQBCUvFfWJ05urlu6qve6g) [verified 9 Nov]:**
+  - Created 8 Oct 2026. 756 subscribers, 78.2K views and 113 videos (all Shorts), about 3.5 a day.
+  - Subscribers: 20 (13 Oct), 253 (30 Oct), 583 (7 Nov), 756 (8 Nov).
+  - One book per numbered season: 48 Laws (300–1.9K views), Atomic Habits Lessons 01–20 (400–3.3K), Courage to Be Disliked Lessons 01–16 (900–24K; L13 24K, L08 7.4K).
+  - Title formula: "<Hinglish hook…> | <Book> • Lesson NN".
+  - No long-form. Comments about 0.
+  - YouTube is a Shorts mirror of Instagram; Instagram is the growth engine.
 
 ## How to use this file
 The growth review appends one dated block a week: new Reels, plays, any new format or series, and 1–3 transferable patterns. The planner reads the latest block and the "insights" on the board.
