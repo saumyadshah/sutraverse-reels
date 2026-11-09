@@ -59,3 +59,36 @@
 - Chanakya Files RULE 02: four tests of gold (Chanakya Niti 5.2).
 - Panchatantra Reloaded FABLE 01: the frame story — three "useless" princes, six months (Olivelle 1997).
 - Turning Points CHAPTER 1 · 1991: India pledges its gold (RBI, 46.91 t, $405 m).
+
+## Idea library from the competitor study (9 Nov 2026) — planner: use these first, in the week shown
+Format per line: week · series · tag · named idea — hook — verse (verify on two editions) — who sends it to whom.
+- 16 Nov · Office Shastra · EP 03 · praise in public, correct in private — "“Great job, team!” …aur 2 minute baad Riya ko DM: “Call me. Now.”" — Gita 17.15 (speech that doesn't agitate, true, kind, useful) — employee → their manager.
+- 17 Nov · Mind Games · FILE 03 · negativity bias (Baumeister et al. 2001) — "Das taareefein. Ek taana. Neend us taane ne udaai." — Gita 2.14 — friend → overthinking friend.
+- 18 Nov · Ghar Ki Baat · EP 01 · the comparison at every dinner — "“Sharma ji ka beta toh Canada mein hai.” Daal mein namak kam tha. Baat mein zyada." — Gita 3.35 (better one's own path) — sibling → sibling.
+- 19 Nov · Chanakya Files · RULE 03 · don't announce plans before they're done — "“Bas offer letter aa jaaye, phir sabko bataunga.” Usne aaj hi bata diya." — Chanakya Niti 2.7 (manasā cintitaṁ kāryaṁ…, verify numbering by edition) — friend → friend who over-shares.
+- 20 Nov · Mind Games · FILE 04 · the spotlight effect (Gilovich, Medvec & Savitsky 2000) — "Shirt pe chai ka daag. Usse laga poora office dekh raha hai." — Gita 2.56 (unshaken mind) — friend → anxious friend.
+- 21 Nov · Panchatantra Reloaded · FABLE 02 · the monkey and the crocodile: when a friend wants your heart — "“Mere ghar chalo, dost.” Magarmachh ki muskaan mein kuch aur tha." — Panchatantra Bk 4 frame verse (verify, Olivelle 1997) — friend → friend in a one-sided friendship.
+- 22 Nov · Turning Points · CHAPTER 2 · 1965 · Shastri asks the nation to skip one meal: leading by example — "1965. Pradhan Mantri ne kaha — ek waqt ka khaana chhodo. Pehle unke ghar ka chulha bujha." — Gita 3.21 (what the best do, others follow) — team member → team lead.
+- 23 Nov · Office Shastra · EP 04 · appraisal-week friendliness (ingratiation) — "Saal bhar 'seen'. Appraisal se ek hafta pehle: “Bhai, chai?”" — Chanakya Niti 2.5 (praises to your face, ruins behind your back, verify) — colleague → colleague.
+- 24 Nov · Mind Games · FILE 05 · sunk cost (Arkes & Blumer 1985) — "Teen saal CA. Dil kahin aur. “Ab chhod du toh teen saal bekaar?”" — Gita 18.63 (reflect fully, then choose) — student → parent.
+- 25 Nov · Ghar Ki Baat · EP 02 · "Main theek hoon": hidden needs of parents — "“Main theek hoon, beta.” Phone kat gaya. Dawai ka dabba khaali tha." — Yoga Sutra 1.33 (maitrī karuṇā…) — child → sibling.
+- 26 Nov · Chanakya Files · RULE 04 · the flatterer is a pot of poison with milk on top — "“Tu toh boss banne layak hai.” Har baar jab koi kaam chahiye hota." — Chanakya Niti 2.5 (verify) — friend → friend.
+- 27 Nov · Office Shastra · EP 05 · saying "I don't know" in a meeting (intellectual humility) — "“Kabir, numbers?” Usne andaaza bol diya. Galat." — Gita 4.34 (learn by asking) — junior → junior.
+- 28 Nov · Panchatantra Reloaded · FABLE 03 · the blue jackal and borrowed status — "Neeli rang ki khaal. Jungle ka raja. Bas ek raat ki baat thi." — Panchatantra Bk 1 (verify) — friend → friend chasing likes.
+- 29 Nov · Turning Points · CHAPTER 3 · 1970 · Operation Flood and Amul: cooperation beats competition — "1970. India doodh import karta tha. 26 saal baad duniya ka sabse bada utpaadak." — Rigveda 10.191.2 (saṁ gacchadhvaṁ…) — founder → co-founder.
+- 30 Nov · Office Shastra · EP 06 · two jobs after a colleague quits (scope creep) — "“Bas jab tak replacement nahi aata.” Chhe mahine ho gaye." — Gita 3.35 — employee → manager.
+- 1 Dec · Mind Games · FILE 06 · the anger chain: one message to a full fight — "“Seen 4:12.” Reply nahi aaya. 4:40 tak jung shuru." — Gita 2.62–63 (dwelling → attachment → desire → anger → delusion) — partner → partner.
+- 2 Dec · Ghar Ki Baat · EP 03 · the EMI parents don't know about — "Maa ne poocha: “Bonus aaya?” Usne kaha haan. EMI ne kaha nahi." — Chanakya Niti 7.1 (what not to disclose, verify) — child → sibling.
+- 3 Dec · Chanakya Files · RULE 05 · learn from anyone: gold from the mud — "Intern ne bola: “Sir, ye aise jaldi hoga.” Sab hans pade. Woh sahi tha." — Chanakya Niti 1.16 (viṣād apy amṛtaṁ grāhyam…, verify) — manager → team.
+- 4 Dec · Mind Games · FILE 07 · foot-in-the-door (Freedman & Fraser 1966) — "“Bas ek file dekh lo.” Phir do. Phir weekend." — Gita 6.5 (lift yourself by yourself) — friend → people-pleaser friend.
+- 5 Dec · Panchatantra Reloaded · FABLE 04 · the tortoise who couldn't stay quiet — "Do hans. Ek lakdi. Ek kachhua. Aur ek muh jo band nahi hua." — Panchatantra Bk 1 (verify) — friend → friend who talks too soon.
+- 6 Dec · Turning Points · CHAPTER 4 · 1947–49 · integrating 560+ princely states: patience and timing — "1947. Ek naqsha. 560 se zyada riyasatein." — Gita 18.63 — leader → team.
+- 7 Dec · Office Shastra · EP 07 · the micromanager: build trust with visible progress — "Har ghante: “Update?”" — Gita 2.47 — employee → manager.
+- 8 Dec · Mind Games · FILE 08 · implementation intentions (Gollwitzer 1999) — "Kal se gym. Ye kal teen saal se aa raha hai." — Gita 6.16–17 (balance) — friend → friend.
+- 9 Dec · Ghar Ki Baat · EP 04 · shaadi kharch pressure — "“Log kya kahenge, sirf 200 log?”" — Īśa Upaniṣad 1 (mā gṛdhaḥ…) — couple → parents.
+- Backlog · Chanakya Files · six faults that sink a career (sleep, drowsiness, fear, anger, laziness, procrastination) — Vidura Niti, Udyoga Parva (verify chapter.verse).
+- Backlog · Chanakya Files · lessons from the crane: focus — Chanakya Niti 6.17 (verify).
+- Backlog · Panchatantra Reloaded · the lion brought back to life: knowledge without sense — Panchatantra Bk 5 (verify).
+- Backlog · Turning Points · 1983 · the underdog World Cup and belief — Gita 2.47.
+- Backlog · Mind Games · why gossip feels good (Dunbar 1996) — Vidura Niti on wounds of words (verify).
+- Backlog · Ghar Ki Baat · the parent who learns WhatsApp from the grandchild — Gita 4.34.

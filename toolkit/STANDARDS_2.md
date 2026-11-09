@@ -81,6 +81,18 @@ Per Reel: skip rate (target ≤ 30%), average watch % (≥ 45%), shares and save
 Account: weekly followers gained and profile visit → follow conversion (now ~0; target ≥ 10%).
 One controlled experiment per week (one variable: hook type, length, treatment, cover, CTA), logged in `plan.json` "experiments" with the result. Instagram doesn't expose per-second retention through the API: the weekly review asks Saumya for retention-graph screenshots of the best and worst Reel only when a diagnosis needs them.
 
+## 12. Lessons from the competitor study (@balakheji, 9 Nov 2026; details in kb/competitors.md)
+Keep SutraVerse's identity (animated cast, Indian wisdom + verse, Hinglish). Adopt these mechanics:
+1. **Emotional micro-conflict first.** The strongest topics are two-person moments every viewer has been on one side of (saying no to family, apologising, being left out, a friend's success, a boss's double standard). Each Reel's real_life_angle names who will SEND it to whom.
+2. **Open on a quoted line or a sensory image + a name**, never on context: "“Papa, maine purse khola nahi hai.”" / "Anil ke joote mein baarish ka paani bhar raha tha." Then flash back.
+3. **One source of authority per Reel**, said plainly: for us, the verse (the shloka card) plus at most one named book or study. No source lists on screen.
+4. **The exact words.** Every Reel ends with the character saying the better sentence (the script viewers can copy), then the verse, then the either/or. Captions repeat the sentence.
+5. **Pace and length:** calm, empathetic narration (≈ 120–135 words/min), soft score, 2–3 cuts per 10 s; 70–95 s when the story needs it. Calm is fine if every beat raises the stakes.
+6. **Numbered-course covers (test from week of 16 Nov):** a series-coloured card with the series tag + number and a 3–4 word Hinglish question in the viewer's words (one amber word), the same template every time, so the grid reads like a course. A/B against the face cover; keep the winner (see §10).
+7. **End card with a value promise:** "Roz ek kahaani, ek shloka — follow @sutraverselife" (≤ 2 s, after the either/or). No mid-video CTA.
+8. **Shares and saves over comments:** a viral Reel can have almost no comments; judge Reels on skip rate, watch %, shares/1k and saves/1k.
+9. **Volume ramps with quality:** 1 a day now; 2 a day only once three weeks in a row hit skip ≤ 33% and watch ≥ 40%.
+
 ## 11. Skills (lean set; load only these)
 - Plan: content-research (outliers), trend-spotter, series-planner, hook-mining (monthly), content-pillar-builder (monthly).
 - Reel: sutraverse (voice, captions, publishing), virality (hook checklist), ab-hook-tester, on-screen-text-writer, cta-writer, Lemo-Opuscar guides (DIRECTOR.md, TECHNIQUE.md, the treatment's base STYLE.md).
