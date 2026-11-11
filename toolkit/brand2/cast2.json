@@ -106,6 +106,25 @@
         "color": "#C8573A",
         "collar": "#F2A93B"
       }
+    },
+    "papa": {
+      "role": "Ghar Ki Baat father, 58: Kabir and Tanvi's father, retired bank officer in Indore. Proud, stubborn, turns up the TV instead of talking; softens late.",
+      "series": "family",
+      "skin": 3,
+      "hair": "short",
+      "greyTemples": true,
+      "headW": 0.42,
+      "jaw": 0.3,
+      "age": 58,
+      "moustache": true,
+      "glasses": "#5A4A3A",
+      "hairCol": "#2A2420",
+      "shoulders": 1.0,
+      "outfit": {
+        "style": "kurta",
+        "color": "#E8DFC9",
+        "collar": "#B89A62"
+      }
     }
   }
 }
