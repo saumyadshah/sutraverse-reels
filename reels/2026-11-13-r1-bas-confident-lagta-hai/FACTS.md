@@ -1,0 +1,14 @@
+# FACTS — 2026-11-13-r1 · Chanakya Files RULE 02 · Test a person like gold
+
+| # | Claim | Source | Exact on-screen wording | Label |
+|---|---|---|---|---|
+| 1 | Gold is tested four ways: rubbing, cutting, heating, beating | Chanakya Niti 5.2 (Niti-darpana numbering; verse text and word analysis: Vedapath Sanskrit edition, Chanakya Niti adhyaya 5 shloka 2; English rendering: Niti-darpana translation reproduced on Patheos "Chanakya Niti – Chapter 5", v.2). Verified on two sources. | "Gold is tested four ways: rubbed, cut, heated, beaten." | faithful paraphrase |
+| 2 | A person is tested by four: tyāga (sacrifice/renunciation), śīla (conduct), guṇa (qualities), karma (actions) | Chanakya Niti 5.2 (same two sources; renderings vary: "renunciation" (Patheos), "generosity" (Vedapath), "sacrifice" (common English editions)) | "And a person, by four: sacrifice, conduct, qualities, actions." | faithful paraphrase |
+| 3 | Verse card | यथा चतुर्भिः कनकं परीक्ष्यते निघर्षणच्छेदनतापताडनैः । तथा चतुर्भिः पुरुषः परीक्ष्यते त्यागेन शीलेन गुणेन कर्मणा ॥ — yathā caturbhiḥ kanakaṃ parīkṣyate nigharṣaṇa-chedana-tāpa-tāḍanaiḥ । tathā caturbhiḥ puruṣaḥ parīkṣyate tyāgena śīlena guṇena karmaṇā ॥ | "As gold is tested four ways — rubbing, cutting, heating, beating — so a person is tested by four: sacrifice, conduct, qualities, actions." CHANAKYA NITI 5.2 · NITI-DARPANA NUMBERING · ATTRIBUTED TO CHANAKYA | direct quote (translation) |
+| 4 | "Confidence" is not one of the four tests | Reading of the verse's own list (claim 2) | "Read the list again… 'confidence' isn't on it." | our reading |
+| 5 | Mapping the four tests to hiring (what they gave up for the work / how they treat people / what they can do / what they have done) | SutraVerse interpretation, not in the text | "grey = our reading", under the A PERSON header | our reading |
+| 6 | Work-sample tests predicted job performance better than unstructured interviews | Schmidt, F. L. & Hunter, J. E. (1998). The validity and utility of selection methods in personnel psychology. Psychological Bulletin 124(2), 262–274. Direction confirmed by the later re-analysis Sackett, Zhang, Berry & Lievens (2022), Journal of Applied Psychology 107(11). No figures shown. | "Research backs the “see the work” part: a work sample predicts the job better than an unstructured interview." source line: SCHMIDT & HUNTER 1998 · PSYCH. BULLETIN | study (no numbers) |
+| 7 | Chanakya Niti is attributed to Chanakya (c. 4th century BCE); the collection's date and authorship are uncertain | standard attribution; the text is a later compilation | "ATTRIBUTED TO CHANAKYA" | attribution |
+| 8 | Riya, Malhotra, Rohan, Sana, the interview and the take-home tasks | fictional composite scene (SutraVerse cast) | — | fiction |
+
+Not used (kept separate on purpose): Mahabharata 12.314.43 uses a similar gold-testing image for examining students; not conflated with this verse.

@@ -125,6 +125,40 @@
         "color": "#E8DFC9",
         "collar": "#B89A62"
       }
+    },
+    "rohan": {
+      "role": "Office Shastra / Chanakya Files: Rohan, 28, sales-turned-product candidate (and Malhotra's favourite in the Ekalavya Reel). Smooth talker, big smile, gelled hair, confident in every room; his work rarely matches the pitch.",
+      "series": "office",
+      "skin": 2,
+      "hair": "side",
+      "headW": 0.41,
+      "jaw": 0.3,
+      "age": 28,
+      "hairCol": "#0E0A08",
+      "outfit": {
+        "style": "blazer",
+        "color": "#F1E8D6",
+        "jacket": "#5A2E3A",
+        "collar": "#EDE8DC"
+      }
+    },
+    "sana": {
+      "role": "Chanakya Files / Office Shastra: Sana, 26, product-analyst candidate from Lucknow. Quiet, precise, speaks slowly in interviews; her take-home task is the one that actually works.",
+      "series": "office",
+      "skin": 3,
+      "hair": "braid",
+      "headW": 0.37,
+      "jaw": 0.22,
+      "age": 26,
+      "hairCol": "#120D0A",
+      "glasses": "#3A3A44",
+      "outfit": {
+        "style": "kurta",
+        "color": "#4A5A8C",
+        "collar": "#E8DFC9"
+      },
+      "browW": 0.02,
+      "eyeOpen": 1.0
     }
   }
 }
