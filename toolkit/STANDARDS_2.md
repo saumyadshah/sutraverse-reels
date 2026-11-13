@@ -1,11 +1,13 @@
-# SutraVerse 2.0 — production standards (from 7 Nov 2026)
+# Shlokwise — production standards (2.0 kit, from 7 Nov 2026)
+
+**BRAND (Saumya, 13 Nov 2026): the brand is Shlokwise, "Getting wise with Shlok".** SutraVerse is another entity's trademark, so it never appears in anything viewers see (caption, title, description, cover, frame, end card, reply, bio, hashtag, keyword). Every viewer-facing name, line, handle and hashtag comes from `toolkit/BRAND.json`: wordmark SHLOKWISE, tagline "Getting wise with Shlok", the follow line and end card with `@{ig}` = `instagram.handle` (the current handle until Saumya confirms the rename), brand hashtag #Shlokwise, brand keyword Shlokwise. Internal names (repo, env files, the `sutraverse` skill, task names) stay as they are.
 
 **This file governs every plan, Reel and review from 9 Nov 2026.** Where it conflicts with CONTENT_STANDARDS.md, CAPTION_STRATEGY.md or the sutraverse skill, this file wins. Still in force from the older files: the AUTO-PUBLISH rule (no approvals; fix, don't hold), the shloka standard (CONTENT_STANDARDS §4) whenever a verse is shown, subtitles on the solid plate, the independent final review (§17.5), the Gemini Hinglish voice, and never printing keys.
 
-Kit: `toolkit/brand2/` (brand2.css, fonts, cast2.js + cast2.json, TREATMENTS.md, OPUSCAR.md, template/, samples/). Strategy, audit and reasoning: the "SutraVerse 2.0" doc.
+Kit: `toolkit/brand2/` (brand2.css, fonts, cast2.js + cast2.json, TREATMENTS.md, OPUSCAR.md, template/, samples/). Strategy, audit and reasoning: the "SutraVerse 2.0" doc (internal).
 
 ## 1. Positioning
-**SutraVerse: ancient strategy and modern psychology, for everyday Indian life.** Indian wisdom (Chanakya, Arthashastra, Panchatantra, Hitopadesha, the Gita, the epics, Indian history) is the spine; psychology and global thinkers (behavioural science, Stoics, Sun Tzu, Machiavelli, Greene) are the lens. Every Reel = one real situation + one named idea + one move the viewer can use tomorrow. Never generic motivation, never a lecture.
+**Shlokwise — getting wise with Shlok: ancient strategy and modern psychology, for everyday Indian life.** Indian wisdom (Chanakya, Arthashastra, Panchatantra, Hitopadesha, the Gita, the epics, Indian history) is the spine; psychology and global thinkers (behavioural science, Stoics, Sun Tzu, Machiavelli, Greene) are the lens. Every Reel = one real situation + one named idea + one move the viewer can use tomorrow. Never generic motivation, never a lecture.
 
 ## 2. Series (pillars) and the weekly mix
 | Series | Pillar | Treatment (TREATMENTS.md) | Chapter tag | Typical sources |
@@ -71,7 +73,7 @@ Independent review (separate agent, CONTENT_STANDARDS §17.5 + `templates/review
   3. the named idea (bias, rule, concept) and its plain-English synonym;
   4. the source / character / text (e.g. "chanakya niti", "duryodhana envy", "bhagavad gita 2.14");
   5. the situation and audience (e.g. "office politics india", "desi family", "corporate life");
-  6. the series name, and "SutraVerse" last.
+  6. the series name, and "Shlokwise" last (BRAND.json brand_keyword). Never "SutraVerse".
   Research: hashtag-keyword-research skill, Instagram search autocomplete phrases visible in the week's outliers' captions, and the planner's search_phrase. Lower-case except proper nouns; each keyword 1–4 words; no duplicates or near-duplicates. Store the list on the slot as `seo_keywords`. YouTube descriptions carry the same list in the same bracket format (yt_upload.py builds it from meta "keywords").
 - Pinned first comment: the either/or question restated with two numbered options.
 - Comment-to-DM keyword per series (after Saumya enables Meta automations): RULE (Chanakya Files), FILE (Mind Games), EP (Office Shastra / Ghar Ki Baat), YEAR (Turning Points), FABLE (Panchatantra).
@@ -82,14 +84,14 @@ Account: weekly followers gained and profile visit → follow conversion (now ~0
 One controlled experiment per week (one variable: hook type, length, treatment, cover, CTA), logged in `plan.json` "experiments" with the result. Instagram doesn't expose per-second retention through the API: the weekly review asks Saumya for retention-graph screenshots of the best and worst Reel only when a diagnosis needs them.
 
 ## 12. Lessons from the competitor study (@balakheji, 9 Nov 2026; details in kb/competitors.md)
-Keep SutraVerse's identity (animated cast, Indian wisdom + verse, Hinglish). Adopt these mechanics:
+Keep our identity (animated cast, Indian wisdom + verse, Hinglish). Adopt these mechanics:
 1. **Emotional micro-conflict first.** The strongest topics are two-person moments every viewer has been on one side of (saying no to family, apologising, being left out, a friend's success, a boss's double standard). Each Reel's real_life_angle names who will SEND it to whom.
 2. **Open on a quoted line or a sensory image + a name**, never on context: "“Papa, maine purse khola nahi hai.”" / "Anil ke joote mein baarish ka paani bhar raha tha." Then flash back.
 3. **One source of authority per Reel**, said plainly: for us, the verse (the shloka card) plus at most one named book or study. No source lists on screen.
 4. **The exact words.** Every Reel ends with the character saying the better sentence (the script viewers can copy), then the verse, then the either/or. Captions repeat the sentence.
 5. **Pace and length:** calm, empathetic narration (≈ 120–135 words/min), soft score, 2–3 cuts per 10 s; 70–95 s when the story needs it. Calm is fine if every beat raises the stakes.
 6. **Numbered-course covers (test from week of 16 Nov):** a series-coloured card with the series tag + number and a 3–4 word Hinglish question in the viewer's words (one amber word), the same template every time, so the grid reads like a course. A/B against the face cover; keep the winner (see §10).
-7. **End card with a value promise:** "Roz ek kahaani, ek shloka — follow @sutraverselife" (≤ 2 s, after the either/or). No mid-video CTA.
+7. **End card with a value promise:** BRAND.json `end_card` ("Getting wise with Shlok. Follow @{ig}") (≤ 2 s, after the either/or). No mid-video CTA.
 8. **Shares and saves over comments:** a viral Reel can have almost no comments; judge Reels on skip rate, watch %, shares/1k and saves/1k.
 10. **YouTube = text seasons (from Balakheji's book seasons; @BalakheJi grew to 756 subscribers in 30 days on Shorts alone, 3.5 a day).** Every Short is numbered by the source text of its verse (kb/seasons.md: Bhagavad Gita - Lesson NN, Chanakya Niti - Rule NN, Panchatantra - Fable NN, Itihaas - Chapter NN). yt_title = "<emotional Hinglish hook with an ellipsis…> | <Text> - <Lesson/Rule/Fable/Chapter> NN #Shorts", ≤ 95 characters, problem first (supersedes the "≤ 60" title limit in the Reel and publisher task prompts; Saumya, 9 Nov). yt_playlist = the season's playlist. The Reel run takes the next number and records it in kb/seasons.md in its commit.
 11. **Emotional beats productivity.** On both his platforms the relationship book (Courage to Be Disliked) out-performed habits and power books 5–10×. Prefer relationship/family/self-worth angles inside every series.

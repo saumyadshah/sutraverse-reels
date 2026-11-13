@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Upload a SutraVerse video to YouTube as a Short (YouTube Data API v3, free).
+"""Upload a Shlokwise video to YouTube as a Short (YouTube Data API v3, free).
 
 Credentials come only from the environment and are never printed:
   YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN
@@ -14,7 +14,7 @@ Usage:
          "sources", "keywords": [...], "hashtags": ["#Topic", "#Scripture"], "tags": [...],
          "hi_title", "hi_description" (optional Hindi translations)}
       A legacy {"title", "description", "tags"} meta still works: the fixed brand block,
-      links and #SutraVerse are added if missing.
+      links and the brand hashtag are added if missing.
   python yt_upload.py --update <video id> --meta meta.json
       Rewrite an existing video's title, description, tags, category, languages and Hindi
       translation in place (needs the youtube.force-ssl scope on the refresh token).
@@ -45,25 +45,30 @@ UPLOAD_URL = ("https://www.googleapis.com/upload/youtube/v3/videos"
 
 # Fixed parts of Saumya's upload template (YouTube channel setup doc, 24 Oct 2026).
 # Studio "upload defaults" don't apply to API uploads, so the script adds them itself.
-BRAND = ("SutraVerse brings ancient Indian wisdom into modern life: real stories and shlokas from the "
-         "Bhagavad Gita, Ramayana, Mahabharata, Vedas, Upanishads and Puranas, explained simply, "
-         "with exact references.")
-LINKS = ("Subscribe for daily life lessons from ancient wisdom: "
-         "https://www.youtube.com/@sutraversehindu?sub_confirmation=1\n"
-         "Instagram: https://www.instagram.com/sutraverselife")
-DEFAULT_TAGS = ["SutraVerse", "Sutraverse Hindu", "ancient wisdom", "life lessons", "Hindu scriptures",
-                "shloka meaning", "Sanatan Dharma", "spiritual stories"]
-BRAND_KEYWORDS = ["SutraVerse", "Ancient Wisdom", "Life Lessons"]
+_B = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "BRAND.json"), encoding="utf-8"))
+NAME = _B["name"]                      # Shlokwise (13 Nov 2026; SutraVerse is someone else's trademark)
+YT = _B["youtube"]["handle"]           # current handle; BRAND.json switches it after the rename
+IG = _B["instagram"]["handle"]
+BRAND = (NAME + ": " + _B["tagline"] + ". Ancient Indian wisdom (Chanakya, the Gita, the epics, "
+         "Panchatantra, Indian history) meets modern psychology, for office, family and the mind: "
+         "real stories, one shlok and one lesson, with exact references.")
+LINKS = ("Subscribe and get wise with Shlok, one verse a day: "
+         "https://www.youtube.com/" + YT + "?sub_confirmation=1\n"
+         "Instagram: https://www.instagram.com/" + IG)
+DEFAULT_TAGS = [NAME, "getting wise with shlok", "ancient wisdom", "life lessons", "chanakya niti",
+                "shloka meaning", "indian psychology", "bhagavad gita lessons"]
+BRAND_KEYWORDS = [NAME, "Ancient Wisdom", "Life Lessons"]
+BRAND_TAG = _B["brand_hashtag"]
 
 
 def build_description(m):
     """Saumya's template, with the per-video fields filled from meta."""
     if m.get("description") and not m.get("hook"):
         d = m["description"].rstrip()
-        if "sutraverselife" not in d:
+        if IG.lower() not in d.lower():
             d += "\n\n" + BRAND + "\n\n" + LINKS
-        if "#sutraverse" not in d.lower():
-            d += "\n\n#SutraVerse"
+        if BRAND_TAG.lower() not in d.lower():
+            d += "\n\n" + BRAND_TAG
         return d
     parts = [m["hook"].strip() + "\n" + m.get("story", "").strip()]
     if m.get("shloka_devanagari"):
@@ -90,11 +95,12 @@ def build_description(m):
         parts.append("Sources: " + m["sources"].strip())
     # SEO keyword section (Saumya, 7 Nov 2026): content-specific keywords, comma-separated inside [ ]
     kws = [k.strip() for k in m.get("keywords", []) if k.strip()]
-    if not any(k.lower() == "sutraverse" for k in kws):
-        kws.append("SutraVerse")
+    kws = [k for k in kws if "sutraverse" not in k.lower()]   # never the old (third-party) name
+    if not any(k.lower() == NAME.lower() for k in kws):
+        kws.append(NAME)
     parts.append("[" + ", ".join(kws[:15]) + "]")
-    tags = ["#SutraVerse"] + [h if h.startswith("#") else "#" + h for h in m.get("hashtags", [])
-                              if h.lstrip("#").lower() != "sutraverse"][:2]
+    tags = [BRAND_TAG] + [h if h.startswith("#") else "#" + h for h in m.get("hashtags", [])
+                              if h.lstrip("#").lower() not in ("sutraverse", NAME.lower())][:2]
     parts.append(" ".join(tags))
     return "\n\n".join(p for p in parts if p.strip())
 
@@ -169,7 +175,7 @@ def ensure_playlist(tok, name):
         if not page:
             break
     body = {"snippet": {"title": name, "description": PLAYLIST_DESC.get(name, "") +
-                        "\n\nSutraVerse: ancient wisdom for modern life.", "defaultLanguage": "en"},
+                        "\n\n" + NAME + ": " + _B["tagline"], "defaultLanguage": "en"},
             "status": {"privacyStatus": "public"}}
     r = json.load(req("https://www.googleapis.com/youtube/v3/playlists?part=snippet,status",
                       data=json.dumps(body).encode("utf-8"), method="POST",

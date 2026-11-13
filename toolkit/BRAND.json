@@ -1,0 +1,29 @@
+{
+  "_doc": "Single source of truth for everything viewers see (Saumya, 13 Nov 2026: SutraVerse is trademarked by another entity; the new brand is Shlokwise, final 13 Nov: 'Getting wise with Shlok', hence Shlokwise). Scripts and scheduled tasks read the name, lines and handles from here. Internal paths (sutraverse-reels repo, ~/.sutraverse_env, the 'sutraverse' skill) keep their names; they are never shown to viewers. Never put 'SutraVerse' in a caption, title, description, cover, frame, reply or bio.",
+  "name": "Shlokwise",
+  "wordmark": "SHLOKWISE",
+  "tagline": "Getting wise with Shlok",
+  "tagline_story": "Shlokwise = getting wise with Shlok: every Reel takes one real shlok (verse) and turns it into one lesson for office, family and the mind.",
+  "signature_hi": "Har shlok, ek sabak.",
+  "signature_en": "Every shlok, a lesson.",
+  "positioning": "Shlokwise: getting wise with Shlok. Ancient Indian wisdom and modern psychology for everyday life, one shlok and one sabak at a time.",
+  "follow_line": "Follow @{ig}: getting wise with Shlok, one verse a day",
+  "end_card": "Getting wise with Shlok. Follow @{ig}",
+  "brand_hashtag": "#Shlokwise",
+  "brand_keyword": "Shlokwise",
+  "instagram": {
+    "handle": "sutraverselife",
+    "target_handle": "shlokwise",
+    "switched": false,
+    "platformAccountId": "29332480083003093",
+    "display_name": "Shlokwise | Getting Wise With Shlok"
+  },
+  "youtube": {
+    "handle": "@sutraversehindu",
+    "target_handle": "@shlokwise",
+    "switched": false,
+    "channel_id": "UClp0hIIwbvwByw7_UQrJmhQ",
+    "display_name": "Shlokwise"
+  },
+  "cutover_note": "Saumya renames the accounts herself. Until 'switched' is true, @{ig} and the YouTube link use the current handle (the old @ keeps working); when she confirms the new handle, set handle = the new one and switched = true."
+}

@@ -37,7 +37,7 @@ export const SHOTS = [
   { t0: 15.8, t1: 20, tag: { n: 'THE MOVE', t: 'OPTION C', kind: 'resolve' },
     draw: (H) => { const { g } = H; g.fillStyle = '#0F0E12'; g.fillRect(0, 0, 1080, 1920); H.glow(540, 700, 700, '#2BA39A', .12); },
     html: (lt) => `<div class="opt" style="top:420px;color:#2BA39A;opacity:${H_eo(lt - .2)}"><span class="k">OPTION C</span>Send the deck to the CXO, with your name on it, <i>before</i> the meeting.</div>
-      <div class="sv2-principle" style="top:900px;opacity:${H_eo(lt - 1.2)}"><div class="k">THE IDEA</div><div class="l">Don't argue for credit. <em>Timestamp it.</em></div><div class="src">SUTRAVERSE · OFFICE SHASTRA × CHANAKYA FILES · PILOT</div></div>
-      <div style="position:absolute;left:0;right:0;bottom:300px;display:flex;justify-content:center;opacity:${H_eo(lt - 2.6)}"><span class="sv2-word"><span>SUTRAVERSE</span></span></div>` },
+      <div class="sv2-principle" style="top:900px;opacity:${H_eo(lt - 1.2)}"><div class="k">AAJ KA SABAK</div><div class="l">Don't argue for credit. <em>Timestamp it.</em></div><div class="src">SHLOKWISE · OFFICE SHASTRA × CHANAKYA FILES · PILOT</div></div>
+      <div style="position:absolute;left:0;right:0;bottom:300px;display:flex;justify-content:center;opacity:${H_eo(lt - 2.6)}"><span class="sv2-word"><span>SHLOKWISE</span></span></div>` },
 ];
 function H_eo(x) { x = Math.max(0, Math.min(1, x / 0.45)); return 1 - Math.pow(1 - x, 3); }

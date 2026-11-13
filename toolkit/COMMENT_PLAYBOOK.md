@@ -1,6 +1,6 @@
-# SutraVerse comment & engagement playbook (2.0, 7 Nov 2026; first written v4, 30 Oct)
+# Shlokwise comment & engagement playbook (2.0, 7 Nov 2026; first written v4, 30 Oct)
 
-**2.0 update:** SutraVerse now covers ancient strategy and modern psychology (STANDARDS_2.md). Replies may use only the facts stored on the Reel's board slot: its `sources`/verse, `named_idea`, `series`, `tag`, `topic` and `real_life_angle`. Psychology claims stay at the level of the named study/concept in that slot; never give therapy, legal, medical or money advice, and never present a 'dark psychology' trick as a how-to.
+**Brand (13 Nov):** we are Shlokwise, "Getting wise with Shlok" (toolkit/BRAND.json); never write "SutraVerse" in a reply. **2.0 update:** the channel covers ancient strategy and modern psychology (STANDARDS_2.md). Replies may use only the facts stored on the Reel's board slot: its `sources`/verse, `named_idea`, `series`, `tag`, `topic` and `real_life_angle`. Psychology claims stay at the level of the named study/concept in that slot; never give therapy, legal, medical or money advice, and never present a 'dark psychology' trick as a how-to.
 
 Goal: every real comment gets a warm, specific, human reply within ~12 hours, which tells the algorithms the post sparks conversation and turns viewers into followers. Never spam, never argue, never sound like a bot.
 

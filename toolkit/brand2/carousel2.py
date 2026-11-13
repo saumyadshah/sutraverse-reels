@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SutraVerse 2.0 carousel renderer ("Lamp & Ink"), 1080x1350 slides.
+"""Shlokwise carousel renderer (2.0 kit) ("Lamp & Ink"), 1080x1350 slides.
 
   python3 toolkit/brand2/carousel2.py spec.json out_dir
 
@@ -12,6 +12,10 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 KIT = Path(__file__).resolve().parent
+BRAND = json.loads((KIT.parent / "BRAND.json").read_text())
+IG = BRAND["instagram"]["handle"]
+WORD = html.escape(BRAND["wordmark"])
+SIG = html.escape(BRAND["tagline"])
 
 
 def md(s):
@@ -55,7 +59,7 @@ canvas.cast { position: absolute; right: -40px; bottom: 0; z-index: 2; }
 
 def slide_html(s, i, n, spec):
     t = s.get("type", "point")
-    top = (f'<div class="top"><div class="sv2-word word"><span>SUTRAVERSE</span></div>'
+    top = (f'<div class="top"><div class="sv2-word word"><span>{html.escape(BRAND["wordmark"])}</span></div>'
            f'<div class="sv2-chip chip">{html.escape(spec.get("series", ""))}</div></div>')
     foot = f'<div class="pg">{i:02d}/{n:02d}</div>' + ('<div class="sw">SWIPE &rarr;</div>' if i < n else "")
     if t == "cover":
@@ -79,7 +83,7 @@ def slide_html(s, i, n, spec):
         inner = (f'<div class="box" style="gap:40px;justify-content:center">'
                  f'<div class="k">{html.escape(s.get("kicker", ""))}</div><h2 style="font-size:92px">{md(s.get("title"))}</h2>'
                  f'<div class="rule" style="background:var(--teal)"></div><div class="sub">{md(s.get("sub"))}</div>'
-                 f'<div class="cta-foot">@sutraverselife · ancient strategy &amp; modern psychology</div></div>')
+                 f'<div class="cta-foot">@{html.escape(IG)} · {SIG}</div></div>')
         return f'<div class="s">{top}{inner}{foot}</div>'
     num = f'<div class="num">{html.escape(s["n"]).zfill(2)}</div>' if s.get("n") else ""
     ref = f'<div class="ref">{html.escape(s["ref"])}</div>' if s.get("ref") else ""
