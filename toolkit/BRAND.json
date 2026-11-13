@@ -12,16 +12,16 @@
   "brand_hashtag": "#Shlokwise",
   "brand_keyword": "Shlokwise",
   "instagram": {
-    "handle": "sutraverselife",
+    "handle": "shlokwise",
     "target_handle": "shlokwise",
-    "switched": false,
+    "switched": true,
     "platformAccountId": "29332480083003093",
     "display_name": "Shlokwise | Getting Wise With Shlok"
   },
   "youtube": {
-    "handle": "@sutraversehindu",
+    "handle": "@shlokwise",
     "target_handle": "@shlokwise",
-    "switched": false,
+    "switched": true,
     "channel_id": "UClp0hIIwbvwByw7_UQrJmhQ",
     "display_name": "Shlokwise"
   },
