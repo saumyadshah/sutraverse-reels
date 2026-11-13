@@ -159,6 +159,55 @@
       },
       "browW": 0.02,
       "eyeOpen": 1.0
+    },
+    "aarav": {
+      "role": "Ghar Ki Baat / Panchatantra Reloaded: Aarav, 15, Kabir and Tanvi's youngest brother, Class 10 in Indore. Doodles in the margins, switches off at lectures, lights up at a story.",
+      "series": "family",
+      "skin": 3,
+      "hair": "side",
+      "headW": 0.4,
+      "jaw": 0.24,
+      "age": 15,
+      "hairCol": "#120D0A",
+      "eyeOpen": 1.05,
+      "browW": 0.02,
+      "shoulders": 0.85,
+      "outfit": {
+        "style": "tee",
+        "color": "#2F7D78"
+      }
+    }
+  },
+  "puppets": {
+    "_doc": "Lamp Theatre (Panchatantra Reloaded) puppets: original jointed dyed-hide designs drawn by the Reel's shots.js puppet() helper (profile, rods, carved holes). Not CAST2 rig characters; same parameters every Reel.",
+    "vishnusharman": {
+      "role": "the old teacher of the Panchatantra frame story; open-cut face, white beard piece, staff",
+      "dye": "#C9822E",
+      "sleeve": "#7A4A22",
+      "beard": true,
+      "staff": true,
+      "height": 1.0,
+      "hunch": 0.18
+    },
+    "amarashakti": {
+      "role": "King Amarashakti of Mahilaropya; tall crown, solid face",
+      "dye": "#B8402A",
+      "sleeve": "#D49A2A",
+      "crown": true,
+      "height": 1.08,
+      "hunch": 0
+    },
+    "prince": {
+      "role": "the three princes (same cut, three dyes); small crowns, slumped",
+      "dye": [
+        "#4F7A3A",
+        "#3D5C8C",
+        "#8C4A6A"
+      ],
+      "sleeve": "#D9A84A",
+      "crown": "small",
+      "height": 0.78,
+      "hunch": 0.1
     }
   }
 }
