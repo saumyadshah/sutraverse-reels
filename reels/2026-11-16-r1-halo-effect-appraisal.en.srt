@@ -1,75 +1,92 @@
 1
-00:00:00,200 --> 00:00:04,510
-“Rohan ‘exceeds’. He’s in every meeting.”
+00:00:00,220 --> 00:00:04,149
+“Rohan ‘exceeds’. He’s
+in every meeting.”
 
 2
-00:00:04,510 --> 00:00:06,815
-Kabir asked just one thing… “And the work, sir?”
+00:00:04,239 --> 00:00:06,499
+Kabir asked just one thing…
 
 3
-00:00:06,815 --> 00:00:09,215
-Appraisal week. Kabir shipped the fix…
+00:00:06,499 --> 00:00:08,309
+“And the work, sir?”
 
 4
-00:00:09,215 --> 00:00:10,939
-Rohan did the talking in meetings.
+00:00:08,309 --> 00:00:10,289
+Appraisal week. Kabir
+shipped the payments fix…
 
 5
-00:00:10,939 --> 00:00:12,903
-Rating the work…
+00:00:10,289 --> 00:00:11,718
+Rohan did the talking in meetings.
 
 6
-00:00:12,903 --> 00:00:15,172
-or the face?
+00:00:11,718 --> 00:00:14,620
+So what got rated—
+the work, or the face?
 
 7
-00:00:15,208 --> 00:00:16,754
+00:00:14,840 --> 00:00:16,600
 It’s the halo effect—
 
 8
-00:00:16,754 --> 00:00:23,709
-Thorndike, 1920. One overall impression colours every separate rating.
+00:00:16,600 --> 00:00:19,390
+Thorndike, 1920.
+One good impression…
 
 9
-00:00:23,709 --> 00:00:24,891
-Visibility shines…
+00:00:19,390 --> 00:00:21,260
+spills onto every separate rating.
 
 10
-00:00:24,891 --> 00:00:28,173
-so ownership, quality, teamwork— all go up.
+00:00:21,260 --> 00:00:22,940
+Visibility shines…
 
 11
-00:00:28,173 --> 00:00:32,449
-Fight it: ‘attitude’. Stay quiet: ‘meets’.
+00:00:22,940 --> 00:00:25,980
+so ownership, quality,
+teamwork— all go up.
 
 12
-00:00:32,449 --> 00:00:36,323
-Riya: a one-page evidence doc, before calibration.
+00:00:25,980 --> 00:00:29,737
+Fight it: ‘attitude’.
+Stay quiet: ‘meets’ again.
 
 13
-00:00:36,323 --> 00:00:42,641
-Kabir wrote: “Sir, before the rating, please look at three things:
+00:00:29,737 --> 00:00:34,925
+Riya’s third way: a one-page
+evidence doc, before calibration.
 
 14
-00:00:42,641 --> 00:00:44,678
-work, impact, date.”
+00:00:34,925 --> 00:00:39,522
+Kabir wrote: “Sir, before the
+rating, please look at three
+things…
 
 15
-00:00:44,678 --> 00:00:55,315
-Chanakya Niti: guṇair uttamatāṁ yāti, noccair āsana-saṁsthitaḥ…
+00:00:39,522 --> 00:00:41,340
+work, impact, date.”
 
 16
-00:00:55,315 --> 00:00:58,947
-You rise by your qualities, not a high seat.
+00:00:41,410 --> 00:00:45,892
+Chanakya Niti: guṇair uttamatāṁ
+yāti, noccair āsana-saṁsthitaḥ.
 
 17
-00:00:58,947 --> 00:01:03,386
-A crow on a palace top… isn’t Garuda.
+00:00:45,892 --> 00:00:50,792
+You rise by qualities, not a high
+seat. A crow on a palace top…
 
 18
-00:01:03,386 --> 00:01:05,067
-The meeting room is that palace top.
+00:00:50,792 --> 00:00:52,130
+doesn’t become Garuda.
 
 19
-00:01:05,067 --> 00:01:10,105
-Your move: send the evidence doc… or wait for the rating?
+00:00:52,130 --> 00:00:54,916
+The meeting room is
+just that palace top.
+
+20
+00:00:55,036 --> 00:00:58,686
+Your move: send the evidence doc…
+or wait for the rating?
