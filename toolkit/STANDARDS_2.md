@@ -97,6 +97,21 @@ Keep our identity (animated cast, Indian wisdom + verse, Hinglish). Adopt these 
 11. **Emotional beats productivity.** On both his platforms the relationship book (Courage to Be Disliked) out-performed habits and power books 5–10×. Prefer relationship/family/self-worth angles inside every series.
 9. **Volume ramps with quality:** 1 a day now; 2 a day only once three weeks in a row hit skip ≤ 33% and watch ≥ 40%.
 
+## 13. VIRAL CUT — hard gates before "ready" (Saumya, 14 Nov 2026: "make sure it is proper, catchy, viral")
+
+Context: Office Shastra EP 03's first cuts opened on two static faces with small UI text, held shots 5–15 s (the verse card ~15 s), carried meaning in tiny mono text and ended on a faded end card. These rules override §3/§4/§12 wherever they conflict (incl. the 45–75 s / 70–95 s lengths).
+
+1. **0–1.5 s = the hook card.** The conflict in ≤ 8 words, ≥ 96 px, one vermilion word, over the most emotional image (a reacting face, the stamp, the screen). A hit (stamp/whoosh/impact) by 1.0 s. The first spoken words ARE the hook. No series intro, no title card, no small UI card in the first 3 s.
+2. **Pattern interrupts.** A visual change (cut, push-in, whip, stamp, pop, new prop) every ≤ 2 s in the first 10 s, then every ≤ 3 s. No shot held > 4 s — the verse card included.
+3. **Captions people can read at a glance.** Kinetic word-group captions, ≥ 56 px, ≤ 5 words per card, the key word highlighted. Anything that must be read is ≥ 40 px and stays ≥ 1.5 s; small mono labels are decoration only.
+4. **Length 35–50 s** (Turning Points and Panchatantra Reloaded ≤ 60 s). Script ≈ 95–125 Hinglish words. Cut every line that doesn't raise the stakes or pay off.
+5. **Characters act.** Expressions change on the beats (worried → stung → resolved), heads are never cropped at the top, bodies never cut awkwardly at the shoulders; every character shot moves (push-in, head turn, blink, gesture). Two characters in one shot must look clearly different (hair, outfit colour, build).
+6. **Verse ≤ 8 s and inside the story:** shown over the scene it explains (e.g. the crow lands on the meeting-room table), one Devanagari line + one English line; the full reference goes in the caption.
+7. **One screenshot-worthy payoff frame** (the template / line / framework), held 2 s, with a small "Save this" cue.
+8. **Ending:** the either/or question as big text (1 or 2), then the BRAND.json end card at full opacity for ≥ 1.5 s.
+9. **Sound:** an impact on the hook, a rise under the conflict, a drop/resolve on the payoff; voice always on top.
+10. **Gate:** the final review (templates/review.md) scores Hook and Retention; both must be ≥ 4 or the run recuts (max 2 rounds). Before rendering, write the shot list with timestamps and check rules 1–8 against it.
+
 ## 11. Skills (lean set; load only these)
 - Plan: content-research (outliers), trend-spotter, series-planner, hook-mining (monthly), content-pillar-builder (monthly).
 - Reel: sutraverse (voice, captions, publishing), virality (hook checklist), ab-hook-tester, on-screen-text-writer, cta-writer, Lemo-Opuscar guides (DIRECTOR.md, TECHNIQUE.md, the treatment's base STYLE.md).

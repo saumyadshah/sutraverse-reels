@@ -20,10 +20,12 @@ and what is the one message? (If this doesn't match the shot list's "message", S
 | 5 | **Infographics / explainer visuals** (or the verse card): accurate, one idea per screen, clear hierarchy, labelled, animation explains rather than decorates | | | |
 | 6 | **Layout + readability**: grid alignment, spacing, nothing clipped or overlapping, text ≥ 30 px and readable at phone size, subtitles always on the plate, safe zones respected | | | |
 | 7 | **Animation**: every shot moves with purpose (acting, camera, reveal); timing lands on the words; nothing static > 3 s; nothing distracting | | | |
+| 9 | **Hook (first 2 s, STANDARDS_2 §13)**: frame 0 shows the conflict as ≤ 8 big words (≥ 96 px) over an emotional image; a hit/stamp/SFX lands by 1 s; the first spoken words are the hook; no intro card, no small UI text in the first 3 s. Would a stranger stop scrolling? | | | |
+| 10 | **Retention / pace (§13)**: a visual change every ≤ 2 s in the first 10 s and ≤ 3 s after; no shot held > 4 s (verse card included); length 35–50 s (Turning Points / fables ≤ 60 s); big kinetic captions (≥ 56 px, ≤ 5 words); one screenshot-worthy payoff frame; end card fully visible | | | |
 | 8 | **Overall polish**: palette and typography on brand; feels cinematic and finished; would we be proud to pin it | | | |
 
 ## 3. Verdict
-- PASS only if: Factual accuracy = 5 and every other category ≥ 4.
+- PASS only if: Factual accuracy = 5, Hook ≥ 4, Retention ≥ 4, and every other category ≥ 4. Hook or Retention below 4 is never "posted anyway" without at least one full fix round that recuts the opening/pace.
 - Otherwise list the fixes in priority order (max 8), each tied to a shot id and a concrete change.
 - After fixes, re-render and run the review again (max 2 rounds). Still below the bar → fix any factual issue by cutting or rewording it, log the remaining scores on the slot, and post anyway (AUTO-PUBLISH, Saumya 1 Nov). Never "needs_review".
 
