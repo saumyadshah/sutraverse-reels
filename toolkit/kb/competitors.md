@@ -41,3 +41,25 @@ Updated by the weekly growth review (Saturday). Facts are marked **[verified]** 
 
 ## How to use this file
 The growth review appends one dated block a week: new Reels, plays, any new format or series, and 1–3 transferable patterns. The planner reads the latest block and the "insights" on the board.
+
+## @balakheji: week of 9 Nov 2026 (growth review 14 Nov)
+Instagram couldn't be read this week: vidIQ was at 0 credits (resets 17 Nov) and the public profile returned HTTP 429. Everything below comes from their YouTube mirror (@BalakheJi, YouTube Data API, read 14 Nov), which repeats the Instagram Reels.
+- **Growth [verified]:** 7,510 subscribers and 721.8K channel views (was 756 subs / 78.2K views on 8–9 Nov), so about 10× in 6 days; 133 videos.
+- **Volume [verified]:** 20 Shorts from 8–13 Nov (about 3.3 a day). Median 12.3K views, up from about 3K for their 3–7 Nov Shorts.
+- **Breakouts [verified]:**
+  - Courage to Be Disliked L17 "Bhai Ka Naya Phone… Apne Joote Cancel": 184K, 15× the median.
+  - An unnumbered Short, "Sabki zimmedaari uthaane waale bade bete ki… apni baari kab aayegi?": 60.9K.
+  - L25 "Sab Hans Rahe The… Woh Chup Ho Gayi": 56.9K.
+  - L21 "Report Bhej Di Thi… Phir Bhi Laptop Khula Tha": 55.6K.
+  - Richest Man in Babylon L01 "Salary Sirf 5 Din Late Thi…": 50.2K.
+- **New season [verified]:** *The Richest Man in Babylon*, Lessons 01–09, 11–13 Nov, about 3–4 a day. It's a money book, but told as family/sibling moments: "Beti Ki Shaadi, Papa Ki Retirement Ka Paisa?" 14.9K, "Tumhaara TV Zaroorat, Mera Sofa Fizoolkharchi?" 13.1K, "Chhote Bhai Ki Salary Zyaada Ho Gayi…" 4.2K. *Courage to Be Disliked* ended at Lesson 25 (about 2.5 weeks per book).
+- **Format tests [verified]:**
+  - First long-form video, "How to Stop Procrastinating" (4:24, 10 Nov): 350 views. It flopped next to their Shorts.
+  - Some titles dropped the book name (L20–22) or the season entirely (the "bade bete" Short); those still did well.
+  - Lengths are steady at 59 s – 1:41, mostly 1:09–1:19.
+  - Comments stay near 0 (max 33 on 184K).
+- **Title pattern [verified]:** "<concrete object/detail + time> … <the emotional turn>" ("Report bhej di thi… phir bhi laptop khula tha", "Parking khaali thi… phir bhi restaurant badal diya"): an everyday physical detail, an ellipsis, then the contradiction.
+- **Transferable patterns:**
+  1. **[hypothesis]** A money topic works when it's a two-person family moment (whose spending is "need" vs "waste", the elder son's turn, the sibling who earns more). For us: put Ghar Ki Baat money stories (and Chanakya on wealth) inside a sibling or parent conflict, never as a finance tip.
+  2. **[hypothesis]** Hooks and titles built as "small concrete detail… contradiction" (laptop still open after the report was sent) beat abstract questions. Our RULE 01 ("Ghar chamak raha tha, par Maa-Papa chup the…") already fits and was our best Short (654). Use this shape for yt_title and cover lines.
+  3. **[hypothesis]** A season of one source for about 20–25 numbered Shorts, then a new source, keeps the series fresh without breaking the habit. For us: Chanakya Niti Rules run as a long season; consider a second YouTube season once Rule NN passes about 20.

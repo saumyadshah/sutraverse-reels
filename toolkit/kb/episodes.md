@@ -39,3 +39,15 @@ Old era (v1–v5, 21 Oct – 6 Nov 2026) for continuity: don't retell these stor
 | 11-12 | Chanakya Files | RULE 01 | 3 signs of a home Lakshmi enters on her own: fools not honoured, grain stored, no quarrel between spouses (none about cleaning); Diwali-puja couple's fight | Chanakya Niti 3.21 (Niti-darpana numbering; vedapath; Bhaktivedanta lecture 1975) | maa, papa (new), tanvi, chanakya | | | |
 | 11-13 | Chanakya Files | RULE 02 | Test a person like gold: sacrifice, conduct, qualities, actions — confidence isn't on the list; Riya asks to see both candidates' work (hiring on vibes) | Chanakya Niti 5.2 (Niti-darpana numbering; Vedapath; Patheos); Schmidt & Hunter 1998 (Psych. Bulletin 124(2)) | malhotra, rohan (new), sana (new), riya, chanakya | | | |
 | 11-14 | Panchatantra Reloaded | FABLE 01 | Stories teach what lectures can't (narrative transportation): Children's Day, 'Tumse kuch nahi hoga'; Vishnusharma refuses the reward, 6 months, stories; Kabir: 'Papa, skip the lecture. Let me tell him a story.' | Panchatantra Kathamukha (BVKS tr.; Olivelle 1997); Hitopadesha Prastavika 8 (wisdomlib; Satya Narayana Dasa); Green & Brock 2000 (JPSP 79(5)) | papa, aarav (new), kabir, puppets: amarashakti, princes, vishnusharman (new) | | | |
+
+### 2.0 results (growth review 14 Nov 2026; lifetime as of 14 Nov morning; follows are account-level only, Instagram doesn't give them per Reel)
+| Date | Series | Tag | Named idea | Verse | Plays | Skip % | Watch % | Shares/1k | Saves/1k | Comments/1k | Follows |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 11-08 | Office Shastra | EP 01 | Credit theft: timestamp it | Chanakya Niti 2.7 | 4,994 | 37.0 | 37.1 | 6.6 | 15.2 | 0.0 | n/a |
+| 11-09 | Office Shastra | EP 02 | The positive no (Ury) | n/a | 5,054 | 33.3 | 39.5 | 12.5 | 15.8 | 0.0 | n/a |
+| 11-10 | Mind Games | FILE 01 | Envy / upward comparison (Festinger) | Yoga Sutras 1.33 | 1,889 | 44.7 | 17.3 | 0.5 | 3.2 | 0.0 | n/a |
+| 11-11 | Mind Games | FILE 02 | Reaching-out gap (Liu et al. 2022) | Atharvaveda 3.30.3 | 1,472 | 39.8 | 19.6 | 2.7 | 2.0 | 0.0 | n/a |
+| 11-12 | Chanakya Files | RULE 01 | Lakshmi's 3 signs of a home | Chanakya Niti 3.21 | 6,968 | 28.4 | 34.8 | 30.9 | 16.1 | 0.0 | n/a |
+| 11-13 | Chanakya Files | RULE 02 | Test a person like gold | Chanakya Niti 5.2 | 3,811 | 34.6 | 45.4 | 10.0 | 19.2 | 0.0 | n/a |
+
+Week of 9 Nov: 73 follows, 3 unfollows (net +70, 36 → 106). Daily gains (Instagram day, Pacific time): 7 Nov +30, 8 Nov +21 (EP 01 + EP 02), 9 Nov +2, 10 Nov +4, 11 Nov +15 (RULE 01), 12 Nov 0. FABLE 01 (14 Nov 18:00) is scored next week.
