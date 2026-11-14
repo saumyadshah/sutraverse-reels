@@ -371,6 +371,27 @@ def gemini_line_starts(pcm: np.ndarray, sr: int, texts: list[str], timeout: int 
     return arr
 
 
+def gemini_extra_speech(pcm: np.ndarray, sr: int, script: str, direction: str = "", timeout: int = 240) -> dict | None:
+    """Listen-check for the 14 Nov bug: Gemini TTS sometimes READS the delivery direction aloud.
+    Asks Gemini (audio understanding) whether the narrator says anything that is not in the script.
+    Returns {"extra": bool, "text": str, "before_first_line_s": float} or None if the check could not run."""
+    prompt = ("This audio should contain ONLY a narrator reading the script below (Hindi/Hinglish, maybe a Sanskrit verse). "
+              "Listen carefully. Does the narrator speak ANY words that are NOT in the script, for example English "
+              "instructions about how to speak (tone, pace, pauses, 'storyteller', 'warm', 'speak', 'read this')? "
+              "Ignore tiny pronunciation differences. Return ONLY JSON: {\"extra\": true/false, \"text\": \"the extra words, if any\", "
+              "\"before_first_line_s\": seconds of extra speech before the first script word (0 if none)}.\n\nSCRIPT:\n" + script)
+    if direction:
+        prompt += "\n\nThe delivery direction that must NOT be spoken was: " + direction
+    r = _gemini_json(pcm, sr, prompt, timeout)
+    if not isinstance(r, dict) or "extra" not in r:
+        return None
+    try:
+        r["before_first_line_s"] = float(r.get("before_first_line_s") or 0)
+    except Exception:
+        r["before_first_line_s"] = 0.0
+    return r
+
+
 def cut_points(pcm: np.ndarray, sr: int, prior_starts: list[float], window: float = 1.3) -> list[float] | None:
     """Pick, for every line boundary, the silence that best matches the prior (longer silences preferred)."""
     segs = speech_segments(pcm, sr)

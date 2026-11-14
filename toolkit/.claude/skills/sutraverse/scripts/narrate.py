@@ -67,6 +67,17 @@ def pick_voice(cfg: dict, tool_override: str | None, voice_override: str | None)
              "\nFix: python -m tools.audio.sherpa_onnx_tts --download hi_rohan  (free, offline)")
 
 
+def gemini_direction(speed: float = 1.0) -> str:
+    """One short line ending in a colon. Long multi-sentence directions get READ ALOUD by Gemini TTS
+    (14 Nov: a Reel's voice-over contained the instructions), so the full STYLE_PROMPT is never sent verbatim."""
+    first = re.split(r"(?<=[.!?])\s", " ".join(STYLE_PROMPT.split()))[0].rstrip(".!? ") if STYLE_PROMPT else ""
+    first = re.sub(r"^(speak|say|read)\s+", "", first, flags=re.I)
+    words = first.split()[:16]
+    tone = " ".join(words) or "natural, conversational Hindi, like a warm storyteller talking to a friend"
+    pace = ", a little faster" if speed > 1.02 else ", a little slower" if speed < 0.97 else ""
+    return f"Read aloud ONLY the script that follows, as {tone}{pace}:"
+
+
 def tts_inputs(tool_name: str, voice: str, text: str, out: Path, speed: float) -> dict:
     if tool_name == "sherpa_onnx_tts":
         return {"text": text, "voice": voice, "speed": speed, "output_path": str(out)}
@@ -76,7 +87,7 @@ def tts_inputs(tool_name: str, voice: str, text: str, out: Path, speed: float) -
     if tool_name == "google_tts":
         return {"text": text, "voice": voice, "language_code": "hi-IN", "speaking_rate": speed, "output_path": str(out)}
     if tool_name == "gemini_tts":
-        style = STYLE_PROMPT + (" Speak a little faster." if speed > 1.02 else " Speak a little slower." if speed < 0.97 else "")
+        style = gemini_direction(speed)
         d = {"text": text, "voice_id": voice or "Charon", "style": style, "output_path": str(out)}
         if TTS_MODEL:
             d["model_id"] = TTS_MODEL
@@ -157,6 +168,43 @@ def single_take(tool, voice, lines, lines_dir, speed, script, vcfg) -> dict:
             return {}
         stamp.write_text(text + "|" + STYLE_PROMPT, encoding="utf-8")
     raw = load_pcm(full)
+    # LEAK GUARD (14 Nov): never let spoken instructions into a Reel. Retake up to 3 times; if a preamble
+    # still leaks only BEFORE the first line, trim it; anything else stops the run (the Reel must not post).
+    if tool.name == "gemini_tts":
+        trim = 0.0
+        for attempt in range(4):
+            chk = AL.gemini_extra_speech(raw, SR, text, gemini_direction(speed))
+            if chk is None:
+                print("  leak guard: Gemini listen-check unavailable; relying on the run's own listen-check")
+                break
+            if not chk.get("extra"):
+                print("  leak guard: clean take (no spoken instructions)")
+                break
+            print(f"  leak guard: take {attempt + 1} contains extra speech: {str(chk.get('text', ''))[:120]!r}")
+            (lines_dir / "_line_starts.json").unlink(missing_ok=True)
+            if attempt < 3:
+                r = run_tts(tool, tts_inputs(tool.name, voice, text, full, speed), timeout_s=300, attempts=2)
+                if not r.success:
+                    sys.exit(f"LEAK GUARD: retake failed ({r.error}); the voice-over is not publishable")
+                raw = load_pcm(full)
+                continue
+            if chk.get("before_first_line_s", 0) > 0.3:
+                trim = float(chk["before_first_line_s"])
+                print(f"  leak guard: trimming {trim:.2f}s of spoken instructions before the first line")
+            else:
+                stamp.unlink(missing_ok=True)
+                sys.exit("LEAK GUARD: the voice-over still contains spoken instructions after 4 takes; not publishable")
+        if trim:
+            segs = AL.speech_segments(raw, SR)
+            gaps = [g for g in AL.gaps_from(segs, min_gap=0.12) if g[0] >= trim - 0.6]
+            cut = (gaps[0][1] - 0.03) if gaps else trim
+            raw = raw[int(cut * SR):]
+            chk = AL.gemini_extra_speech(raw, SR, text, gemini_direction(speed))
+            if chk and chk.get("extra"):
+                stamp.unlink(missing_ok=True)
+                sys.exit("LEAK GUARD: spoken instructions remain after trimming; not publishable")
+            import soundfile as _sf2
+            _sf2.write(str(full), raw, SR)
     texts = [l.get("hi_tts", l["hi"]) for l in lines]
     # 1) coarse: find where each line starts in the RAW take (natural pauses), then cut in the silences.
     #    Gemini audio understanding gives the line order/positions; local pause-anchored alignment is the fallback.
