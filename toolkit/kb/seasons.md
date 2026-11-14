@@ -5,7 +5,7 @@ Each Short is also numbered by the source text of its verse card. The Reel run t
 | Season (playlist) | Title label | Used by | Last number |
 |---|---|---|---|
 | Gita for Everyday Life | Bhagavad Gita - Lesson NN | any series whose verse is from the Gita | 00 |
-| Chanakya Niti Rules | Chanakya Niti - Rule NN | Chanakya Files (and any Reel whose verse is Chanakya Niti) | 02 |
+| Chanakya Niti Rules | Chanakya Niti - Rule NN | Chanakya Files (and any Reel whose verse is Chanakya Niti) | 03 |
 | Panchatantra for Adults | Panchatantra - Fable NN | Panchatantra Reloaded | 01 |
 | Itihaas | Itihaas - Chapter NN | Turning Points | 01 |
 | Niti & Upanishad (other texts) | <Text> - Lesson NN | Vidura Niti, Upanishads, Yoga Sutras, Subhashitas, Rigveda, Atharvaveda | 02 |
@@ -17,3 +17,4 @@ Log (date · slot · season · number):
 - 2026-11-12 · 2026-11-13-r1 · Chanakya Niti Rules · Chanakya Niti - Rule 02 (Chanakya Niti 5.2)
 - 2026-11-13 · 2026-11-14-r2 · Panchatantra for Adults · Panchatantra - Fable 01 (Hitopadesha, Prastavika 8; Panchatantra Kathamukha)
 - 2026-11-14 · 2026-11-15-r1 · Itihaas · Itihaas - Chapter 01 (Chanakya Niti 1.6; 1991 gold pledge)
+- 2026-11-14 · 2026-11-16-r1 · Chanakya Niti Rules · Chanakya Niti - Rule 03 (Chanakya Niti 16.6)
