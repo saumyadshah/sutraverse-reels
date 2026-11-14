@@ -1,7 +1,7 @@
 # Backlog by series (verify every source before production; "verify" = numbering/details to check)
 
 ## Chanakya Files (RULE NN)
-- **Test a friend in adversity, a relative in calamity** (Chanakya Niti 1.11 in common numbering, verify): the friend who gives up his confirmed Chhath ticket. Hook seed: “Confirm ticket? Bhai, tu le ja.”
+- **Six faults that sink a career** (Vidura Niti, Udyoga Parva; verify ch.verse on BORI CE + Gita Press): “Kal se pakka.” Ye kal 2019 se chal raha hai.
 - **The four upayas (sama, dana, bheda, danda)** as a negotiation ladder (Arthashastra; verify book.chapter). Hook: a landlord dispute escalates in four messages.
 - **40 kinds of embezzlement** (Arthashastra 2.8, verify): "corporate fraud is 2,300 years old". Explainer: 4 of the 40 mapped to modern expense fraud.
 - **Spies and information asymmetry** (Arthashastra 1.11–12, verify): who in your office knows what before you do.
@@ -9,7 +9,7 @@
 - **Never reveal your plans** (Chanakya Niti 2.7): credit theft (pilot made 7 Nov).
 
 ## Mind Games (FILE NN)
-- **Spotlight effect** (Gilovich, Medvec & Savitsky 2000): "log kya kahenge" is mostly in your head. Strong fit with our best Reel.
+- **Illusion of transparency** (Gilovich, Savitsky & Medvec 1998, JPSP 75(2), verify): “Teri awaaz kaanp rahi thi.” Kisi ne notice nahi kiya tha. Verse: Gita 2.56 (verify).
 - **Social comparison** (Festinger 1954): their bonus ruins your Diwali.
 - **Foot-in-the-door** (Freedman & Fraser 1966): the "5-minute favour" boss.
 - **Sunk cost** (Arkes & Blumer 1985): Duryodhana and the five villages; the bad startup you won't quit.
@@ -20,7 +20,8 @@
 - **Gaslighting** (term from the 1944 film; recognise and defend only).
 
 ## Office Shastra (EP NN, cast: Riya, Kabir, Malhotra sir)
-- Appraisal halo: Malhotra rates Rohan 'exceeds' for being visible (halo effect, Thorndike 1920; verify).
+- The bell-curve meeting: Malhotra must put one person in the lowest band (forced ranking; 2026 press reports of a 5% lowest band in Indian IT, verify; no company on screen). Hook: “Kisi ek ko toh ‘below’ dena padega, Riya.”
+- The green dot: “Online toh the, reply kyun nahi kiya?” 11:40 pm (right to disconnect; Gita 6.16–17).
 - EP 01 Credit theft (pilot story; Option C: timestamp your work).
 - Client visit: “Ek gaana ho jaaye, Riya?” — the professional no, part 2 (trend: the Nov 2026 office Diwali dance debate; never show or name the real employee).
 - Appraisal season: the manager's favourite (callback to the leave-favouritism Reel, our best performer).
@@ -29,14 +30,15 @@
 - First salary number (Mind Games crossover: anchoring).
 
 ## Ghar Ki Baat (EP NN, cast: Maa, Papa, Dadi, Kabir/Riya as siblings)
+- The shagun ledger: “Unhone 1100 diye the, hum 501 denge?” (reciprocity norm, Gouldner 1960; wedding season).
+- The elder son's turn: “Kabir hai na, woh sambhaal lega.” (the eldest's load; competitor outlier 60.9K on this topic).
 - "Shaadi kab?" at every function: deflection that keeps the peace.
 - Lending money to a cousin (Chanakya on money + reciprocity).
-- Sharma ji ka beta: social comparison at home.
 - The family WhatsApp forward war (Rigveda 1.89.1 backlog idea).
 - Mom never says "proud of you" (callback to the Yashoda Reel, a top performer).
-- Kharna: “Maa, tum bas ritual karti ho” — the 36-hour waterless fast nobody counts as work (Chhath tradition labelled; Rigveda 1.50 Surya hymn, verify).
 
 ## Turning Points (CHAPTER N + year)
+- **c. 1947–49**: integrating 560+ princely states: patience and timing (Gita 18.63; maps per OPUSCAR, verify).
 - **c. 321 BCE**: a teacher and a young man bring down the Nandas (tradition + Greek sources; label legend vs record).
 - **c. 261 BCE**: Ashoka after Kalinga (Rock Edict XIII).
 - **1757**: Plassey, a battle decided before it began (Mir Jafar's deal).
@@ -45,13 +47,23 @@
 - **1980s**: Nirma vs the giants (Karsanbhai Patel): pricing as strategy.
 
 ## Panchatantra Reloaded (FABLE NN)
-- FABLE 02 (after the frame story, planned 14 Nov): the lion and the bull, two jackals break a friendship (Book 1); continue Aarav's arc.
+- The heron and the crab (Book 1): the 'helpful' middleman / too-good-to-be-true offers (Olivelle 1997, verify).
 - The monkey and the crocodile: when "trust me" is a trap (Book 4).
 - The blue jackal: the fake persona (Book 1).
 - The talkative tortoise: when silence saves you (Book 1).
 - The lion and the hare: brains over brawn (Book 1).
 - The brahmin's wife and the mongoose: acting in haste (Book 5).
 - The crows and the owls (Book 3): the defector who was a plant.
+
+## Planned (week of 16 Nov 2026) — moved out of the backlog
+- Office Shastra EP 03: appraisal halo — “Rohan ‘exceeds’ hai. Har meeting mein dikhta hai.” (Thorndike 1920; Chanakya Niti 16.6 crow on the palace top).
+- Mind Games FILE 03: spotlight effect — “Ye kurta pichhli shaadi mein bhi pehna tha na?” (Gilovich et al. 2000; Gita 12.18).
+- Ghar Ki Baat EP 01: “Sharma ji ki beti toh Canada mein settle ho gayi.” (Gita 3.35).
+- Chanakya Files RULE 03: six places a true friend stands by you, International Men's Day (Chanakya Niti 1.12 āture vyasane…).
+- Office Shastra EP 04: praise in public, correct in private — Sana, Riya, Malhotra (Gita 17.15; Edmondson 1999).
+- Panchatantra Reloaded FABLE 02: the lion, the bull and the whispering jackal — Aarav, Ishaan, Varun (Panchatantra Bk 1 opening verse).
+- Turning Points CHAPTER 2 · 1965: Shastri's skip-a-meal appeal (Gita 3.21).
+- Idea-library lines rescheduled: FILE 03 negativity bias → a later FILE; RULE 03 'don't announce plans' → callback only (Chanakya Niti 2.7 already used in EP 01); FABLE 02 monkey & crocodile → FABLE 03+; FILE 04 spotlight → done as FILE 03. Fridays alternate: Office Shastra 20 Nov, Mind Games 27 Nov.
 
 ## Planned (week of 9 Nov 2026) — moved out of the backlog
 - Office Shastra EP 02: the 8:47 pm "quick call" — the positive no (Ury 2007).
