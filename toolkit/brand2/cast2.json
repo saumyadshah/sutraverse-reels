@@ -196,6 +196,27 @@
     "pallu": "#6E5A8A",
     "border": "#C9A45A"
    }
+  },
+  "bua": {
+   "role": "Ghar Ki Baat / Mind Games: Bua, 62, Papa's elder sister (Kabir, Tanvi and Aarav's aunt), Bhopal. Loud, affectionate, comments on everyone's clothes and weight at every function; means well, never whispers.",
+   "series": "family",
+   "skin": 3,
+   "hair": "bun",
+   "greyTemples": true,
+   "headW": 0.43,
+   "jaw": 0.3,
+   "age": 62,
+   "bindi": "#B0182A",
+   "hairCol": "#2A1F1C",
+   "glasses": "#B8892E",
+   "eyeOpen": 0.9,
+   "shoulders": 1.05,
+   "outfit": {
+    "style": "saree",
+    "color": "#B8336A",
+    "pallu": "#F2A93B",
+    "border": "#E8C25A"
+   }
   }
  },
  "puppets": {
