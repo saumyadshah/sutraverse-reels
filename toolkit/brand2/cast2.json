@@ -217,6 +217,24 @@
     "pallu": "#F2A93B",
     "border": "#E8C25A"
    }
+  },
+  "imran": {
+   "role": "Chanakya Files / Ghar Ki Baat: Kabir's college roommate, 29, civil engineer in Bengaluru. Quiet, few words, shows up. Short hair, moustache and stubble, rust-brown shirt.",
+   "series": "family",
+   "skin": 4,
+   "hair": "short",
+   "headW": 0.42,
+   "jaw": 0.3,
+   "age": 29,
+   "hairCol": "#120D0A",
+   "shoulders": 1.02,
+   "outfit": {
+    "style": "shirt",
+    "color": "#9A5A2E",
+    "collar": "#EADFC8"
+   },
+   "stubble": true,
+   "moustache": true
   }
  },
  "puppets": {

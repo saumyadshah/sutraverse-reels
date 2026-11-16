@@ -1,0 +1,14 @@
+# FACTS — Chanakya Files RULE 03 · 2026-11-19-r1 (Shlokwise)
+
+| # | Claim | Source | On-screen wording | Label |
+|---|---|---|---|---|
+| 1 | The verse: āture vyasane prāpte durbhikṣe śatru-saṅkaṭe / rāja-dvāre śmaśāne ca yas tiṣṭhati sa bāndhavaḥ — "In illness, in misfortune, in famine, in danger from enemies, at the king's gate and at the cremation ground: the one who stands by you is your true kin." | Chanakya Niti 1.12 (Niti-darpana numbering). Verified on two sources: (a) Vedapath, Chanakya Niti Adhyaya 1, shloka 12 (vedapath.app/en/chanakya-niti/adhyaya-1-education-and-conduct/12); (b) Patheos "Chanakya Niti – Chapter 1" (patheos.com/blogs/hindu2/?p=206), same verse in chapter 1 ("a true friend… does not forsake you in need, misfortune, famine, war, at a king's court, or at the crematorium"). Also listed as ०१-१२ in sanskritdocuments.org "चाणक्यनीति". | Devanagari line: "राजद्वारे श्मशाने च यस्तिष्ठति स बान्धवः" · English: "Whoever stands by you there is your true kin." · Source line: "CHANAKYA NITI 1.12 · TRADITIONAL ATTRIBUTION" | Attributed to Chanakya. Numbering varies by edition (1.11/1.12). |
+| 2 | A close variant of the same verse appears in the Hitopadesha (Mitralabha), with *utsave* (festivity) in place of *āture* (illness). | wisdomlib Hitopadesha (Sanskrit) entries; Vedapath note. | Not on screen (caption note only) | Parallel |
+| 3 | The six places named by the verse: illness (āture), misfortune/calamity (vyasane prāpte), famine/scarcity (durbhikṣe; durbhikṣa = famine, dearth: hard times when there is not enough), danger from enemies (śatru-saṅkaṭe), the king's gate (rāja-dvāre), the cremation ground (śmaśāne). | Verse text (row 1). | Cards: ILLNESS · MISFORTUNE · FAMINE · ENEMY TROUBLE · THE KING'S GATE · THE CREMATION GROUND | Direct (translation) |
+| 4 | Modern mapping (voice/subtitle say "scarcity" = famine/dearth): famine → "the month the salary is late"; king's gate → police station / court / government office; misfortune → layoff. | Our reading, not the text. | Small mono line: "OUR READING" on the modern examples | Interpretation (labelled) |
+| 5 | International Men's Day is observed on 19 November. | Board research (bankbazaar.com, nationaldaycalendar.com); widely observed date. No theme stated. | "19 NOV · INTERNATIONAL MEN'S DAY" | Fact |
+| 6 | Kabir (dengue, alone in a Bengaluru flat), 37 "get well soon" replies, Imran arriving at 11 pm with khichdi and a thermometer; the message "Tu aaya tha. Main bhoola nahi hoon." | Fictional composite story with our recurring cast. | Story scenes | Story (fiction) |
+| 7 | No medical claims about dengue; no loneliness statistics. | — | — | — |
+| 8 | "2,300 saal" not used; Chanakya dated only as "c. 4th century BCE" if at all. | — | Not on screen | — |
+
+Exact Devanagari (Vedapath): आतुरे व्यसने प्राप्ते दुर्भिक्षे शत्रुसङ्कटे । राजद्वारे श्मशाने च यस्तिष्ठति स बान्धवः ॥
