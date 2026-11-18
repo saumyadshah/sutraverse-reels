@@ -1,0 +1,16 @@
+# FACTS — 2026-11-21-r2 · Panchatantra Reloaded · FABLE 02 · "Usne tere baare mein bola?"
+
+Named idea: **the whisperer who breaks a friendship** (Mitrabheda, "the separation of friends") — and the antidote: ask the person directly.
+Verse checked on two editions (below). No psychology study is cited (the planner's optional "triangulation" line was dropped: no citable source was verified this run).
+
+| # | Claim | Source | On-screen wording |
+|---|---|---|---|
+| 1 | Book 1 of the Panchatantra is *Mitrabheda*, the separation (loss) of friends; its frame story is the friendship of the lion and the bull broken by a jackal. | Panchatantra, Book 1 (Mitrabheda), textus simplicior Sanskrit text (Kielhorn/Bühler–Kale line; online: advocatetanmoy.com "Panchatantram by Vishnu Sharma", Mitrabheda); A. W. Ryder, *The Panchatantra*, Univ. of Chicago Press 1925, Book I "The Loss of Friends" | "FABLE 02 · MITRABHEDA · THE LOSS OF FRIENDS" |
+| 2 | The lion is Pingalaka, the bull Sanjivaka, the jackals Damanaka and Karataka (Ryder renders them Rusty, Lively, Victor and Cheek). | same; Ryder 1925 translator's names | "PINGALAKA · THE LION", "SANJIVAKA · THE BULL", "DAMANAKA · THE JACKAL" |
+| 3 | Damanaka, sidelined once the lion and the bull became inseparable, tells the lion the bull plans to kill him, and tells the bull the lion plans to kill him; the lion kills the bull. | Panchatantra Book 1 frame story (Sanskrit text as above; Ryder 1925 Book I; BVKS Śrī Pañcatantra, Eng., prose intro: "a very wicked jackal named Damanaka spoiled their friendship") | Plaques: "THE BULL WANTS TO KILL YOU." / "THE LION WANTS TO KILL YOU." / "THEY NEVER ASKED EACH OTHER." Story retold, simplified (story_retelling). |
+| 4 | Verse: वर्धमानो महान् स्नेहः सिंहगोवृषयोर्वने । पिशुनेनातिलुब्धेन जम्बुकेन विनाशितः ॥ — vardhamāno mahān snehaḥ siṃha-go-vṛṣayor vane / piśunenātilubdhena jambukena vināśitaḥ. Introduced in the text as "yasyāyam ādimaḥ ślokaḥ" (the first verse of Book 1). | Source 1: Panchatantra 1.1 (Mitrabheda), Sanskrit text as above (numbered ॥१.१॥). Source 2: Ryder 1925, Book I opening stanza: "The forest lion and the bull / Were linked in friendship, growing, full: / A jackal then estranged the friends / For greedy and malicious ends." Variant: Hitopadesha 2.1 (Mitrabheda) has the same verse with *mṛgendra-vṛṣayor* (wisdomlib Hitopadesha Sanskrit). | Devanagari couplet + "A great and growing friendship between a lion and a bull, in the forest, was destroyed by a greedy, slandering jackal." + "PANCHATANTRA 1.1 · MITRABHEDA" (our literal translation; Ryder's verse translation cited in the caption). |
+| 5 | Recensions differ (Panchatantra exists in several versions); verse numbering follows the textus simplicior. | scholarly consensus (Edgerton 1924; Olivelle 1997) | caption: "in the common Sanskrit text" |
+| 6 | Modern scene (Aarav, Ishaan, Varun, Kabir) is a composite fiction; no real people. | — | — |
+| 7 | The move: ask the person directly, in one sentence, naming the source: "Varun ne kuch bola. Main tujhse seedha pooch raha hoon." | Shlokwise script (advice, not a claim) | chat card, the exact words |
+
+Labels: the fable is "story retold"; the verse translation is our literal rendering (not a quote from a translator).

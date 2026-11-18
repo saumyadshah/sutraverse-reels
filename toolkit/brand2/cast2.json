@@ -235,6 +235,41 @@
    },
    "stubble": true,
    "moustache": true
+  },
+  "ishaan": {
+   "role": "Panchatantra Reloaded / Ghar Ki Baat: Ishaan, 15, Aarav's best friend since Class 2, Indore. Bookish cricket fan, round glasses, short hair, mustard tee; slow to anger, quick to laugh.",
+   "series": "family",
+   "skin": 4,
+   "hair": "short",
+   "headW": 0.4,
+   "jaw": 0.25,
+   "age": 15,
+   "hairCol": "#0E0A08",
+   "glasses": "#2A2420",
+   "eyeOpen": 1.0,
+   "browW": 0.025,
+   "shoulders": 0.84,
+   "outfit": {
+    "style": "tee",
+    "color": "#D49A2A"
+   }
+  },
+  "varun": {
+   "role": "Panchatantra Reloaded: Varun, 15, Aarav and Ishaan's classmate. Not a villain: a left-out kid who wants to be in the middle of things, like Damanaka. Side-swept hair, lighter skin, maroon hoodie, restless eyes.",
+   "series": "family",
+   "skin": 1,
+   "hair": "side",
+   "headW": 0.38,
+   "jaw": 0.23,
+   "age": 15,
+   "hairCol": "#2A1C14",
+   "eyeOpen": 0.9,
+   "browW": 0.02,
+   "shoulders": 0.82,
+   "outfit": {
+    "style": "hoodie",
+    "color": "#7A2E3A"
+   }
   }
  },
  "puppets": {
@@ -267,6 +302,33 @@
    "crown": "small",
    "height": 0.78,
    "hunch": 0.1
+  },
+  "pingalaka": {
+   "role": "the lion king of Book 1 (Mitrabheda); gold hide, carved crescent mane in vermilion, open-cut face (sympathetic but rash)",
+   "dye": "#D08A2A",
+   "mane": "#B8402A",
+   "kind": "lion",
+   "height": 1.0
+  },
+  "sanjivaka": {
+   "role": "the bull of Book 1; raw-hide body, malachite saddle cloth, marigold garland, open-cut face, big hump and horns",
+   "dye": "#E3CFA0",
+   "cloth": "#4F7A3A",
+   "garland": "#F2A93B",
+   "kind": "bull",
+   "height": 1.0
+  },
+  "damanaka": {
+   "role": "the ambitious jackal adviser who whispers to both; dark umber hide, solid face (antagonist), long ears, bushy tail",
+   "dye": "#7A4A22",
+   "kind": "jackal",
+   "height": 0.62
+  },
+  "karataka": {
+   "role": "Damanaka's cautious brother jackal; olive hide, solid face, sits back (warns, doesn't act)",
+   "dye": "#6E6A3A",
+   "kind": "jackal",
+   "height": 0.58
   }
  }
 }
