@@ -23,3 +23,4 @@ Log (date · slot · season · number):
 - 2026-11-16 · 2026-11-19-r1 · Chanakya Niti Rules · Chanakya Niti - Rule 04 (Chanakya Niti 1.12)
 - 2026-11-17 · 2026-11-20-r1 · Gita for Everyday Life · Bhagavad Gita - Lesson 03 (Bhagavad Gita 17.15)
 - 2026-11-18 · 2026-11-21-r2 · Panchatantra for Adults · Panchatantra - Fable 02 (Panchatantra 1.1, Mitrabheda)
+- 2026-11-19 · 2026-11-22-r1 · Itihaas · Itihaas - Chapter 02 (Bhagavad Gita 3.21; 1965 skip-a-meal appeal)
