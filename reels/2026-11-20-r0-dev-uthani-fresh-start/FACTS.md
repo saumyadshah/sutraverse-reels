@@ -1,0 +1,17 @@
+# FACTS — Mind Games FILE 04 (slot 2026-11-20-r0) · Dev Uthani Ekadashi · the fresh start effect
+
+| # | Claim (on screen / in voice) | Source | Label |
+|---|---|---|---|
+| 1 | Today (Fri 20 Nov 2026) is Dev Uthani / Prabodhini Ekadashi. On screen: "DEV UTHANI EKADASHI". Voice says "aaj" only. | drikpanchang.com Prabodhini Ekadashi 2026 page (Fri 20 Nov; Smarta); thedailyjagran.com 2026 article (Smarta 20 Nov, Vaishnava 21 Nov); haindavam.org 2026-11-20 | Calendar fact; both dates in caption |
+| 2 | "Tradition holds that after four months of sleep, Vishnu wakes today." (Chaturmas: Devshayani → Prabodhini Ekadashi) | drikpanchang.com Prabodhini page; daanyam.in "Devuthani Ekadashi 2026 … End of Chaturmas" | Tradition ("maana jaata hai" / "TRADITION HOLDS") |
+| 3 | Dadi draws the Lord's feet in rangoli; thali; sugarcane for Tulsi Vivah | Common household practice on this day (drikpanchang; regional custom) | Story composite (fictional family) |
+| 4 | Kabir's list ("Diwali ke baad pakka": gym, ₹2,000 SIP, call Tanvi every Sunday); "Diwali was 12 days ago" | Fiction. Diwali (Lakshmi Puja) 2026 = Sun 8 Nov 2026 → 20 Nov is 12 days later | Fiction; date arithmetic checked |
+| 5 | "Psychology calls it the fresh start effect." On screen: "THE FRESH START EFFECT" | Dai, H., Milkman, K. L., & Riis, J. (2014). The fresh start effect: Temporal landmarks motivate aspirational behavior. Management Science, 60(10), 2563–2582 | Named concept |
+| 6 | "In one study, after a new week, a birthday or a holiday, gym visits and 'diet' searches both went up." On screen exhibits: "GYM VISITS ↑", "'DIET' SEARCHES ↑" after "NEW WEEK · BIRTHDAY · HOLIDAY" | Dai, Milkman & Riis 2014: Study 1 Google searches for "diet", Study 2 university gym visits, Study 3 goal commitments, all rise after temporal landmarks (start of week/month/year/semester, birthdays, holidays). Wharton Knowledge summary; UCLA Anderson Review PDF | Direct summary; no percentages shown; not claimed for Indian festivals |
+| 7 | "New day, new me" (landmarks separate the old self from the new) | Same paper: landmarks open new mental accounting periods, distancing people from past imperfections | Plain paraphrase of the mechanism |
+| 8 | "The push is strongest right after the landmark" | Same paper: aspirational behaviour increases immediately following landmarks | No decay figure invented |
+| 9 | Verse card: उत्तिष्ठत जाग्रत प्राप्य वरान्निबोधत । क्षुरस्य धारा निशिता दुरत्यया दुर्गं पथस्तत्कवयो वदन्ति ॥ — uttiṣṭhata jāgrata prāpya varān nibodhata / kṣurasya dhārā niśitā duratyayā durgaṃ pathas tat kavayo vadanti. English on screen: "Arise, awake… sharp as a razor's edge is that path, say the wise." Ref: KATHA UPANISHAD 1.3.14 | Text checked on vidhyamitra.com Kathopanishad (1.3.14) and darshya.pages.dev Katha Upanishad; translation sense per Swami Gambhirananda (Advaita Ashrama) / vivekavani (Vivekananda's "Arise, awake") | Verse shown as a parallel, not proof of the study |
+| 10 | The move: one two-minute step (shoes on → gate → back; SIP ₹500 not ₹2,000) | Shlokwise advice, framed as a suggestion; not attributed to the study | Advice (our move) |
+| 11 | Dadi: "Bhagwan bhi aaj jaag gaye. Tu kab jaagega?" / "Chalo… bhagwan ke saath tu bhi jaaga." | Fictional dialogue | Fiction |
+
+Not used: any decay percentage; any Purana chapter for the Prabodhini mantra; any claim that the study measured Indian festivals.

@@ -8,11 +8,12 @@ Each Short is also numbered by the source text of its verse card. The Reel run t
 | Chanakya Niti Rules | Chanakya Niti - Rule NN | Chanakya Files (and any Reel whose verse is Chanakya Niti) | 04 |
 | Panchatantra for Adults | Panchatantra - Fable NN | Panchatantra Reloaded | 02 |
 | Itihaas | Itihaas - Chapter NN | Turning Points | 01 |
-| Niti & Upanishad (other texts) | <Text> - Lesson NN | Vidura Niti, Upanishads, Yoga Sutras, Subhashitas, Rigveda, Atharvaveda | 02 |
+| Niti & Upanishad (other texts) | <Text> - Lesson NN | Vidura Niti, Upanishads, Yoga Sutras, Subhashitas, Rigveda, Atharvaveda | 03 |
 
 Log (date · slot · season · number):
 - 2026-11-09 · 2026-11-10-r1 · Niti & Upanishad (other texts) · Yoga Sutras - Lesson 01 (Yoga Sutras 1.33)
 - 2026-11-10 · 2026-11-11-r1 · Niti & Upanishad (other texts) · Atharvaveda - Lesson 02 (Atharvaveda 3.30.3)
+- 2026-11-19 · 2026-11-20-r0 · Niti & Upanishad (other texts) · Katha Upanishad - Lesson 03 (Katha Upanishad 1.3.14)
 - 2026-11-11 · 2026-11-12-r1 · Chanakya Niti Rules · Chanakya Niti - Rule 01 (Chanakya Niti 3.21)
 - 2026-11-12 · 2026-11-13-r1 · Chanakya Niti Rules · Chanakya Niti - Rule 02 (Chanakya Niti 5.2)
 - 2026-11-13 · 2026-11-14-r2 · Panchatantra for Adults · Panchatantra - Fable 01 (Hitopadesha, Prastavika 8; Panchatantra Kathamukha)
