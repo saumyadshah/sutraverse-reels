@@ -30,7 +30,7 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          while read -r wd; do
+          while read -r wd <&3; do
             [ -z "$wd" ] && continue
             : > "$wd/build.log"
             if [ -f "$wd/carousel.html" ] && [ ! -f "$wd/script.json" ]; then
@@ -46,7 +46,7 @@ jobs:
             fi
             if python3 otlo/toolkit/bin/build.py render "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
             tail -40 "$wd/build.log"
-          done < otlo/toolkit/queue.txt
+          done 3< otlo/toolkit/queue.txt
       - name: Commit outputs
         run: |
           git config user.name "Otlo bot"; git config user.email "saumyadshah@users.noreply.github.com"

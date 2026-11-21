@@ -132,11 +132,11 @@ def encode(d):
           f"[1:v]fps={FPS},trim=duration={THUMB_LEAD},setpts=PTS-STARTPTS[th];"
           f"[th][main]concat=n=2:v=1:a=0,scale=1080:1920:flags=lanczos+accurate_rnd+full_chroma_int:out_color_matrix=bt709:out_range=tv,format=yuv420p[v];"
           f"[2:a]adelay={ms}|{ms},loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(d/'frames/f%05d.png'),
+    subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(d/'frames/f%05d.png'),
                     "-loop", "1", "-framerate", str(FPS), "-i", str(d/'thumb.png'), "-i", str(d/'mix.wav'),
                     "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-r", str(FPS),
                     "-c:v", "libx264", "-profile:v", "high", "-level:v", "4.2", "-preset", "slow", "-tune", "animation",
-                    "-b:v", "12M", "-minrate", "8M", "-maxrate", "16M", "-bufsize", "24M", "-g", "60", "-bf", "2",
+                    "-b:v", "12M", "-minrate", "12M", "-maxrate", "12M", "-bufsize", "12M", "-x264-params", "nal-hrd=cbr:force-cfr=1", "-g", "60", "-bf", "2",
                     "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
                     "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(d/'reel.mp4')], check=True)
 
@@ -145,10 +145,10 @@ def qa(d, T, S):
     mids = [THUMB_LEAD+(s+e)/2 for s, e in zip(T['starts'], T['ends'])]
     ims = []
     for i, m in enumerate(mids):
-        p = d/f'qa_{i+1}.jpg'; subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{m:.2f}", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-vf", "scale=270:480", str(p)], check=True); ims.append(Image.open(p))
+        p = d/f'qa_{i+1}.jpg'; subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-ss", f"{m:.2f}", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-vf", "scale=270:480", str(p)], check=True); ims.append(Image.open(p))
     c = Image.new('RGB', (270*len(ims), 480)); [c.paste(im, (i*270, 0)) for i, im in enumerate(ims)]; c.save(d/'contact.jpg')
     for p in d.glob('qa_*.jpg'): p.unlink()
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-q:v", "2", str(d/'first_frame.jpg')], check=True)
+    subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-q:v", "2", str(d/'first_frame.jpg')], check=True)
     lufs = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(d/'reel.mp4'), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     import re; I = re.findall(r"I:\s+(-?[\d.]+) LUFS", lufs)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(d/'reel.mp4')], capture_output=True, text=True).stdout)
