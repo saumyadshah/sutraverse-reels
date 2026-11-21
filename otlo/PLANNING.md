@@ -10,6 +10,15 @@ Mon–Fri only. Days alternate **A** (Carousel 13:00 + Reel 19:30) and **B** (Re
 The alternation runs across weekends: next Monday's type is the **opposite of last Friday's**
 (read last Friday's two rows: a Carousel there = A, so Monday = B). 5 days → 10 rows.
 
+## Skills to use
+`anthropic-skills:content-calendar`, `anthropic-skills:series-planner`, `anthropic-skills:content-pillar-builder`,
+`anthropic-skills:trend-spotter`, `anthropic-skills:analytics-readout` / `anthropic-skills:social-analytics-report`
+(look back), `anthropic-skills:content-audit` (every 4th week), `anthropic-skills:comment-mining` (ideas from
+comments), `anthropic-skills:best-time-scheduler` (only to flag if 13:00/19:30 should move; never change the
+pattern without Saumya), `anthropic-skills:content-research` / `anthropic-skills:competitor-teardown` /
+`anthropic-skills:viral-carousel` (paid vidIQ calls: at most 15 credits a week, check `vidiq_balance` first).
+Same exclusions and rule precedence as the RUNBOOK. Note in the plan which skills were used.
+
 ## Steps
 1. **Repo + sheets.** Pull the repo. Read `Calendar!A1:H120` and `Idea bank!A1:F200`.
 2. **Look back (last Mon–Fri).** For each posted row get the permalink from column G and, if available for free,

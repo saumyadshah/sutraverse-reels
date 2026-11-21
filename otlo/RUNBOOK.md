@@ -52,8 +52,29 @@ Read `{"kind":"readCells","sheet":"Calendar","range":"A1:H120"}`. Write
 6. **Images must match the subject.** Khaman must look like khaman, a kite like a kite. Draw it carefully.
 7. **No sponsored content, no paid links, no replies/DMs, no deleting posts.**
 8. **Mandatory for every post: highest-quality export, a designed thumbnail/cover, the full caption formula
-   (with the [keywords] block and hashtags).** A post missing any of these is not posted.
+   (with the [keywords] block and exactly 5 hashtags), and the skills listed below.** A post missing any of these is not posted.
 9. **When in doubt, skip.** A skipped slot is fine; a wrong or offensive post is not. Always log the reason.
+
+## Skills to use (Saumya: "take into account all the skills we have")
+Load each with the Skill tool at the step it belongs to and follow it, inside Otlo's rules (these hard rules win
+if a skill says otherwise). If a skill is not available in the run, apply its idea from this table and note it in the log.
+
+| Step | Skills |
+|---|---|
+| Video craft (always, before a Reel) | `anthropic-skills:video-making`, `anthropic-skills:virality`, `anthropic-skills:going-viral` |
+| Hook (4A line 1) | `anthropic-skills:viral-hook-writer` (write 3), `anthropic-skills:ab-hook-tester` (pick the stronger); `anthropic-skills:hook-mining` only if a hooks CSV exists in `otlo/data/` |
+| Script + scenes (4A/4B) | `anthropic-skills:reel-scripter`, `anthropic-skills:reel-builder`, `anthropic-skills:on-screen-text-writer`, `anthropic-skills:frontend-design` (layout/typography of the HTML) |
+| Ending ask | `anthropic-skills:cta-writer` |
+| Thumbnail | `anthropic-skills:cover-thumbnail-brief` |
+| Carousel (4C) | `anthropic-skills:carousel-builder`, `anthropic-skills:frontend-design`; `anthropic-skills:viral-carousel` only in the weekly plan (it spends vidIQ credits) |
+| Caption (7) | `anthropic-skills:caption-and-hashtags`, `anthropic-skills:hashtag-keyword-research` (keywords block + the 5 hashtags) |
+| Research (3) | `anthropic-skills:content-research` / `anthropic-skills:trend-spotter` for angles (free tools only in daily runs) |
+
+Not used, because they break Otlo rules: `comment-responder`, `dm-script-writer`, `content-factory` (auto-DMs and
+3 posts a day), `collab-outreach` / `creator-outreach` / `influencer-partnerships` / `ugc-creator-brief` (no
+outreach or sponsorship without Saumya), `sutraverse` (the old brand). vidIQ credits are limited (150/month):
+daily runs use only free vidIQ tools (upload, publish, post list); paid research belongs to the weekly plan,
+at most 15 credits a week.
 
 ## Steps
 
@@ -143,9 +164,9 @@ Follow @otlo.gujarat · ગુજરાતની વાતો, ઓટલા પ�
 
 [<8–12 SEO keywords and phrases, comma-separated: topic + year, English and Gujarati spellings, related searches>]
 
-#<6–8 hashtags: 2–3 topic, 1 Gujarati-script, 2 niche (#GujaratiCulture / #GujaratiFood / #GujaratiCinema / #GujaratiFestivals), #Otlo>
+#<EXACTLY 5 hashtags: 2 topic (one may be Gujarati script), 1 niche (#GujaratiCulture / #GujaratiFood / #GujaratiCinema / #GujaratiFestivals), 1 audience/reach (e.g. #Gujarati, #Gujarat, #Amdavad), and always #Otlo>
 ```
-No walls of text, no more than two emojis, no hashtag stuffing, no unrelated trending tags. Carousels: the ask
+**Exactly 5 hashtags on every post (Saumya's rule), never more, never fewer.** No walls of text, no more than two emojis, no unrelated trending tags. Carousels: the ask
 is usually "Save it" or "Send it to the family group".
 
 ### 8. Post
