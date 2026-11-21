@@ -29,7 +29,9 @@ The alternation runs across weekends: next Monday's type is the **opposite of la
      never the same content restated;
    - lean towards what worked last week; drop or rework what flopped;
    - every row needs a column-G note naming the sources to check.
-5. **Write the Calendar.** Delete rows of weeks that are fully past **only after** confirming they are
+5. **Write the Calendar.** If next week already has rows (e.g. planned earlier in chat), do **not** append a
+   second set: keep its 10 rows and only update a row's Topic/Notes in place where you found a clearly more
+   timely or better-sourced topic for the same slot and format (log what changed and why). Otherwise: Delete rows of weeks that are fully past **only after** confirming they are
    `Posted`/`Skipped` (never delete a `To make` row from the current or a future week). Append the 10 new rows
    (`Date`, `=TEXT(A<n>,"ddd")`, `13:00`/`19:30`, Format, Series, Topic, Notes, `To make`) in date and time order.
    Format and Status cells use the existing dropdown labels exactly.
