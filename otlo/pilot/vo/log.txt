@@ -1,1 +1,1 @@
-NO_KEY
+NO_KEY (GitHub secret GEMINI_API_KEY missing)
