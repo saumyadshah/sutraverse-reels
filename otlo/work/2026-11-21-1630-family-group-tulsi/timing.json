@@ -1,0 +1,56 @@
+{
+ "starts": [
+  0.0,
+  5.0,
+  10.05,
+  17.9,
+  25.75,
+  32.35
+ ],
+ "ends": [
+  5.0,
+  10.05,
+  17.9,
+  25.75,
+  32.35,
+  39.45
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-21-1630-family-group-tulsi/vo/s1.wav",
+   "at": 0.2,
+   "on": 0.30000000000000004,
+   "off": 3.8000000000000003
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-21-1630-family-group-tulsi/vo/s2.wav",
+   "at": 5.1,
+   "on": 0.25,
+   "off": 4.25
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-21-1630-family-group-tulsi/vo/s3.wav",
+   "at": 10.15,
+   "on": 0.25,
+   "off": 7.050000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-21-1630-family-group-tulsi/vo/s4.wav",
+   "at": 18.0,
+   "on": 0.25,
+   "off": 7.050000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-21-1630-family-group-tulsi/vo/s5.wav",
+   "at": 25.85,
+   "on": 0.25,
+   "off": 5.800000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-21-1630-family-group-tulsi/vo/s6.wav",
+   "at": 32.4,
+   "on": 0.30000000000000004,
+   "off": 5.45
+  }
+ ]
+}
