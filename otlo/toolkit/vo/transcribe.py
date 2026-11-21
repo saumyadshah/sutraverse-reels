@@ -11,7 +11,7 @@ for d in sys.argv[1:]:
             body = {"contents": [{"parts": [{"text": "Transcribe this audio exactly, word for word, in the script of the language spoken (English words in Latin script). Output only the transcript."},
                                             {"inlineData": {"mimeType": "audio/wav", "data": b64}}]}]}
             r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
-                              headers={"x-goog-api-key": key}, json=body, timeout=180)
+                              headers={"x-goog-api-key": key}, json=body, timeout=90)
             if r.status_code == 200:
                 try: txt = r.json()["candidates"][0]["content"]["parts"][0]["text"].strip().replace("\n", " "); break
                 except Exception as e: txt = f"PARSE_ERROR {e}"
