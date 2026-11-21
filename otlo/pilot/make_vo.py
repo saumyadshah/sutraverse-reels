@@ -9,7 +9,7 @@ log = []
 for ln in cfg["lines"]:
     ok = False
     for m in MODELS:
-        body = {"contents": [{"parts": [{"text": cfg["direction"] + "\n\n" + ln["gu"]}]}],
+        body = {"contents": [{"parts": [{"text": ((cfg.get("direction") or "") + "\n\n" if cfg.get("direction") else "") + ln["gu"]}]}],
                 "generationConfig": {"responseModalities": ["AUDIO"],
                     "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": cfg["voice"]}}}}}
         r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
