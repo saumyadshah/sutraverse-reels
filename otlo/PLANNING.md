@@ -23,7 +23,7 @@ Same exclusions and rule precedence as the RUNBOOK. Note in the plan which skill
 
 ## Steps
 1. **Repo + sheets.** Pull the repo. Read `Calendar!A1:H120` and `Idea bank!A1:F200`.
-2. **Look back (last Mon–Fri).** For each posted row get the permalink from column G and, if available for free,
+2. **Look back (last Mon–Sun).** For each posted row get the permalink from column G and, if available for free,
    reach/saves/comments from `vidiq_instagram_owner_insights` (account `29167885212872260`). Note the top 2 and the
    bottom 2 posts and why (topic, hook, format). Note skipped rows and their reasons.
 3. **Look ahead (next Mon–Sun).** WebSearch, two sources each:
