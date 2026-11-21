@@ -1,3 +1,6 @@
+
+Enter command: <target>|all <time>|-1 <command>[ <argument>]
+
 scenes [0.0, 6.2, 16.6, 29.6, 38.4, 45.95] [6.2, 16.6, 29.6, 38.4, 45.95, 51.8]
 {
  "video": {
@@ -7,7 +10,7 @@ scenes [0.0, 6.2, 16.6, 29.6, 38.4, 45.95] [6.2, 16.6, 29.6, 38.4, 45.95, 51.8]
   "height": 1920,
   "pix_fmt": "yuv420p",
   "r_frame_rate": "30/1",
-  "bit_rate": "966098"
+  "bit_rate": "2358654"
  },
  "duration": 52.2,
  "lufs": -14.1,
