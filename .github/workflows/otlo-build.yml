@@ -2,7 +2,7 @@ name: Otlo build
 # Builds Otlo Reels. Trigger: push a change to otlo/toolkit/queue.txt; each non-empty line is a work dir
 # (e.g. otlo/work/2026-11-22-family-invite) holding script.json + reel.html.
 # For each: records the Gujarati voice with Gemini TTS (secret GEMINI_API_KEY) unless vo/ already has every clip,
-# transcribes it as a leak check, renders reel.mp4 + cover.jpg + contact.jpg + qa.json, and commits them.
+# renders reel.mp4 + cover.jpg + contact.jpg + qa.json, and commits them.
 on:
   workflow_dispatch:
   push:
@@ -38,7 +38,6 @@ jobs:
             if [ "$have" -lt "$n" ]; then
               if [ -z "$GEMINI_API_KEY" ]; then echo "NO_KEY (GitHub secret GEMINI_API_KEY missing)" >> "$wd/build.log"; continue; fi
               python3 otlo/toolkit/vo/make_vo.py "$wd/script.json" "$wd/vo" >> "$wd/build.log" 2>&1 || echo "VOICE FAILED" >> "$wd/build.log"
-              timeout 600 python3 otlo/toolkit/vo/transcribe.py "$wd/vo" >> "$wd/build.log" 2>&1 || echo "transcribe failed or timed out" >> "$wd/build.log"
             fi
             if python3 otlo/toolkit/bin/build.py render "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
             tail -40 "$wd/build.log"
