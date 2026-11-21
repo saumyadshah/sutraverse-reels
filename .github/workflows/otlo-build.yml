@@ -1,0 +1,51 @@
+name: Otlo build
+# Builds Otlo Reels. Trigger: push a change to otlo/toolkit/queue.txt; each non-empty line is a work dir
+# (e.g. otlo/work/2026-11-22-family-invite) holding script.json + reel.html.
+# For each: records the Gujarati voice with Gemini TTS (secret GEMINI_API_KEY) unless vo/ already has every clip,
+# transcribes it as a leak check, renders reel.mp4 + cover.jpg + contact.jpg + qa.json, and commits them.
+on:
+  workflow_dispatch:
+  push:
+    paths: ["otlo/toolkit/queue.txt"]
+permissions:
+  contents: write
+concurrency: { group: otlo-build, cancel-in-progress: false }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg > /dev/null
+          pip install --quiet requests numpy pillow playwright
+          python -m playwright install --with-deps chromium > /dev/null
+          (cd otlo/toolkit && npm install --silent)
+      - name: Voice + render
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          while read -r wd; do
+            [ -z "$wd" ] && continue
+            mkdir -p "$wd/vo"; : > "$wd/build.log"
+            n=$(python3 -c "import json;print(len(json.load(open('$wd/script.json'))['lines']))")
+            have=$(ls "$wd"/vo/s*.wav 2>/dev/null | wc -l)
+            if [ "$have" -lt "$n" ]; then
+              if [ -z "$GEMINI_API_KEY" ]; then echo "NO_KEY (GitHub secret GEMINI_API_KEY missing)" >> "$wd/build.log"; continue; fi
+              python3 otlo/toolkit/vo/make_vo.py "$wd/script.json" "$wd/vo" >> "$wd/build.log" 2>&1 || echo "VOICE FAILED" >> "$wd/build.log"
+              timeout 600 python3 otlo/toolkit/vo/transcribe.py "$wd/vo" >> "$wd/build.log" 2>&1 || echo "transcribe failed or timed out" >> "$wd/build.log"
+            fi
+            if python3 otlo/toolkit/bin/build.py render "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
+            tail -40 "$wd/build.log"
+          done < otlo/toolkit/queue.txt
+      - name: Commit outputs
+        run: |
+          git config user.name "Otlo bot"; git config user.email "saumyadshah@users.noreply.github.com"
+          git add -A otlo/work
+          git diff --cached --quiet || git commit -m "Otlo: build outputs via GitHub Actions"
+          git pull --rebase && git push

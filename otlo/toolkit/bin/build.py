@@ -17,7 +17,7 @@ def rd(p):
 def speech_bounds(p):
     x, sr = rd(p); x = x if x.ndim == 1 else x.mean(1); fr = int(sr * 0.05)
     e = np.array([np.sqrt(np.mean(x[k:k+fr]**2)) for k in range(0, len(x)-fr, fr)]); a = np.where(e > e.max()*0.05)[0]
-    return a[0]*0.05, (a[-1]+1)*0.05
+    return float(a[0]*0.05), float((a[-1]+1)*0.05)
 
 def orig_scenes(d):
     import re
@@ -30,7 +30,7 @@ def timing(d, S):
     starts, ends, vo, t = [], [], [], 0.0
     for i, ln in enumerate(S['lines']):
         p = d/'vo'/f"{ln['id']}.wav"; on, off = speech_bounds(p); lead = 0.5 if i == 0 else 0.35
-        L = max(orig[i][1]-orig[i][0], lead + (off-on) + (1.6 if i == n-1 else 0.7))
+        L = float(max(orig[i][1]-orig[i][0], lead + (off-on) + (1.6 if i == n-1 else 0.7)))
         starts.append(round(t, 3)); vo.append({"file": str(p), "at": round(t+lead-on, 3), "on": on, "off": off}); t += L; ends.append(round(t, 3))
     T = {"starts": starts, "ends": ends, "vo": vo}; (d/'timing.json').write_text(json.dumps(T, indent=1)); return T
 
