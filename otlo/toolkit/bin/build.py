@@ -136,6 +136,7 @@ def subs(d, T, S):
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Sub,Fira Sans SemiBold,46,&H00D6E9F3,&H00D6E9F3,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,16,0,2,110,110,40,1\n\n[Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"""
+    if is_slideshow(d): hdr = hdr.replace(",2,110,110,40,1", ",2,110,110,300,1")  # sit just under the slide
     (d/'subs.ass').write_text(hdr+"\n".join(f"Dialogue: 0,{f(a)},{f(b)},Sub,,0,0,0,,{x}" for a, b, x in ev)+"\n")
 
 THUMB_LEAD = 0.4  # seconds the designed thumbnail is held as the very first frames (Instagram's API cover = first frame)
