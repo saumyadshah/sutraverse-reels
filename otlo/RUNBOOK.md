@@ -1,8 +1,8 @@
 # Otlo runbook: one post per run
 
 Otlo (ઓટલો, Instagram **@otlo.gujarat**) is Saumya's faceless Gujarati culture, food and cinema brand.
-Posts: Reels (Gujarati voice-over, English subtitles, bilingual on-screen text) and carousels (bilingual
-slides), all in the "Kankotri Press" style. Scheduled runs follow this file **exactly**, work unattended and ask
+Posts: Reels (Gujarati voice-over, English subtitles, bilingual on-screen text) and carousel slots
+(bilingual slides, posted as voiced swipe-style Reels), all in the "Kankotri Press" style. Scheduled runs follow this file **exactly**, work unattended and ask
 nothing. Each run handles **one slot**: the calendar row whose Date is today (Asia/Kolkata) and whose
 Time (IST) is the run's slot (`13:00` = midday run, `19:30` = evening run).
 
@@ -119,11 +119,18 @@ indigo #1B2A4A, red #A8322A, haldi #E3A21A, rani #C2185B sparingly, leaf #3C7A3A
 Gujarati headline + English headline + optional short body + SVG art of the real subject. Keep the bottom 260 px
 free (subtitles). Quality bar: `otlo/toolkit/examples/2026-11-21-tulsi-vivah/`.
 
-### 4C. Carousel: slides → `carousel.html` (no script.json)
-Copy `otlo/toolkit/templates/carousel-skeleton.html`. 6–9 slides (max 10), 1080×1350:
-cover (hook + big bilingual title + subject art + "Swipe") → one idea per slide (number, Gujarati + English
-headline, 1–2 short lines, art) → last slide: save/share ask + comment prompt + follow. Every slide bilingual.
-Make it save-worthy: a cheat sheet, comparison, map, word list, checklist or results.
+### 4C. Carousel slot → swipe-style Reel (`carousel.html` + `script.json`)
+Saumya's choice (21 Nov): carousel slots are posted as **swipe-style Reels** (vidIQ needs a manual approval
+for true carousels, so those never run unattended). Make the slides exactly as a carousel, then voice them:
+- `carousel.html` from `otlo/toolkit/templates/carousel-skeleton.html`: 6–9 slides, 1080×1350:
+  cover (hook + big bilingual title + subject art; it is also the Reel's cover, so design it as the thumbnail)
+  → one idea per slide (number, Gujarati + English headline, 1–2 short lines, art) → second-to-last: the summary
+  people screenshot → last: one ask + follow. Every slide bilingual. Save-worthy: cheat sheet, comparison, map,
+  word list, checklist or results.
+- `script.json`: **one voice line per slide**, same order (same format as 4A, no `thumb` needed), 40–110
+  Gujarati characters each, the last line ending "ઓટલોને ફોલો કરો." Subtitles `en` as in 4A.
+- The builder shows each slide on the branded stage with a slow push-in and a slide-in between slides,
+  timed to the voice, with subtitles under the slide.
 
 ### 5. Build (GitHub Actions does voice + render + export)
 ```
@@ -136,7 +143,7 @@ Poll every 30 s (`git pull`) for up to 25 min until `otlo/work/<dir>/build.log` 
 
 Export settings are fixed in `bin/build.py` (do not lower them): Reels 1080×1920, 30 fps, H.264 High 4.2,
 12 Mb/s CBR, BT.709, AAC 256 kb/s 48 kHz, −14 LUFS, lossless PNG frames, thumbnail as first frame.
-Carousels 1080×1350 JPEG q95 4:4:4.
+Swipe-style Reels: same video settings; slides rendered 1080×1350 lossless.
 
 ### 6. Review (must pass all)
 - Read `contact.jpg` (and for Reels `thumb.jpg`) with the Read tool: text fits, nothing overlaps, Gujarati
@@ -159,7 +166,7 @@ two-to-three-line mini story with the "why", one takeaway, one specific ask, sou
 <Specific ask in Gujarati + English: comment a word / "save it for <day>" / "send it to <who>">
 
 Sources: <outlets>. <any "check locally" caveat>
-Illustration and voice: Otlo.            (carousels: "Illustration: Otlo.")
+Illustration and voice: Otlo.            (same for swipe-style Reels)
 Follow @otlo.gujarat · ગુજરાતની વાતો, ઓટલા પર
 
 [<8–12 SEO keywords and phrases, comma-separated: topic + year, English and Gujarati spellings, related searches>]
@@ -176,11 +183,7 @@ is usually "Save it" or "Send it to the family group".
   `url=https://raw.githubusercontent.com/saumyadshah/sutraverse-reels/main/otlo/work/<dir>/reel.mp4`, then
   `vidiq_instagram_publish_reel` (platformAccountId `29167885212872260`, that videoUrl, the caption; no trial,
   no AI label unless Saumya asks). Continue with containerId every ~10 s until `PUBLISHED`.
-- **Carousel:** for each `slide_NN.jpg` in order, `vidiq_upload_image` with
-  `image=https://raw.githubusercontent.com/saumyadshah/sutraverse-reels/main/otlo/work/<dir>/slide_NN.jpg`;
-  then `vidiq_social_post_draft_create` with one INSTAGRAM destination (platformAccountId
-  `29167885212872260`), `text` = caption, `media` = the image ids in order; check it is `ready`; then
-  `vidiq_social_post_publish` with its postId and revision; confirm with `vidiq_social_post_status`.
+- **Carousel slot:** it is a swipe-style Reel, so post it exactly like a Reel (above).
 - Stop on errors; never retry a failed publish. If access expired, log "RECONNECT NEEDED".
 
 ### 9. Record

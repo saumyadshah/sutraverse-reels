@@ -6,7 +6,7 @@ and what worked on @otlo.gujarat last week. It plans only; it never posts. Work 
 Same IDs as `otlo/RUNBOOK.md` (sheet `Calendar` + sheet `Idea bank` in the Otlo Content Calendar).
 
 ## Pattern (fixed)
-Mon–Fri only. Days alternate **A** (Carousel 13:00 + Reel 19:30) and **B** (Reel 13:00 + Reel 19:30).
+Mon–Fri only. Days alternate **A** (Carousel 13:00, posted as a swipe-style Reel + Reel 19:30) and **B** (Reel 13:00 + Reel 19:30).
 The alternation runs across weekends: next Monday's type is the **opposite of last Friday's**
 (read last Friday's two rows: a Carousel there = A, so Monday = B). 5 days → 10 rows.
 
