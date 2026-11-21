@@ -6,15 +6,16 @@ Posts: Reels (Gujarati voice-over, English subtitles, bilingual on-screen text) 
 nothing. Each run handles **one slot**: the calendar row whose Date is today (Asia/Kolkata) and whose
 Time (IST) is the run's slot (`13:00` = midday run, `19:30` = evening run).
 
-## Posting pattern (set by Saumya, 21 Nov 2026)
+## Posting pattern (set by Saumya, 21 Nov 2026; weekends added the same day)
 
-Working days only (Mon–Fri). Days alternate:
-- **A day:** 1 carousel at 13:00 + 1 Reel at 19:30
+**Every day, weekends included.** Days alternate, continuing day by day without a break:
+- **A day:** 1 carousel slot at 13:00 (posted as a swipe-style Reel) + 1 Reel at 19:30
 - **B day:** 1 Reel at 13:00 + 1 Reel at 19:30
 
-The calendar holds one week at a time; it is planned every Saturday by `otlo/PLANNING.md` (backlog in the
-`Idea bank` sheet). Carousels complement the Reels (a save-worthy cheat sheet,
-a map, a word list, poll results), never the same content restated. When adding rows, keep the pattern.
+(Sat 21 Nov = A, Sun 22 = B, Mon 23 = A, …) The calendar holds one week at a time (next Mon–Sun); it is planned
+every Saturday by `otlo/PLANNING.md` (backlog in the `Idea bank` sheet). Carousel slots complement the Reels
+(a save-worthy cheat sheet, a map, a word list, poll results), never the same content restated. Weekend topics
+lean lighter (food, family, language, weekend watchlists) unless a festival falls on the day.
 
 ## Fixed IDs
 
@@ -37,7 +38,6 @@ Read `{"kind":"readCells","sheet":"Calendar","range":"A1:H120"}`. Write
 
 1. **One post per run, only this slot's row.** If there is no row for today + this slot, or its Status is
    `Posted`/`Skipped`, or `otlo/logs/<today>.md` already records this slot as POSTED, stop and log why.
-   Weekends: do nothing.
 2. **Facts.** Every factual claim (dates, tithis, history, numbers, release dates, box office) needs two
    independent reliable sources found today with WebSearch/WebFetch (start from column G). Drop any claim you
    cannot confirm. If the topic's core cannot be confirmed, mark the row `Skipped` with the reason and post nothing.
