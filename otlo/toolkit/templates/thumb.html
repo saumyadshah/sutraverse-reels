@@ -1,0 +1,43 @@
+<!doctype html><html lang="gu"><head><meta charset="utf-8">
+<!-- Otlo Reel thumbnail / cover, 1080x1920. Filled by build.py from script.json "thumb" + an art crop of the Reel.
+     Everything important sits inside the centre 1080x1440 (y 240-1680) so the profile-grid crop keeps it. -->
+<link rel="stylesheet" href="../runtime/otlo.css">
+<style>
+#stage{display:flex;flex-direction:column;align-items:center}
+.wrap{position:absolute;left:0;right:0;top:250px;bottom:390px;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 70px}
+.chip{align-self:center;font-size:44px;padding:12px 40px}
+.tgu{white-space:nowrap;font-weight:800;font-size:200px;line-height:1.02;margin-top:26px;color:var(--indigo)}
+.ten{max-width:940px;font-weight:800;font-stretch:75%;text-transform:uppercase;font-size:104px;line-height:.92;margin-top:18px;color:var(--red)}
+.art{position:relative;margin-top:30px;flex:1;width:100%;display:flex;align-items:center;justify-content:center;bottom:auto}
+.art img{max-width:100%;max-height:100%;object-fit:contain}
+.badge{position:absolute;left:465px;top:70px;width:150px;height:150px}
+.handle{position:absolute;left:0;right:0;bottom:120px;text-align:center;font-size:48px}
+.ribbon{position:absolute;left:0;right:0;bottom:250px;height:120px;background:var(--indigo);color:var(--ivory);display:flex;align-items:center;justify-content:center;gap:26px;font-size:50px;font-weight:700}
+.ribbon .en{font-size:52px;color:var(--haldi)}
+</style></head><body>
+<div id="stage">
+  <svg class="band" style="top:0" viewBox="0 0 1080 36"><defs><pattern id="pt" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#1B2A4A"/><path d="M18 4 L32 18 L18 32 L4 18 Z" fill="#A8322A"/><path d="M18 11 L25 18 L18 25 L11 18 Z" fill="#E3A21A"/></pattern></defs><rect width="1080" height="36" fill="url(#pt)"/></svg>
+  <svg class="band" style="bottom:0" viewBox="0 0 1080 36"><rect width="1080" height="36" fill="url(#pt)"/></svg>
+  <div class="wrap">
+    <span class="chip" id="chip"></span>
+    <div class="tgu" id="tgu"></div>
+    <div class="ten" id="ten"></div>
+    <div class="art"><img id="art" alt=""></div>
+  </div>
+  <svg class="badge" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#1B2A4A"/><circle cx="200" cy="200" r="184" fill="none" stroke="#E3A21A" stroke-width="6"/><line x1="90" y1="110" x2="310" y2="110" stroke="#E3A21A" stroke-width="6"/><g><polygon points="98,110 128,110 113,140" fill="#C2185B"/><polygon points="128,110 158,110 143,140" fill="#E3A21A"/><polygon points="158,110 188,110 173,140" fill="#C2185B"/><polygon points="188,110 218,110 203,140" fill="#E3A21A"/><polygon points="218,110 248,110 233,140" fill="#C2185B"/><polygon points="248,110 278,110 263,140" fill="#E3A21A"/><polygon points="278,110 308,110 293,140" fill="#C2185B"/></g><text x="200" y="252" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="104" fill="#F3E9D6">ઓટલો</text><text x="200" y="316" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="56" letter-spacing="8" style="font-stretch:75%" fill="#E3A21A">OTLO</text></svg>
+  <div class="kick handle">@otlo.gujarat · ગુજરાતની વાતો, ઓટલા પર</div>
+  <div class="ribbon" id="ribbon"><span id="rgu"></span><span class="en" id="ren"></span></div>
+</div>
+<script>
+window.fill=function(d){
+  const s=(id,v)=>{const e=document.getElementById(id); if(v){e.textContent=v}else{e.style.display='none'}};
+  s('chip',[d.chip_gu,d.chip_en].filter(Boolean).join(' · '));
+  s('tgu',d.gu); s('ten',d.en);
+  if(d.ribbon_gu||d.ribbon_en){s('rgu',d.ribbon_gu);s('ren',d.ribbon_en)} else document.getElementById('ribbon').style.display='none';
+  if(d.gu_size) document.getElementById('tgu').style.fontSize=d.gu_size+'px';
+  if(d.en_size) document.getElementById('ten').style.fontSize=d.en_size+'px';
+  document.getElementById('art').src=d.art;
+  const g=document.getElementById('tgu'); let fs=parseFloat(getComputedStyle(g).fontSize); while(g.scrollWidth>940&&fs>90){fs-=4;g.style.fontSize=fs+'px'}
+};
+</script>
+</body></html>

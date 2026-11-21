@@ -54,5 +54,20 @@
     "Follow Otlo."
    ]
   }
- ]
+ ],
+ "thumb": {
+  "chip_gu": "કારતક સુદ બારસ",
+  "chip_en": "Sat 21 Nov",
+  "gu": "તુલસી વિવાહ",
+  "en": "Why wedding season starts today",
+  "ribbon_gu": "લગ્નની સિઝન શરૂ",
+  "ribbon_en": "Wedding season: on",
+  "art_t": 9.0,
+  "art_clip": [
+   40,
+   1110,
+   1000,
+   720
+  ]
+ }
 }

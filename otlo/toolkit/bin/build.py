@@ -2,9 +2,9 @@
 """Otlo Reel builder. Run from repo root.
   python3 otlo/toolkit/bin/build.py render otlo/work/<slug>     # needs <slug>/reel.html, script.json, vo/s*.wav
   python3 otlo/toolkit/bin/build.py stills otlo/work/<slug> 1 4 9   # check stills at given seconds (original timeline)
-Outputs in <slug>/: timing.json, score.wav, mix.wav, subs.ass, reel.mp4, cover.jpg, contact.jpg, qa.json
+Outputs in <slug>/: timing.json, mix.wav, subs.ass, thumb.png/thumb.jpg, reel.mp4 (thumbnail = first frame), contact.jpg, qa.json\n  python3 otlo/toolkit/bin/build.py thumb otlo/work/<slug>      # thumbnail only
 script.json: {"voice":"Kore","direction":"","lines":[{"id":"s1","gu":"<Gujarati VO>","en":["subtitle chunk 1","chunk 2"]},...]}
-One line per scene, same order. Subtitle chunks: short (<= ~55 chars), plain English, no trailing commas needed."""
+One line per scene, same order. Optional "thumb": {"chip_gu","chip_en","gu","en","ribbon_gu","ribbon_en","art_t":sec,"art_clip":[x,y,w,h],"gu_size","en_size"}. Subtitle chunks: short (<= ~55 chars), plain English, no trailing commas needed."""
 import sys, json, wave, subprocess, pathlib, asyncio, numpy as np
 HERE = pathlib.Path(__file__).resolve().parent
 SR = 44100; FPS = 30
@@ -46,7 +46,7 @@ async def frames(d, T, only=None):
         else:
             for i in range(int(FPS*T['ends'][-1])):
                 await pg.evaluate(f"window.renderTimed({i/FPS},{T['starts']},{T['ends']})")
-                await pg.screenshot(path=str(out/f'f{i:05d}.jpg'), type='jpeg', quality=90)
+                await pg.screenshot(path=str(out/f'f{i:05d}.png'), type='png')
         await b.close()
 
 def music(d, T):
@@ -102,35 +102,68 @@ Style: Sub,Fira Sans SemiBold,46,&H00D6E9F3,&H00D6E9F3,&H004A2A1B,&H004A2A1B,0,0
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"""
     (d/'subs.ass').write_text(hdr+"\n".join(f"Dialogue: 0,{f(a)},{f(b)},Sub,,0,0,0,,{x}" for a, b, x in ev)+"\n")
 
+THUMB_LEAD = 0.4  # seconds the designed thumbnail is held as the very first frames (Instagram's API cover = first frame)
+
+async def thumbnail(d, S):
+    """Render thumb.png/thumb.jpg (1080x1920) from script.json "thumb" and an art crop of the Reel."""
+    from playwright.async_api import async_playwright
+    th = dict(S.get('thumb') or {})
+    if not th.get('gu'): th['gu'] = S['lines'][0]['gu'][:24]
+    t = float(th.get('art_t', 3.0)); clip = th.get('art_clip', [0, 820, 1080, 1060])
+    async with async_playwright() as p:
+        b = await p.chromium.launch(); pg = await b.new_page(viewport={'width': 1080, 'height': 1920})
+        await pg.goto((d/'reel.html').resolve().as_uri()); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(600)
+        await pg.evaluate(f"window.render({t})"); await pg.wait_for_timeout(100)
+        await pg.screenshot(path=str(d/'thumb_art.png'), type='png', clip={'x': clip[0], 'y': clip[1], 'width': clip[2], 'height': clip[3]})
+        await pg.goto((HERE.parent/'templates'/'thumb.html').resolve().as_uri()); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(400)
+        th['art'] = (d/'thumb_art.png').resolve().as_uri()
+        await pg.evaluate("d=>window.fill(d)", th); await pg.wait_for_timeout(500)
+        await pg.screenshot(path=str(d/'thumb.png'), type='png')
+        await b.close()
+    from PIL import Image
+    Image.open(d/'thumb.png').convert('RGB').save(d/'thumb.jpg', quality=95, subsampling=0)
+
 def encode(d):
-    fontsdir = HERE.parent/'fonts'
-    vf = f"ass={d/'subs.ass'}:fontsdir={fontsdir}"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(d/'frames/f%05d.jpg'), "-i", str(d/'mix.wav'),
-                    "-vf", vf, "-filter:a", "loudnorm=I=-14:TP=-1.5:LRA=11", "-c:v", "libx264", "-pix_fmt", "yuv420p", "-crf", "20", "-preset", "medium",
-                    "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-shortest", "-movflags", "+faststart", str(d/'reel.mp4')], check=True)
+    """Highest-quality master for Instagram: 1080x1920, 30 fps, H.264 High@4.2, CRF 16 (visually lossless for flat art),
+    BT.709 colour, AAC 256 kb/s 48 kHz, -14 LUFS. Thumbnail held for THUMB_LEAD s as the cover frame."""
+    fontsdir = HERE.parent/'fonts'; ms = int(THUMB_LEAD*1000)
+    fc = (f"[0:v]ass={d/'subs.ass'}:fontsdir={fontsdir}[main];"
+          f"[1:v]fps={FPS},trim=duration={THUMB_LEAD},setpts=PTS-STARTPTS[th];"
+          f"[th][main]concat=n=2:v=1:a=0,scale=1080:1920:flags=lanczos+accurate_rnd+full_chroma_int:out_color_matrix=bt709:out_range=tv,format=yuv420p[v];"
+          f"[2:a]adelay={ms}|{ms},loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]")
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(d/'frames/f%05d.png'),
+                    "-loop", "1", "-framerate", str(FPS), "-i", str(d/'thumb.png'), "-i", str(d/'mix.wav'),
+                    "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-r", str(FPS),
+                    "-c:v", "libx264", "-profile:v", "high", "-level:v", "4.2", "-preset", "slow", "-crf", "16", "-tune", "animation",
+                    "-maxrate", "20M", "-bufsize", "40M", "-g", "60", "-bf", "2",
+                    "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
+                    "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(d/'reel.mp4')], check=True)
 
 def qa(d, T, S):
     from PIL import Image
-    mids = [(s+e)/2 for s, e in zip(T['starts'], T['ends'])]
+    mids = [THUMB_LEAD+(s+e)/2 for s, e in zip(T['starts'], T['ends'])]
     ims = []
     for i, m in enumerate(mids):
         p = d/f'qa_{i+1}.jpg'; subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{m:.2f}", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-vf", "scale=270:480", str(p)], check=True); ims.append(Image.open(p))
     c = Image.new('RGB', (270*len(ims), 480)); [c.paste(im, (i*270, 0)) for i, im in enumerate(ims)]; c.save(d/'contact.jpg')
     for p in d.glob('qa_*.jpg'): p.unlink()
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", f"{mids[0]:.2f}", "-i", str(d/'reel.mp4'), "-frames:v", "1", str(d/'cover.jpg')], check=True)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-q:v", "2", str(d/'first_frame.jpg')], check=True)
     lufs = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(d/'reel.mp4'), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     import re; I = re.findall(r"I:\s+(-?[\d.]+) LUFS", lufs)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(d/'reel.mp4')], capture_output=True, text=True).stdout)
     chars = [len(l['gu']) for l in S['lines']]; speech = [c['off']-c['on'] for c in T['vo']]
     rate = [round(c/s, 1) for c, s in zip(chars, speech)]
     warn = [f"{l['id']}: {r} chars/s (normal 10-14) - possible leaked instruction or truncation, LISTEN" for l, r in zip(S['lines'], rate) if r < 8.5 or r > 17]
-    rep = {"duration": round(dur, 1), "lufs": float(I[-1]) if I else None, "chars_per_sec": rate, "warnings": warn, "ok": not warn and 15 <= dur <= 90}
+    vs = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,codec_name,profile,bit_rate,r_frame_rate,pix_fmt", "-of", "json", str(d/'reel.mp4')], capture_output=True, text=True).stdout)["streams"][0]
+    if (vs.get("width"), vs.get("height")) != (1080, 1920): warn.append(f"resolution {vs.get('width')}x{vs.get('height')}, expected 1080x1920")
+    rep = {"video": vs, "duration": round(dur, 1), "lufs": float(I[-1]) if I else None, "chars_per_sec": rate, "warnings": warn, "ok": not warn and 15 <= dur <= 90}
     (d/'qa.json').write_text(json.dumps(rep, indent=1)); print(json.dumps(rep, indent=1)); return rep
 
 if __name__ == "__main__":
     cmd, d = sys.argv[1], pathlib.Path(sys.argv[2]).resolve()
+    if cmd == "thumb": asyncio.run(thumbnail(d, json.loads((d/'script.json').read_text()))); sys.exit()
     if cmd == "stills": asyncio.run(frames(d, None, [float(x) for x in sys.argv[3:]])); sys.exit()
     S = json.loads((d/'script.json').read_text())
     T = timing(d, S); print("scenes", T['starts'], T['ends'])
     import shutil; shutil.rmtree(d/'frames', ignore_errors=True)
-    asyncio.run(frames(d, T)); mix(d, T, music(d, T)); subs(d, T, S); encode(d); qa(d, T, S)
+    asyncio.run(frames(d, T)); asyncio.run(thumbnail(d, S)); mix(d, T, music(d, T)); subs(d, T, S); encode(d); qa(d, T, S)
