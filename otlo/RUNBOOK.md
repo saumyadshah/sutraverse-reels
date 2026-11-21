@@ -12,7 +12,8 @@ Working days only (Mon–Fri). Days alternate:
 - **A day:** 1 carousel at 13:00 + 1 Reel at 19:30
 - **B day:** 1 Reel at 13:00 + 1 Reel at 19:30
 
-The calendar already encodes this (from 23 Nov). Carousels complement the Reels (a save-worthy cheat sheet,
+The calendar holds one week at a time; it is planned every Saturday by `otlo/PLANNING.md` (backlog in the
+`Idea bank` sheet). Carousels complement the Reels (a save-worthy cheat sheet,
 a map, a word list, poll results), never the same content restated. When adding rows, keep the pattern.
 
 ## Fixed IDs
