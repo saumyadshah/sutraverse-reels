@@ -2,7 +2,8 @@
 """Otlo Reel builder. Run from repo root.
   python3 otlo/toolkit/bin/build.py render otlo/work/<slug>     # needs <slug>/reel.html, script.json, vo/s*.wav
   python3 otlo/toolkit/bin/build.py stills otlo/work/<slug> 1 4 9   # check stills at given seconds (original timeline)
-Outputs in <slug>/: timing.json, mix.wav, subs.ass, thumb.png/thumb.jpg, reel.mp4 (thumbnail = first frame), contact.jpg, qa.json\n  python3 otlo/toolkit/bin/build.py thumb otlo/work/<slug>      # thumbnail only
+Outputs in <slug>/: timing.json, mix.wav, subs.ass, thumb.png/thumb.jpg, reel.mp4 (thumbnail = first frame), contact.jpg, qa.json\n  python3 otlo/toolkit/bin/build.py carousel otlo/work/<slug>   # needs carousel.html -> slide_NN.jpg, contact.jpg, qa.json
+  python3 otlo/toolkit/bin/build.py thumb otlo/work/<slug>      # thumbnail only
 script.json: {"voice":"Kore","direction":"","lines":[{"id":"s1","gu":"<Gujarati VO>","en":["subtitle chunk 1","chunk 2"]},...]}
 One line per scene, same order. Optional "thumb": {"chip_gu","chip_en","gu","en","ribbon_gu","ribbon_en","art_t":sec,"art_clip":[x,y,w,h],"gu_size","en_size"}. Subtitle chunks: short (<= ~55 chars), plain English, no trailing commas needed."""
 import sys, json, wave, subprocess, pathlib, asyncio, numpy as np
@@ -124,7 +125,7 @@ async def thumbnail(d, S):
     Image.open(d/'thumb.png').convert('RGB').save(d/'thumb.jpg', quality=95, subsampling=0)
 
 def encode(d):
-    """Highest-quality master for Instagram: 1080x1920, 30 fps, H.264 High@4.2, CRF 16 (visually lossless for flat art),
+    """Highest-quality master for Instagram: 1080x1920, 30 fps, H.264 High@4.2 at ~12 Mb/s (Instagram re-encodes, so a rich master keeps its copy crisp),
     BT.709 colour, AAC 256 kb/s 48 kHz, -14 LUFS. Thumbnail held for THUMB_LEAD s as the cover frame."""
     fontsdir = HERE.parent/'fonts'; ms = int(THUMB_LEAD*1000)
     fc = (f"[0:v]ass={d/'subs.ass'}:fontsdir={fontsdir}[main];"
@@ -134,8 +135,8 @@ def encode(d):
     subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(d/'frames/f%05d.png'),
                     "-loop", "1", "-framerate", str(FPS), "-i", str(d/'thumb.png'), "-i", str(d/'mix.wav'),
                     "-filter_complex", fc, "-map", "[v]", "-map", "[a]", "-r", str(FPS),
-                    "-c:v", "libx264", "-profile:v", "high", "-level:v", "4.2", "-preset", "slow", "-crf", "16", "-tune", "animation",
-                    "-maxrate", "20M", "-bufsize", "40M", "-g", "60", "-bf", "2",
+                    "-c:v", "libx264", "-profile:v", "high", "-level:v", "4.2", "-preset", "slow", "-tune", "animation",
+                    "-b:v", "12M", "-minrate", "8M", "-maxrate", "16M", "-bufsize", "24M", "-g", "60", "-bf", "2",
                     "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
                     "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-shortest", "-movflags", "+faststart", str(d/'reel.mp4')], check=True)
 
@@ -159,8 +160,32 @@ def qa(d, T, S):
     rep = {"video": vs, "duration": round(dur, 1), "lufs": float(I[-1]) if I else None, "chars_per_sec": rate, "warnings": warn, "ok": not warn and 15 <= dur <= 90}
     (d/'qa.json').write_text(json.dumps(rep, indent=1)); print(json.dumps(rep, indent=1)); return rep
 
+async def carousel(d):
+    """Render each <section class="slide"> of carousel.html to slide_NN.png + slide_NN.jpg (1080x1350, JPEG q95 4:4:4)."""
+    from playwright.async_api import async_playwright
+    from PIL import Image
+    for old in d.glob('slide_*'): old.unlink()
+    async with async_playwright() as p:
+        b = await p.chromium.launch(); pg = await b.new_page(viewport={'width': 1080, 'height': 1350})
+        await pg.goto((d/'carousel.html').resolve().as_uri()); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(700)
+        els = await pg.query_selector_all('section.slide')
+        for i, el in enumerate(els, 1):
+            await el.screenshot(path=str(d/f'slide_{i:02d}.png'), type='png')
+        await b.close()
+    paths = sorted(d.glob('slide_*.png')); warn = []
+    for q in paths:
+        im = Image.open(q).convert('RGB')
+        if im.size != (1080, 1350): warn.append(f"{q.name} is {im.size}, expected 1080x1350")
+        im.save(q.with_suffix('.jpg'), quality=95, subsampling=0)
+    if not 2 <= len(paths) <= 10: warn.append(f"{len(paths)} slides (need 2-10)")
+    cols = 5; rows = (len(paths)+cols-1)//cols; c = Image.new('RGB', (216*cols, 270*rows), 'white')
+    for i, q in enumerate(paths): c.paste(Image.open(q).convert('RGB').resize((216, 270)), ((i % cols)*216, (i//cols)*270))
+    c.save(d/'contact.jpg')
+    rep = {"slides": len(paths), "warnings": warn, "ok": not warn}; (d/'qa.json').write_text(json.dumps(rep, indent=1)); print(json.dumps(rep, indent=1))
+
 if __name__ == "__main__":
     cmd, d = sys.argv[1], pathlib.Path(sys.argv[2]).resolve()
+    if cmd == "carousel": asyncio.run(carousel(d)); sys.exit()
     if cmd == "thumb": asyncio.run(thumbnail(d, json.loads((d/'script.json').read_text()))); sys.exit()
     if cmd == "stills": asyncio.run(frames(d, None, [float(x) for x in sys.argv[3:]])); sys.exit()
     S = json.loads((d/'script.json').read_text())

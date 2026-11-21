@@ -1,6 +1,6 @@
 name: Otlo build
 # Builds Otlo Reels. Trigger: push a change to otlo/toolkit/queue.txt; each non-empty line is a work dir
-# (e.g. otlo/work/2026-11-22-family-invite) holding script.json + reel.html.
+# (e.g. otlo/work/2026-11-22-family-invite) holding script.json + reel.html (a Reel) or carousel.html (a carousel).
 # For each: records the Gujarati voice with Gemini TTS (secret GEMINI_API_KEY) unless vo/ already has every clip,
 # renders reel.mp4 + cover.jpg + contact.jpg + qa.json, and commits them.
 on:
@@ -32,7 +32,12 @@ jobs:
         run: |
           while read -r wd; do
             [ -z "$wd" ] && continue
-            mkdir -p "$wd/vo"; : > "$wd/build.log"
+            : > "$wd/build.log"
+            if [ -f "$wd/carousel.html" ] && [ ! -f "$wd/script.json" ]; then
+              if python3 otlo/toolkit/bin/build.py carousel "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
+              tail -20 "$wd/build.log"; continue
+            fi
+            mkdir -p "$wd/vo"
             n=$(python3 -c "import json;print(len(json.load(open('$wd/script.json'))['lines']))")
             have=$(ls "$wd"/vo/s*.wav 2>/dev/null | wc -l)
             if [ "$have" -lt "$n" ]; then

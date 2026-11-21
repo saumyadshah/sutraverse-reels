@@ -1,0 +1,51 @@
+<!doctype html><html lang="gu"><head><meta charset="utf-8">
+<!-- Otlo carousel skeleton. Lives at otlo/work/<date-slug>/carousel.html. Each <section class="slide"> is one
+     1080x1350 slide (portrait 4:5, Instagram's tallest feed size). 6-9 slides is the sweet spot, max 10.
+     Slide 1 = cover (hook + subject art), last slide = save/share + follow. Bilingual on every slide.
+     Draw the subject accurately in inline SVG (brand colours). Keep 60px clear at every edge. -->
+<link rel="stylesheet" href="../../toolkit/runtime/otlo.css">
+<style>
+body{margin:0;background:#888}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--ivory);color:var(--indigo);font-family:'Anek Gujarati',sans-serif;box-sizing:border-box;padding:110px 80px 90px;display:flex;flex-direction:column;gap:22px;margin-bottom:20px}
+.slide .band{position:absolute;left:0;width:1080px;height:36px}
+.num{font-weight:800;font-stretch:75%;font-size:56px;color:var(--haldi)}
+.pager{position:absolute;right:70px;bottom:56px;font-family:'Rasa',serif;font-style:italic;font-size:34px;color:var(--red)}
+.mark{position:absolute;left:70px;bottom:50px;display:flex;align-items:center;gap:14px;font-size:30px;font-weight:700}
+.cover .gu{font-size:150px}.cover .en{font-size:96px}
+.art{position:relative;bottom:auto;flex:1;display:flex;align-items:center;justify-content:center}
+.swipe{align-self:flex-start;background:var(--indigo);color:var(--ivory);font-weight:700;font-size:38px;padding:12px 30px;border-radius:999px}
+</style></head><body>
+<!-- reusable bits -->
+<template id="bands"><svg class="band" style="top:0" viewBox="0 0 1080 36"><defs><pattern id="pt" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#1B2A4A"/><path d="M18 4 L32 18 L18 32 L4 18 Z" fill="#A8322A"/><path d="M18 11 L25 18 L18 25 L11 18 Z" fill="#E3A21A"/></pattern></defs><rect width="1080" height="36" fill="url(#pt)"/></svg><svg class="band" style="bottom:0" viewBox="0 0 1080 36"><rect width="1080" height="36" fill="url(#pt)"/></svg></template>
+
+<section class="slide cover">
+  <span class="chip">{{CHIP_GU}} · {{CHIP_EN}}</span>
+  <div class="gu">{{TITLE_GU}}</div>
+  <div class="en">{{TITLE_EN}}</div>
+  <div class="art"><svg width="760" height="560" viewBox="-380 -280 760 560"><!-- ART of the real subject --></svg></div>
+  <span class="swipe">સ્વાઇપ કરો · Swipe →</span>
+</section>
+
+<section class="slide">
+  <div class="num">01</div>
+  <div class="gu" style="font-size:96px">{{HEAD_GU}}</div>
+  <div class="en" style="font-size:72px">{{HEAD_EN}}</div>
+  <div class="body" style="font-size:40px">{{BODY_EN}}</div>
+  <div class="gu" style="font-size:40px;font-weight:500">{{BODY_GU}}</div>
+  <div class="art"><svg width="600" height="420" viewBox="-300 -210 600 420"><!-- ART --></svg></div>
+</section>
+
+<section class="slide" style="background:var(--indigo);color:var(--ivory);justify-content:center;align-items:center;text-align:center">
+  <div class="gu" style="font-size:88px">સેવ કરો, શેર કરો</div>
+  <div class="en" style="font-size:80px;color:var(--haldi)">Save it. Send it to the family group.</div>
+  <div class="body" style="font-size:42px;margin-top:20px">{{COMMENT_PROMPT_EN}}</div>
+  <div class="gu" style="font-size:44px;margin-top:30px">@otlo.gujarat · ગુજરાતની વાતો, ઓટલા પર</div>
+</section>
+
+<script>
+// adds bands, the Otlo mark and "n / N" to every slide
+(function(){const S=[...document.querySelectorAll('.slide')],tpl=document.getElementById('bands').innerHTML;
+S.forEach((s,i)=>{s.insertAdjacentHTML('afterbegin',tpl);
+ if(i<S.length-1){s.insertAdjacentHTML('beforeend',`<div class="pager">${i+1} / ${S.length}</div><div class="mark"><svg width="54" height="54" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#1B2A4A"/><text x="200" y="250" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="110" fill="#F3E9D6">ઓટલો</text></svg>@otlo.gujarat</div>`)}});})();
+</script>
+</body></html>
