@@ -1,0 +1,68 @@
+<!doctype html><html lang="gu"><head><meta charset="utf-8">
+<!-- Otlo Reel skeleton. Lives at otlo/work/<date-slug>/reel.html. Copy, then replace the scenes.
+     Rules: one scene per voice line (same order as script.json); scene data-s/data-e are the ORIGINAL
+     animation timings (they get stretched to the voice automatically); element data-in is inside its scene.
+     Keep text out of the bottom 260px (subtitles). Illustrations: draw inline SVG in brand colours that show the
+     actual subject (khaman looks like khaman). No movie stills, posters, logos of others, or real people's faces. -->
+<link rel="stylesheet" href="../../toolkit/runtime/otlo.css">
+<style>
+.chat{align-self:center;width:960px;background:#FFF9EE;border:6px solid var(--indigo);border-radius:48px;overflow:hidden;margin-top:30px}
+.chat .hd{background:var(--indigo);color:var(--ivory);padding:28px 38px;font-size:52px;font-weight:700;display:flex;align-items:center;gap:20px}
+.chat .hd small{font-family:'Rasa',serif;font-style:italic;font-weight:400;font-size:36px;color:var(--haldi)}
+.msgs{padding:44px 34px;display:flex;flex-direction:column;gap:34px;min-height:1180px}
+.b{max-width:840px;background:#fff;border-radius:30px;padding:18px 28px 14px;box-shadow:0 4px 0 rgba(27,42,74,.10)}
+.b .n{font-size:38px;font-weight:700;color:var(--red)} .b .n.g{color:var(--leaf)} .b .n.p{color:var(--rani)}
+.b .t{font-size:70px;font-weight:700;color:var(--indigo);line-height:1.18}
+.b .e{font-family:'Rasa',serif;font-size:42px;color:#55606f;margin-top:4px}
+.b .tm{font-size:28px;color:#8b8f98;text-align:right;margin-top:4px}
+.seen{align-self:flex-end;font-family:'Rasa',serif;font-style:italic;font-size:38px;color:#8b8f98}
+</style>
+</head><body>
+<div id="stage">
+<svg class="band" style="top:0" viewBox="0 0 1080 36"><defs><pattern id="pt" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#1B2A4A"/><path d="M18 4 L32 18 L18 32 L4 18 Z" fill="#A8322A"/><path d="M18 11 L25 18 L18 25 L11 18 Z" fill="#E3A21A"/></pattern></defs><rect width="1080" height="36" fill="url(#pt)"/></svg>
+<svg class="band" style="bottom:0" viewBox="0 0 1080 36"><rect width="1080" height="36" fill="url(#pt)"/></svg>
+
+<!-- S1: hook -->
+<div class="scene" data-s="0" data-e="5">
+  <span class="chip a" data-in="0.1">ફેમિલી ગ્રુપ ચેટ · Family Group Chat</span>
+  <div class="gu a" data-in="0.35" data-pop="1" style="font-size:140px;margin-top:10px;white-space:nowrap">આજે સાંજે શું છે?</div>
+  <div class="en a" data-in="0.9" style="font-size:100px">Tonight's plan just dropped</div>
+  <div class="art a" data-in="1.0" data-rise="300" style="bottom:230px"><svg width="820" height="820" viewBox="-320 -330 640 640">
+ <path d="M-200,230 L-150,-230" stroke="#3C7A3A" stroke-width="26" stroke-linecap="round"/><path d="M200,230 L150,-230" stroke="#3C7A3A" stroke-width="26" stroke-linecap="round"/>
+ <path d="M-150,-230 Q0,-330 150,-230" stroke="#3C7A3A" stroke-width="22" fill="none" stroke-linecap="round"/>
+ <g stroke="#2E5E2C" stroke-width="4"><line x1="-194" y1="179" x2="-180" y2="179"/><line x1="194" y1="179" x2="180" y2="179"/><line x1="-189" y1="128" x2="-175" y2="128"/><line x1="189" y1="128" x2="175" y2="128"/><line x1="-183" y1="77" x2="-169" y2="77"/><line x1="183" y1="77" x2="169" y2="77"/><line x1="-178" y1="26" x2="-164" y2="26"/><line x1="178" y1="26" x2="164" y2="26"/><line x1="-172" y1="-26" x2="-158" y2="-26"/><line x1="172" y1="-26" x2="158" y2="-26"/><line x1="-167" y1="-77" x2="-153" y2="-77"/><line x1="167" y1="-77" x2="153" y2="-77"/><line x1="-161" y1="-128" x2="-147" y2="-128"/><line x1="161" y1="-128" x2="147" y2="-128"/><line x1="-156" y1="-179" x2="-142" y2="-179"/><line x1="156" y1="-179" x2="142" y2="-179"/></g>
+ <path d="M-150,-232 L150,-232" stroke="#E3A21A" stroke-width="6"/><polygon points="-140,-232 -100,-232 -120,-196" fill="#C2185B"/><polygon points="-100,-232 -60,-232 -80,-196" fill="#E3A21A"/><polygon points="-60,-232 -20,-232 -40,-196" fill="#C2185B"/><polygon points="-20,-232 20,-232 0,-196" fill="#E3A21A"/><polygon points="20,-232 60,-232 40,-196" fill="#C2185B"/><polygon points="60,-232 100,-232 80,-196" fill="#E3A21A"/><polygon points="100,-232 140,-232 120,-196" fill="#C2185B"/>
+ <g transform="translate(0,120)">
+  <path d="M0,40 L0,-150 M0,-60 L-50,-10 M0,-60 L50,-10 M0,-110 L-35,-125 M0,-110 L35,-125" stroke="#2E5E2C" stroke-width="7" fill="none" stroke-linecap="round"/><ellipse cx="-50" cy="-14" rx="22" ry="12" fill="#3C7A3A" transform="rotate(-30,-50,-14)"/><ellipse cx="50" cy="-14" rx="22" ry="12" fill="#3C7A3A" transform="rotate(30,50,-14)"/><ellipse cx="-36" cy="-126" rx="22" ry="12" fill="#3C7A3A" transform="rotate(-20,-36,-126)"/><ellipse cx="36" cy="-126" rx="22" ry="12" fill="#3C7A3A" transform="rotate(20,36,-126)"/><ellipse cx="-22" cy="-160" rx="22" ry="12" fill="#3C7A3A" transform="rotate(-50,-22,-160)"/><ellipse cx="22" cy="-160" rx="22" ry="12" fill="#3C7A3A" transform="rotate(50,22,-160)"/><ellipse cx="0" cy="-170" rx="22" ry="12" fill="#3C7A3A" transform="rotate(90,0,-170)"/><ellipse cx="-30" cy="-70" rx="22" ry="12" fill="#3C7A3A" transform="rotate(-25,-30,-70)"/><ellipse cx="30" cy="-70" rx="22" ry="12" fill="#3C7A3A" transform="rotate(25,30,-70)"/>
+  <circle cx="0" cy="-185" r="9" fill="#A8322A"/><circle cx="-12" cy="-172" r="7" fill="#A8322A"/><circle cx="12" cy="-172" r="7" fill="#A8322A"/>
+  <rect x="-150" y="40" width="300" height="34" fill="#A8322A"/><path d="M-130,74 L130,74 L105,200 L-105,200 Z" fill="#C8553D"/>
+  <path d="M-60,120 l24,-24 l24,24 l-24,24 z M12,120 l24,-24 l24,24 l-24,24 z" fill="#E3A21A"/>
+ </g></svg></div>
+</div>
+<div class="scene" data-s="5" data-e="10" style="padding-top:120px">
+  <div class="chat a" data-in="5.05"><div class="hd"><svg width="78" height="78" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#E3A21A"/><text x="200" y="262" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="170" fill="#1B2A4A">ફે</text></svg>ફેમિલી ગ્રુપ <small>· Family group · 14 members</small></div>
+  <div class="msgs"><div class="b a" data-in="5.6" data-pop="1"><div class="n ">બા · Ba</div><div class="t">સાત વાગ્યે બધા આંગણામાં. મોડું નહિ ચાલે.</div><div class="e">Everyone in the courtyard at 7. No one's late.</div><div class="tm">4:02 PM</div></div></div></div>
+</div>
+<div class="scene" data-s="10" data-e="16" style="padding-top:120px">
+  <div class="chat a" data-in="10.05"><div class="hd"><svg width="78" height="78" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#E3A21A"/><text x="200" y="262" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="170" fill="#1B2A4A">ફે</text></svg>ફેમિલી ગ્રુપ <small>· Family group · 14 members</small></div>
+  <div class="msgs"><div class="b a" data-in="10.4" data-pop="1"><div class="n p">મમ્મી · Mummy</div><div class="t">શેરડી કોણ લાવશે?</div><div class="e">Who's bringing the sugarcane?</div><div class="tm">4:05 PM</div></div><div class="b a" data-in="11.6" data-pop="1"><div class="n g">પપ્પા · Pappa</div><div class="t">હું.</div><div class="e">Me.</div><div class="tm">4:06 PM</div></div><div class="b a" data-in="13.4" data-pop="1"><div class="n g">પપ્પા · Pappa</div><div class="t">શેરડી મળે ક્યાં?</div><div class="e">Where do you even get sugarcane?</div><div class="tm">6:30 PM</div></div></div></div>
+</div>
+<div class="scene" data-s="16" data-e="21" style="padding-top:120px">
+  <div class="chat a" data-in="16.05"><div class="hd"><svg width="78" height="78" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#E3A21A"/><text x="200" y="262" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="170" fill="#1B2A4A">ફે</text></svg>ફેમિલી ગ્રુપ <small>· Family group · 14 members</small></div>
+  <div class="msgs"><div class="b a" data-in="16.4" data-pop="1"><div class="n p">ફઈ · Fai</div><div class="t">ઢોલ લાવું?</div><div class="e">Shall I bring the dhol?</div><div class="tm">6:41 PM</div></div><div class="b a" data-in="17.9" data-pop="1"><div class="n g">જય (USA) · Jay</div><div class="t">લાઈવ વીડિયો કરજો, પ્લીઝ!</div><div class="e">Please go live!</div><div class="tm">6:42 PM</div></div></div></div>
+</div>
+<div class="scene" data-s="21" data-e="26" style="padding-top:120px">
+  <div class="chat a" data-in="21.05"><div class="hd"><svg width="78" height="78" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#E3A21A"/><text x="200" y="262" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="170" fill="#1B2A4A">ફે</text></svg>ફેમિલી ગ્રુપ <small>· Family group · 14 members</small></div>
+  <div class="msgs"><div class="b a" data-in="21.5" data-pop="1"><div class="n ">બા · Ba</div><div class="t">હવે લગ્નની સિઝન શરૂ. બધા કપડાં તૈયાર રાખજો.</div><div class="e">Wedding season starts now. Get your outfits ready.</div><div class="tm">6:58 PM</div></div><div class="seen a" data-in="23.2">Seen by 14 · 14 લોકોએ જોયું</div></div></div>
+</div>
+<!-- END CARD (keep) -->
+<div class="scene" data-s="26.0" data-e="29.5" style="align-items:center;justify-content:center;padding-top:0;gap:34px">
+  <div class="a" data-in="26.1" data-pop="1" data-origin="center"><svg width="520" height="520" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#1B2A4A"/><line x1="80" y1="110" x2="320" y2="110" stroke="#E3A21A" stroke-width="5"/><polygon points="85,110 125,110 105,150" fill="#C2185B"/><polygon points="125,110 165,110 145,150" fill="#E3A21A"/><polygon points="165,110 205,110 185,150" fill="#C2185B"/><polygon points="195,110 235,110 215,150" fill="#E3A21A"/><polygon points="235,110 275,110 255,150" fill="#C2185B"/><polygon points="275,110 315,110 295,150" fill="#E3A21A"/><text x="200" y="275" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="116" fill="#F3E9D6">ઓટલો</text></svg></div>
+  <div class="kick a" data-in="26.3" style="font-size:46px;color:var(--indigo)">તમારા ઘરે કોણ શું લાવે છે? · Who brings what at yours?</div>
+  <div class="en a" data-in="26.5" style="font-size:120px;letter-spacing:.04em">OTLO</div>
+  <div class="gu a" data-in="26.8" style="font-size:66px">ગુજરાતની વાતો, ઓટલા પર</div>
+  <div class="kick a" data-in="27.1" style="font-size:44px">@otlo.gujarat · Next: Fafda-jalebi · Sun 1 PM</div>
+</div>
+</div>
+<script src="../../toolkit/runtime/otlo.js"></script>
+</body></html>

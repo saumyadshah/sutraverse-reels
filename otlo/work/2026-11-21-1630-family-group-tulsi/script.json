@@ -1,0 +1,70 @@
+{
+ "voice": "Kore",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "આજે સાંજે",
+  "chip_en": "Tonight",
+  "gu": "ફેમિલી ગ્રુપ",
+  "en": "Tulsi Vivah, family-group style",
+  "ribbon_gu": "શેરડી કોણ લાવશે?",
+  "ribbon_en": "Who's bringing the sugarcane?",
+  "art_t": 15.0,
+  "art_clip": [
+   60,
+   150,
+   960,
+   1020
+  ]
+ },
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "ફેમિલી ગ્રુપમાં આજે સાંજનો પ્લાન આવી ગયો છે. તુલસી વિવાહ!",
+   "en": [
+    "Tonight's plan just dropped in the family group.",
+    "Tulsi Vivah!"
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "બાનો મેસેજ: સાત વાગ્યે બધા આંગણામાં. મોડું નહિ ચાલે.",
+   "en": [
+    "Ba's message: everyone in the courtyard at seven.",
+    "No one's late."
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "મમ્મી પૂછે છે, શેરડી કોણ લાવશે? પપ્પા કહે, હું. અને સાડા છએ પપ્પા પૂછે છે, શેરડી મળે ક્યાં?",
+   "en": [
+    "Mummy asks who's bringing the sugarcane.",
+    "Pappa says: me.",
+    "At six-thirty Pappa asks: where do you even get sugarcane?"
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "ફઈ પૂછે છે, ઢોલ લાવું? અને અમેરિકાથી ભત્રીજો: લાઈવ વીડિયો કરજો, પ્લીઝ!",
+   "en": [
+    "Fai asks: shall I bring the dhol?",
+    "And the nephew in America: please go live!"
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "છેલ્લે બા: હવે લગ્નની સિઝન શરૂ. બધા કપડાં તૈયાર રાખજો.",
+   "en": [
+    "Finally, Ba: wedding season starts now.",
+    "Get your outfits ready."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "તમારા ઘરે આજે કોણ શું લાવે છે? કમેન્ટમાં કહો. ઓટલોને ફોલો કરો.",
+   "en": [
+    "Who's bringing what at your place tonight?",
+    "Tell us in the comments. Follow Otlo."
+   ]
+  }
+ ]
+}
