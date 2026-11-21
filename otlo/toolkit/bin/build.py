@@ -22,8 +22,43 @@ def speech_bounds(p):
 
 def orig_scenes(d):
     import re
+    if is_slideshow(d):
+        n = len(sorted(d.glob('slide_*.png'))); return [(i*4.5, (i+1)*4.5) for i in range(n)]
     html = (d/'reel.html').read_text()
     return [(float(s), float(e)) for s, e in re.findall(r'class="scene"[^>]*data-s="([\d.]+)"\s+data-e="([\d.]+)"', html)]
+
+def is_slideshow(d):
+    return (d/'carousel.html').exists() and not (d/'reel.html').exists()
+
+def slideshow_frames(d, T):
+    """Swipe-style Reel: each carousel slide (1080x1350) sits on the branded 1080x1920 stage with a slow push-in,
+    a 0.3 s slide-in between slides, and the bottom kept clear for subtitles. Also writes thumb.png (slide 1 = cover)."""
+    from PIL import Image, ImageDraw
+    out = d/'frames'; out.mkdir(exist_ok=True)
+    IV, IN, RD, HD = (243, 233, 214), (27, 42, 74), (168, 50, 42), (227, 162, 26)
+    bg = Image.new('RGB', (1080, 1920), IV); dr = ImageDraw.Draw(bg)
+    for y0 in (0, 1884):
+        dr.rectangle([0, y0, 1080, y0+36], fill=IN)
+        for x in range(0, 1080, 36):
+            dr.polygon([(x+18, y0+4), (x+32, y0+18), (x+18, y0+32), (x+4, y0+18)], fill=RD)
+            dr.polygon([(x+18, y0+11), (x+25, y0+18), (x+18, y0+25), (x+11, y0+18)], fill=HD)
+    slides = [Image.open(p).convert('RGB') for p in sorted(d.glob('slide_*.png'))]
+    W, H, X, Y = 1000, 1250, 40, 250          # slide box on the stage; subtitles live below y=1520 area (MarginV)
+    base = [s.resize((W, H), Image.LANCZOS) for s in slides]
+    def frame(i, local, dur):
+        k = 1 + 0.025*min(1, local/max(dur, .1))       # slow push-in
+        im = slides[i].resize((int(W*k), int(H*k)), Image.LANCZOS)
+        cx, cy = (im.width-W)//2, (im.height-H)//2; im = im.crop((cx, cy, cx+W, cy+H))
+        f = bg.copy(); f.paste(im, (X, Y))
+        if i > 0 and local < 0.3:                        # previous slide slides out to the left
+            t = local/0.3; e = 1-(1-t)**3; off = int(-W*1.1*e)
+            f = bg.copy(); f.paste(base[i-1], (X+off, Y)); f.paste(im, (X+off+int(W*1.1), Y))
+        return f
+    n = int(FPS*T['ends'][-1])
+    for fi in range(n):
+        t = fi/FPS; i = max(k for k in range(len(T['starts'])) if t >= T['starts'][k])
+        frame(min(i, len(slides)-1), t-T['starts'][i], T['ends'][i]-T['starts'][i]).save(out/f'f{fi:05d}.png', compress_level=1)
+    c = bg.copy(); c.paste(base[0], (X, Y)); c.save(d/'thumb.png'); c.save(d/'thumb.jpg', quality=95, subsampling=0)
 
 def timing(d, S):
     orig = orig_scenes(d); n = len(S['lines'])
@@ -189,6 +224,9 @@ if __name__ == "__main__":
     if cmd == "thumb": asyncio.run(thumbnail(d, json.loads((d/'script.json').read_text()))); sys.exit()
     if cmd == "stills": asyncio.run(frames(d, None, [float(x) for x in sys.argv[3:]])); sys.exit()
     S = json.loads((d/'script.json').read_text())
+    if is_slideshow(d): asyncio.run(carousel(d))
     T = timing(d, S); print("scenes", T['starts'], T['ends'])
     import shutil; shutil.rmtree(d/'frames', ignore_errors=True)
-    asyncio.run(frames(d, T)); asyncio.run(thumbnail(d, S)); mix(d, T, music(d, T)); subs(d, T, S); encode(d); qa(d, T, S)
+    if is_slideshow(d): slideshow_frames(d, T)
+    else: asyncio.run(frames(d, T)); asyncio.run(thumbnail(d, S))
+    mix(d, T, music(d, T)); subs(d, T, S); encode(d); qa(d, T, S)
