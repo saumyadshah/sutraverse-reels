@@ -1,0 +1,69 @@
+{
+ "voice": "Kore",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "શિયાળો",
+  "chip_en": "Winter",
+  "gu": "અડદિયા પાક",
+  "en": "Who's making it this year?",
+  "ribbon_gu": "ઘી કોણ લાવશે?",
+  "ribbon_en": "Who's bringing the ghee?",
+  "art_t": 15.0,
+  "art_clip": [
+   60,
+   150,
+   960,
+   620
+  ]
+ },
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "રવિવારની સાંજ, અને ફેમિલી ગ્રુપમાં શિયાળાનો પહેલો મેસેજ આવી ગયો.",
+   "en": [
+    "Sunday evening, and winter's first message",
+    "just landed in the family group."
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "બા પૂછે છે: આ વખતે અડદિયા પાક કોણ બનાવશે?",
+   "en": [
+    "Ba asks: who's making adadiya pak this time?"
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "મમ્મી કહે, હું બનાવીશ, પણ ઘી કોણ લાવશે? પપ્પા કહે, હું. દસ મિનિટ પછી પપ્પા: કેટલા કિલો?",
+   "en": [
+    "Mummy: I'll make it, but who's bringing the ghee?",
+    "Pappa: me.",
+    "Ten minutes later, Pappa: how many kilos?"
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "ફઈ: મારો ડબ્બો અત્યારથી અલગ રાખજો. અને અમેરિકાથી જય: કુરિયર કરી દેજો, પ્લીઝ!",
+   "en": [
+    "Fai: keep my box aside already.",
+    "And Jay in America: please courier some!"
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "છેલ્લે બા: તો હલાવવામાં મદદ કોણ કરશે? અને આખું ગ્રુપ ચૂપ.",
+   "en": [
+    "Finally, Ba: so who's helping with the stirring?",
+    "And the whole group goes quiet."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "તમારા ઘરે અડદિયા પાક કોણ બનાવે છે? કમેન્ટમાં કહો. ઓટલોને ફોલો કરો.",
+   "en": [
+    "Who makes adadiya pak at your place?",
+    "Tell us in the comments. Follow Otlo."
+   ]
+  }
+ ]
+}
