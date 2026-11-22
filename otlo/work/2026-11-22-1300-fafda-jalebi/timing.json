@@ -1,0 +1,64 @@
+{
+ "starts": [
+  0.0,
+  10.25,
+  20.1,
+  30.65,
+  43.0,
+  51.15,
+  60.9
+ ],
+ "ends": [
+  10.25,
+  20.1,
+  30.65,
+  43.0,
+  51.15,
+  60.9,
+  66.9
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1300-fafda-jalebi/vo/s1.wav",
+   "at": 0.15,
+   "on": 0.35000000000000003,
+   "off": 9.4
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1300-fafda-jalebi/vo/s2.wav",
+   "at": 10.25,
+   "on": 0.35000000000000003,
+   "off": 9.15
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1300-fafda-jalebi/vo/s3.wav",
+   "at": 20.15,
+   "on": 0.30000000000000004,
+   "off": 9.8
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1300-fafda-jalebi/vo/s4.wav",
+   "at": 30.75,
+   "on": 0.25,
+   "off": 11.55
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1300-fafda-jalebi/vo/s5.wav",
+   "at": 43.1,
+   "on": 0.25,
+   "off": 7.3500000000000005
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1300-fafda-jalebi/vo/s6.wav",
+   "at": 51.25,
+   "on": 0.25,
+   "off": 8.950000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1300-fafda-jalebi/vo/s7.wav",
+   "at": 60.95,
+   "on": 0.30000000000000004,
+   "off": 4.3500000000000005
+  }
+ ]
+}
