@@ -128,6 +128,16 @@ indigo #1B2A4A, red #A8322A, haldi #E3A21A, rani #C2185B sparingly, leaf #3C7A3A
 Gujarati headline + English headline + optional short body + SVG art of the real subject. Keep the bottom 260 px
 free (subtitles). Quality bar: `otlo/toolkit/examples/2026-11-21-tulsi-vivah/`.
 
+### 4B-chat. Chat-style Reels (Family Group Chat and any "group chat" format) — mandatory template
+Saumya (22 Nov): chat posts must look like a **real phone chat**. Never hand-build chat bubbles; write
+`chat.json` and run `python3 otlo/toolkit/bin/chat_reel.py otlo/work/<dir>` to generate `reel.html` (phone frame,
+status bar, group header with members / "… is typing", patterned wallpaper, bubbles with tails, timestamps,
+"Today" marker, message bar; earlier messages stay and scroll up). One scene per voice line between the hook and
+the end card (hook = line 1, end card = last line). Keep each message short (≤ 40 Gujarati characters), add the
+English under it, invented names only, generic UI (no real app names or logos). Thumbnail: `art_t` inside a chat
+scene and `art_clip` ≈ `[90,110,900,760]` so the cover shows the phone top (status bar, group name, first message).
+Example: `otlo/work/2026-11-22-1945-family-group-adadiya/`.
+
 ### 4C. Carousel slot → swipe-style Reel (`carousel.html` + `script.json`)
 Saumya's choice (21 Nov): carousel slots are posted as **swipe-style Reels** (vidIQ needs a manual approval
 for true carousels, so those never run unattended). Make the slides exactly as a carousel, then voice them:
