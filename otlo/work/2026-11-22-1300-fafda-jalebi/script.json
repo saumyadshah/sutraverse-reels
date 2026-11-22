@@ -1,0 +1,30 @@
+{
+ "voice": "Kore",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "રવિવારની સવાર",
+  "chip_en": "Sunday special",
+  "gu": "ફાફડા-જલેબી",
+  "en": "Why this pair, and why Dussehra?",
+  "ribbon_gu": "ખારું + ગળ્યું",
+  "ribbon_en": "Salty + sweet",
+  "art_t": 4.2,
+  "art_clip": [20, 930, 1040, 740]
+ },
+ "lines": [
+  {"id": "s1", "gu": "રવિવારની સવાર અને ફાફડા-જલેબી. ખારું અને ગળ્યું, એક જ ડીશમાં. આ જોડી આવી ક્યાંથી?",
+   "en": ["Sunday morning and fafda-jalebi.", "Salty and sweet on one plate.", "Where did this pair come from?"]},
+  {"id": "s2", "gu": "ફાફડા બને છે ચણાના લોટ, અજમા અને મીઠાથી. સાથે તળેલાં લીલાં મરચાં, કાચા પપૈયાનો સંભારો અને ચટણી.",
+   "en": ["Fafda is made from gram flour, ajwain and salt.", "It comes with fried green chillies,", "raw papaya sambharo and chutney."]},
+  {"id": "s3", "gu": "આ જોડી સૌથી વધુ જાણીતી બની દશેરાથી. ઘણા ગુજરાતી પરિવારો માટે દશેરાની સવારે ફાફડા-જલેબી ખાવાં એ દર વર્ષની પરંપરા છે.",
+   "en": ["The pair became famous through Dussehra.", "For many Gujarati families,", "fafda-jalebi on Dussehra morning is a yearly ritual."]},
+  {"id": "s4", "gu": "લોકકથા કહે છે કે ભગવાન રામને જલેબી ગમતી, અને હનુમાનજીને ચણાના લોટની વાનગીઓ. ઘણા માને છે કે નવરાત્રિનો ઉપવાસ ચણાના લોટથી છોડાય.",
+   "en": ["Folklore says Lord Ram loved jalebi,", "and Hanuman loved gram-flour dishes.", "Many believe the Navratri fast", "is best broken with gram flour."]},
+  {"id": "s5", "gu": "એટલે દશેરાની સવારે ફરસાણની દુકાનો બહાર લાંબી લાઇનો લાગે છે, ક્યાંક તો સવારે ચાર વાગ્યાથી.",
+   "en": ["So on Dussehra morning, long queues form", "outside farsan shops,", "some starting as early as 4 a.m."]},
+  {"id": "s6", "gu": "અને બાકીના દિવસોમાં પણ આ ગુજરાતનો મનગમતો નાસ્તો છે. તમને ફાફડા સાથે શું જોઈએ: મરચાં કે સંભારો? કમેન્ટમાં લખો.",
+   "en": ["And on other days, it's still a favourite breakfast.", "What do you want with your fafda:", "chillies or sambharo? Tell us in the comments."]},
+  {"id": "s7", "gu": "ગુજરાતની વાતો, ઓટલા પર. ઓટલોને ફોલો કરો.",
+   "en": ["Stories of Gujarat, on the otlo.", "Follow Otlo."]}
+ ]
+}
