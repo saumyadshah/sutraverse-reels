@@ -1,0 +1,86 @@
+{
+ "group": "ફેમિલી ગ્રુપ",
+ "members": "Ba, Mummy, Pappa, Fai, Jay +9",
+ "clock": "7:20",
+ "hook": {
+  "chip": "ફેમિલી ગ્રુપ ચેટ · Family Group Chat",
+  "gu": "શિયાળો આવી ગયો",
+  "en": "Winter has entered the chat",
+  "art_svg": "<svg width=\"820\" height=\"700\" viewBox=\"-360 -300 720 620\">\n <path d=\"M-120,-260 q-30,-40 0,-80 M0,-270 q-30,-40 0,-80 M120,-260 q-30,-40 0,-80\" stroke=\"#C9B48E\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>\n <ellipse cx=\"0\" cy=\"120\" rx=\"330\" ry=\"90\" fill=\"#A8322A\"/><ellipse cx=\"0\" cy=\"100\" rx=\"300\" ry=\"70\" fill=\"#E3A21A\"/><ellipse cx=\"0\" cy=\"96\" rx=\"270\" ry=\"56\" fill=\"#F3E9D6\"/>\n <g transform=\"translate(-150,40)\"><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"96\" rx=\"10\" fill=\"#7A4A26\"/><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"30\" rx=\"10\" fill=\"#93603A\"/><circle cx=\"-30\" cy=\"-34\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"0\" cy=\"-30\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"28\" cy=\"-36\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"-12\" cy=\"-40\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"16\" cy=\"-28\" r=\"5\" fill=\"#E8D9B0\"/></g><g transform=\"translate(0,30)\"><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"96\" rx=\"10\" fill=\"#7A4A26\"/><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"30\" rx=\"10\" fill=\"#93603A\"/><circle cx=\"-30\" cy=\"-34\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"0\" cy=\"-30\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"28\" cy=\"-36\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"-12\" cy=\"-40\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"16\" cy=\"-28\" r=\"5\" fill=\"#E8D9B0\"/></g><g transform=\"translate(150,40)\"><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"96\" rx=\"10\" fill=\"#7A4A26\"/><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"30\" rx=\"10\" fill=\"#93603A\"/><circle cx=\"-30\" cy=\"-34\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"0\" cy=\"-30\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"28\" cy=\"-36\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"-12\" cy=\"-40\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"16\" cy=\"-28\" r=\"5\" fill=\"#E8D9B0\"/></g><g transform=\"translate(-80,-50)\"><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"96\" rx=\"10\" fill=\"#7A4A26\"/><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"30\" rx=\"10\" fill=\"#93603A\"/><circle cx=\"-30\" cy=\"-34\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"0\" cy=\"-30\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"28\" cy=\"-36\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"-12\" cy=\"-40\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"16\" cy=\"-28\" r=\"5\" fill=\"#E8D9B0\"/></g><g transform=\"translate(80,-50)\"><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"96\" rx=\"10\" fill=\"#7A4A26\"/><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"30\" rx=\"10\" fill=\"#93603A\"/><circle cx=\"-30\" cy=\"-34\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"0\" cy=\"-30\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"28\" cy=\"-36\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"-12\" cy=\"-40\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"16\" cy=\"-28\" r=\"5\" fill=\"#E8D9B0\"/></g><g transform=\"translate(0,-130)\"><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"96\" rx=\"10\" fill=\"#7A4A26\"/><rect x=\"-58\" y=\"-48\" width=\"116\" height=\"30\" rx=\"10\" fill=\"#93603A\"/><circle cx=\"-30\" cy=\"-34\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"0\" cy=\"-30\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"28\" cy=\"-36\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"-12\" cy=\"-40\" r=\"5\" fill=\"#E8D9B0\"/><circle cx=\"16\" cy=\"-28\" r=\"5\" fill=\"#E8D9B0\"/></g>\n</svg>"
+ },
+ "scenes": [
+  {
+   "msgs": [
+    {
+     "from": "બા · Ba",
+     "color": "#A8322A",
+     "gu": "આ વખતે અડદિયા પાક કોણ બનાવશે?",
+     "en": "Who's making adadiya pak this time?",
+     "time": "7:02 PM"
+    }
+   ],
+   "typing": "Mummy is typing…"
+  },
+  {
+   "msgs": [
+    {
+     "from": "મમ્મી · Mummy",
+     "color": "#C2185B",
+     "gu": "હું બનાવીશ. પણ ઘી કોણ લાવશે?",
+     "en": "I'll make it. But who's bringing the ghee?",
+     "time": "7:04 PM"
+    },
+    {
+     "from": "પપ્પા · Pappa",
+     "color": "#2E7D32",
+     "gu": "હું.",
+     "en": "Me.",
+     "time": "7:05 PM"
+    },
+    {
+     "from": "પપ્પા · Pappa",
+     "color": "#2E7D32",
+     "gu": "કેટલા કિલો?",
+     "en": "How many kilos?",
+     "time": "7:15 PM"
+    }
+   ],
+   "typing": "Fai is typing…"
+  },
+  {
+   "msgs": [
+    {
+     "from": "ફઈ · Fai",
+     "color": "#1565C0",
+     "gu": "મારો ડબ્બો અત્યારથી અલગ રાખજો.",
+     "en": "Keep my box aside already.",
+     "time": "7:16 PM"
+    },
+    {
+     "from": "જય (USA) · Jay",
+     "color": "#6A1B9A",
+     "gu": "કુરિયર કરી દેજો, પ્લીઝ!",
+     "en": "Please courier some!",
+     "time": "7:16 PM"
+    }
+   ],
+   "typing": "Ba is typing…"
+  },
+  {
+   "msgs": [
+    {
+     "from": "બા · Ba",
+     "color": "#A8322A",
+     "gu": "તો હલાવવામાં મદદ કોણ કરશે?",
+     "en": "So who's helping with the stirring?",
+     "time": "7:20 PM"
+    }
+   ],
+   "seen": "Seen by 14 · no replies"
+  }
+ ],
+ "end": {
+  "question": "તમારા ઘરે અડદિયા કોણ બનાવે છે? · Who makes it at yours?",
+  "next": "Dev Diwali guide · Mon 1 PM"
+ }
+}
