@@ -1,0 +1,56 @@
+{
+ "starts": [
+  0.0,
+  5.8,
+  10.8,
+  20.65,
+  26.95,
+  32.85
+ ],
+ "ends": [
+  5.8,
+  10.8,
+  20.65,
+  26.95,
+  32.85,
+  40.2
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1945-family-group-adadiya/vo/s1.wav",
+   "at": 0.25,
+   "on": 0.25,
+   "off": 4.8500000000000005
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1945-family-group-adadiya/vo/s2.wav",
+   "at": 5.95,
+   "on": 0.2,
+   "off": 3.25
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1945-family-group-adadiya/vo/s3.wav",
+   "at": 10.9,
+   "on": 0.25,
+   "off": 9.05
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1945-family-group-adadiya/vo/s4.wav",
+   "at": 20.75,
+   "on": 0.25,
+   "off": 5.5
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1945-family-group-adadiya/vo/s5.wav",
+   "at": 27.0,
+   "on": 0.30000000000000004,
+   "off": 5.15
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-22-1945-family-group-adadiya/vo/s6.wav",
+   "at": 32.9,
+   "on": 0.30000000000000004,
+   "off": 5.7
+  }
+ ]
+}
