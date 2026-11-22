@@ -53,7 +53,16 @@ Read `{"kind":"readCells","sheet":"Calendar","range":"A1:H120"}`. Write
 7. **No sponsored content, no paid links, no replies/DMs, no deleting posts.**
 8. **Mandatory for every post: highest-quality export, a designed thumbnail/cover, the full caption formula
    (with the [keywords] block and exactly 5 hashtags), and the skills listed below.** A post missing any of these is not posted.
-9. **When in doubt, skip.** A skipped slot is fine; a wrong or offensive post is not. Always log the reason.
+9. **When in doubt, skip the topic, not the slot** (Saumya, 22 Nov: a slot must not stay empty). If this slot's
+   topic fails rule 2, 3 or 4, mark its row `Skipped` with the reason and make a **backup** for the same slot:
+   (a) a *Family Group Chat* Reel (original comedy, invented characters, no facts to check) on a seasonal or
+   topical everyday moment, or (b) an `Idea bank` row whose sources you CAN confirm today. Add the backup as a new
+   calendar row (same date and time, Status `Posted` once live) and post it, even if it goes out up to 60 minutes
+   late. Never publish a backup that fails any hard rule; never post twice in one slot. Log both.
+10. **Language posts (Gujlish Shabdkosh, Shabdkosh Cards):** the two sources may be one Gujarati dictionary
+   (GujaratiLexicon, Bhagavadgomandal, Rekhta Gujarati) plus one published usage example from a reputable
+   Gujarati outlet or book; say "commonly used to mean" rather than claiming a dictionary definition you could
+   not read.
 
 ## Skills to use (Saumya: "take into account all the skills we have")
 Load each with the Skill tool at the step it belongs to and follow it, inside Otlo's rules (these hard rules win
