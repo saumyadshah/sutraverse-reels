@@ -10,15 +10,15 @@ Style: Sub,Fira Sans SemiBold,46,&H00D6E9F3,&H00D6E9F3,&H004A2A1B,&H004A2A1B,0,0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.50,0:00:02.60,Sub,,0,0,0,,Before the cold reaches Gujarat,
-Dialogue: 0,0:00:02.63,0:00:05.15,Sub,,0,0,0,,Ba's message reaches the family group.
-Dialogue: 0,0:00:06.20,0:00:08.16,Sub,,0,0,0,,Ba writes: it's cold from tomorrow,
-Dialogue: 0,0:00:08.19,0:00:10.00,Sub,,0,0,0,,everyone take out your sweaters.
-Dialogue: 0,0:00:11.70,0:00:15.17,Sub,,0,0,0,,Mummy asks: who's getting the bag down from the loft?
-Dialogue: 0,0:00:15.20,0:00:17.25,Sub,,0,0,0,,Pappa says: me. In the morning.
-Dialogue: 0,0:00:18.30,0:00:23.26,Sub,,0,0,0,,Fai: my red shawl is still at your place.
-Dialogue: 0,0:00:23.29,0:00:29.00,Sub,,0,0,0,,And Jay in America: cold? It's minus five here!
-Dialogue: 0,0:00:30.05,0:00:32.67,Sub,,0,0,0,,Ba: then you wear a sweater too, and send a photo.
-Dialogue: 0,0:00:32.70,0:00:34.35,Sub,,0,0,0,,And the whole group goes quiet.
-Dialogue: 0,0:00:35.55,0:00:39.47,Sub,,0,0,0,,Who announces winter at your place? Tell us below.
-Dialogue: 0,0:00:39.50,0:00:43.05,Sub,,0,0,0,,Stories of Gujarat, on the otlo. Follow Otlo.
+Dialogue: 0,0:00:00.50,0:00:02.57,Sub,,0,0,0,,Before the cold reaches Gujarat,
+Dialogue: 0,0:00:02.60,0:00:05.10,Sub,,0,0,0,,Ba's message reaches the family group.
+Dialogue: 0,0:00:06.15,0:00:08.29,Sub,,0,0,0,,Ba writes: it's cold from tomorrow,
+Dialogue: 0,0:00:08.32,0:00:10.30,Sub,,0,0,0,,everyone take out your sweaters.
+Dialogue: 0,0:00:11.65,0:00:15.25,Sub,,0,0,0,,Mummy asks: who's getting the bag down from the loft?
+Dialogue: 0,0:00:15.28,0:00:17.40,Sub,,0,0,0,,Pappa says: me. In the morning.
+Dialogue: 0,0:00:18.45,0:00:21.82,Sub,,0,0,0,,Fai says: my red shawl is still at your place.
+Dialogue: 0,0:00:21.85,0:00:25.55,Sub,,0,0,0,,And Jay writes from America: it's minus five here.
+Dialogue: 0,0:00:26.60,0:00:30.37,Sub,,0,0,0,,Ba: then you wear a sweater too, and send a photo.
+Dialogue: 0,0:00:30.40,0:00:32.75,Sub,,0,0,0,,And the whole group goes quiet.
+Dialogue: 0,0:00:33.80,0:00:37.80,Sub,,0,0,0,,Who announces winter at your place? Tell us below.
+Dialogue: 0,0:00:37.83,0:00:41.45,Sub,,0,0,0,,Stories of Gujarat, on the otlo. Follow Otlo.

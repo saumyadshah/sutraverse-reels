@@ -1,56 +1,56 @@
 {
  "starts": [
   0.0,
-  5.85,
-  11.35,
-  17.95,
-  29.7,
-  35.2
+  5.8,
+  11.3,
+  18.1,
+  26.25,
+  33.45
  ],
  "ends": [
-  5.85,
-  11.35,
-  17.95,
-  29.7,
-  35.2,
-  44.65
+  5.8,
+  11.3,
+  18.1,
+  26.25,
+  33.45,
+  43.05
  ],
  "vo": [
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1930-family-group-sweater/vo/s1.wav",
    "at": 0.25,
    "on": 0.25,
-   "off": 4.9
+   "off": 4.8500000000000005
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1930-family-group-sweater/vo/s2.wav",
-   "at": 5.9,
-   "on": 0.30000000000000004,
-   "off": 4.1000000000000005
+   "at": 5.95,
+   "on": 0.2,
+   "off": 4.3500000000000005
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1930-family-group-sweater/vo/s3.wav",
-   "at": 11.4,
-   "on": 0.30000000000000004,
-   "off": 5.8500000000000005
+   "at": 11.45,
+   "on": 0.2,
+   "off": 5.95
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1930-family-group-sweater/vo/s4.wav",
-   "at": 18.05,
-   "on": 0.25,
-   "off": 10.950000000000001
+   "at": 18.15,
+   "on": 0.30000000000000004,
+   "off": 7.4
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1930-family-group-sweater/vo/s5.wav",
-   "at": 29.8,
+   "at": 26.35,
    "on": 0.25,
-   "off": 4.55
+   "off": 6.4
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1930-family-group-sweater/vo/s6.wav",
-   "at": 35.25,
-   "on": 0.30000000000000004,
-   "off": 7.800000000000001
+   "at": 33.55,
+   "on": 0.25,
+   "off": 7.9
   }
  ]
 }
