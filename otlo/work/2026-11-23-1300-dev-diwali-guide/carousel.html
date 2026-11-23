@@ -1,0 +1,189 @@
+<!doctype html><html lang="gu"><head><meta charset="utf-8">
+<!-- Otlo carousel skeleton. Lives at otlo/work/<date-slug>/carousel.html. Each <section class="slide"> is one
+     1080x1350 slide (portrait 4:5, Instagram's tallest feed size). 6-9 slides is the sweet spot, max 10.
+     Slide 1 = cover (hook + subject art), last slide = save/share + follow. Bilingual on every slide.
+     Draw the subject accurately in inline SVG (brand colours). Keep 60px clear at every edge. -->
+<link rel="stylesheet" href="../../toolkit/runtime/otlo.css">
+<style>
+body{margin:0;background:#888}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--ivory);color:var(--indigo);font-family:'Anek Gujarati',sans-serif;box-sizing:border-box;padding:110px 80px 90px;display:flex;flex-direction:column;gap:22px;margin-bottom:20px}
+.slide .band{position:absolute;left:0;width:1080px;height:36px}
+.num{font-weight:800;font-stretch:75%;font-size:56px;color:var(--haldi)}
+.pager{position:absolute;right:70px;bottom:56px;font-family:'Rasa',serif;font-style:italic;font-size:34px;color:var(--red)}
+.mark{position:absolute;left:70px;bottom:50px;display:flex;align-items:center;gap:14px;font-size:30px;font-weight:700}
+.cover{padding-bottom:150px}.cover .gu{font-size:150px}.cover .en{font-size:96px}
+.art{position:relative;bottom:auto;flex:1;display:flex;align-items:center;justify-content:center}
+.swipe{align-self:flex-start;background:var(--indigo);color:var(--ivory);font-weight:700;font-size:38px;padding:12px 30px;border-radius:999px}
+</style><style>
+.row{display:flex;gap:18px;align-items:baseline}
+.tbl{width:100%;border-collapse:collapse;font-size:34px}
+.tbl td{padding:9px 14px;border-bottom:3px solid #D9C6A3;vertical-align:top}
+.tbl td:first-child{font-weight:800;font-stretch:75%;text-transform:uppercase;color:var(--red);width:250px;font-size:38px}
+.tbl .g{font-weight:500;font-size:32px;color:#4A5675}
+.note{font-family:'Rasa',serif;font-style:italic;font-size:30px;color:#5A6480}
+.timebox{background:var(--indigo);color:var(--ivory);border-radius:10px;padding:24px 34px;font-size:42px;line-height:1.35}
+.timebox b{color:var(--haldi)}
+</style></head><body>
+<!-- reusable bits --><svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="diya" viewBox="-60 -110 120 150" overflow="visible">
+ <path d="M0,-100 C14,-78 18,-62 12,-50 C8,-42 -8,-42 -12,-50 C-18,-62 -14,-78 0,-100 Z" fill="#E3A21A"/>
+ <path d="M0,-82 C7,-70 8,-60 5,-53 C3,-49 -3,-49 -5,-53 C-8,-60 -7,-70 0,-82 Z" fill="#FFF3C4"/>
+ <path d="M-2,-46 L2,-46 L2,-34 L-2,-34 Z" fill="#3A2A1A"/>
+ <path d="M-56,-34 L44,-34 L58,-44 L52,-30 C46,-4 24,10 0,10 C-28,10 -50,-6 -56,-34 Z" fill="#A8322A"/>
+ <path d="M-56,-34 L44,-34 L58,-44 L52,-30 C40,-36 -40,-36 -56,-34 Z" fill="#7E2520"/>
+ <path d="M-40,-20 Q0,-8 40,-20" stroke="#E3A21A" stroke-width="4" fill="none"/>
+ <circle cx="-22" cy="-6" r="3.5" fill="#E3A21A"/><circle cx="0" cy="-2" r="3.5" fill="#E3A21A"/><circle cx="22" cy="-6" r="3.5" fill="#E3A21A"/>
+</symbol>
+<symbol id="shikhara" viewBox="-160 -300 320 320" overflow="visible">
+ <path d="M0,-290 L4,-262 L-4,-262 Z" fill="#E3A21A"/><line x1="0" y1="-290" x2="0" y2="-330" stroke="#1B2A4A" stroke-width="4"/>
+ <path d="M0,-330 L40,-318 L0,-306 Z" fill="#A8322A"/>
+ <ellipse cx="0" cy="-258" rx="22" ry="10" fill="#1B2A4A"/>
+ <path d="M-22,-255 C-40,-200 -60,-150 -70,-90 L70,-90 C60,-150 40,-200 22,-255 Z" fill="#1B2A4A"/>
+ <path d="M-70,-90 C-82,-120 -96,-130 -110,-130 L-118,-40 L118,-40 L110,-130 C96,-130 82,-120 70,-90 Z" fill="#26375C"/>
+ <path d="M-150,-40 L150,-40 L150,0 L-150,0 Z" fill="#1B2A4A"/>
+ <path d="M-20,0 L-20,-26 A20,20 0 0 1 20,-26 L20,0 Z" fill="#E3A21A"/>
+ <path d="M-110,-40 L-110,-60 A12,12 0 0 1 -86,-60 L-86,-40 Z" fill="#E3A21A" opacity=".8"/><path d="M86,-40 L86,-60 A12,12 0 0 1 110,-60 L110,-40 Z" fill="#E3A21A" opacity=".8"/>
+ <path d="M-50,-180 L50,-180 M-60,-140 L60,-140" stroke="#E3A21A" stroke-width="4" opacity=".7"/>
+</symbol>
+</defs></svg>
+<template id="bands"><svg class="band" style="top:0" viewBox="0 0 1080 36"><defs><pattern id="pt" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#1B2A4A"/><path d="M18 4 L32 18 L18 32 L4 18 Z" fill="#A8322A"/><path d="M18 11 L25 18 L18 25 L11 18 Z" fill="#E3A21A"/></pattern></defs><rect width="1080" height="36" fill="url(#pt)"/></svg><svg class="band" style="bottom:0" viewBox="0 0 1080 36"><rect width="1080" height="36" fill="url(#pt)"/></svg></template>
+
+<section class="slide cover">
+ <span class="chip">ઉત્સવ ગાઇડ · Save it for Tuesday</span>
+ <div class="gu" style="font-size:150px">દેવ દિવાળી</div>
+ <div class="en" style="font-size:90px">Dev Diwali is tomorrow</div>
+ <div class="kick" style="font-size:48px">Kartik Purnima · Tue 24 Nov 2026 · what, when, where in Gujarat</div>
+ <div class="art"><svg width="900" height="520" viewBox="-450 -260 900 520" style="margin-top:-20px">
+  <rect x="-450" y="-260" width="900" height="520" rx="18" fill="#1B2A4A"/>
+  <circle cx="230" cy="-140" r="78" fill="#F7EBC8"/><circle cx="230" cy="-140" r="96" fill="#F7EBC8" opacity=".15"/>
+  <circle cx="-300" cy="-190" r="4" fill="#F3E9D6"/><circle cx="-150" cy="-220" r="3" fill="#F3E9D6"/><circle cx="20" cy="-180" r="3" fill="#F3E9D6"/><circle cx="380" cy="-220" r="3" fill="#F3E9D6"/><circle cx="-380" cy="-90" r="3" fill="#F3E9D6"/>
+  <rect x="-450" y="10" width="900" height="40" fill="#A8322A"/><rect x="-450" y="50" width="900" height="40" fill="#8E2A24"/><rect x="-450" y="90" width="900" height="40" fill="#A8322A"/>
+  <rect x="-450" y="130" width="900" height="130" fill="#22355E"/>
+  <path d="M-450,170 Q-380,160 -310,170 T-170,170 T-30,170 T110,170 T250,170 T390,170 T530,170" stroke="#3B5285" stroke-width="5" fill="none"/>
+  <path d="M-450,215 Q-380,205 -310,215 T-170,215 T-30,215 T110,215 T250,215 T390,215 T530,215" stroke="#3B5285" stroke-width="5" fill="none"/>
+  <path d="M200,150 h60 M210,175 h40 M218,200 h24" stroke="#F7EBC8" stroke-width="6" opacity=".35" stroke-linecap="round"/>
+  <use href="#diya" x="-414.0" y="-89.0" width="108.0" height="135.0"/><use href="#diya" x="-294.0" y="-89.0" width="108.0" height="135.0"/><use href="#diya" x="-174.0" y="-89.0" width="108.0" height="135.0"/><use href="#diya" x="-54.0" y="-89.0" width="108.0" height="135.0"/><use href="#diya" x="66.0" y="-89.0" width="108.0" height="135.0"/><use href="#diya" x="186.0" y="-89.0" width="108.0" height="135.0"/><use href="#diya" x="306.0" y="-89.0" width="108.0" height="135.0"/>
+  <use href="#diya" x="-348.0" y="2.0" width="96.0" height="120.0"/><use href="#diya" x="-108.0" y="2.0" width="96.0" height="120.0"/><use href="#diya" x="132.0" y="2.0" width="96.0" height="120.0"/>
+  <g opacity=".85"><use href="#diya" x="-236.0" y="144.0" width="72.0" height="90.0"/><use href="#diya" x="4.0" y="144.0" width="72.0" height="90.0"/><use href="#diya" x="264.0" y="144.0" width="72.0" height="90.0"/></g>
+ </svg></div>
+ <span class="swipe" style="position:absolute;right:70px;bottom:110px">સ્વાઇપ કરો · Swipe →</span>
+</section>
+<section class="slide">
+ <div class="num">01</div>
+ <div class="gu" style="font-size:100px">ક્યારે?</div>
+ <div class="en" style="font-size:72px">When exactly?</div>
+ <div class="timebox"><b>Purnima tithi:</b> Mon 23 Nov, 11:42 PM → Tue 24 Nov, 8:23 PM<br><b>Lamps (pradosh):</b> Tue 24 Nov, 5:08 – 7:47 PM</div>
+ <div class="gu" style="font-size:42px;font-weight:500">દીવા મંગળવારે સાંજે, પ્રદોષ કાળમાં.</div>
+ <div class="note">IST, as listed by Drik Panchang. Times shift by city: check your local panchang.</div>
+ <div class="art"><svg width="640" height="400" viewBox="-320 -200 640 400">
+  <rect x="-170" y="-170" width="340" height="340" rx="22" fill="#FFFDF7" stroke="#1B2A4A" stroke-width="8"/>
+  <rect x="-170" y="-170" width="340" height="90" rx="22" fill="#A8322A"/><rect x="-170" y="-110" width="340" height="30" fill="#A8322A"/>
+  <circle cx="-90" cy="-170" r="12" fill="#1B2A4A"/><circle cx="90" cy="-170" r="12" fill="#1B2A4A"/>
+  <text x="0" y="-108" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="48" fill="#F3E9D6">NOV 2026</text>
+  <text x="0" y="70" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="170" fill="#1B2A4A">24</text>
+  <text x="0" y="140" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="44" fill="#A8322A">મંગળવાર · TUE</text>
+  <circle cx="250" cy="-90" r="56" fill="#F7EBC8" stroke="#E3A21A" stroke-width="6"/>
+  <use href="#diya" x="-304.0" y="21.0" width="108.0" height="135.0"/>
+ </svg></div>
+</section>
+<section class="slide">
+ <div class="num">02</div>
+ <div class="gu" style="font-size:100px">ઘરે શું થાય?</div>
+ <div class="en" style="font-size:72px">What many families do</div>
+ <div class="body" style="font-size:42px">An early holy dip in a river, diyas lit at dusk, and worship of Shiva and Vishnu. It is also called Tripurari Purnima. Why? That's tomorrow's Reel.</div>
+ <div class="gu" style="font-size:40px;font-weight:500">સવારે સ્નાન, સાંજે દીવા, શિવ-વિષ્ણુની પૂજા.</div>
+ <div class="art"><svg width="700" height="380" viewBox="-350 -190 700 380">
+  <ellipse cx="0" cy="110" rx="300" ry="62" fill="#B8862E"/><ellipse cx="0" cy="98" rx="300" ry="62" fill="#E3A21A"/>
+  <ellipse cx="0" cy="98" rx="250" ry="46" fill="none" stroke="#B8862E" stroke-width="5"/>
+  <use href="#diya" x="-250" y="-10" width="120" height="150"/><use href="#diya" x="-155" y="-10" width="120" height="150"/><use href="#diya" x="-60" y="-10" width="120" height="150"/><use href="#diya" x="35" y="-10" width="120" height="150"/><use href="#diya" x="130" y="-10" width="120" height="150"/>
+  <circle cx="-150" cy="-150" r="10" fill="#C2185B"/><circle cx="-125" cy="-165" r="8" fill="#E3A21A"/><circle cx="150" cy="-150" r="10" fill="#C2185B"/><circle cx="125" cy="-165" r="8" fill="#E3A21A"/>
+ </svg></div>
+</section>
+<section class="slide">
+ <div class="num">03</div>
+ <div class="gu" style="font-size:100px">સોમનાથ</div>
+ <div class="en" style="font-size:72px">Somnath: a fair by the sea</div>
+ <div class="body" style="font-size:42px">The Kartik Purnima melo is held on the seashore around the full moon, run by the temple trust: darshan, folk programmes, stalls.</div>
+ <div class="gu" style="font-size:40px;font-weight:500">દરિયા કિનારે કાર્તિકી પૂનમનો મેળો.</div>
+ <div class="art"><svg width="820" height="440" viewBox="-410 -250 820 440">
+  <rect x="-410" y="-250" width="820" height="440" rx="18" fill="#1B2A4A"/>
+  <circle cx="-260" cy="-150" r="56" fill="#F7EBC8"/>
+  <g transform="translate(60,70)"><g transform="scale(1)"><use href="#shikhara" x="-160" y="-300" width="320" height="320" style="filter:brightness(1.6)"/></g></g>
+  <rect x="-410" y="70" width="820" height="120" fill="#22355E"/>
+  <path d="M-410,105 Q-360,90 -310,105 T-210,105 T-110,105 T-10,105 T90,105 T190,105 T290,105 T390,105 T490,105" stroke="#F3E9D6" stroke-width="5" fill="none" opacity=".6"/>
+  <path d="M-410,150 Q-360,135 -310,150 T-210,150 T-110,150 T-10,150 T90,150 T190,150 T290,150 T390,150 T490,150" stroke="#F3E9D6" stroke-width="5" fill="none" opacity=".4"/>
+  <path d="M-290,95 h60 M-280,125 h40 M-272,155 h24" stroke="#F7EBC8" stroke-width="6" opacity=".35" stroke-linecap="round"/>
+  <use href="#diya" x="-382.0" y="-7.0" width="84.0" height="105.0"/><use href="#diya" x="288.0" y="-7.0" width="84.0" height="105.0"/>
+ </svg></div>
+</section>
+<section class="slide">
+ <div class="num">04</div>
+ <div class="gu" style="font-size:100px">વૌઠાનો મેળો</div>
+ <div class="en" style="font-size:72px">Vautha, near Dholka</div>
+ <div class="body" style="font-size:42px">Known as Saptasangam, a confluence of rivers where the Sabarmati and Vatrak meet. Pilgrims bathe at the sangam; the fair is famous for its donkey and camel market.</div>
+ <div class="gu" style="font-size:40px;font-weight:500">સંગમમાં સ્નાન, ગધેડાં-ઊંટનું બજાર.</div>
+ <div class="art"><svg width="820" height="400" viewBox="-410 -210 820 400">
+  <path d="M-410,150 C-200,120 -60,60 40,40 C160,15 300,-30 410,-60" stroke="#4E7CB8" stroke-width="40" fill="none" stroke-linecap="round"/>
+  <path d="M-410,-40 C-260,-10 -120,40 40,40" stroke="#6F9BD0" stroke-width="28" fill="none" stroke-linecap="round"/>
+  <text x="-400" y="45" font-family="Anek Gujarati" font-weight="700" font-size="30" fill="#1B2A4A">વાત્રક · Vatrak</text>
+  <text x="140" y="70" font-family="Anek Gujarati" font-weight="700" font-size="30" fill="#1B2A4A">સાબરમતી · Sabarmati</text>
+  <g transform="translate(-200,-95) scale(.72)">
+   <!-- donkey, side view facing right -->
+   <path d="M-110,0 C-112,-40 -80,-62 -30,-62 L40,-62 C70,-62 84,-50 92,-34 L100,-20 C104,-6 96,10 80,12 L-90,12 C-104,12 -110,8 -110,0 Z" fill="#8C8C94"/>
+   <path d="M80,-40 C96,-70 112,-96 130,-104 C146,-110 170,-100 180,-86 C190,-72 186,-58 172,-54 C156,-50 142,-56 132,-52 C120,-46 108,-30 100,-20 Z" fill="#8C8C94"/>
+   <path d="M128,-104 L118,-160 L136,-108 Z" fill="#7A7A82"/><path d="M142,-106 L146,-166 L152,-104 Z" fill="#7A7A82"/>
+   <ellipse cx="178" cy="-70" rx="14" ry="18" fill="#D8D8DC"/><circle cx="150" cy="-86" r="5" fill="#1B2A4A"/>
+   <path d="M92,-90 C104,-80 108,-64 104,-48" stroke="#3E3E46" stroke-width="8" fill="none"/>
+   <rect x="-96" y="8" width="16" height="70" rx="5" fill="#7A7A82"/><rect x="-62" y="8" width="16" height="70" rx="5" fill="#7A7A82"/>
+   <rect x="46" y="8" width="16" height="70" rx="5" fill="#7A7A82"/><rect x="74" y="8" width="16" height="70" rx="5" fill="#7A7A82"/>
+   <path d="M-108,-22 C-126,-14 -132,8 -128,26" stroke="#5A5A62" stroke-width="6" fill="none"/>
+   <circle cx="-50" cy="-30" r="20" fill="#C2185B" opacity=".85"/><circle cx="10" cy="-26" r="16" fill="#E3A21A" opacity=".9"/><circle cx="-80" cy="-14" r="12" fill="#E3A21A" opacity=".9"/><circle cx="44" cy="-38" r="12" fill="#A8322A" opacity=".9"/>
+  </g>
+  <use href="#diya" x="224.0" y="-176.0" width="72.0" height="90.0"/><use href="#diya" x="294.0" y="-176.0" width="72.0" height="90.0"/>
+ </svg></div>
+</section>
+<section class="slide">
+ <div class="num">05</div>
+ <div class="gu" style="font-size:100px">શામળાજી</div>
+ <div class="en" style="font-size:72px">Shamlaji, on the Meshwo</div>
+ <div class="body" style="font-size:42px">Pilgrims bathe in the Meshwo river before darshan of Vishnu as Gadadhar. Bhil devotees call him Kaliyo Dev. The fair runs about three weeks around Kartik Purnima.</div>
+ <div class="gu" style="font-size:40px;font-weight:500">મેશ્વોમાં સ્નાન, પછી શામળિયાનાં દર્શન.</div>
+ <div class="art"><svg width="820" height="400" viewBox="-410 -230 820 400">
+  <path d="M-410,40 L-410,-20 C-300,-30 -200,-10 -150,-40 L-150,40 Z" fill="#7A9A4A" opacity=".5"/>
+  <path d="M-240,-160 L-160,-230 L-60,-150 Z M60,-150 L170,-220 L300,-140 Z" fill="#B8A07A" opacity=".55"/>
+  <g transform="translate(0,40)"><use href="#shikhara" x="-160" y="-300" width="320" height="320"/></g>
+  <rect x="-410" y="40" width="820" height="130" fill="#4E7CB8"/>
+  <path d="M-410,80 Q-360,68 -310,80 T-210,80 T-110,80 T-10,80 T90,80 T190,80 T290,80 T390,80 T490,80" stroke="#F3E9D6" stroke-width="5" fill="none" opacity=".6"/>
+  <path d="M-410,125 Q-360,113 -310,125 T-210,125 T-110,125 T-10,125 T90,125 T190,125 T290,125 T390,125 T490,125" stroke="#F3E9D6" stroke-width="5" fill="none" opacity=".4"/>
+  <rect x="-200" y="20" width="400" height="20" fill="#A8322A"/>
+  <use href="#diya" x="-342.0" y="-37.0" width="84.0" height="105.0"/><use href="#diya" x="258.0" y="-37.0" width="84.0" height="105.0"/>
+ </svg></div>
+</section>
+<section class="slide">
+ <div class="num">સ્ક્રીનશોટ લો · Screenshot this</div>
+ <div class="gu" style="font-size:76px">દેવ દિવાળી, એક નજરે</div>
+ <div class="en" style="font-size:56px">Dev Diwali at a glance</div>
+ <table class="tbl">
+  <tr><td>When</td><td>Tue 24 Nov 2026 (Kartik Purnima)<div class="g">મંગળવાર, કાર્તિકી પૂનમ</div></td></tr>
+  <tr><td>Lamps</td><td>Pradosh, 5:08 – 7:47 PM IST*<div class="g">સાંજે દીવા, પ્રદોષ કાળમાં</div></td></tr>
+  <tr><td>At home</td><td>River dip, diyas, Shiva and Vishnu puja<div class="g">સ્નાન, દીવા, પૂજા</div></td></tr>
+  <tr><td>Somnath</td><td>Seashore Kartik Purnima melo<div class="g">દરિયા કિનારે મેળો</div></td></tr>
+  <tr><td>Vautha</td><td>Sangam dip, donkey and camel market<div class="g">સંગમ સ્નાન, ગધેડાં-ઊંટ બજાર</div></td></tr>
+  <tr><td>Shamlaji</td><td>Meshwo dip, about three weeks of fair<div class="g">મેશ્વો સ્નાન, લાંબો મેળો</div></td></tr>
+ </table>
+ <div class="note" style="font-size:28px;margin-top:-6px">*Drik Panchang; check your local panchang. Fair dates: check the organisers' notices.</div>
+</section>
+<section class="slide" style="background:var(--indigo);color:var(--ivory);justify-content:center;align-items:center;text-align:center">
+ <div class="gu" style="font-size:84px">તમે કયા મેળામાં ગયા છો?</div>
+ <div class="en" style="font-size:72px;color:var(--haldi)">Which melo have you been to?</div>
+ <div class="body" style="font-size:42px;margin-top:10px">Comment Somnath, Vautha or Shamlaji. Save it for Tuesday evening and send it to the family group.</div>
+ <div class="box" style="align-self:center;background:#26375C;font-size:38px;margin-top:20px">Next: Tue 1 PM · Why do the gods celebrate Diwali?<br><span class="gu" style="font-size:36px;font-weight:500">આવતીકાલે: દેવો દિવાળી કેમ ઉજવે છે?</span></div>
+ <div class="gu" style="font-size:44px;margin-top:30px">@otlo.gujarat · ગુજરાતની વાતો, ઓટલા પર</div>
+</section>
+<script>
+// adds bands, the Otlo mark and "n / N" to every slide
+(function(){const S=[...document.querySelectorAll('.slide')],tpl=document.getElementById('bands').innerHTML;
+S.forEach((s,i)=>{s.insertAdjacentHTML('afterbegin',tpl);
+ if(i<S.length-1){s.insertAdjacentHTML('beforeend',`<div class="pager">${i+1} / ${S.length}</div><div class="mark"><svg width="54" height="54" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#1B2A4A"/><text x="200" y="250" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="110" fill="#F3E9D6">ઓટલો</text></svg>@otlo.gujarat</div>`)}});})();
+</script>
+</body></html>
