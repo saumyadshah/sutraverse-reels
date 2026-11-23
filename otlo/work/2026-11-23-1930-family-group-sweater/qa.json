@@ -1,0 +1,25 @@
+{
+ "video": {
+  "codec_name": "h264",
+  "profile": "High",
+  "width": 1080,
+  "height": 1920,
+  "pix_fmt": "yuv420p",
+  "r_frame_rate": "30/1",
+  "bit_rate": "11973944"
+ },
+ "duration": 45.0,
+ "lufs": -13.5,
+ "chars_per_sec": [
+  15.7,
+  12.9,
+  11.7,
+  8.2,
+  14.2,
+  11.7
+ ],
+ "warnings": [
+  "s4: 8.2 chars/s (normal 10-14) - possible leaked instruction or truncation, LISTEN"
+ ],
+ "ok": false
+}

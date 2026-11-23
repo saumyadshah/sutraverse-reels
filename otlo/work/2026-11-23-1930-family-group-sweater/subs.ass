@@ -1,0 +1,24 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,46,&H00D6E9F3,&H00D6E9F3,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,16,0,2,110,110,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.50,0:00:02.60,Sub,,0,0,0,,Before the cold reaches Gujarat,
+Dialogue: 0,0:00:02.63,0:00:05.15,Sub,,0,0,0,,Ba's message reaches the family group.
+Dialogue: 0,0:00:06.20,0:00:08.16,Sub,,0,0,0,,Ba writes: it's cold from tomorrow,
+Dialogue: 0,0:00:08.19,0:00:10.00,Sub,,0,0,0,,everyone take out your sweaters.
+Dialogue: 0,0:00:11.70,0:00:15.17,Sub,,0,0,0,,Mummy asks: who's getting the bag down from the loft?
+Dialogue: 0,0:00:15.20,0:00:17.25,Sub,,0,0,0,,Pappa says: me. In the morning.
+Dialogue: 0,0:00:18.30,0:00:23.26,Sub,,0,0,0,,Fai: my red shawl is still at your place.
+Dialogue: 0,0:00:23.29,0:00:29.00,Sub,,0,0,0,,And Jay in America: cold? It's minus five here!
+Dialogue: 0,0:00:30.05,0:00:32.67,Sub,,0,0,0,,Ba: then you wear a sweater too, and send a photo.
+Dialogue: 0,0:00:32.70,0:00:34.35,Sub,,0,0,0,,And the whole group goes quiet.
+Dialogue: 0,0:00:35.55,0:00:39.47,Sub,,0,0,0,,Who announces winter at your place? Tell us below.
+Dialogue: 0,0:00:39.50,0:00:43.05,Sub,,0,0,0,,Stories of Gujarat, on the otlo. Follow Otlo.
