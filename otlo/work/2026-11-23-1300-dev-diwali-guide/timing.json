@@ -1,0 +1,72 @@
+{
+ "starts": [
+  0.0,
+  8.15,
+  15.3,
+  23.8,
+  31.6,
+  39.9,
+  47.95,
+  55.6
+ ],
+ "ends": [
+  8.15,
+  15.3,
+  23.8,
+  31.6,
+  39.9,
+  47.95,
+  55.6,
+  63.6
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s1.wav",
+   "at": 0.25,
+   "on": 0.25,
+   "off": 7.2
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s2.wav",
+   "at": 8.2,
+   "on": 0.30000000000000004,
+   "off": 6.4
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s3.wav",
+   "at": 15.45,
+   "on": 0.2,
+   "off": 7.65
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s4.wav",
+   "at": 23.9,
+   "on": 0.25,
+   "off": 7.0
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s5.wav",
+   "at": 31.65,
+   "on": 0.30000000000000004,
+   "off": 7.550000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s6.wav",
+   "at": 40.0,
+   "on": 0.25,
+   "off": 7.25
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s7.wav",
+   "at": 48.0,
+   "on": 0.30000000000000004,
+   "off": 6.9
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-23-1300-dev-diwali-guide/vo/s8.wav",
+   "at": 55.7,
+   "on": 0.25,
+   "off": 6.300000000000001
+  }
+ ]
+}
