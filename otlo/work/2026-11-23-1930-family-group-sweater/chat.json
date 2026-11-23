@@ -1,0 +1,79 @@
+{
+ "group": "ફેમિલી ગ્રુપ",
+ "members": "Ba, Mummy, Pappa, Fai, Jay +9",
+ "clock": "7:12",
+ "hook": {
+  "chip": "ફેમિલી ગ્રુપ ચેટ · Family Group Chat",
+  "gu": "સ્વેટર એલર્ટ",
+  "en": "Ba's sweater alert is here",
+  "art_svg": "<svg width=\"820\" height=\"700\" viewBox=\"-360 -300 720 620\">\n <path d=\"M-230,-200 q-30,-40 0,-80 M-150,-215 q-30,-40 0,-80\" stroke=\"#C9B48E\" stroke-width=\"10\" fill=\"none\" stroke-linecap=\"round\" opacity=\".0\"/>\n <g>\n  <path d=\"M-110,-210 Q0,-170 110,-210 L250,-130 L300,90 L220,110 L185,-40 L170,250 L-170,250 L-185,-40 L-220,110 L-300,90 L-250,-130 Z\" fill=\"#A8322A\"/>\n  <path d=\"M-110,-210 Q0,-150 110,-210 Q0,-185 -110,-210 Z\" fill=\"#7E231D\"/>\n  <path d=\"M-70,-200 Q0,-120 70,-200\" stroke=\"#7E231D\" stroke-width=\"22\" fill=\"none\"/>\n  <rect x=\"-178\" y=\"40\" width=\"356\" height=\"46\" fill=\"#E3A21A\"/>\n  <rect x=\"-178\" y=\"110\" width=\"356\" height=\"18\" fill=\"#F3E9D6\"/>\n  <g fill=\"#F3E9D6\"><path d=\"M-156,63 l16,-14 l16,14 l-16,14z\"/><path d=\"M-86,63 l16,-14 l16,14 l-16,14z\"/><path d=\"M-16,63 l16,-14 l16,14 l-16,14z\"/><path d=\"M54,63 l16,-14 l16,14 l-16,14z\"/><path d=\"M124,63 l16,-14 l16,14 l-16,14z\"/></g>\n  <rect x=\"-172\" y=\"222\" width=\"344\" height=\"30\" rx=\"6\" fill=\"#7E231D\"/>\n  <g stroke=\"#7E231D\" stroke-width=\"5\"><line x1=\"-150\" y1=\"226\" x2=\"-150\" y2=\"248\"/><line x1=\"-110\" y1=\"226\" x2=\"-110\" y2=\"248\"/><line x1=\"-70\" y1=\"226\" x2=\"-70\" y2=\"248\"/><line x1=\"-30\" y1=\"226\" x2=\"-30\" y2=\"248\"/><line x1=\"10\" y1=\"226\" x2=\"10\" y2=\"248\"/><line x1=\"50\" y1=\"226\" x2=\"50\" y2=\"248\"/><line x1=\"90\" y1=\"226\" x2=\"90\" y2=\"248\"/><line x1=\"130\" y1=\"226\" x2=\"130\" y2=\"248\"/></g>\n  <path d=\"M-300,90 L-220,110 L-226,140 L-306,120 Z\" fill=\"#7E231D\"/><path d=\"M300,90 L220,110 L226,140 L306,120 Z\" fill=\"#7E231D\"/>\n </g>\n <g transform=\"translate(250,215)\">\n  <circle r=\"62\" fill=\"#E3A21A\"/>\n  <path d=\"M-55,-25 Q0,-60 55,-25 M-62,0 Q0,-40 62,0 M-55,25 Q0,-15 55,25 M-35,48 Q0,20 35,48\" stroke=\"#B87C0E\" stroke-width=\"6\" fill=\"none\"/>\n  <line x1=\"-90\" y1=\"-90\" x2=\"40\" y2=\"40\" stroke=\"#1B2A4A\" stroke-width=\"9\" stroke-linecap=\"round\"/><circle cx=\"-92\" cy=\"-92\" r=\"11\" fill=\"#1B2A4A\"/>\n  <line x1=\"90\" y1=\"-95\" x2=\"-30\" y2=\"40\" stroke=\"#1B2A4A\" stroke-width=\"9\" stroke-linecap=\"round\"/><circle cx=\"92\" cy=\"-97\" r=\"11\" fill=\"#1B2A4A\"/>\n  <path d=\"M-62,20 Q-140,60 -200,30\" stroke=\"#E3A21A\" stroke-width=\"7\" fill=\"none\"/>\n </g>\n</svg>"
+ },
+ "scenes": [
+  {
+   "msgs": [
+    {
+     "from": "બા · Ba",
+     "color": "#A8322A",
+     "gu": "કાલથી ઠંડી. બધાં સ્વેટર કાઢી રાખજો.",
+     "en": "Cold from tomorrow. Everyone, take out your sweaters.",
+     "time": "7:02 PM"
+    }
+   ],
+   "typing": "Mummy is typing…"
+  },
+  {
+   "msgs": [
+    {
+     "from": "મમ્મી · Mummy",
+     "color": "#C2185B",
+     "gu": "માળિયેથી બેગ કોણ ઉતારશે?",
+     "en": "Who's getting the bag down from the loft?",
+     "time": "7:04 PM"
+    },
+    {
+     "from": "પપ્પા · Pappa",
+     "color": "#2E7D32",
+     "gu": "હું. સવારે.",
+     "en": "Me. In the morning.",
+     "time": "7:05 PM"
+    }
+   ],
+   "typing": "Fai is typing…"
+  },
+  {
+   "msgs": [
+    {
+     "from": "ફઈ · Fai",
+     "color": "#1565C0",
+     "gu": "મારી લાલ શાલ તમારે ત્યાં રહી ગઈ છે.",
+     "en": "My red shawl is still at your place.",
+     "time": "7:09 PM"
+    },
+    {
+     "from": "જય (USA) · Jay",
+     "color": "#6A1B9A",
+     "gu": "ઠંડી? અહીં તો માઈનસ પાંચ છે!",
+     "en": "Cold? It's minus five here!",
+     "time": "7:10 PM"
+    }
+   ],
+   "typing": "Ba is typing…"
+  },
+  {
+   "msgs": [
+    {
+     "from": "બા · Ba",
+     "color": "#A8322A",
+     "gu": "તો તું પણ સ્વેટર પહેર. ફોટો મોકલ.",
+     "en": "Then you wear a sweater too. Send a photo.",
+     "time": "7:12 PM"
+    }
+   ],
+   "seen": "Seen by 14 · no replies"
+  }
+ ],
+ "end": {
+  "question": "તમારા ઘરે ઠંડી કોણ જાહેર કરે છે? · Who announces winter at yours?",
+  "next": "Dev Diwali: why tonight · Tue 1 PM"
+ }
+}

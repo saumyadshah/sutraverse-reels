@@ -1,0 +1,69 @@
+{
+ "voice": "Kore",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "શિયાળો",
+  "chip_en": "Winter",
+  "gu": "સ્વેટર એલર્ટ",
+  "en": "Ba has declared winter",
+  "ribbon_gu": "બેગ કોણ ઉતારશે?",
+  "ribbon_en": "Who's getting the bag down?",
+  "art_t": 15.0,
+  "art_clip": [
+   90,
+   110,
+   900,
+   760
+  ]
+ },
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "ઠંડી ગુજરાતમાં પહોંચે એ પહેલાં, બાનો મેસેજ ફેમિલી ગ્રુપમાં પહોંચી જાય છે.",
+   "en": [
+    "Before the cold reaches Gujarat,",
+    "Ba's message reaches the family group."
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "બા લખે છે: કાલથી ઠંડી છે, બધાં સ્વેટર કાઢી રાખજો.",
+   "en": [
+    "Ba writes: it's cold from tomorrow,",
+    "everyone take out your sweaters."
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "મમ્મી પૂછે છે: માળિયેથી બેગ કોણ ઉતારશે? પપ્પા કહે છે: હું. સવારે.",
+   "en": [
+    "Mummy asks: who's getting the bag down from the loft?",
+    "Pappa says: me. In the morning."
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "ફઈ: મારી લાલ શાલ તમારે ત્યાં જ રહી ગઈ છે. અને અમેરિકાથી જય: ઠંડી? અહીં તો માઈનસ પાંચ છે!",
+   "en": [
+    "Fai: my red shawl is still at your place.",
+    "And Jay in America: cold? It's minus five here!"
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "બા: તો તું પણ સ્વેટર પહેર, અને ફોટો મોકલ. અને આખું ગ્રુપ ચૂપ.",
+   "en": [
+    "Ba: then you wear a sweater too, and send a photo.",
+    "And the whole group goes quiet."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "તમારા ઘરે ઠંડી કોણ જાહેર કરે છે? કમેન્ટમાં કહો. ગુજરાતની વાતો, ઓટલા પર. ઓટલોને ફોલો કરો.",
+   "en": [
+    "Who announces winter at your place? Tell us below.",
+    "Stories of Gujarat, on the otlo. Follow Otlo."
+   ]
+  }
+ ]
+}
