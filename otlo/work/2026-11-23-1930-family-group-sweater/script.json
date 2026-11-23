@@ -8,12 +8,12 @@
   "en": "Ba has declared winter",
   "ribbon_gu": "બેગ કોણ ઉતારશે?",
   "ribbon_en": "Who's getting the bag down?",
-  "art_t": 15.0,
+  "art_t": 2.0,
   "art_clip": [
-   90,
-   110,
-   900,
-   760
+   60,
+   940,
+   960,
+   700
   ]
  },
  "lines": [
