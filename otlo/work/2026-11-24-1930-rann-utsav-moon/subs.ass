@@ -1,0 +1,33 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,46,&H00D6E9F3,&H00D6E9F3,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,16,0,2,110,110,40,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.50,0:00:03.54,Sub,,0,0,0,,Gujarat has a desert made not of sand,
+Dialogue: 0,0:00:03.57,0:00:04.51,Sub,,0,0,0,,but of salt.
+Dialogue: 0,0:00:04.54,0:00:07.85,Sub,,0,0,0,,And on full-moon nights, it turns silver.
+Dialogue: 0,0:00:08.90,0:00:11.09,Sub,,0,0,0,,This is the Great Rann of Kutch.
+Dialogue: 0,0:00:11.12,0:00:13.58,Sub,,0,0,0,,In the monsoon, it fills with water.
+Dialogue: 0,0:00:13.61,0:00:15.24,Sub,,0,0,0,,Then the water dries up,
+Dialogue: 0,0:00:15.27,0:00:17.35,Sub,,0,0,0,,leaving a white sheet of salt.
+Dialogue: 0,0:00:18.40,0:00:21.71,Sub,,0,0,0,,In winter, Rann Utsav is held near Dhordo.
+Dialogue: 0,0:00:21.74,0:00:24.90,Sub,,0,0,0,,This season it runs from 1 November 2026
+Dialogue: 0,0:00:24.93,0:00:26.20,Sub,,0,0,0,,to 7 March 2027.
+Dialogue: 0,0:00:27.25,0:00:30.51,Sub,,0,0,0,,The most special nights are the full moons.
+Dialogue: 0,0:00:30.54,0:00:33.49,Sub,,0,0,0,,This season's first: 23 to 25 November,
+Dialogue: 0,0:00:33.52,0:00:35.17,Sub,,0,0,0,,which means right now.
+Dialogue: 0,0:00:35.20,0:00:37.95,Sub,,0,0,0,,Then December, January and February.
+Dialogue: 0,0:00:39.00,0:00:42.53,Sub,,0,0,0,,Under the moon, the white desert looks silver,
+Dialogue: 0,0:00:42.56,0:00:46.20,Sub,,0,0,0,,and evenings bring Kutchi folk music and dance.
+Dialogue: 0,0:00:47.25,0:00:49.57,Sub,,0,0,0,,Have you seen the white Rann?
+Dialogue: 0,0:00:49.60,0:00:50.71,Sub,,0,0,0,,Comment: rann.
+Dialogue: 0,0:00:50.74,0:00:53.90,Sub,,0,0,0,,And send this to the one you'd go with.
+Dialogue: 0,0:00:54.95,0:00:57.57,Sub,,0,0,0,,Stories of Gujarat, on the otlo.
+Dialogue: 0,0:00:57.60,0:00:58.60,Sub,,0,0,0,,Follow Otlo.

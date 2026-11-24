@@ -1,0 +1,64 @@
+{
+ "starts": [
+  0.0,
+  8.55,
+  18.05,
+  26.9,
+  38.65,
+  46.9,
+  54.6
+ ],
+ "ends": [
+  8.55,
+  18.05,
+  26.9,
+  38.65,
+  46.9,
+  54.6,
+  60.2
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1930-rann-utsav-moon/vo/s1.wav",
+   "at": 0.3,
+   "on": 0.2,
+   "off": 7.550000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1930-rann-utsav-moon/vo/s2.wav",
+   "at": 8.7,
+   "on": 0.2,
+   "off": 8.65
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1930-rann-utsav-moon/vo/s3.wav",
+   "at": 18.2,
+   "on": 0.2,
+   "off": 8.0
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1930-rann-utsav-moon/vo/s4.wav",
+   "at": 27.0,
+   "on": 0.25,
+   "off": 10.950000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1930-rann-utsav-moon/vo/s5.wav",
+   "at": 38.75,
+   "on": 0.25,
+   "off": 7.45
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1930-rann-utsav-moon/vo/s6.wav",
+   "at": 46.95,
+   "on": 0.30000000000000004,
+   "off": 6.95
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1930-rann-utsav-moon/vo/s7.wav",
+   "at": 54.6,
+   "on": 0.35000000000000003,
+   "off": 4.0
+  }
+ ]
+}
