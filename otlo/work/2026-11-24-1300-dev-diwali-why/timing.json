@@ -1,0 +1,64 @@
+{
+ "starts": [
+  0.0,
+  8.15,
+  18.1,
+  27.4,
+  37.9,
+  48.75,
+  60.6
+ ],
+ "ends": [
+  8.15,
+  18.1,
+  27.4,
+  37.9,
+  48.75,
+  60.6,
+  66.55
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1300-dev-diwali-why/vo/s1.wav",
+   "at": 0.3,
+   "on": 0.2,
+   "off": 7.15
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1300-dev-diwali-why/vo/s2.wav",
+   "at": 8.35,
+   "on": 0.15000000000000002,
+   "off": 9.05
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1300-dev-diwali-why/vo/s3.wav",
+   "at": 18.2,
+   "on": 0.25,
+   "off": 8.5
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1300-dev-diwali-why/vo/s4.wav",
+   "at": 27.25,
+   "on": 0.5,
+   "off": 9.950000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1300-dev-diwali-why/vo/s5.wav",
+   "at": 37.95,
+   "on": 0.30000000000000004,
+   "off": 10.100000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1300-dev-diwali-why/vo/s6.wav",
+   "at": 48.9,
+   "on": 0.2,
+   "off": 11.0
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-24-1300-dev-diwali-why/vo/s7.wav",
+   "at": 60.7,
+   "on": 0.25,
+   "off": 4.25
+  }
+ ]
+}
