@@ -1,0 +1,85 @@
+{
+ "voice": "Kore",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "આજે રાત્રે",
+  "chip_en": "Tonight",
+  "gu": "દેવ દિવાળી",
+  "en": "Why the gods light diyas",
+  "ribbon_gu": "કાર્તિક પૂર્ણિમા",
+  "ribbon_en": "Kartik Purnima",
+  "art_t": 29.8,
+  "art_clip": [
+   40,
+   860,
+   1000,
+   780
+  ]
+ },
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "દિવાળી તો બે અઠવાડિયાં પહેલાં ગઈ. તો આજે રાત્રે ફરી દીવા કેમ? કારણ કે આજે દેવ દિવાળી છે.",
+   "en": [
+    "Diwali was two weeks ago.",
+    "So why the diyas again tonight?",
+    "Because tonight is Dev Diwali."
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "દેવ દિવાળી કાર્તિક મહિનાની પૂનમે આવે છે, દિવાળી પછીની પહેલી પૂનમે. આ વર્ષે એ આજે છે, મંગળવાર, ચોવીસ નવેમ્બર.",
+   "en": [
+    "Dev Diwali falls on Kartik Purnima,",
+    "the first full moon after Diwali.",
+    "This year, that's today: Tuesday, 24 November."
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "પૌરાણિક કથા મુજબ, ત્રિપુરાસુર પાસે ત્રણ ઊડતાં નગર હતાં. એ ત્યારે જ નાશ પામે, જ્યારે ત્રણેય એક લાઇનમાં આવે, અને એક જ બાણ વાગે.",
+   "en": [
+    "As the old story goes,",
+    "Tripurasura had three flying cities.",
+    "They could fall only when all three lined up,",
+    "and were struck by a single arrow."
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "કાર્તિક પૂનમે ત્રણેય નગર એક લાઇનમાં આવ્યાં, અને ભગવાન શિવે એક જ બાણથી ત્રિપુરનો નાશ કર્યો. એટલે શિવ કહેવાયા ત્રિપુરારિ.",
+   "en": [
+    "On Kartik Purnima the three cities lined up,",
+    "and Lord Shiva destroyed Tripura with one arrow.",
+    "That's why Shiva is called Tripurari."
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "માન્યતા છે કે આ જીત ઉજવવા દેવો કાશી આવ્યા, ગંગામાં સ્નાન કર્યું, અને ઘાટ પર દીવા પ્રગટાવ્યા. એ જ દેવોની દિવાળી.",
+   "en": [
+    "It is believed the gods came to Kashi to celebrate,",
+    "bathed in the Ganga and lit diyas on the ghats.",
+    "That is the Diwali of the gods."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "આજે પણ વારાણસીના ઘાટ દીવાથી ઝગમગે છે, અને ઘણા લોકો પાણીમાં દીવા તરતા મૂકે છે. આજે સાંજે તમે દીવો કરશો? કમેન્ટમાં લખો, દીવો.",
+   "en": [
+    "Even today, Varanasi's ghats glow with diyas,",
+    "and many people float lamps on the water.",
+    "Lighting a diya this evening?",
+    "Comment: diyo."
+   ]
+  },
+  {
+   "id": "s7",
+   "gu": "ગુજરાતની વાતો, ઓટલા પર. ઓટલોને ફોલો કરો.",
+   "en": [
+    "Stories of Gujarat, on the otlo.",
+    "Follow Otlo."
+   ]
+  }
+ ]
+}
