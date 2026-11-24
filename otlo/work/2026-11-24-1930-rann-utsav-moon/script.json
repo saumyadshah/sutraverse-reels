@@ -1,0 +1,30 @@
+{
+ "voice": "Kore",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "આજે પૂનમ",
+  "chip_en": "Full moon tonight",
+  "gu": "સફેદ રણ",
+  "en": "The desert that turns silver",
+  "ribbon_gu": "રણ ઉત્સવ, કચ્છ",
+  "ribbon_en": "Rann Utsav, Kutch",
+  "art_t": 4.2,
+  "art_clip": [40, 834, 1000, 760],
+  "gu_size": 150
+ },
+ "lines": [
+  {"id":"s1","gu":"ગુજરાતમાં એક રણ છે, જે રેતીનું નહીં, મીઠાનું છે. અને પૂનમની રાતે એ ચાંદી જેવું ચમકે છે.",
+   "en":["Gujarat has a desert made not of sand,","but of salt.","And on full-moon nights, it turns silver."]},
+  {"id":"s2","gu":"આ છે કચ્છનું મોટું રણ. ચોમાસામાં અહીં પાણી ભરાય છે. પછી પાણી સુકાય, અને પાછળ રહી જાય મીઠાની સફેદ ચાદર.",
+   "en":["This is the Great Rann of Kutch.","In the monsoon, it fills with water.","Then the water dries up,","leaving a white sheet of salt."]},
+  {"id":"s3","gu":"શિયાળામાં ધોરડો પાસે રણ ઉત્સવ થાય છે. આ વર્ષે એ એક નવેમ્બરથી સાત માર્ચ, બે હજાર સત્તાવીસ સુધી ચાલે છે.",
+   "en":["In winter, Rann Utsav is held near Dhordo.","This season it runs from 1 November 2026","to 7 March 2027."]},
+  {"id":"s4","gu":"સૌથી ખાસ રાતો પૂનમની. આ સીઝનની પહેલી પૂનમની રાતો, ત્રેવીસથી પચીસ નવેમ્બર, એટલે કે અત્યારે. પછી ડિસેમ્બર, જાન્યુઆરી અને ફેબ્રુઆરીમાં.",
+   "en":["The most special nights are the full moons.","This season's first: 23 to 25 November,","which means right now.","Then December, January and February."]},
+  {"id":"s5","gu":"ચાંદનીમાં સફેદ રણ ચાંદી જેવું દેખાય છે, અને સાંજે કચ્છી લોકસંગીત અને નૃત્યના કાર્યક્રમો થાય છે.",
+   "en":["Under the moon, the white desert looks silver,","and evenings bring Kutchi folk music and dance."]},
+  {"id":"s6","gu":"તમે સફેદ રણ જોયું છે? કમેન્ટમાં લખો, રણ. અને જેની સાથે જવું છે, એને આ મોકલો.",
+   "en":["Have you seen the white Rann?","Comment: rann.","And send this to the one you'd go with."]},
+  {"id":"s7","gu":"ગુજરાતની વાતો, ઓટલા પર. ઓટલોને ફોલો કરો.","en":["Stories of Gujarat, on the otlo.","Follow Otlo."]}
+ ]
+}
