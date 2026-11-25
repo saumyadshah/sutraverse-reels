@@ -1,0 +1,31 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,46,&H00D6E9F3,&H00D6E9F3,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,16,0,2,110,110,300,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.50,0:00:02.98,Sub,,0,0,0,,Are khaman and dhokla the same? No!
+Dialogue: 0,0:00:03.01,0:00:05.20,Sub,,0,0,0,,And khandvi is different again.
+Dialogue: 0,0:00:05.23,0:00:07.10,Sub,,0,0,0,,Let's spot the difference.
+Dialogue: 0,0:00:08.15,0:00:10.78,Sub,,0,0,0,,Khaman is made from besan or chana dal.
+Dialogue: 0,0:00:10.81,0:00:13.37,Sub,,0,0,0,,Soda or fruit salt makes it rise fast:
+Dialogue: 0,0:00:13.40,0:00:15.10,Sub,,0,0,0,,bright yellow and spongy.
+Dialogue: 0,0:00:16.15,0:00:18.97,Sub,,0,0,0,,Dhokla is made from a rice-and-dal batter
+Dialogue: 0,0:00:19.00,0:00:20.77,Sub,,0,0,0,,left to ferment overnight.
+Dialogue: 0,0:00:20.80,0:00:23.30,Sub,,0,0,0,,Paler in colour, with a slight tang.
+Dialogue: 0,0:00:24.35,0:00:27.17,Sub,,0,0,0,,Khandvi is besan with buttermilk or yogurt.
+Dialogue: 0,0:00:27.20,0:00:29.43,Sub,,0,0,0,,The batter is cooked, spread thin,
+Dialogue: 0,0:00:29.46,0:00:30.85,Sub,,0,0,0,,then rolled up tight.
+Dialogue: 0,0:00:31.90,0:00:35.94,Sub,,0,0,0,,Quick test: bright yellow and spongy is khaman,
+Dialogue: 0,0:00:35.97,0:00:38.11,Sub,,0,0,0,,pale and tangy is dhokla,
+Dialogue: 0,0:00:38.14,0:00:40.30,Sub,,0,0,0,,little rolls are khandvi.
+Dialogue: 0,0:00:41.35,0:00:42.86,Sub,,0,0,0,,Screenshot this slide,
+Dialogue: 0,0:00:42.89,0:00:46.10,Sub,,0,0,0,,and next time at the farsan shop, you'll know.
+Dialogue: 0,0:00:47.15,0:00:50.39,Sub,,0,0,0,,Which one is your favourite? Tell us in the comments.
+Dialogue: 0,0:00:50.42,0:00:53.20,Sub,,0,0,0,,Stories of Gujarat, on the otlo. Follow Otlo.

@@ -1,0 +1,64 @@
+{
+ "starts": [
+  0.0,
+  7.8,
+  15.8,
+  24.0,
+  31.55,
+  41.0,
+  46.8
+ ],
+ "ends": [
+  7.8,
+  15.8,
+  24.0,
+  31.55,
+  41.0,
+  46.8,
+  54.8
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1300-khaman-dhokla-khandvi/vo/s1.wav",
+   "at": 0.35,
+   "on": 0.15000000000000002,
+   "off": 6.75
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1300-khaman-dhokla-khandvi/vo/s2.wav",
+   "at": 7.9,
+   "on": 0.25,
+   "off": 7.2
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1300-khaman-dhokla-khandvi/vo/s3.wav",
+   "at": 15.95,
+   "on": 0.2,
+   "off": 7.3500000000000005
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1300-khaman-dhokla-khandvi/vo/s4.wav",
+   "at": 24.1,
+   "on": 0.25,
+   "off": 6.75
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1300-khaman-dhokla-khandvi/vo/s5.wav",
+   "at": 31.65,
+   "on": 0.25,
+   "off": 8.65
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1300-khaman-dhokla-khandvi/vo/s6.wav",
+   "at": 41.05,
+   "on": 0.30000000000000004,
+   "off": 5.050000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1300-khaman-dhokla-khandvi/vo/s7.wav",
+   "at": 46.9,
+   "on": 0.25,
+   "off": 6.300000000000001
+  }
+ ]
+}
