@@ -1,0 +1,71 @@
+{
+ "voice": "Kore",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "ખમણ",
+  "chip_en": "Khaman",
+  "gu": "ખમણની લડાઈ",
+  "en": "Amdavad vs Surat: you decide",
+  "ribbon_gu": "તમે કોની સાથે?",
+  "ribbon_en": "Whose side are you on?",
+  "art_t": 2.0,
+  "art_clip": [
+   60,
+   940,
+   960,
+   700
+  ]
+ },
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "એક પ્લેટ ખમણ, અને ફેમિલી ગ્રુપમાં અમદાવાદ અને સુરત સામસામે.",
+   "en": [
+    "One plate of khaman, and Amdavad and Surat",
+    "face off in the family group."
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "પપ્પા લખે છે: રવિવારે નાસ્તામાં ખમણ લાવું છું. મમ્મી તરત: અમદાવાદી ખમણ જ લાવજો.",
+   "en": [
+    "Pappa writes: I'm bringing khaman for Sunday breakfast.",
+    "Mummy, instantly: only Amdavadi khaman."
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "સુરતથી ફઈ લખે છે: ખમણ તો સુરતના, બટર અને સેવ સાથે. મમ્મી: ખમણમાં બટર? આ શું નવું?",
+   "en": [
+    "Fai writes from Surat: khaman means Surat's,",
+    "with butter and sev.",
+    "Mummy: butter on khaman? What's this now?"
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "અમેરિકાથી જય પૂછે છે: અહીં ફ્રોઝન ખમણ મળે છે, ચાલશે? ફઈ અને મમ્મી, બંને એકસાથે: ના.",
+   "en": [
+    "Jay asks from America: we get frozen khaman here.",
+    "Will that do? Fai and Mummy, together: no."
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "અને બા લખે છે: ખમણ હું ઘરે બનાવીશ. ચટણી કોણ લાવશે? અને આખું ગ્રુપ ચૂપ.",
+   "en": [
+    "And Ba writes: I'll make the khaman at home.",
+    "Who's bringing chutney?",
+    "And the whole group goes quiet."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "તમે કોની સાથે છો, અમદાવાદ કે સુરત? કમેન્ટમાં લખો. ગુજરાતની વાતો, ઓટલા પર. ઓટલોને ફોલો કરો.",
+   "en": [
+    "Whose side are you on, Amdavad or Surat? Comment below.",
+    "Stories of Gujarat, on the otlo. Follow Otlo."
+   ]
+  }
+ ]
+}
