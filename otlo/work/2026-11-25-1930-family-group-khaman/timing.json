@@ -1,0 +1,56 @@
+{
+ "starts": [
+  0.0,
+  5.25,
+  12.15,
+  21.55,
+  30.5,
+  38.85
+ ],
+ "ends": [
+  5.25,
+  12.15,
+  21.55,
+  30.5,
+  38.85,
+  49.15
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1930-family-group-khaman/vo/s1.wav",
+   "at": 0.4,
+   "on": 0.1,
+   "off": 4.15
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1930-family-group-khaman/vo/s2.wav",
+   "at": 5.6,
+   "on": 0.0,
+   "off": 5.8500000000000005
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1930-family-group-khaman/vo/s3.wav",
+   "at": 12.5,
+   "on": 0.0,
+   "off": 8.35
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1930-family-group-khaman/vo/s4.wav",
+   "at": 21.9,
+   "on": 0.0,
+   "off": 7.9
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1930-family-group-khaman/vo/s5.wav",
+   "at": 30.5,
+   "on": 0.35000000000000003,
+   "off": 7.65
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-25-1930-family-group-khaman/vo/s6.wav",
+   "at": 38.95,
+   "on": 0.25,
+   "off": 8.6
+  }
+ ]
+}

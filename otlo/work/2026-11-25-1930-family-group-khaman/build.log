@@ -1,0 +1,33 @@
+s1 ok via gemini-3.8-flash-tts
+s2 ok via gemini-3.8-flash-tts
+s3 ok via gemini-3.8-flash-tts
+s4 ok via gemini-3.8-flash-tts
+s5 gemini-3.8-flash-tts HTTP 429
+s5 ok via gemini-3.1-flash-tts-preview
+s6 gemini-3.8-flash-tts HTTP 429
+s6 ok via gemini-3.1-flash-tts-preview
+scenes [0.0, 5.25, 12.15, 21.55, 30.5, 38.85] [5.25, 12.15, 21.55, 30.5, 38.85, 49.15]
+{
+ "video": {
+  "codec_name": "h264",
+  "profile": "High",
+  "width": 1080,
+  "height": 1920,
+  "pix_fmt": "yuv420p",
+  "r_frame_rate": "30/1",
+  "bit_rate": "11976351"
+ },
+ "duration": 49.5,
+ "lufs": -13.7,
+ "chars_per_sec": [
+  14.6,
+  13.5,
+  9.7,
+  10.5,
+  9.6,
+  10.8
+ ],
+ "warnings": [],
+ "ok": true
+}
+BUILD OK
