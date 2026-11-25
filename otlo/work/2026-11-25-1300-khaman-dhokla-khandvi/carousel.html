@@ -1,0 +1,136 @@
+<!doctype html><html lang="gu"><head><meta charset="utf-8">
+<!-- Otlo carousel skeleton. Lives at otlo/work/<date-slug>/carousel.html. Each <section class="slide"> is one
+     1080x1350 slide (portrait 4:5, Instagram's tallest feed size). 6-9 slides is the sweet spot, max 10.
+     Slide 1 = cover (hook + subject art), last slide = save/share + follow. Bilingual on every slide.
+     Draw the subject accurately in inline SVG (brand colours). Keep 60px clear at every edge. -->
+<link rel="stylesheet" href="../../toolkit/runtime/otlo.css">
+<style>
+body{margin:0;background:#888}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--ivory);color:var(--indigo);font-family:'Anek Gujarati',sans-serif;box-sizing:border-box;padding:110px 80px 90px;display:flex;flex-direction:column;gap:22px;margin-bottom:20px}
+.slide .band{position:absolute;left:0;width:1080px;height:36px}
+.num{font-weight:800;font-stretch:75%;font-size:56px;color:var(--haldi)}
+.pager{position:absolute;right:70px;bottom:56px;font-family:'Rasa',serif;font-style:italic;font-size:34px;color:var(--red)}
+.mark{position:absolute;left:70px;bottom:50px;display:flex;align-items:center;gap:14px;font-size:30px;font-weight:700}
+.cover{padding-bottom:150px}.cover .gu{font-size:150px}.cover .en{font-size:96px}
+.art{position:relative;bottom:auto;flex:1;display:flex;align-items:center;justify-content:center}
+.swipe{align-self:flex-start;background:var(--indigo);color:var(--ivory);font-weight:700;font-size:38px;padding:12px 30px;border-radius:999px}
+</style><style>
+.row{display:flex;gap:18px;align-items:baseline}
+.tbl{width:100%;border-collapse:collapse;font-size:34px}
+.tbl td{padding:9px 14px;border-bottom:3px solid #D9C6A3;vertical-align:top}
+.tbl td:first-child{font-weight:800;font-stretch:75%;text-transform:uppercase;color:var(--red);width:250px;font-size:38px}
+.tbl .g{font-weight:500;font-size:32px;color:#4A5675}
+.note{font-family:'Rasa',serif;font-style:italic;font-size:30px;color:#5A6480}
+.timebox{background:var(--indigo);color:var(--ivory);border-radius:10px;padding:24px 34px;font-size:42px;line-height:1.35}
+.timebox b{color:var(--haldi)}
+.tbl3 td:first-child{width:150px;font-size:32px}.tbl3 td{padding:12px 10px}.tbl3 .g{font-size:29px}
+</style></head><body>
+<!-- reusable bits --><svg width="0" height="0" style="position:absolute"><defs>
+<symbol id="khaman" viewBox="-10 -50 220 160" overflow="visible">
+ <path d="M0,0 L36,-36 L196,-36 L160,0 Z" fill="#F5CB3A"/>
+ <path d="M160,0 L196,-36 L196,60 L160,96 Z" fill="#D89B16"/>
+ <rect x="0" y="0" width="160" height="96" fill="#E8AE1E"/>
+ <g><ellipse cx="55" cy="21" rx="5.1" ry="4.1" fill="#C98A12"/><ellipse cx="20" cy="51" rx="4.0" ry="3.2" fill="#C98A12"/><ellipse cx="18" cy="49" rx="2.6" ry="2.1" fill="#C98A12"/><ellipse cx="71" cy="15" rx="2.9" ry="2.3" fill="#C98A12"/><ellipse cx="69" cy="73" rx="3.0" ry="2.4" fill="#C98A12"/><ellipse cx="41" cy="58" rx="6.3" ry="5.0" fill="#C98A12"/><ellipse cx="91" cy="40" rx="6.4" ry="5.1" fill="#C98A12"/><ellipse cx="17" cy="75" rx="3.7" ry="2.9" fill="#C98A12"/><ellipse cx="30" cy="19" rx="3.7" ry="3.0" fill="#C98A12"/><ellipse cx="124" cy="24" rx="4.8" ry="3.9" fill="#C98A12"/><ellipse cx="99" cy="38" rx="4.7" ry="3.8" fill="#C98A12"/><ellipse cx="19" cy="15" rx="3.3" ry="2.7" fill="#C98A12"/><ellipse cx="105" cy="42" rx="3.8" ry="3.0" fill="#C98A12"/><ellipse cx="92" cy="44" rx="3.7" ry="3.0" fill="#C98A12"/><ellipse cx="121" cy="63" rx="3.5" ry="2.8" fill="#C98A12"/><ellipse cx="90" cy="50" rx="6.0" ry="4.8" fill="#C98A12"/><ellipse cx="112" cy="32" rx="6.4" ry="5.1" fill="#C98A12"/><ellipse cx="27" cy="42" rx="5.5" ry="4.4" fill="#C98A12"/><ellipse cx="31" cy="47" rx="2.7" ry="2.1" fill="#C98A12"/><ellipse cx="104" cy="68" rx="4.8" ry="3.8" fill="#C98A12"/><ellipse cx="133" cy="34" rx="5.3" ry="4.2" fill="#C98A12"/><ellipse cx="93" cy="54" rx="4.3" ry="3.5" fill="#C98A12"/><ellipse cx="128" cy="82" rx="4.4" ry="3.5" fill="#C98A12"/><ellipse cx="103" cy="15" rx="5.3" ry="4.2" fill="#C98A12"/><ellipse cx="101" cy="85" rx="5.8" ry="4.6" fill="#C98A12"/><ellipse cx="50" cy="39" rx="5.2" ry="4.1" fill="#C98A12"/><ellipse cx="13" cy="45" rx="3.2" ry="2.5" fill="#C98A12"/><ellipse cx="26" cy="14" rx="5.6" ry="4.5" fill="#C98A12"/><ellipse cx="28" cy="29" rx="4.1" ry="3.3" fill="#C98A12"/><ellipse cx="132" cy="16" rx="4.3" ry="3.4" fill="#C98A12"/><ellipse cx="87" cy="77" rx="5.8" ry="4.6" fill="#C98A12"/><ellipse cx="131" cy="31" rx="4.2" ry="3.3" fill="#C98A12"/><ellipse cx="60" cy="77" rx="6.3" ry="5.1" fill="#C98A12"/><ellipse cx="31" cy="23" rx="3.4" ry="2.7" fill="#C98A12"/><ellipse cx="43" cy="47" rx="4.9" ry="3.9" fill="#C98A12"/><ellipse cx="47" cy="10" rx="4.2" ry="3.3" fill="#C98A12"/><ellipse cx="62" cy="53" rx="6.3" ry="5.0" fill="#C98A12"/><ellipse cx="107" cy="49" rx="5.0" ry="4.0" fill="#C98A12"/><ellipse cx="105" cy="14" rx="6.1" ry="4.9" fill="#C98A12"/><ellipse cx="119" cy="76" rx="5.7" ry="4.6" fill="#C98A12"/><ellipse cx="65" cy="40" rx="2.9" ry="2.3" fill="#C98A12"/><ellipse cx="99" cy="15" rx="2.8" ry="2.2" fill="#C98A12"/><ellipse cx="39" cy="22" rx="3.9" ry="3.1" fill="#C98A12"/><ellipse cx="17" cy="10" rx="3.1" ry="2.5" fill="#C98A12"/><ellipse cx="24" cy="38" rx="2.6" ry="2.1" fill="#C98A12"/><ellipse cx="132" cy="57" rx="3.1" ry="2.5" fill="#C98A12"/></g>
+ <path d="M40,-18 q30,-14 60,-4" stroke="#3C7A3A" stroke-width="7" fill="none" stroke-linecap="round"/>
+ <ellipse cx="128" cy="-20" rx="16" ry="7" fill="#3C7A3A" transform="rotate(-20 128 -20)"/>
+ <circle cx="70" cy="-26" r="3.5" fill="#2A1E14"/><circle cx="110" cy="-10" r="3.5" fill="#2A1E14"/><circle cx="150" cy="-26" r="3.5" fill="#2A1E14"/><circle cx="58" cy="-8" r="3.5" fill="#2A1E14"/><circle cx="92" cy="-30" r="3" fill="#2A1E14"/>
+ <circle cx="84" cy="-14" r="3" fill="#7DB04A"/><circle cx="140" cy="-12" r="3" fill="#7DB04A"/>
+</symbol>
+<symbol id="dhokla" viewBox="-10 -50 220 160" overflow="visible">
+ <path d="M0,0 L36,-36 L196,-36 L160,0 Z" fill="#F4E8BC"/>
+ <path d="M160,0 L196,-36 L196,60 L160,96 Z" fill="#D9C68A"/>
+ <rect x="0" y="0" width="160" height="96" fill="#EADCA4"/>
+ <g><ellipse cx="45" cy="36" rx="2.9" ry="2.3" fill="#CDB26A"/><ellipse cx="27" cy="75" rx="3.5" ry="2.8" fill="#CDB26A"/><ellipse cx="75" cy="47" rx="2.6" ry="2.1" fill="#CDB26A"/><ellipse cx="24" cy="36" rx="2.8" ry="2.2" fill="#CDB26A"/><ellipse cx="126" cy="22" rx="2.5" ry="2.0" fill="#CDB26A"/><ellipse cx="143" cy="50" rx="2.6" ry="2.1" fill="#CDB26A"/><ellipse cx="86" cy="12" rx="3.0" ry="2.4" fill="#CDB26A"/><ellipse cx="147" cy="76" rx="3.2" ry="2.6" fill="#CDB26A"/><ellipse cx="47" cy="38" rx="2.7" ry="2.1" fill="#CDB26A"/><ellipse cx="118" cy="50" rx="3.3" ry="2.6" fill="#CDB26A"/><ellipse cx="56" cy="27" rx="3.3" ry="2.6" fill="#CDB26A"/><ellipse cx="148" cy="75" rx="3.3" ry="2.6" fill="#CDB26A"/><ellipse cx="125" cy="66" rx="2.7" ry="2.2" fill="#CDB26A"/><ellipse cx="82" cy="37" rx="2.5" ry="2.0" fill="#CDB26A"/></g>
+ <path d="M54,-20 q26,-10 52,-2" stroke="#3C7A3A" stroke-width="6" fill="none" stroke-linecap="round"/>
+ <circle cx="80" cy="-26" r="3.5" fill="#2A1E14"/><circle cx="128" cy="-14" r="3.5" fill="#2A1E14"/><circle cx="150" cy="-28" r="3" fill="#2A1E14"/><circle cx="46" cy="-8" r="3" fill="#2A1E14"/>
+</symbol>
+<symbol id="khandvi" viewBox="-40 -40 160 80" overflow="visible">
+ <rect x="0" y="-34" width="90" height="68" fill="#EDBE3C"/>
+ <ellipse cx="90" cy="0" rx="22" ry="34" fill="#E2AD2A"/>
+ <path d="M14,-34 L14,34 M34,-34 L34,34 M58,-34 L58,34" stroke="#D69E22" stroke-width="2" opacity=".5"/>
+ <ellipse cx="0" cy="0" rx="34" ry="34" fill="#F6D468"/>
+ <path d="M0,0 a5,5 0 0 1 10,0 a10,10 0 0 1 -20,0 a15,15 0 0 1 30,0 a20,20 0 0 1 -40,0 a25,25 0 0 1 50,0 a30,30 0 0 1 -60,0" transform="scale(1.05)" stroke="#C98A12" stroke-width="3.5" fill="none"/>
+ <circle cx="20" cy="-30" r="3" fill="#2A1E14"/><circle cx="52" cy="-33" r="3" fill="#2A1E14"/><circle cx="70" cy="-30" r="3" fill="#F3E9D6"/><circle cx="36" cy="-34" r="2.6" fill="#F3E9D6"/>
+ <path d="M40,-38 l8,-6 l6,6 l-8,4 Z" fill="#3C7A3A"/>
+</symbol>
+<symbol id="plate" viewBox="-200 -60 400 120" overflow="visible">
+ <ellipse cx="0" cy="8" rx="200" ry="58" fill="#C9B48A"/>
+ <ellipse cx="0" cy="0" rx="200" ry="58" fill="#FFFDF7" stroke="#A8322A" stroke-width="8"/>
+ <ellipse cx="0" cy="0" rx="160" ry="42" fill="none" stroke="#E7DCC6" stroke-width="4"/>
+</symbol>
+</defs></svg>
+<template id="bands"><svg class="band" style="top:0" viewBox="0 0 1080 36"><defs><pattern id="pt" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#1B2A4A"/><path d="M18 4 L32 18 L18 32 L4 18 Z" fill="#A8322A"/><path d="M18 11 L25 18 L18 25 L11 18 Z" fill="#E3A21A"/></pattern></defs><rect width="1080" height="36" fill="url(#pt)"/></svg><svg class="band" style="bottom:0" viewBox="0 0 1080 36"><rect width="1080" height="36" fill="url(#pt)"/></svg></template>
+<section class="slide cover">
+ <span class="chip">થાળી કાર્ડ · Save it</span>
+ <div class="gu" style="font-size:118px">ખમણ, ઢોકળાં, ખાંડવી</div>
+ <div class="en" style="font-size:86px">Spot the difference</div>
+ <div class="kick" style="font-size:44px">Three Gujarati farsan people mix up</div>
+ <div class="art" style="margin-bottom:90px"><svg width="980" height="400" viewBox="-480 -170 960 390"><g transform="translate(-310,0) scale(.76)"><use href="#plate" x="-200" y="-60" width="400" height="120"/><use href="#khaman" x="-150" y="-110" width="220" height="160" transform="scale(.75)"/><use href="#khaman" x="-10" y="-110" width="220" height="160" transform="scale(.75)"/><use href="#khaman" x="-85" y="-60" width="220" height="160" transform="scale(.75)"/></g><g transform="translate(0,0) scale(.76)"><use href="#plate" x="-200" y="-60" width="400" height="120"/><use href="#dhokla" x="-150" y="-110" width="220" height="160" transform="scale(.75)"/><use href="#dhokla" x="-10" y="-110" width="220" height="160" transform="scale(.75)"/><use href="#dhokla" x="-85" y="-60" width="220" height="160" transform="scale(.75)"/></g><g transform="translate(316,0) scale(.8)"><g transform="translate(-22,0)"><use href="#plate" x="-200" y="-60" width="400" height="120"/><use href="#khandvi" x="-150" y="-50" width="160" height="80"/><use href="#khandvi" x="-50" y="-50" width="160" height="80"/><use href="#khandvi" x="50" y="-50" width="160" height="80"/><use href="#khandvi" x="-110" y="-12" width="160" height="80"/><use href="#khandvi" x="-10" y="-12" width="160" height="80"/></g></g><text x="-310" y="122" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="46" fill="#1B2A4A">ખમણ</text><text x="-310" y="162" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#A8322A">KHAMAN</text><text x="0" y="122" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="46" fill="#1B2A4A">ઢોકળાં</text><text x="0" y="162" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#A8322A">DHOKLA</text><text x="310" y="122" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="46" fill="#1B2A4A">ખાંડવી</text><text x="310" y="162" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#A8322A">KHANDVI</text></svg></div>
+ <span class="swipe" style="position:absolute;right:70px;bottom:120px">સ્વાઇપ કરો · Swipe →</span>
+</section>
+<section class="slide">
+ <div class="num">01</div>
+ <div class="gu" style="font-size:100px">ખમણ</div>
+ <div class="en" style="font-size:72px">Khaman: besan, quick-risen</div>
+ <div class="body" style="font-size:42px">Made from besan (gram flour) or soaked chana dal. Often made instant: soda or fruit salt makes the batter rise, so it steams up bright yellow, soft and spongy. A sweet-and-sour tempering goes on top.</div>
+ <div class="gu" style="font-size:42px;font-weight:500">ચણાનો લોટ · પીળું · પોચું ને જાળીદાર</div>
+ <div class="art"><svg width="820" height="420" viewBox="-410 -210 820 420"><g transform="translate(0,-20) scale(1.6)"><g transform=""><use href="#plate" x="-200" y="-60" width="400" height="120"/>
+ <use href="#khaman" x="-150" y="-110" width="220" height="160" transform="scale(.75)"/><use href="#khaman" x="-10" y="-110" width="220" height="160" transform="scale(.75)"/>
+ <use href="#khaman" x="-85" y="-60" width="220" height="160" transform="scale(.75)"/></g></g><rect x="-371" y="150" width="333" height="52" rx="26" fill="#1B2A4A"/><text x="-204" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">BESAN / CHANA DAL</text><rect x="-22" y="150" width="112" height="52" rx="26" fill="#1B2A4A"/><text x="34" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">SODA</text><rect x="106" y="150" width="265" height="52" rx="26" fill="#1B2A4A"/><text x="238" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">BRIGHT YELLOW</text></svg></div>
+</section>
+<section class="slide">
+ <div class="num">02</div>
+ <div class="gu" style="font-size:100px">ઢોકળાં</div>
+ <div class="en" style="font-size:72px">Dhokla: rice + dal, fermented</div>
+ <div class="body" style="font-size:42px">Made from a batter of rice and dal (lentils), soaked, ground and left to ferment overnight. It comes out paler, a little firmer than khaman, with a slight tang.</div>
+ <div class="gu" style="font-size:42px;font-weight:500">ચોખા + દાળ · આથો · આછું ને ખાટું</div>
+ <div class="art"><svg width="820" height="420" viewBox="-410 -210 820 420"><g transform="translate(0,-20) scale(1.6)"><g transform="translate(0,0) scale(1)"><use href="#plate" x="-200" y="-60" width="400" height="120"/>
+ <use href="#dhokla" x="-150" y="-110" width="220" height="160" transform="scale(.75)"/><use href="#dhokla" x="-10" y="-110" width="220" height="160" transform="scale(.75)"/>
+ <use href="#dhokla" x="-85" y="-60" width="220" height="160" transform="scale(.75)"/></g></g><rect x="-337" y="150" width="214" height="52" rx="26" fill="#1B2A4A"/><text x="-230" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">RICE + DAL</text><rect x="-107" y="150" width="197" height="52" rx="26" fill="#1B2A4A"/><text x="-8" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">FERMENTED</text><rect x="106" y="150" width="231" height="52" rx="26" fill="#1B2A4A"/><text x="222" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">PALE, TANGY</text></svg></div>
+</section>
+<section class="slide">
+ <div class="num">03</div>
+ <div class="gu" style="font-size:100px">ખાંડવી</div>
+ <div class="en" style="font-size:72px">Khandvi: cooked, spread, rolled</div>
+ <div class="body" style="font-size:42px">Besan whisked with buttermilk or yogurt, cooked down to a thick paste, spread thin while hot, then cut into strips and rolled up into tight, bite-sized rolls.</div>
+ <div class="gu" style="font-size:42px;font-weight:500">ચણાનો લોટ + છાશ · પાતળું પાથરો · વીંટો</div>
+ <div class="art"><svg width="820" height="420" viewBox="-410 -210 820 420"><g transform="translate(0,-20) scale(1.6)"><g transform="translate(0,0) scale(1)"><use href="#plate" x="-200" y="-60" width="400" height="120"/>
+ <use href="#khandvi" x="-150" y="-50" width="160" height="80"/><use href="#khandvi" x="-50" y="-50" width="160" height="80"/><use href="#khandvi" x="50" y="-50" width="160" height="80"/>
+ <use href="#khandvi" x="-110" y="-12" width="160" height="80"/><use href="#khandvi" x="-10" y="-12" width="160" height="80"/></g></g><rect x="-337" y="150" width="350" height="52" rx="26" fill="#1B2A4A"/><text x="-162" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">BESAN + BUTTERMILK</text><rect x="29" y="150" width="146" height="52" rx="26" fill="#1B2A4A"/><text x="102" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">COOKED</text><rect x="191" y="150" width="146" height="52" rx="26" fill="#1B2A4A"/><text x="264" y="186" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="28" fill="#F3E9D6">ROLLED</text></svg></div>
+</section>
+<section class="slide">
+ <div class="num">04</div>
+ <div class="gu" style="font-size:96px">ઝટપટ ટેસ્ટ</div>
+ <div class="en" style="font-size:72px">The 5-second test</div>
+ <div class="art" style="flex-direction:column;gap:26px;align-items:stretch">
+  <div class="timebox" style="display:flex;align-items:center;gap:30px"><svg width="200" height="140" viewBox="-10 -50 220 160"><use href="#khaman" x="-10" y="-50" width="220" height="160"/></svg><div><b>Bright yellow + spongy holes?</b><br>Khaman · <span class="gu" style="font-size:40px">ખમણ</span></div></div>
+  <div class="timebox" style="display:flex;align-items:center;gap:30px"><svg width="200" height="140" viewBox="-10 -50 220 160"><use href="#dhokla" x="-10" y="-50" width="220" height="160"/></svg><div><b>Paler, firmer, a little tangy?</b><br>Dhokla · <span class="gu" style="font-size:40px">ઢોકળાં</span></div></div>
+  <div class="timebox" style="display:flex;align-items:center;gap:30px"><svg width="200" height="140" viewBox="-50 -50 180 100"><use href="#khandvi" x="-40" y="-40" width="160" height="80"/></svg><div><b>Thin, tight little rolls?</b><br>Khandvi · <span class="gu" style="font-size:40px">ખાંડવી</span></div></div>
+ </div>
+</section>
+<section class="slide">
+ <div class="num">સ્ક્રીનશોટ લો · Screenshot this</div>
+ <div class="gu" style="font-size:76px">ત્રણેય, એક નજરે</div>
+ <div class="en" style="font-size:56px">All three at a glance</div>
+ <table class="tbl tbl3" style="font-size:31px">
+  <tr><td></td><td style="color:#A8322A;font-weight:800">KHAMAN <span class="g">ખમણ</span></td><td style="color:#A8322A;font-weight:800">DHOKLA <span class="g">ઢોકળાં</span></td><td style="color:#A8322A;font-weight:800">KHANDVI <span class="g">ખાંડવી</span></td></tr>
+  <tr><td>Made of</td><td>Besan or chana dal<div class="g">ચણાનો લોટ</div></td><td>Rice + dal<div class="g">ચોખા + દાળ</div></td><td>Besan + buttermilk<div class="g">ચણાનો લોટ + છાશ</div></td></tr>
+  <tr><td>Batter</td><td>Quick rise (soda)<div class="g">તરત ફૂલે</div></td><td>Fermented overnight<div class="g">આખી રાત આથો</div></td><td>Cooked, spread thin<div class="g">રાંધીને પાથરો</div></td></tr>
+  <tr><td>Looks</td><td>Bright yellow, spongy<div class="g">પીળું, જાળીદાર</div></td><td>Paler, firmer<div class="g">આછું, થોડું કડક</div></td><td>Yellowish, tight rolls<div class="g">પીળાશ પડતા વીંટા</div></td></tr>
+ </table>
+ <div class="note" style="font-size:28px">Recipes vary from home to home. Sources: Gulf Times, Slurrp, Veg Recipes of India, Wikipedia.</div>
+</section>
+<section class="slide" style="background:var(--indigo);color:var(--ivory);justify-content:center;align-items:center;text-align:center">
+ <div class="gu" style="font-size:84px">તમારું ફેવરિટ કયું?</div>
+ <div class="en" style="font-size:72px;color:var(--haldi)">Which one is your favourite?</div>
+ <div class="body" style="font-size:42px;margin-top:10px">Comment ખમણ, ઢોકળાં or ખાંડવી. Save it and send it to the family group.</div>
+ <div class="box" style="align-self:center;background:#26375C;font-size:38px;margin-top:20px">Next: Tonight 7:30 PM · Khaman: Ahmedabad vs Surat vs Vadodara<br><span class="gu" style="font-size:36px;font-weight:500">આજે રાત્રે: ખમણની લડાઈ, તમે નક્કી કરો</span></div>
+ <div class="gu" style="font-size:44px;margin-top:30px">@otlo.gujarat · ગુજરાતની વાતો, ઓટલા પર</div>
+</section>
+<script>
+// adds bands, the Otlo mark and "n / N" to every slide
+(function(){const S=[...document.querySelectorAll('.slide')],tpl=document.getElementById('bands').innerHTML;
+S.forEach((s,i)=>{s.insertAdjacentHTML('afterbegin',tpl);
+ if(i<S.length-1){s.insertAdjacentHTML('beforeend',`<div class="pager">${i+1} / ${S.length}</div><div class="mark"><svg width="54" height="54" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#1B2A4A"/><text x="200" y="250" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="110" fill="#F3E9D6">ઓટલો</text></svg>@otlo.gujarat</div>`)}});})();
+</script>
+</body></html>
