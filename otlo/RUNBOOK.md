@@ -6,16 +6,21 @@ Posts: Reels (Gujarati voice-over, English subtitles, bilingual on-screen text) 
 nothing. Each run handles **one slot**: the calendar row whose Date is today (Asia/Kolkata) and whose
 Time (IST) is the run's slot (`13:00` = midday run, `19:30` = evening run).
 
-## Posting pattern (set by Saumya, 21 Nov 2026; weekends added the same day)
+## Schedule (Saumya, 26 Nov 2026 overhaul): prepared in advance, two posts every day
 
-**Every day, weekends included.** Days alternate, continuing day by day without a break:
-- **A day:** 1 carousel slot at 13:00 (posted as a swipe-style Reel) + 1 Reel at 19:30
-- **B day:** 1 Reel at 13:00 + 1 Reel at 19:30
+Two posts every day, weekends included: **Morning 10:00 IST** and **Evening 19:30 IST**. Days alternate
+A (carousel slot in the morning, posted as a swipe-style Reel + Reel in the evening) and B (Reel + Reel), as the
+calendar says. Each post is made by a **PREP run** well before its slot and published by a short **PUBLISH run**:
 
-(Sat 21 Nov = A, Sun 22 = B, Mon 23 = A, …) The calendar holds one week at a time (next Mon–Sun); it is planned
-every Saturday by `otlo/PLANNING.md` (backlog in the `Idea bank` sheet). Carousel slots complement the Reels
-(a save-worthy cheat sheet, a map, a word list, poll results), never the same content restated. Weekend topics
-lean lighter (food, family, language, weekend watchlists) unless a festival falls on the day.
+| Run | When (IST) | Does |
+|---|---|---|
+| PREP evening | 14:15 | makes, checks and readies tonight's 19:30 post; its final reply is the content email |
+| PUBLISH evening | 19:25 | publishes the readied 19:30 post (and recovers any unconfirmed container) |
+| PREP morning | 21:15 | makes, checks and readies tomorrow's 10:00 post; its final reply is the content email |
+| PUBLISH morning | 09:55 | publishes the readied 10:00 post (and recovers any unconfirmed container) |
+
+A PREP run follows **Steps 1–7** and **Step 8-PREP**; a PUBLISH run follows only **Step 8-PUBLISH** and **Step 9**.
+The calendar holds one week at a time, planned every Saturday by `otlo/PLANNING.md` (backlog: `Idea bank`).
 
 ## Fixed IDs
 
@@ -26,13 +31,35 @@ lean lighter (food, family, language, weekend watchlists) unless a festival fall
 | Calendar columns | A Date · B Day · C Time (IST) · D Format (Reel / Carousel) · E Series · F Topic · G Notes and sources to check · H Status (Idea / To make / Ready / Posted / Skipped) |
 | Strategy doc | https://claude.ai/artifact/LCvcv5vPVocJuHEjeKDrU9 |
 | Instagram (vidIQ) | platformAccountId `29167885212872260` (username otlo.gujarat) |
-| Voice | Gemini TTS voice `Kore`, `direction` always `""` (any instruction text gets read aloud) |
+| Voice | Otlo narrator = Gemini TTS voice `Sulafat` (warm, expressive) for every non-chat Reel; chat Reels use one voice per character (see 4B-chat). `direction` always `""` (instruction text gets read aloud) |
 
 Sheets calls: `read`/`update` with `ref={"object":"node","id":"3d2daa40-bf99"}`,
 `container={"kind":"project","id":"e89bed33-8969-476f-9b60-09a18065bbb3"}`, `engine="workbook"`.
 Read `{"kind":"readCells","sheet":"Calendar","range":"A1:H120"}`. Write
 `{"kind":"applyEdits","base":<revision>,"edits":[{"kind":"writeCells","sheet":"Calendar","topLeft":"G<row>","rows":[["<notes>","Posted"]]}]}`
 (call the Docs `guide` with `topic.sheets` first if unsure).
+
+## Creative standard v2 (from the 26 Nov audit: 66–89% of viewers swiped away in the first seconds)
+
+Every post must meet all of these; the review in Step 6 checks each one.
+1. **Hook in frame one.** The first spoken line (≤ 60 Gujarati characters) and its on-screen text start at once:
+   no title card, no greeting, no "today we'll see". Open on a surprise, a rivalry, a number, a feeling or the most
+   dramatic message. Write 3 hooks (viral-hook-writer), pick one (ab-hook-tester), log the other two.
+2. **18–35 seconds** (hard ceiling 40). 5–7 lines, each ≤ 90 Gujarati characters; one idea per line; cut every line
+   that does not move the story. End on the payoff + one short ask. **Never tease or announce another Reel.**
+3. **Something changes every 1.5–2.5 s**: a new scene, a pop-in element, a bubble, a number. The engine adds the
+   slide-in cuts, the push-in, whooshes, pops and message pings; you supply enough elements (2–4 per scene,
+   staggered `data-in`).
+4. **Voice**: the narrator `Sulafat`, written to be spoken: short sentences, contractions, "!" and "?" where a person
+   would use them. Chat Reels: character voices, no narrator except the final ask.
+5. **Subtitles and safe zones**: subtitles are automatic (large, white on indigo, about y 1,380–1,480). All other
+   text stays between **y 240 and 1,480**, and **left of x 912 below y 1,000** (Instagram's buttons). The 3:4
+   profile grid shows y 240–1,680: the hook must read there too. The builder fails any text outside these zones.
+6. **Art must show the real subject** and fill its space (inline SVG, brand palette); no clip art, no stock, no
+   film stills or posters, no real people.
+7. **Cover**: the designed thumbnail is frame one only (Instagram uses it as the cover); frame two is the hook.
+8. **Shareability test** before building: would a Gujarati viewer send this to their family group, save it, or
+   comment? If none, change the angle (rivalry, surprise, nostalgia, a "that's my Ba" moment, a useful list).
 
 ## Hard rules (never break)
 
@@ -113,7 +140,7 @@ Follow hard rule 2. Keep a source list (outlet + URL). Note 8–12 search phrase
   {"id":"sN","gu":"ગુજરાતની વાતો, ઓટલા પર. ઓટલોને ફોલો કરો.","en":["Stories of Gujarat, on the otlo.","Follow Otlo."]}
 ]}
 ```
-- Natural, warm, spoken Gujarati, 60–160 characters per line; about 35–55 s in total.
+- Natural, warm, spoken Gujarati, ≤ 90 characters per line (hook ≤ 60); 18–35 s in total; voice `Sulafat`.
 - Line 1 is the hook: a paradox, a felt question or a reveal (see the reference patterns below).
 - `en`: faithful plain-English subtitle chunks of ≤ 55 characters each, covering the whole line.
 - **Thumbnail (mandatory):** the cover must say the subject in 2–3 big Gujarati words plus a short English
@@ -128,15 +155,17 @@ indigo #1B2A4A, red #A8322A, haldi #E3A21A, rani #C2185B sparingly, leaf #3C7A3A
 Gujarati headline + English headline + optional short body + SVG art of the real subject. Keep the bottom 260 px
 free (subtitles). Quality bar: `otlo/toolkit/examples/2026-11-21-tulsi-vivah/`.
 
-### 4B-chat. Chat-style Reels (Family Group Chat and any "group chat" format) — mandatory template
-Saumya (22 Nov): chat posts must look like a **real phone chat**. Never hand-build chat bubbles; write
-`chat.json` and run `python3 otlo/toolkit/bin/chat_reel.py otlo/work/<dir>` to generate `reel.html` (phone frame,
-status bar, group header with members / "… is typing", patterned wallpaper, bubbles with tails, timestamps,
-"Today" marker, message bar; earlier messages stay and scroll up). One scene per voice line between the hook and
-the end card (hook = line 1, end card = last line). Keep each message short (≤ 40 Gujarati characters), add the
-English under it, invented names only, generic UI (no real app names or logos). Thumbnail: `art_t` inside a chat
-scene and `art_clip` ≈ `[90,110,900,760]` so the cover shows the phone top (status bar, group name, first message).
-Example: `otlo/work/2026-11-22-1945-family-group-adadiya/`.
+### 4B-chat. Chat-style Reels (Family Group Chat etc.): v2, mandatory
+Write `chat.json` and run `python3 otlo/toolkit/bin/chat_reel.py otlo/work/<dir>`: it writes `reel.html` AND
+`script.json` (one beat = one message = one voiced line, in that character's own voice). See the docstring for
+the format; example `otlo/work/2026-11-26-1930-family-group-invite/`.
+- Cast voices (keep them consistent across Reels): Ba `Gacrux` · Mummy `Aoede` · Pappa `Algenib` · Fai `Leda` ·
+  Jay (cousin abroad) `Puck` · narrator `Sulafat` (final ask only).
+- Writing: open on the most dramatic message (a voice note from Ba, a forwarded alarm, a one-word bombshell);
+  every beat escalates, reveals or twists; use real chat texture (voice notes with transcripts from elders, a
+  "Forwarded many times", an emoji reaction, a deleted message someone replies to, a reply to the wrong
+  message); payoff in the last two beats; 6–10 beats. A pinned caption at the top sets it up for silent viewers.
+- No polite, explanatory or greeting messages. If a beat could be cut without losing the joke, cut it.
 
 ### 4C. Carousel slot → swipe-style Reel (`carousel.html` + `script.json`)
 Saumya's choice (21 Nov): carousel slots are posted as **swipe-style Reels** (vidIQ needs a manual approval
@@ -167,7 +196,11 @@ Swipe-style Reels: same video settings; slides rendered 1080×1350 lossless.
 ### 6. Review (must pass all)
 - Read `contact.jpg` (and for Reels `thumb.jpg`) with the Read tool: text fits, nothing overlaps, Gujarati
   renders, art matches the subject, subtitles sit under the art, the thumbnail reads at a glance.
-- `qa.json`: `ok` true, no `warnings`. Reels: 1080×1920, bit_rate ≥ 10,000,000, lufs ≈ −14, 15–90 s.
+- `qa.json`: `ok` true, no `warnings` (this includes the safe-zone and length checks). Reels: 1080×1920,
+  bit_rate ≥ 10,000,000, lufs ≈ −14, 15–40 s.
+- Read `contact_safezones.jpg`: nothing important under the red (Instagram UI) zones; the hook readable inside the
+  blue 3:4 frame. Read `thumb.jpg`: subject + 2–3 big words readable at phone-grid size.
+- Watch the hook: frame two must already show the hook text; the voice starts within 0.2 s.
 - A chars/sec warning means the voice may have read something extra or cut off: delete `vo/*.wav`, fix the
   line, re-queue. Layout problems: fix the HTML, re-queue (voice is reused).
 - At most 2 rebuilds. Still failing → row `Skipped`, log, stop.
@@ -195,17 +228,34 @@ Follow @otlo.gujarat · ગુજરાતની વાતો, ઓટલા પ�
 **Exactly 5 hashtags on every post (Saumya's rule), never more, never fewer.** No walls of text, no more than two emojis, no unrelated trending tags. Carousels: the ask
 is usually "Save it" or "Send it to the family group".
 
-### 8. Post
-- Before posting, `vidiq_social_post_list` (today) and the log: make sure this slot was not already posted.
-- If the slot time (IST) is still ahead, wait until then; if it has passed, post now.
-- **Reel:** `vidiq_video_upload` with
-  `url=https://raw.githubusercontent.com/saumyadshah/sutraverse-reels/main/otlo/work/<dir>/reel.mp4`, then
-  `vidiq_instagram_publish_reel` (platformAccountId `29167885212872260`, that videoUrl, the caption; no trial,
-  no AI label unless Saumya asks). Continue with containerId every ~10 s until `PUBLISHED`.
-- **Carousel slot:** it is a swipe-style Reel, so post it exactly like a Reel (above).
-- Stop on errors; never retry a failed publish. If access expired, log "RECONNECT NEEDED".
+### 8-PREP. Ready it and send the content email (PREP runs)
+- Write `otlo/ready/<YYYY-MM-DD>-<HHMM>.json`: `{"dir": "otlo/work/<dir>", "time": "<YYYY-MM-DD>T<HH:MM>+05:30",
+  "caption_file": "otlo/work/<dir>/caption.txt", "row": <calendar row>}`; set the calendar Status to `Ready`;
+  commit and push.
+- If QA failed after 2 rebuilds: make the backup (rule 9) instead; if that also fails, write no ready file and say so.
+- **Your final reply is emailed to Saumya.** Make it exactly this package (plain text, no tool chatter):
+  `OTLO READY: <title> · <date> <time> IST`
+  1. Final Reel: https://raw.githubusercontent.com/saumyadshah/sutraverse-reels/main/otlo/work/<dir>/reel.mp4
+  2. Thumbnail / cover: https://raw.githubusercontent.com/saumyadshah/sutraverse-reels/main/otlo/work/<dir>/thumb.jpg
+  3. Caption: the full caption text, including the [keywords] block and the 5 hashtags
+  4. Scheduled: <date>, <time> IST, Instagram @otlo.gujarat
+  5. Concept and objective: 2–3 lines (the idea, the hook, the action it aims for: share / save / comment)
+  6. Quality check: hook, voice, subtitles, safe zones (9:16 and 3:4), thumbnail, caption, export: passed (list
+     anything not perfect)
 
-### 9. Record
+### 8-PUBLISH. Publish the readied post (PUBLISH runs)
+- First, recovery: for any `otlo/ready/*.json` of the last 2 days with a `container` but no `permalink`, call
+  `vidiq_instagram_publish_reel` with that `containerId` and account until `PUBLISHED` (this continues the same
+  post; it is not a retry), then record it.
+- Then this slot: read `otlo/ready/<today>-<HHMM>.json`. Missing → log "NOT READY", set the row `Skipped`, stop.
+  Already has a `permalink` → stop.
+- Wait until the slot time, then `vidiq_video_upload` with the raw URL of `reel.mp4`, then
+  `vidiq_instagram_publish_reel` (account `29167885212872260`, that videoUrl, the caption from `caption_file`).
+  **Write the returned `containerId` into the ready file and push before continuing.** Continue with the
+  containerId every ~10 s until `PUBLISHED`; write `permalink` into the ready file. Stop on errors; never start a
+  second container for the same post. If access expired, log "RECONNECT NEEDED".
+
+### 9. Record (PUBLISH runs; PREP runs record Ready)
 - Calendar: Status → `Posted` (or `Skipped`), and append the permalink (or the reason) to column G.
 - Append to `otlo/logs/<YYYY-MM-DD>.md`: slot, row, POSTED/SKIPPED, permalink, sources, QA numbers, anything odd.
 - Empty `otlo/toolkit/queue.txt`; commit and push (`git pull --rebase` first).
@@ -219,3 +269,9 @@ is usually "Save it" or "Send it to the family group".
 - **Manka Daily** (85.5K): opens with a challenge or exact promise ("Your whole Lakshmi Puja, in 12 steps. Save
   it for Sunday evening."), gives exact dates/times and named sources in the caption, ends with
   "comment your question" or "send this to…". Its save-worthy step-by-step posts get the most comments.
+
+## Feedback loop (every PREP run)
+Before writing, read the last 3 published posts' insights (`vidiq_instagram_owner_insights` with their media ids:
+free): skip rate, average watched %, watch time, shares, saves, comments. Append one line per post to
+`otlo/insights.md` (date, title, format, hook type, length, skip %, watched %, shares/saves/comments) and one
+lesson. Apply it: repeat hook types and formats that beat the running average; drop ones that trail it.
