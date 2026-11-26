@@ -1,0 +1,74 @@
+{
+ "voice": "Sulafat",
+ "direction": "",
+ "images": [
+  {
+   "id": "father",
+   "source": "gemini",
+   "prompt": "A comic scene: an overprotective middle-aged Gujarati father in a cream kurta and spectacles stands in a decorated wedding-house doorway with his arms spread wide to block it, a stern but funny expression; behind him his grown daughter in a red bridal dupatta rolls her eyes. Square composition, characters fictional and stylised."
+  }
+ ],
+ "thumb": {
+  "chip_gu": "લોકો શું કહે છે?",
+  "chip_en": "Loko Shu Kahe Chhe?",
+  "gu": "રફ એન્ડ ટફ કન્યા",
+  "en": "What Bollywood is saying",
+  "ribbon_gu": "હંસલ મહેતા: મસ્ટ-વૉચ",
+  "ribbon_en": "Hansal Mehta: must-watch",
+  "art_t": 7.5,
+  "art_clip": [
+   260,
+   800,
+   560,
+   560
+  ]
+ },
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "એક ગુજરાતી કોમેડી માટે આખું બૉલીવુડ બોલી રહ્યું છે!",
+   "en": [
+    "Bollywood is talking about a Gujarati comedy!"
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "રફ એન્ડ ટફ કન્યા. એક એવા પપ્પાની વાર્તા, જે દીકરીના લગ્ન થવા જ નથી દેતા.",
+   "en": [
+    "Ruff & Tuff Kanya: a dad",
+    "who just won't let his daughter get married."
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "સ્કેમ નાઈન્ટીન નાઈન્ટી ટુના ડિરેક્ટર હંસલ મહેતાએ એને મસ્ટ-વૉચ કહી.",
+   "en": [
+    "Scam 1992 director Hansal Mehta",
+    "called it a must-watch."
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "અને કહ્યું, ગુજરાતી સિનેમાને લોકો પાસેથી ઘણો વધારે પ્રેમ મળવો જોઈએ.",
+   "en": [
+    "And said Gujarati cinema",
+    "deserves much more love from audiences."
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "પણ એક પ્રામાણિક વાત: મોટા ક્રિટિક્સના રિવ્યૂ હજી આવ્યા નથી.",
+   "en": [
+    "One honest note:",
+    "no major critic reviews are out yet."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "તમે જોઈ? એક શબ્દમાં તમારો રિવ્યૂ કમેન્ટ કરો.",
+   "en": [
+    "Seen it? Review it in one word below."
+   ]
+  }
+ ]
+}
