@@ -6,8 +6,8 @@ and what worked on @otlo.gujarat last week. It plans only; it never posts. Work 
 Same IDs as `otlo/RUNBOOK.md` (sheet `Calendar` + sheet `Idea bank` in the Otlo Content Calendar).
 
 ## Pattern (fixed)
-Every day, weekends included. Days alternate **A** (Carousel slot 13:00, posted as a swipe-style Reel + Reel 19:30)
-and **B** (Reel 13:00 + Reel 19:30), continuing day by day: next Monday's type is the **opposite of this
+Every day, weekends included. Days alternate **A** (Carousel slot 10:00, posted as a swipe-style Reel + Reel 19:30)
+and **B** (Reel 10:00 + Reel 19:30), continuing day by day: next Monday's type is the **opposite of this
 Sunday's** (Sunday has a Carousel row = A, so Monday = B). 7 days → 14 rows. This week's Saturday and Sunday were
 planned last Saturday, so the plan always runs Monday to Sunday. Weekend posts lean lighter (food, family,
 language, weekend watchlists) unless a festival falls on the day.
@@ -44,7 +44,7 @@ Same exclusions and rule precedence as the RUNBOOK. Note in the plan which skill
    second set: keep its rows and only update a row's Topic/Notes in place where you found a clearly more
    timely or better-sourced topic for the same slot and format (log what changed and why). Otherwise: Delete rows of weeks that are fully past **only after** confirming they are
    `Posted`/`Skipped` (never delete a `To make` row from the current or a future week). Append the 14 new rows
-   (`Date`, `=TEXT(A<n>,"ddd")`, `13:00`/`19:30`, Format, Series, Topic, Notes, `To make`) in date and time order.
+   (`Date`, `=TEXT(A<n>,"ddd")`, `10:00`/`19:30`, Format, Series, Topic, Notes, `To make`) in date and time order.
    Format and Status cells use the existing dropdown labels exactly.
 6. **Update the Idea bank.** Set Status `Used <date>` on rows you used; add 5–10 new ideas you found
    (Suggested date if time-bound), Status `Unused`. Mark stale time-bound ideas `Expired`.
@@ -52,3 +52,17 @@ Same exclusions and rule precedence as the RUNBOOK. Note in the plan which skill
    one line of reasoning each, key dates found, and anything Saumya should know (e.g. a sensitive topic skipped).
    Commit and push.
 8. Finish with one line: the week planned (dates) and its three headline posts.
+
+## Added 26 Nov (overhaul)
+- **Source pre-check:** before a fact-based topic enters the calendar, confirm today that at least two usable
+  sources exist (search them, note the URLs in column G). Three evening topics were skipped in the week of
+  23 Nov because sources did not exist (e.g. reviews of a film released 3 days earlier). Reception Reels go in
+  only once at least two named reviews exist.
+- **Formats:** follow the "Creative standard v2" in RUNBOOK.md and the test plan in the audit doc
+  (https://claude.ai/artifact/YMP1dotTv6rbaEGPfx5aXJ): each week include at least 2 city-rivalry posts, 2 "you've
+  eaten it all your life, but…" posts, 2 Family Group Chat v2 posts, 2 save-it lists (carousel slots) and 1 Gujlish
+  word; no format more than 3 times a week; no two chat Reels on the same day.
+- **Weekly report (your final reply is emailed to Saumya):** start with `OTLO WEEKLY REPORT: <dates>`; then a table of
+  every post of the past week (title, format, plays, skip %, watched %, shares, saves, comments, follows), the 3
+  lessons, the change in followers, the week's 14 planned posts (date, time, format, topic) and the 2 formats
+  being tested. Also save it as `otlo/plans/<monday>-report.md`.
