@@ -161,7 +161,9 @@ def mix(d, T, m):
     for c in T['vo']:
         x, s = rd(c['file']); x = x if x.ndim == 1 else x.mean(1)
         tt = np.arange(int(len(x)*SR/s))/SR; y = np.interp(tt, np.arange(len(x))/s, x).astype(np.float32)
-        i = int(c['at']*SR); v[i:i+len(y)] += y[:max(0, N-i)]
+        i = int(c['at']*SR)
+        if i < 0: y = y[-i:]; i = 0
+        n = max(0, min(len(y), N-i)); v[i:i+n] += y[:n]
     v /= np.max(np.abs(v))+1e-9
     envl = np.convolve(np.abs(v), np.ones(4410)/4410, 'same'); envl = np.clip(envl/.05, 0, 1); envl = np.convolve(envl, np.ones(8820)/8820, 'same')
     out = m*(1-.65*envl)[:, None]*.6+v[:, None]*.9; out /= np.max(np.abs(out))*1.05
