@@ -11,7 +11,7 @@ for ln in cfg["lines"]:
     for m in MODELS:
         body = {"contents": [{"parts": [{"text": ((cfg.get("direction") or "") + "\n\n" if cfg.get("direction") else "") + ln["gu"]}]}],
                 "generationConfig": {"responseModalities": ["AUDIO"],
-                    "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": cfg["voice"]}}}}}
+                    "speechConfig": {"voiceConfig": {"prebuiltVoiceConfig": {"voiceName": (ln.get("voice") or cfg["voice"])}}}}}
         r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
                           headers={"x-goog-api-key": key, "Content-Type": "application/json"}, json=body, timeout=180)
         if r.status_code != 200:

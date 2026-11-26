@@ -65,8 +65,8 @@ def timing(d, S):
     if len(orig) != n: sys.exit(f"QA FAIL: {len(orig)} scenes in reel.html but {n} voice lines")
     starts, ends, vo, t = [], [], [], 0.0
     for i, ln in enumerate(S['lines']):
-        p = d/'vo'/f"{ln['id']}.wav"; on, off = speech_bounds(p); lead = 0.5 if i == 0 else 0.35
-        L = float(max(orig[i][1]-orig[i][0], lead + (off-on) + (1.6 if i == n-1 else 0.7)))
+        p = d/'vo'/f"{ln['id']}.wav"; on, off = speech_bounds(p); lead = 0.06 if i == 0 else float(ln.get('lead', 0.18))
+        L = float(max(1.6, lead + (off-on) + (0.9 if i == n-1 else float(ln.get('tail', 0.3)))))
         starts.append(round(t, 3)); vo.append({"file": str(p), "at": round(t+lead-on, 3), "on": on, "off": off}); t += L; ends.append(round(t, 3))
     T = {"starts": starts, "ends": ends, "vo": vo}; (d/'timing.json').write_text(json.dumps(T, indent=1)); return T
 
@@ -80,6 +80,17 @@ async def frames(d, T, only=None):
             for s in only:
                 await pg.evaluate(f"window.render({s})"); await pg.screenshot(path=str(d/f'still_{s}.jpg'), type='jpeg', quality=88)
         else:
+            # safe-zone check: text must stay clear of Instagram's UI (bottom 440 px, right 170 px below y=1000)
+            # and inside the 3:4 grid crop (y 240-1680) for anything that carries the message
+            warn = []
+            for k, (os_, oe) in enumerate(orig_scenes(d)):
+                await pg.evaluate(f"window.render({oe-0.4})")
+                bad = await pg.evaluate('''() => [...document.querySelectorAll('.scene')].filter(s => s.style.display !== 'none')
+                  .flatMap(s => [...s.querySelectorAll('.gu,.en,.kick,.body,.chip,.box,.cap,.m')]).filter(e => !e.closest('.endcard'))
+                  .map(e => { const r = e.getBoundingClientRect(); return {c: e.className, t: (e.innerText||'').slice(0,24), b: r.bottom, r: r.right, top: r.top}; })
+                  .filter(o => o.b > 1482 || (o.r > 912 && o.b > 1000) || o.top < 236)''')
+                for o in bad[:3]: warn.append(f"scene {k+1}: '{o['t']}' outside safe zone (top {o['top']:.0f}, bottom {o['b']:.0f}, right {o['r']:.0f})")
+            (d/'safezone.json').write_text(json.dumps(warn))
             for i in range(int(FPS*T['ends'][-1])):
                 await pg.evaluate(f"window.renderTimed({i/FPS},{T['starts']},{T['ends']})")
                 await pg.screenshot(path=str(out/f'f{i:05d}.png'), type='png')
@@ -110,8 +121,40 @@ def music(d, T):
     while x0 < DUR-1:
         s = int(x0*SR); n = min(int(.35*SR), N-s); x = np.arange(n)/SR; f = 110*np.exp(-x*8)+55
         out[s:s+n] += (.16 if k % 4 in (0, 3) else .08)*np.sin(2*np.pi*np.cumsum(f)/SR)*np.exp(-x*12); x0 += beat/2 if k % 4 == 2 else beat; k += 1
-    out *= np.minimum(1, np.minimum(t/.4, (DUR-t)/1.5)); out /= np.max(np.abs(out))*1.15; out *= .55
+    rng = np.random.default_rng(7); x0 = .3
+    while x0 < DUR-.5:                                   # shaker on 8ths: drive without clutter
+        s0 = int(x0*SR); n = min(int(.06*SR), N-s0)
+        out[s0:s0+n] += .05*rng.standard_normal(n)*np.exp(-np.arange(n)/SR*60); x0 += 60/84/2
+    out *= np.minimum(1, np.minimum(t/.15, (DUR-t)/1.0)); out /= np.max(np.abs(out))*1.15; out *= .5
+    for kind, at in sfx_events(d, T):                    # sound design: whoosh on cuts, pop on reveals, ping on messages
+        s0 = int(at*SR)
+        if s0 >= N: continue
+        if kind == 'whoosh':
+            n = min(int(.32*SR), N-s0); x = np.arange(n)/SR; nz = rng.standard_normal(n)
+            env_ = np.sin(np.pi*np.clip(x/.32, 0, 1))**2; nz = np.convolve(nz, np.ones(12)/12, 'same')
+            out[s0:s0+n] += .55*nz*env_
+        elif kind == 'pop':
+            n = min(int(.09*SR), N-s0); x = np.arange(n)/SR
+            out[s0:s0+n] += .35*np.sin(2*np.pi*(900-5000*x)*x)*np.exp(-x*45)
+        elif kind == 'ping':
+            n = min(int(.35*SR), N-s0); x = np.arange(n)/SR
+            out[s0:s0+n] += .30*(np.sin(2*np.pi*1568*x)+.5*np.sin(2*np.pi*2093*x))*np.exp(-x*14)
     return np.stack([out, np.roll(out, 90)], 1).astype(np.float32)
+
+def sfx_events(d, T):
+    """Map element reveal times (data-in, original timeline) to the voiced timeline."""
+    import re
+    if is_slideshow(d): return [('whoosh', THUMB_LEAD*0+s) for s in T['starts'][1:]]
+    html = (d/'reel.html').read_text(); orig = orig_scenes(d); ev = [('whoosh', s) for s in T['starts'][1:]]
+    for i, m in enumerate(re.finditer(r'class="scene"[^>]*data-s="([\d.]+)"\s+data-e="([\d.]+)"', html)):
+        if i >= len(T['starts']): break
+        seg_end = html.find('class="scene"', m.end()); seg = html[m.end(): seg_end if seg_end > 0 else len(html)]
+        os_, oe = orig[i]; ol = oe-os_; nl = T['ends'][i]-T['starts'][i]; k = nl/ol if nl < ol else 1.0
+        for cls, tin in re.findall(r'class="([^"]*\ba\b[^"]*)"[^>]*data-in="([\d.]+)"', seg):
+            at = T['starts'][i] + (float(tin)-os_)*k
+            if at < T['starts'][i] + 0.12 and i > 0: continue
+            ev.append(('ping' if re.search(r'\bm\b', cls) else 'pop', max(0.0, at)))
+    return ev
 
 def mix(d, T, m):
     N = len(m); v = np.zeros(N, np.float32)
@@ -128,18 +171,25 @@ def subs(d, T, S):
     f = lambda t: f"{int(t//3600)}:{int(t%3600//60):02d}:{t%60:05.2f}"
     ev = []
     for c, ln in zip(T['vo'], S['lines']):
-        s0 = c['at']+c['on']; s1 = c['at']+c['off']; ch = ln.get('en') or []; tot = sum(len(x) for x in ch) or 1; t = s0
+        s0 = c['at']+c['on']; s1 = c['at']+c['off']; ch = []
+        for x in (ln.get('en') or []):
+            w, cur = x.split(), ''
+            for word in w:
+                if len(cur)+len(word)+1 > 32 and cur: ch.append(cur); cur = word
+                else: cur = (cur+' '+word).strip()
+            if cur: ch.append(cur)
+        tot = sum(len(x) for x in ch) or 1; t = s0
         for x in ch:
             dd = (s1-s0)*len(x)/tot; ev.append([t, t+dd, x.replace('\n', ' ')]); t += dd
     for a, b in zip(ev, ev[1:]): a[1] = min(a[1], b[0]-.03)
     hdr = """[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\nWrapStyle: 0\n\n[V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
-Style: Sub,Fira Sans SemiBold,46,&H00D6E9F3,&H00D6E9F3,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,16,0,2,110,110,40,1\n\n[Events]
+Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,18,0,2,90,170,450,1\n\n[Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n"""
-    if is_slideshow(d): hdr = hdr.replace(",2,110,110,40,1", ",2,110,110,300,1")  # sit just under the slide
+    if is_slideshow(d): hdr = hdr.replace(",2,90,170,450,1", ",2,90,170,440,1")
     (d/'subs.ass').write_text(hdr+"\n".join(f"Dialogue: 0,{f(a)},{f(b)},Sub,,0,0,0,,{x}" for a, b, x in ev)+"\n")
 
-THUMB_LEAD = 0.4  # seconds the designed thumbnail is held as the very first frames (Instagram's API cover = first frame)
+THUMB_LEAD = 1/30  # the designed thumbnail is the very first frame only (Instagram's API cover = first frame); the hook starts on frame 2
 
 async def thumbnail(d, S):
     """Render thumb.png/thumb.jpg (1080x1920) from script.json "thumb" and an art crop of the Reel."""
@@ -165,7 +215,7 @@ def encode(d):
     BT.709 colour, AAC 256 kb/s 48 kHz, -14 LUFS. Thumbnail held for THUMB_LEAD s as the cover frame."""
     fontsdir = HERE.parent/'fonts'; ms = int(THUMB_LEAD*1000)
     fc = (f"[0:v]ass={d/'subs.ass'}:fontsdir={fontsdir}[main];"
-          f"[1:v]fps={FPS},trim=duration={THUMB_LEAD},setpts=PTS-STARTPTS[th];"
+          f"[1:v]fps={FPS},trim=end_frame=1,setpts=PTS-STARTPTS[th];"
           f"[th][main]concat=n=2:v=1:a=0,scale=1080:1920:flags=lanczos+accurate_rnd+full_chroma_int:out_color_matrix=bt709:out_range=tv,format=yuv420p[v];"
           f"[2:a]adelay={ms}|{ms},loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]")
     subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-framerate", str(FPS), "-i", str(d/'frames/f%05d.png'),
@@ -183,6 +233,13 @@ def qa(d, T, S):
     for i, m in enumerate(mids):
         p = d/f'qa_{i+1}.jpg'; subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-ss", f"{m:.2f}", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-vf", "scale=270:480", str(p)], check=True); ims.append(Image.open(p))
     c = Image.new('RGB', (270*len(ims), 480)); [c.paste(im, (i*270, 0)) for i, im in enumerate(ims)]; c.save(d/'contact.jpg')
+    # review aids: the same frames with Instagram's UI zones shaded, and the 3:4 profile-grid crop
+    from PIL import ImageDraw
+    ov = c.convert('RGBA'); lay = Image.new('RGBA', ov.size, (0, 0, 0, 0)); dr = ImageDraw.Draw(lay); f = 270/1080
+    for i in range(len(ims)):
+        x0 = i*270; dr.rectangle([x0, int(1480*f), x0+270, 480], fill=(255, 0, 0, 70)); dr.rectangle([x0+int(912*f), int(1000*f), x0+270, 480], fill=(255, 0, 0, 70))
+        dr.rectangle([x0, int(240*f), x0+269, int(1680*f)], outline=(0, 120, 255, 255), width=2)
+    Image.alpha_composite(ov, lay).convert('RGB').save(d/'contact_safezones.jpg')
     for p in d.glob('qa_*.jpg'): p.unlink()
     subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-q:v", "2", str(d/'first_frame.jpg')], check=True)
     lufs = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(d/'reel.mp4'), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
@@ -193,6 +250,9 @@ def qa(d, T, S):
     warn = [f"{l['id']}: {r} chars/s (normal 10-14) - possible leaked instruction or truncation, LISTEN" for l, r in zip(S['lines'], rate) if r < 8.5 or r > 17]
     vs = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,codec_name,profile,bit_rate,r_frame_rate,pix_fmt", "-of", "json", str(d/'reel.mp4')], capture_output=True, text=True).stdout)["streams"][0]
     if (vs.get("width"), vs.get("height")) != (1080, 1920): warn.append(f"resolution {vs.get('width')}x{vs.get('height')}, expected 1080x1920")
+    if dur > 40: warn.append(f"duration {dur:.0f}s: over the 40 s ceiling (target 18-35 s)")
+    sz = d/'safezone.json'
+    if sz.exists(): warn += json.loads(sz.read_text())
     rep = {"video": vs, "duration": round(dur, 1), "lufs": float(I[-1]) if I else None, "chars_per_sec": rate, "warnings": warn, "ok": not warn and 15 <= dur <= 90}
     (d/'qa.json').write_text(json.dumps(rep, indent=1)); print(json.dumps(rep, indent=1)); return rep
 

@@ -2,7 +2,7 @@
 <!-- Otlo Reel skeleton. Lives at otlo/work/<date-slug>/reel.html. Copy, then replace the scenes.
      Rules: one scene per voice line (same order as script.json); scene data-s/data-e are the ORIGINAL
      animation timings (they get stretched to the voice automatically); element data-in is inside its scene.
-     Keep text out of the bottom 260px (subtitles). Illustrations: draw inline SVG in brand colours that show the
+     Hook on screen from frame one (scene-1 elements with data-in <= 0.3 show at once). Text only between y 240 and 1480, and left of x 912 below y 1000 (Instagram UI + 3:4 grid crop); subtitles sit at about y 1380-1480. No 'next Reel' teasers. Illustrations: draw inline SVG in brand colours that show the
      actual subject (khaman looks like khaman). No movie stills, posters, logos of others, or real people's faces. -->
 <link rel="stylesheet" href="../../toolkit/runtime/otlo.css">
 </head><body>
@@ -30,11 +30,11 @@
   <div class="box a" data-in="10.6" style="background:var(--haldi)"><div class="gu" style="font-size:64px">{{Q_GU}}</div><div class="en" style="font-size:52px;margin-top:10px">{{Q_EN}}</div></div>
 </div>
 <!-- END CARD (keep) -->
-<div class="scene" data-s="20.0" data-e="23.5" style="align-items:center;justify-content:center;padding-top:0;gap:34px">
+<div class="scene" data-s="20.0" data-e="21.6" style="align-items:center;justify-content:center;padding-top:0;gap:34px">
   <div class="a" data-in="20.1" data-pop="1" data-origin="center"><svg width="520" height="520" viewBox="0 0 400 400"><circle cx="200" cy="200" r="200" fill="#1B2A4A"/><line x1="80" y1="110" x2="320" y2="110" stroke="#E3A21A" stroke-width="5"/><polygon points="85,110 125,110 105,150" fill="#C2185B"/><polygon points="125,110 165,110 145,150" fill="#E3A21A"/><polygon points="165,110 205,110 185,150" fill="#C2185B"/><polygon points="195,110 235,110 215,150" fill="#E3A21A"/><polygon points="235,110 275,110 255,150" fill="#C2185B"/><polygon points="275,110 315,110 295,150" fill="#E3A21A"/><text x="200" y="275" text-anchor="middle" font-family="Anek Gujarati" font-weight="700" font-size="116" fill="#F3E9D6">ઓટલો</text></svg></div>
   <div class="en a" data-in="20.5" style="font-size:120px;letter-spacing:.04em">OTLO</div>
   <div class="gu a" data-in="20.8" style="font-size:66px">ગુજરાતની વાતો, ઓટલા પર</div>
-  <div class="kick a" data-in="21.1" style="font-size:44px">@otlo.gujarat · Next: {{NEXT}}</div>
+  <div class="kick a" data-in="21.1" style="font-size:44px">@otlo.gujarat</div>
 </div>
 </div>
 <script src="../../toolkit/runtime/otlo.js"></script>

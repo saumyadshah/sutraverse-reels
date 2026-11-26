@@ -1,0 +1,105 @@
+{
+ "group": "ફેમિલી ગ્રુપ 🏠",
+ "members": "Ba, Mummy, Pappa, Fai, Jay +9",
+ "clock": "9:41",
+ "caption": {
+  "gu": "સિઝનની પહેલી કંકોત્રી 💌",
+  "en": "The season's first invite just dropped"
+ },
+ "narrator_voice": "Sulafat",
+ "cast": {
+  "Ba": {
+   "label": "બા · Ba",
+   "color": "#A8322A",
+   "voice": "Gacrux"
+  },
+  "Mummy": {
+   "label": "મમ્મી · Mummy",
+   "color": "#C2185B",
+   "voice": "Aoede"
+  },
+  "Pappa": {
+   "label": "પપ્પા · Pappa",
+   "color": "#2E7D32",
+   "voice": "Algenib"
+  },
+  "Fai": {
+   "label": "ફઈ · Fai",
+   "color": "#1565C0",
+   "voice": "Leda"
+  },
+  "Jay": {
+   "label": "જય (USA) · Jay",
+   "color": "#6A1B9A",
+   "voice": "Puck"
+  }
+ },
+ "beats": [
+  {
+   "from": "Ba",
+   "type": "voice",
+   "secs": "0:04",
+   "gu": "બાર ડિસેમ્બર. ત્રણ દિવસ. આખું ફેમિલી. ના નહીં ચાલે!",
+   "en": "12 December. Three days. Whole family. No excuses!",
+   "time": "9:12 PM"
+  },
+  {
+   "from": "Pappa",
+   "type": "text",
+   "gu": "પણ લગ્ન છે કોના?",
+   "en": "But whose wedding is it?",
+   "time": "9:13 PM"
+  },
+  {
+   "from": "Ba",
+   "type": "text",
+   "gu": "તારા મામાના સાળાના દીકરાના.",
+   "en": "Your mama's brother-in-law's son's.",
+   "time": "9:13 PM",
+   "react": "😂 6"
+  },
+  {
+   "from": "Mummy",
+   "type": "text",
+   "gu": "ત્રણ દિવસ એટલે ત્રણ નવા ડ્રેસ.",
+   "en": "Three days means three new outfits.",
+   "time": "9:14 PM"
+  },
+  {
+   "from": "Pappa",
+   "type": "deleted",
+   "say": ""
+  },
+  {
+   "from": "Fai",
+   "type": "text",
+   "gu": "ભાઈ, ડિલીટ કરે એ પહેલાં મેં વાંચી લીધું હતું 😏",
+   "en": "Bhai, I read it before you deleted it 😏",
+   "time": "9:15 PM",
+   "reply_to": 4
+  },
+  {
+   "from": "Jay",
+   "type": "text",
+   "gu": "પણ મામાના સાળા છે કોણ?",
+   "en": "But who IS mama's brother-in-law?",
+   "time": "9:16 PM"
+  },
+  {
+   "from": "Ba",
+   "type": "voice",
+   "secs": "0:05",
+   "gu": "એ જ, જેને તું છેલ્લા લગ્નમાં ઓળખી નહોતો શક્યો.",
+   "en": "The same one you didn't recognise at the last wedding.",
+   "time": "9:17 PM",
+   "react": "😂 11"
+  },
+  {
+   "from": "narrator",
+   "type": "end",
+   "gu": "તમારા ગ્રુપની 'બા' કોણ છે?",
+   "en": "Tag the Ba of your family group",
+   "say": "તમારા ફેમિલી ગ્રુપની બા કોણ છે? ટેગ કરો."
+  }
+ ]
+}

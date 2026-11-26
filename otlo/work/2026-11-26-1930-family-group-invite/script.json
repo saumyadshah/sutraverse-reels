@@ -1,0 +1,93 @@
+{
+ "voice": "Sulafat",
+ "direction": "",
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "બાર ડિસેમ્બર. ત્રણ દિવસ. આખું ફેમિલી. ના નહીં ચાલે!",
+   "en": [],
+   "voice": "Gacrux",
+   "lead": 0.32,
+   "tail": 0.25
+  },
+  {
+   "id": "s2",
+   "gu": "પણ લગ્ન છે કોના?",
+   "en": [],
+   "voice": "Algenib",
+   "lead": 0.32,
+   "tail": 0.25
+  },
+  {
+   "id": "s3",
+   "gu": "તારા મામાના સાળાના દીકરાના.",
+   "en": [],
+   "voice": "Gacrux",
+   "lead": 0.32,
+   "tail": 0.25
+  },
+  {
+   "id": "s4",
+   "gu": "ત્રણ દિવસ એટલે ત્રણ નવા ડ્રેસ.",
+   "en": [],
+   "voice": "Aoede",
+   "lead": 0.32,
+   "tail": 0.25
+  },
+  {
+   "id": "s5",
+   "gu": "રહેવા દો…",
+   "en": [],
+   "voice": "Algenib",
+   "lead": 0.3
+  },
+  {
+   "id": "s6",
+   "gu": "ભાઈ, ડિલીટ કરે એ પહેલાં મેં વાંચી લીધું હતું 😏",
+   "en": [],
+   "voice": "Leda",
+   "lead": 0.32,
+   "tail": 0.25
+  },
+  {
+   "id": "s7",
+   "gu": "પણ મામાના સાળા છે કોણ?",
+   "en": [],
+   "voice": "Puck",
+   "lead": 0.32,
+   "tail": 0.25
+  },
+  {
+   "id": "s8",
+   "gu": "એ જ, જેને તું છેલ્લા લગ્નમાં ઓળખી નહોતો શક્યો.",
+   "en": [],
+   "voice": "Gacrux",
+   "lead": 0.32,
+   "tail": 0.25
+  },
+  {
+   "id": "s9",
+   "gu": "તમારા ફેમિલી ગ્રુપની બા કોણ છે? ટેગ કરો.",
+   "en": [
+    "Tag the Ba of your family group"
+   ],
+   "voice": "Sulafat",
+   "lead": 0.12
+  }
+ ],
+ "thumb": {
+  "chip_gu": "ફેમિલી ગ્રુપ",
+  "chip_en": "Family Group Chat",
+  "gu": "પહેલી કંકોત્રી",
+  "en": "Whose wedding is it, anyway?",
+  "ribbon_gu": "મામાના સાળાના દીકરાના",
+  "ribbon_en": "Mama's brother-in-law's son's",
+  "art_t": 5.8,
+  "art_clip": [
+   105,
+   420,
+   870,
+   700
+  ]
+ }
+}
