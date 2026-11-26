@@ -1,0 +1,33 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,18,0,2,90,170,440,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.06,0:00:01.48,Sub,,0,0,0,,A Bollywood face-off this
+Dialogue: 0,0:00:01.51,0:00:01.89,Sub,,0,0,0,,Friday!
+Dialogue: 0,0:00:01.92,0:00:03.61,Sub,,0,0,0,,But first, our Gujarati film.
+Dialogue: 0,0:00:04.09,0:00:06.35,Sub,,0,0,0,,In theatres from today: King of
+Dialogue: 0,0:00:06.38,0:00:07.09,Sub,,0,0,0,,Salangpur,
+Dialogue: 0,0:00:07.12,0:00:09.49,Sub,,0,0,0,,a Gujarati film on Hanuman Dada.
+Dialogue: 0,0:00:09.97,0:00:12.15,Sub,,0,0,0,,And the face-off? Ayushmann's
+Dialogue: 0,0:00:12.18,0:00:13.45,Sub,,0,0,0,,Yeh Prem Mol Liya
+Dialogue: 0,0:00:13.48,0:00:15.77,Sub,,0,0,0,,versus Emraan's Gunmaaster G9!
+Dialogue: 0,0:00:16.25,0:00:17.48,Sub,,0,0,0,,Watching from home?
+Dialogue: 0,0:00:17.51,0:00:19.46,Sub,,0,0,0,,Drishyam: The Conclusion is on
+Dialogue: 0,0:00:19.49,0:00:20.75,Sub,,0,0,0,,Netflix from today.
+Dialogue: 0,0:00:21.23,0:00:23.61,Sub,,0,0,0,,Campus politics in Dhai Chaal on
+Dialogue: 0,0:00:23.64,0:00:24.44,Sub,,0,0,0,,JioHotstar,
+Dialogue: 0,0:00:24.47,0:00:26.58,Sub,,0,0,0,,and Hanuman Ansh on SonyLIV.
+Dialogue: 0,0:00:27.06,0:00:28.32,Sub,,0,0,0,,Screenshot this list,
+Dialogue: 0,0:00:28.35,0:00:30.31,Sub,,0,0,0,,and send it to the family group.
+Dialogue: 0,0:00:30.79,0:00:33.00,Sub,,0,0,0,,What will you watch? Tell us in
+Dialogue: 0,0:00:33.03,0:00:33.93,Sub,,0,0,0,,the comments.
+Dialogue: 0,0:00:33.96,0:00:36.24,Sub,,0,0,0,,Stories of Gujarat, on the otlo.
+Dialogue: 0,0:00:36.27,0:00:37.14,Sub,,0,0,0,,Follow Otlo.

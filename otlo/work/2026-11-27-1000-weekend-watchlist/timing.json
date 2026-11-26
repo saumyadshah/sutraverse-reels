@@ -1,0 +1,64 @@
+{
+ "starts": [
+  0.0,
+  3.91,
+  9.79,
+  16.07,
+  21.05,
+  26.88,
+  30.61
+ ],
+ "ends": [
+  3.91,
+  9.79,
+  16.07,
+  21.05,
+  26.88,
+  30.61,
+  38.04
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1000-weekend-watchlist/vo/s1.wav",
+   "at": 0.06,
+   "on": 0.0,
+   "off": 3.5500000000000003
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1000-weekend-watchlist/vo/s2.wav",
+   "at": 4.09,
+   "on": 0.0,
+   "off": 5.4
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1000-weekend-watchlist/vo/s3.wav",
+   "at": 9.97,
+   "on": 0.0,
+   "off": 5.800000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1000-weekend-watchlist/vo/s4.wav",
+   "at": 16.15,
+   "on": 0.1,
+   "off": 4.6000000000000005
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1000-weekend-watchlist/vo/s5.wav",
+   "at": 21.13,
+   "on": 0.1,
+   "off": 5.45
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1000-weekend-watchlist/vo/s6.wav",
+   "at": 26.81,
+   "on": 0.25,
+   "off": 3.5
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1000-weekend-watchlist/vo/s7.wav",
+   "at": 30.49,
+   "on": 0.30000000000000004,
+   "off": 6.65
+  }
+ ]
+}
