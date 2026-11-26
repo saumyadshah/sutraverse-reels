@@ -1,0 +1,56 @@
+{
+ "starts": [
+  0.0,
+  3.56,
+  10.09,
+  16.57,
+  20.65,
+  25.08
+ ],
+ "ends": [
+  3.56,
+  10.09,
+  16.57,
+  20.65,
+  25.08,
+  29.21
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1000-dabeli-six-paise/vo/s1.wav",
+   "at": 0.06,
+   "on": 0.0,
+   "off": 3.2
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1000-dabeli-six-paise/vo/s2.wav",
+   "at": 3.74,
+   "on": 0.0,
+   "off": 6.050000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1000-dabeli-six-paise/vo/s3.wav",
+   "at": 10.27,
+   "on": 0.0,
+   "off": 6.0
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1000-dabeli-six-paise/vo/s4.wav",
+   "at": 16.75,
+   "on": 0.0,
+   "off": 3.6
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1000-dabeli-six-paise/vo/s5.wav",
+   "at": 20.73,
+   "on": 0.1,
+   "off": 4.05
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1000-dabeli-six-paise/vo/s6.wav",
+   "at": 25.26,
+   "on": 0.0,
+   "off": 3.0500000000000003
+  }
+ ]
+}

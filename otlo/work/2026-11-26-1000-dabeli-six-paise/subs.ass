@@ -1,0 +1,26 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,18,0,2,90,170,450,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.06,0:00:02.70,Sub,,0,0,0,,Your dabeli once cost just six
+Dialogue: 0,0:00:02.73,0:00:03.26,Sub,,0,0,0,,paise!
+Dialogue: 0,0:00:03.74,0:00:06.15,Sub,,0,0,0,,In the 1960s, in Mandvi, Kutch,
+Dialogue: 0,0:00:06.18,0:00:08.66,Sub,,0,0,0,,Kesha Malam is said to have made
+Dialogue: 0,0:00:08.69,0:00:09.79,Sub,,0,0,0,,the first one.
+Dialogue: 0,0:00:10.27,0:00:12.44,Sub,,0,0,0,,The recipe is in the name.
+Dialogue: 0,0:00:12.47,0:00:14.80,Sub,,0,0,0,,Dabeli means pressed: masala
+Dialogue: 0,0:00:14.83,0:00:16.27,Sub,,0,0,0,,pressed into pav.
+Dialogue: 0,0:00:16.75,0:00:18.55,Sub,,0,0,0,,Mandvi's dabeli masala is still
+Dialogue: 0,0:00:18.58,0:00:20.35,Sub,,0,0,0,,considered the most authentic.
+Dialogue: 0,0:00:20.83,0:00:23.33,Sub,,0,0,0,,And that shop? Still open today,
+Dialogue: 0,0:00:23.36,0:00:24.78,Sub,,0,0,0,,run by his family.
+Dialogue: 0,0:00:25.26,0:00:27.24,Sub,,0,0,0,,Had a dabeli in Mandvi? Tell us
+Dialogue: 0,0:00:27.27,0:00:28.31,Sub,,0,0,0,,in the comments.
