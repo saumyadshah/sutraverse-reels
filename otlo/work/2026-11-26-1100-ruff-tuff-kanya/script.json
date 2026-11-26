@@ -1,13 +1,6 @@
 {
  "voice": "Sulafat",
  "direction": "",
- "images": [
-  {
-   "id": "father",
-   "source": "gemini",
-   "prompt": "A comic scene: an overprotective middle-aged Gujarati father in a cream kurta and spectacles stands in a decorated wedding-house doorway with his arms spread wide to block it, a stern but funny expression; behind him his grown daughter in a red bridal dupatta rolls her eyes. Square composition, characters fictional and stylised."
-  }
- ],
  "thumb": {
   "chip_gu": "લોકો શું કહે છે?",
   "chip_en": "Loko Shu Kahe Chhe?",
