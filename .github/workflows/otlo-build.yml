@@ -37,6 +37,7 @@ jobs:
               if python3 otlo/toolkit/bin/build.py carousel "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
               tail -20 "$wd/build.log"; continue
             fi
+            if grep -q '"images"' "$wd/script.json" 2>/dev/null; then python3 otlo/toolkit/img/get_images.py "$wd" >> "$wd/build.log" 2>&1 || echo "IMAGES FAILED" >> "$wd/build.log"; fi
             mkdir -p "$wd/vo"
             n=$(python3 -c "import json;print(len(json.load(open('$wd/script.json'))['lines']))")
             have=$(ls "$wd"/vo/s*.wav 2>/dev/null | wc -l)
@@ -44,7 +45,7 @@ jobs:
               if [ -z "$GEMINI_API_KEY" ]; then echo "NO_KEY (GitHub secret GEMINI_API_KEY missing)" >> "$wd/build.log"; continue; fi
               python3 otlo/toolkit/vo/make_vo.py "$wd/script.json" "$wd/vo" >> "$wd/build.log" 2>&1 || echo "VOICE FAILED" >> "$wd/build.log"
             fi
-            if python3 otlo/toolkit/bin/build.py render "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
+            if timeout 1200 python3 -u otlo/toolkit/bin/build.py render "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
             tail -40 "$wd/build.log"
           done 3< otlo/toolkit/queue.txt
       - name: Commit outputs

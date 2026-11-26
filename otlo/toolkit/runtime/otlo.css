@@ -15,5 +15,6 @@ body{margin:0;background:var(--ivory)}
 .body{font-family:'Rasa','Anek Gujarati',serif;line-height:1.35}
 .chip{align-self:flex-start;background:var(--rani);color:#fff;font-weight:700;font-size:40px;padding:10px 34px;border-radius:999px}
 .box{align-self:flex-start;padding:26px 36px;border-radius:6px}
-.art{position:absolute;left:0;right:0;bottom:150px;display:flex;justify-content:center}
+.art{position:absolute;left:0;right:0;bottom:540px;display:flex;justify-content:center}
+.photo{display:block;border-radius:28px;object-fit:cover;box-shadow:0 10px 30px rgba(27,42,74,.25)}
 /* keep the bottom ~260px of the stage clear of text: subtitles live there */

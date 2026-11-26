@@ -2,7 +2,7 @@
 <!-- Otlo Reel skeleton. Lives at otlo/work/<date-slug>/reel.html. Copy, then replace the scenes.
      Rules: one scene per voice line (same order as script.json); scene data-s/data-e are the ORIGINAL
      animation timings (they get stretched to the voice automatically); element data-in is inside its scene.
-     Hook on screen from frame one (scene-1 elements with data-in <= 0.3 show at once). Text only between y 240 and 1480, and left of x 912 below y 1000 (Instagram UI + 3:4 grid crop); subtitles sit at about y 1380-1480. No 'next Reel' teasers. Illustrations: draw inline SVG in brand colours that show the
+     Hook on screen from frame one (scene-1 elements with data-in <= 0.3 show at once). Text only between y 240 and 1480, and left of x 912 below y 1000 (Instagram UI + 3:4 grid crop); subtitles sit at about y 1380-1480, so art and images must END above y 1366 (default .art bottom does this; never set a lower bottom). Photos/illustrations: list them in script.json "images" (Wikimedia Commons with licence check, or Gemini generation) and use <img class="photo" src="img/<id>.png">. No 'next Reel' teasers. Illustrations: draw inline SVG in brand colours that show the
      actual subject (khaman looks like khaman). No movie stills, posters, logos of others, or real people's faces. -->
 <link rel="stylesheet" href="../../toolkit/runtime/otlo.css">
 </head><body>

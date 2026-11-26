@@ -57,7 +57,7 @@ CSS = """<style>
 .typ{align-self:flex-start;margin-left:12px;background:#fff;border-radius:0 22px 22px 22px;padding:16px 22px;display:flex;gap:8px}
 .typ i{display:block;width:12px;height:12px;border-radius:50%;background:#9aa0a8}
 .inp{display:flex;align-items:center;gap:16px;padding:14px 20px 26px;background:#F7F3EC}
-.box{flex:1;height:76px;border-radius:40px;background:#fff;display:flex;align-items:center;padding:0 28px;font:400 30px 'Anek Gujarati';color:#9aa0a8}
+.ibox{flex:1;height:76px;border-radius:40px;background:#fff;display:flex;align-items:center;padding:0 28px;font:400 30px 'Anek Gujarati';color:#9aa0a8}
 .mic{width:76px;height:76px;border-radius:50%;background:#2E8B57;display:flex;align-items:center;justify-content:center}
 .endq{position:absolute;left:90px;right:90px;top:540px;text-align:center}
 </style>"""
@@ -99,7 +99,7 @@ def phone(s, beats, idx, typing_who=None):
             f'<div class="hdr"><svg width="24" height="40" viewBox="0 0 26 44"><path d="M22 4 L4 22 L22 40" stroke="#1B2A4A" stroke-width="5" fill="none" stroke-linecap="round"/></svg>'
             f'<div class="av">{e(C["group"][:2])}</div><div><div class="gn">{e(C["group"])}</div>{sub}</div></div>'
             f'<div class="wall"><div class="feed">{feed}</div></div>'
-            f'<div class="inp"><div class="box">Message</div><div class="mic">{MIC}</div></div></div></div>')
+            f'<div class="inp"><div class="ibox">Message</div><div class="mic">{MIC}</div></div></div></div>')
 
 sk = (HERE.parent/'templates'/'reel-skeleton.html').read_text()
 head = sk[:sk.index('<!-- S1: hook -->')].replace('</head>', CSS + '</head>')
