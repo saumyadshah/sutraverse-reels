@@ -1,0 +1,56 @@
+{
+ "starts": [
+  0.0,
+  4.01,
+  9.94,
+  15.07,
+  20.15,
+  24.33
+ ],
+ "ends": [
+  4.01,
+  9.94,
+  15.07,
+  20.15,
+  24.33,
+  28.46
+ ],
+ "vo": [
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1100-ruff-tuff-kanya/vo/s1.wav",
+   "at": -0.14,
+   "on": 0.2,
+   "off": 3.85
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1100-ruff-tuff-kanya/vo/s2.wav",
+   "at": 4.19,
+   "on": 0.0,
+   "off": 5.45
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1100-ruff-tuff-kanya/vo/s3.wav",
+   "at": 9.97,
+   "on": 0.15000000000000002,
+   "off": 4.800000000000001
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1100-ruff-tuff-kanya/vo/s4.wav",
+   "at": 14.95,
+   "on": 0.30000000000000004,
+   "off": 4.9
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1100-ruff-tuff-kanya/vo/s5.wav",
+   "at": 20.18,
+   "on": 0.15000000000000002,
+   "off": 3.85
+  },
+  {
+   "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-26-1100-ruff-tuff-kanya/vo/s6.wav",
+   "at": 24.51,
+   "on": 0.0,
+   "off": 3.0500000000000003
+  }
+ ]
+}
