@@ -9,3 +9,31 @@ s5 gemini-3.8-flash-tts HTTP 429
 s5 ok via gemini-3.1-flash-tts-preview
 scenes [0.0, 3.41, 7.63, 13.25, 15.92, 18.54, 22.06, 26.13] [3.41, 7.63, 13.25, 15.92, 18.54, 22.06, 26.13, 30.45]
 BUILD FAILED
+--- local render (Actions render hung 3x on the runner; voices above came from Actions) ---
+scenes [0.0, 3.41, 7.63, 13.25, 15.92, 18.54, 22.06, 26.13] [3.41, 7.63, 13.25, 15.92, 18.54, 22.06, 26.13, 30.45]
+{
+ "video": {
+  "codec_name": "h264",
+  "profile": "High",
+  "width": 1080,
+  "height": 1920,
+  "pix_fmt": "yuv420p",
+  "r_frame_rate": "30/1",
+  "bit_rate": "11961171"
+ },
+ "duration": 30.5,
+ "lufs": -13.9,
+ "chars_per_sec": [
+  14.5,
+  12.1,
+  12.7,
+  14.3,
+  12.7,
+  11.9,
+  13.1,
+  13.3
+ ],
+ "warnings": [],
+ "ok": true
+}
+BUILD OK (local render, voices from Actions)
