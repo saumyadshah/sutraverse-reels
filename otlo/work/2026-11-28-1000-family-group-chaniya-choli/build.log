@@ -1,0 +1,40 @@
+s1 ok via gemini-3.8-flash-tts
+s2 gemini-3.8-flash-tts HTTP 429
+s2 ok via gemini-3.1-flash-tts-preview
+s3 ok via gemini-3.8-flash-tts
+s4 gemini-3.8-flash-tts HTTP 429
+s4 gemini-3.1-flash-tts-preview HTTP 429
+s4 ok via gemini-2.5-flash-preview-tts
+s5 gemini-3.8-flash-tts HTTP 429
+s5 gemini-3.1-flash-tts-preview HTTP 429
+s5 gemini-2.5-flash-preview-tts HTTP 503
+s5 FAILED
+s6 gemini-3.8-flash-tts HTTP 429
+s6 ok via gemini-3.1-flash-tts-preview
+s7 gemini-3.8-flash-tts HTTP 429
+s7 gemini-3.1-flash-tts-preview HTTP 429
+s7 ok via gemini-2.5-flash-preview-tts
+s8 gemini-3.8-flash-tts HTTP 429
+s8 gemini-3.1-flash-tts-preview HTTP 429
+s8 ok via gemini-2.5-flash-preview-tts
+Traceback (most recent call last):
+  File "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/toolkit/bin/build.py", line 294, in <module>
+    T = timing(d, S); print("scenes", T['starts'], T['ends'])
+        ^^^^^^^^^^^^
+  File "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/toolkit/bin/build.py", line 68, in timing
+    p = d/'vo'/f"{ln['id']}.wav"; on, off = speech_bounds(p); lead = 0.06 if i == 0 else float(ln.get('lead', 0.18))
+                                            ^^^^^^^^^^^^^^^^
+  File "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/toolkit/bin/build.py", line 19, in speech_bounds
+    x, sr = rd(p); x = x if x.ndim == 1 else x.mean(1); fr = int(sr * 0.05)
+            ^^^^^
+  File "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/toolkit/bin/build.py", line 14, in rd
+    w = wave.open(str(p)); x = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(np.float32) / 32768
+        ^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/wave.py", line 649, in open
+    return Wave_read(f)
+           ^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/wave.py", line 282, in __init__
+    f = builtins.open(f, 'rb')
+        ^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-28-1000-family-group-chaniya-choli/vo/s5.wav'
+BUILD FAILED
