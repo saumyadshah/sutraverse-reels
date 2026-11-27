@@ -1,0 +1,30 @@
+{
+ "voice": "Sulafat",
+ "direction": "",
+ "thumb": {
+  "chip_gu": "અમદાવાદની પોળ",
+  "chip_en": "Ahmedabad's pols",
+  "gu": "પોળ = ભુલભુલામણી",
+  "en": "Built to lose strangers",
+  "ribbon_gu": "એક દરવાજો, છુપા રસ્તા",
+  "ribbon_en": "One gate, hidden passages",
+  "art_t": 2.0,
+  "art_clip": [60, 900, 960, 720]
+ },
+ "lines": [
+  {"id": "s1", "gu": "અમદાવાદની પોળમાં ભૂલા પડ્યા? એ ભૂલ નથી, ડિઝાઇન છે!",
+   "en": ["Lost in an Ahmedabad pol?", "That's not a mistake. It's the design."]},
+  {"id": "s2", "gu": "દરેક પોળનો એક મોટો દરવાજો. એ બંધ થાય, તો બહારનું કોઈ અંદર ન આવે.",
+   "en": ["Each pol had one big gate.", "Shut it, and no outsider could get in."]},
+  {"id": "s3", "gu": "અંદર ગલી, પછી બીજી ગલી, પછી ખડકી. અજાણ્યા માટે તો ભુલભુલામણી!",
+   "en": ["Inside: a lane, another lane, then a khadki.", "For a stranger, a maze!"]},
+  {"id": "s4", "gu": "ને ઘરો વચ્ચે છુપા રસ્તા! હુમલો થાય, તો પાછળથી બહાર નીકળી જવાય.",
+   "en": ["And hidden passages between houses!", "In a raid, families could slip out the back."]},
+  {"id": "s5", "gu": "ધાબેથી ધાબે સંદેશો પહોંચે. આખી પોળ, જાણે એક નાનો કિલ્લો!",
+   "en": ["Messages travelled roof to roof.", "The whole pol, like a little fort!"]},
+  {"id": "s6", "gu": "ને ૨૦૧૭માં આ પોળોવાળું અમદાવાદ, ભારતનું પહેલું વર્લ્ડ હેરિટેજ સિટી બન્યું.",
+   "en": ["In 2017, this city of pols became", "India's first World Heritage City."]},
+  {"id": "s7", "gu": "તમારી પોળનું નામ કમેન્ટમાં લખો. ઓટલોને ફોલો કરો.",
+   "en": ["Write your pol's name in the comments.", "Follow Otlo."]}
+ ]
+}
