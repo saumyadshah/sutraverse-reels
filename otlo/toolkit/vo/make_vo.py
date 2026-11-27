@@ -7,6 +7,7 @@ key = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
 if not key: sys.exit("NO_KEY: GEMINI_API_KEY / GOOGLE_API_KEY not set")
 log = []
 for ln in cfg["lines"]:
+    if (out / f"{ln['id']}.wav").exists(): print(ln["id"], "kept (existing clip)", flush=True); continue
     ok = False
     for m in MODELS:
         body = {"contents": [{"parts": [{"text": ((cfg.get("direction") or "") + "\n\n" if cfg.get("direction") else "") + ln["gu"]}]}],
