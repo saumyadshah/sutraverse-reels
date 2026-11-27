@@ -62,7 +62,7 @@
    "id": "s8",
    "gu": "તમારા ઘરમાં કપડાં રિપીટ કોણ કરે છે? ટેગ કરો.",
    "en": [
-    "Tag the outfit-repeater in your family"
+    "Tag your family's outfit-repeater"
    ],
    "voice": "Sulafat",
    "lead": 0.12
@@ -75,7 +75,7 @@
   "en": "Same outfit, second wedding?",
   "ribbon_gu": "કોઈને ખબર નહીં પડે!",
   "ribbon_en": "Nobody will notice!",
-  "art_t": 9.0,
+  "art_t": 6.5,
   "art_clip": [
    105,
    420,

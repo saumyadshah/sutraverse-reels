@@ -247,7 +247,7 @@ def qa(d, T, S):
     Image.alpha_composite(ov, lay).convert('RGB').save(d/'contact_safezones.jpg')
     for p in d.glob('qa_*.jpg'): p.unlink()
     subprocess.run(["ffmpeg", "-nostdin", "-y", "-loglevel", "error", "-i", str(d/'reel.mp4'), "-frames:v", "1", "-q:v", "2", str(d/'first_frame.jpg')], check=True)
-    lufs = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(d/'reel.mp4'), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
+    lufs = subprocess.run(["ffmpeg", "-nostdin", "-hide_banner", "-i", str(d/'reel.mp4'), "-af", "ebur128", "-f", "null", "-"], capture_output=True, text=True).stderr
     import re; I = re.findall(r"I:\s+(-?[\d.]+) LUFS", lufs)
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(d/'reel.mp4')], capture_output=True, text=True).stdout)
     chars = [len(l['gu']) for l in S['lines']]; speech = [c['off']-c['on'] for c in T['vo']]
