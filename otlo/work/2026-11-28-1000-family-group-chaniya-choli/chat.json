@@ -1,0 +1,26 @@
+{
+ "group": "ફેમિલી ગ્રુપ 🏠",
+ "members": "Ba, Mummy, Pappa, Fai, Jay +9",
+ "clock": "9:41",
+ "caption": {"gu": "એક ચણિયાચોળી, બે લગ્ન 👗", "en": "One chaniya choli, two weddings?"},
+ "narrator_voice": "Sulafat",
+ "cast": {
+  "Ba": {"label": "બા · Ba", "color": "#A8322A", "voice": "Gacrux"},
+  "Mummy": {"label": "મમ્મી · Mummy", "color": "#C2185B", "voice": "Aoede"},
+  "Pappa": {"label": "પપ્પા · Pappa", "color": "#2E7D32", "voice": "Algenib"},
+  "Fai": {"label": "ફઈ · Fai", "color": "#1565C0", "voice": "Leda"},
+  "Jay": {"label": "જય (USA) · Jay", "color": "#6A1B9A", "voice": "Puck"}
+ },
+ "thumb": {"chip_gu": "ફેમિલી ગ્રુપ", "chip_en": "Family Group Chat", "gu": "ચણિયાચોળી રિપીટ?", "en": "Same outfit, second wedding?",
+           "ribbon_gu": "કોઈને ખબર નહીં પડે!", "ribbon_en": "Nobody will notice!", "art_t": 9.0, "art_clip": [105, 420, 870, 700]},
+ "beats": [
+  {"from": "Mummy", "type": "text", "gu": "ચણિયાચોળી રિપીટ કરું છું. કોઈને ખબર નહીં પડે!", "en": "I'm repeating my chaniya choli. Nobody will notice!", "time": "9:12 PM"},
+  {"from": "Fai", "type": "text", "gu": "ભાભી, નવરાત્રિના ૪૦૦ ફોટા આ જ ગ્રુપમાં છે.", "say": "ભાભી, નવરાત્રિના ચારસો ફોટા આ જ ગ્રુપમાં છે.", "en": "Bhabhi, 400 Navratri photos are in this very group.", "time": "9:12 PM", "reply_to": 0, "react": "😂 7"},
+  {"from": "Ba", "type": "voice", "secs": "0:06", "gu": "મારી બ્રોકેડ સાડી ત્રીસ વર્ષથી દરેક લગ્નમાં જાય છે. કોઈ બોલ્યું?", "en": "My brocade saree has gone to every wedding for 30 years. Did anyone say a word?", "time": "9:13 PM", "react": "👏 5"},
+  {"from": "Pappa", "type": "text", "gu": "મારો સૂટ પણ ૨૦૧૫નો છે.", "say": "મારો સૂટ પણ બે હજાર પંદરનો છે.", "en": "My suit is from 2015 too.", "time": "9:14 PM"},
+  {"from": "Mummy", "type": "text", "gu": "તમારો સૂટ કોઈ જોતું જ નથી.", "en": "Nobody even looks at your suit.", "time": "9:14 PM", "reply_to": 3, "react": "😂 12"},
+  {"from": "Jay", "type": "text", "gu": "સિમ્પલ! દુપટ્ટો બદલી નાખો. નવો લૂક!", "en": "Simple! Change the dupatta. New look!", "time": "9:15 PM"},
+  {"from": "Ba", "type": "voice", "secs": "0:04", "gu": "મારો દુપટ્ટો લઈ જા. એ પણ ૧૯૯૪નો છે.", "say": "મારો દુપટ્ટો લઈ જા. એ પણ ઓગણીસસો ચોરાણુંનો છે.", "en": "Take my dupatta. That one's from 1994 too.", "time": "9:16 PM", "react": "😂 15"},
+  {"from": "narrator", "type": "end", "gu": "તમારા ઘરમાં 'રિપીટ' કોણ કરે છે?", "en": "Tag the outfit-repeater in your family", "say": "તમારા ઘરમાં કપડાં રિપીટ કોણ કરે છે? ટેગ કરો."}
+ ]
+}
