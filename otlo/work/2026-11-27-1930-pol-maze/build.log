@@ -1,0 +1,43 @@
+s1 ok via gemini-3.8-flash-tts
+s2 ok via gemini-3.8-flash-tts
+s3 ok via gemini-3.8-flash-tts
+s4 ok via gemini-3.8-flash-tts
+s5 gemini-3.8-flash-tts HTTP 429
+s5 ok via gemini-3.1-flash-tts-preview
+s6 ok via gemini-3.8-flash-tts
+s7 gemini-3.8-flash-tts HTTP 429
+s7 ok via gemini-3.1-flash-tts-preview
+scenes [0.0, 4.21, 10.09, 15.82, 21.1, 26.48, 32.26] [4.21, 10.09, 15.82, 21.1, 26.48, 32.26, 37.34]
+{
+ "video": {
+  "codec_name": "h264",
+  "profile": "High",
+  "width": 1080,
+  "height": 1920,
+  "pix_fmt": "yuv420p",
+  "r_frame_rate": "30/1",
+  "bit_rate": "11968513"
+ },
+ "duration": 37.4,
+ "lufs": -14.9,
+ "chars_per_sec": [
+  13.0,
+  11.9,
+  11.6,
+  12.9,
+  11.4,
+  14.0,
+  12.0
+ ],
+ "warnings": [
+  "scene 1: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 774, bottom 1620, right 1046)",
+  "scene 2: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 795, bottom 1620, right 1035)",
+  "scene 3: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 795, bottom 1620, right 1035)",
+  "scene 4: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 795, bottom 1620, right 1035)",
+  "scene 5: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 795, bottom 1620, right 1035)",
+  "scene 6: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 795, bottom 1620, right 1035)",
+  "scene 7: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 795, bottom 1620, right 1035)"
+ ],
+ "ok": false
+}
+BUILD OK

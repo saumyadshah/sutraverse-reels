@@ -1,0 +1,35 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,18,0,2,90,170,450,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.06,0:00:01.58,Sub,,0,0,0,,Lost in an Ahmedabad pol?
+Dialogue: 0,0:00:01.61,0:00:03.45,Sub,,0,0,0,,That's not a mistake. It's the
+Dialogue: 0,0:00:03.48,0:00:03.91,Sub,,0,0,0,,design.
+Dialogue: 0,0:00:04.39,0:00:06.59,Sub,,0,0,0,,Each pol had one big gate.
+Dialogue: 0,0:00:06.62,0:00:09.16,Sub,,0,0,0,,Shut it, and no outsider could
+Dialogue: 0,0:00:09.19,0:00:09.79,Sub,,0,0,0,,get in.
+Dialogue: 0,0:00:10.27,0:00:12.55,Sub,,0,0,0,,Inside: a lane, another lane,
+Dialogue: 0,0:00:12.58,0:00:13.66,Sub,,0,0,0,,then a khadki.
+Dialogue: 0,0:00:13.69,0:00:15.52,Sub,,0,0,0,,For a stranger, a maze!
+Dialogue: 0,0:00:16.00,0:00:17.65,Sub,,0,0,0,,And hidden passages between
+Dialogue: 0,0:00:17.68,0:00:18.09,Sub,,0,0,0,,houses!
+Dialogue: 0,0:00:18.12,0:00:19.96,Sub,,0,0,0,,In a raid, families could slip
+Dialogue: 0,0:00:19.99,0:00:20.80,Sub,,0,0,0,,out the back.
+Dialogue: 0,0:00:21.28,0:00:23.66,Sub,,0,0,0,,Messages travelled roof to roof.
+Dialogue: 0,0:00:23.69,0:00:25.77,Sub,,0,0,0,,The whole pol, like a little
+Dialogue: 0,0:00:25.80,0:00:26.18,Sub,,0,0,0,,fort!
+Dialogue: 0,0:00:26.66,0:00:28.75,Sub,,0,0,0,,In 2017, this city of pols
+Dialogue: 0,0:00:28.78,0:00:29.24,Sub,,0,0,0,,became
+Dialogue: 0,0:00:29.27,0:00:31.52,Sub,,0,0,0,,India's first World Heritage
+Dialogue: 0,0:00:31.55,0:00:31.96,Sub,,0,0,0,,City.
+Dialogue: 0,0:00:32.44,0:00:34.70,Sub,,0,0,0,,Write your pol's name in the
+Dialogue: 0,0:00:34.73,0:00:35.43,Sub,,0,0,0,,comments.
+Dialogue: 0,0:00:35.46,0:00:36.44,Sub,,0,0,0,,Follow Otlo.
