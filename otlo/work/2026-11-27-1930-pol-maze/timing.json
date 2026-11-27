@@ -1,64 +1,64 @@
 {
  "starts": [
   0.0,
-  4.21,
-  10.09,
-  15.82,
-  21.1,
-  26.48,
-  32.26
+  4.36,
+  9.89,
+  15.42,
+  21.2,
+  26.03,
+  31.71
  ],
  "ends": [
-  4.21,
-  10.09,
-  15.82,
-  21.1,
-  26.48,
-  32.26,
-  37.34
+  4.36,
+  9.89,
+  15.42,
+  21.2,
+  26.03,
+  31.71,
+  36.29
  ],
  "vo": [
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1930-pol-maze/vo/s1.wav",
    "at": 0.06,
    "on": 0.0,
-   "off": 3.85
+   "off": 4.0
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1930-pol-maze/vo/s2.wav",
-   "at": 4.39,
+   "at": 4.54,
    "on": 0.0,
-   "off": 5.4
+   "off": 5.050000000000001
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1930-pol-maze/vo/s3.wav",
-   "at": 10.22,
-   "on": 0.05,
-   "off": 5.300000000000001
+   "at": 10.07,
+   "on": 0.0,
+   "off": 5.050000000000001
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1930-pol-maze/vo/s4.wav",
-   "at": 15.95,
+   "at": 15.55,
    "on": 0.05,
-   "off": 4.8500000000000005
+   "off": 5.3500000000000005
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1930-pol-maze/vo/s5.wav",
-   "at": 21.03,
-   "on": 0.25,
-   "off": 5.15
+   "at": 21.28,
+   "on": 0.1,
+   "off": 4.45
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1930-pol-maze/vo/s6.wav",
-   "at": 26.36,
-   "on": 0.30000000000000004,
-   "off": 5.6000000000000005
+   "at": 26.21,
+   "on": 0.0,
+   "off": 5.2
   },
   {
    "file": "/home/runner/work/sutraverse-reels/sutraverse-reels/otlo/work/2026-11-27-1930-pol-maze/vo/s7.wav",
-   "at": 32.14,
-   "on": 0.30000000000000004,
-   "off": 4.3
+   "at": 31.89,
+   "on": 0.0,
+   "off": 3.5
   }
  ]
 }

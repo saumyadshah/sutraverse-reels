@@ -10,26 +10,24 @@ Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.06,0:00:01.58,Sub,,0,0,0,,Lost in an Ahmedabad pol?
-Dialogue: 0,0:00:01.61,0:00:03.45,Sub,,0,0,0,,That's not a mistake. It's the
-Dialogue: 0,0:00:03.48,0:00:03.91,Sub,,0,0,0,,design.
-Dialogue: 0,0:00:04.39,0:00:06.59,Sub,,0,0,0,,Each pol had one big gate.
-Dialogue: 0,0:00:06.62,0:00:09.16,Sub,,0,0,0,,Shut it, and no outsider could
-Dialogue: 0,0:00:09.19,0:00:09.79,Sub,,0,0,0,,get in.
-Dialogue: 0,0:00:10.27,0:00:12.55,Sub,,0,0,0,,Inside: a lane, another lane,
-Dialogue: 0,0:00:12.58,0:00:13.66,Sub,,0,0,0,,then a khadki.
-Dialogue: 0,0:00:13.69,0:00:15.52,Sub,,0,0,0,,For a stranger, a maze!
-Dialogue: 0,0:00:16.00,0:00:17.65,Sub,,0,0,0,,And hidden passages between
-Dialogue: 0,0:00:17.68,0:00:18.09,Sub,,0,0,0,,houses!
-Dialogue: 0,0:00:18.12,0:00:19.96,Sub,,0,0,0,,In a raid, families could slip
-Dialogue: 0,0:00:19.99,0:00:20.80,Sub,,0,0,0,,out the back.
-Dialogue: 0,0:00:21.28,0:00:23.66,Sub,,0,0,0,,Messages travelled roof to roof.
-Dialogue: 0,0:00:23.69,0:00:25.77,Sub,,0,0,0,,The whole pol, like a little
-Dialogue: 0,0:00:25.80,0:00:26.18,Sub,,0,0,0,,fort!
-Dialogue: 0,0:00:26.66,0:00:28.75,Sub,,0,0,0,,In 2017, this city of pols
-Dialogue: 0,0:00:28.78,0:00:29.24,Sub,,0,0,0,,became
-Dialogue: 0,0:00:29.27,0:00:31.52,Sub,,0,0,0,,India's first World Heritage
-Dialogue: 0,0:00:31.55,0:00:31.96,Sub,,0,0,0,,City.
-Dialogue: 0,0:00:32.44,0:00:34.70,Sub,,0,0,0,,Write your pol's name in the
-Dialogue: 0,0:00:34.73,0:00:35.43,Sub,,0,0,0,,comments.
-Dialogue: 0,0:00:35.46,0:00:36.44,Sub,,0,0,0,,Follow Otlo.
+Dialogue: 0,0:00:00.06,0:00:01.64,Sub,,0,0,0,,Lost in an Ahmedabad pol?
+Dialogue: 0,0:00:01.67,0:00:03.58,Sub,,0,0,0,,That's not a mistake. It's the
+Dialogue: 0,0:00:03.61,0:00:04.06,Sub,,0,0,0,,design.
+Dialogue: 0,0:00:04.54,0:00:06.82,Sub,,0,0,0,,Each pol had just one gate.
+Dialogue: 0,0:00:06.85,0:00:09.59,Sub,,0,0,0,,Shut it, and no outsider got in.
+Dialogue: 0,0:00:10.07,0:00:12.94,Sub,,0,0,0,,Lane after lane, then a khadki.
+Dialogue: 0,0:00:12.97,0:00:15.12,Sub,,0,0,0,,For a stranger, a maze!
+Dialogue: 0,0:00:15.60,0:00:17.43,Sub,,0,0,0,,And hidden passages between
+Dialogue: 0,0:00:17.46,0:00:17.91,Sub,,0,0,0,,houses!
+Dialogue: 0,0:00:17.94,0:00:19.98,Sub,,0,0,0,,In a raid, families could slip
+Dialogue: 0,0:00:20.01,0:00:20.90,Sub,,0,0,0,,out the back.
+Dialogue: 0,0:00:21.38,0:00:23.49,Sub,,0,0,0,,Messages travelled roof to roof.
+Dialogue: 0,0:00:23.52,0:00:25.37,Sub,,0,0,0,,The whole pol, like a little
+Dialogue: 0,0:00:25.40,0:00:25.73,Sub,,0,0,0,,fort!
+Dialogue: 0,0:00:26.21,0:00:28.26,Sub,,0,0,0,,In 2017, this city of pols
+Dialogue: 0,0:00:28.29,0:00:28.74,Sub,,0,0,0,,became
+Dialogue: 0,0:00:28.77,0:00:30.98,Sub,,0,0,0,,India's first World Heritage
+Dialogue: 0,0:00:31.01,0:00:31.41,Sub,,0,0,0,,City!
+Dialogue: 0,0:00:31.89,0:00:33.86,Sub,,0,0,0,,Write your pol's name in the
+Dialogue: 0,0:00:33.89,0:00:34.50,Sub,,0,0,0,,comments.
+Dialogue: 0,0:00:34.53,0:00:35.39,Sub,,0,0,0,,Follow Otlo.
