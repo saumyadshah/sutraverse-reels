@@ -14,3 +14,15 @@
 | 2026-11-26 | Family group: wedding invite | chat v2 | bombshell voice note | 29 | 61.5 | 26.1 | 0 | 0 | 0 | chat v2 beat chat v1 skip (66-89%) clearly; still no shares |
 | 2026-11-27 | Weekend watchlist (Ghar Bethe Juo) | swipe-style carousel | rivalry/topical | 38 | 50.0 | 101.9 | 0 | 0 | 0 | only 4 plays at PREP time (too early to judge); 27 Nov refresh: Ruff & Tuff now 1,399 plays / 6 shares / 2 saves (topical cinema still the outlier), wedding invite 71.7% skip, dabeli 58.9%. Lesson applied 27 Nov 19:30: v2 explainer at ~30 s with a "you" reveal hook (not a question card) and a name-your-pol comment ask |
 | 2026-11-27 | Pol ni Vaato: pol maze | explainer v2 | reveal ("you") | 36 | 43.0 | 19.3 | 0 | 0 | 0 | lowest skip yet (43%) with a 'you got lost? that's the design' reveal; 28 Nov refresh: watchlist swipe-carousel only 5 plays (59% watched, 66.7% skip), wedding-invite chat v2 154 plays / 71.7% skip / 1 share. Lesson applied 28 Nov 10:00: chat v2 opens on a direct 'you'-style bombshell from Ba in beat one (no setup), 7 beats, ~25 s |
+
+## 28 Nov audit (12 Reels, 21–28 Nov)
+| Reel | Plays | Skip % | Watched % | Shares | Saves | Comments |
+|---|---|---|---|---|---|---|
+| Ruff & Tuff Kanya (official poster, Hansal Mehta) | 1,473 | 62.5 | 23.7 | 6 | 2 | 3 |
+| Pol maze ("not a mistake, it's design") | 1,145 | 56.8 | 22.6 | 4 | 1 | 0 |
+| Family group invite (chat v2) | 155 | 71.9 | 22.7 | 1 | 0 | 0 |
+| Khaman Amdavad vs Surat (chat) | 130 | 66.9 | 18.6 | 0 | 0 | 0 |
+| Dabeli six paise | 124 | 58.9 | 22.6 | 1 | 0 | 0 |
+| Weekend watchlist (swipe-style) | 6 (lagging?) | 75 | 32.7 | 0 | 0 | 0 |
+Lesson: timely subjects with real visuals and named people beat evergreen explainers and chat Reels by about 10×. Test next:
+chat v3 (cold open), FX-layer motion Reels, official-artwork film posts, events roundups.

@@ -19,3 +19,4 @@ s10 gemini-3.1-flash-tts-preview HTTP 429
 s10 ok via gemini-2.5-flash-preview-tts
 scenes [0.0, 2.96, 6.48, 8.08, 10.15, 11.92, 16.24, 18.71, 22.33, 24.85, 26.57] [2.96, 6.48, 8.08, 10.15, 11.92, 16.24, 18.71, 22.33, 24.85, 26.57, 31.14]
 BUILD FAILED
+BUILD OK (re-rendered 28 Nov 10:15 IST after the end-card + short-line QA fixes; qa.json ok, no warnings)
