@@ -1,0 +1,200 @@
+{
+ "voice": "Sulafat",
+ "direction": "Warm, lively Gujarati food-show host; playful rivalry, smiling voice.",
+ "speed": 1.04,
+ "images": [
+  {
+   "id": "u1",
+   "source": "commons",
+   "query": "Undhiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "u2",
+   "source": "commons",
+   "query": "Undhiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "u3",
+   "source": "commons",
+   "query": "Undhiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "u4",
+   "source": "commons",
+   "query": "Undhiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "u5",
+   "source": "commons",
+   "query": "Undhiyu Gujarati dish",
+   "min_width": 1000
+  },
+  {
+   "id": "surti1",
+   "source": "commons",
+   "query": "Surti undhiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "kathi1",
+   "source": "commons",
+   "query": "Kathiyawadi undhiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "kathi2",
+   "source": "commons",
+   "query": "Kathiyawadi food",
+   "min_width": 1000
+  },
+  {
+   "id": "umb1",
+   "source": "commons",
+   "query": "Umbadiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "umb2",
+   "source": "commons",
+   "query": "Ubadiyu",
+   "min_width": 1000
+  },
+  {
+   "id": "papdi",
+   "source": "commons",
+   "query": "Surti papdi beans",
+   "min_width": 700
+  },
+  {
+   "id": "kand",
+   "source": "commons",
+   "query": "Purple yam Dioscorea alata tuber",
+   "min_width": 700
+  },
+  {
+   "id": "garlic",
+   "source": "commons",
+   "query": "Green garlic",
+   "min_width": 700
+  },
+  {
+   "id": "coconut",
+   "source": "commons",
+   "query": "Grated coconut",
+   "min_width": 700
+  },
+  {
+   "id": "coriander",
+   "source": "commons",
+   "query": "Coriander leaves",
+   "min_width": 700
+  },
+  {
+   "id": "chilli",
+   "source": "commons",
+   "query": "Red chilli powder",
+   "min_width": 700
+  },
+  {
+   "id": "brinjal",
+   "source": "commons",
+   "query": "Small brinjal",
+   "min_width": 700
+  },
+  {
+   "id": "rawbanana",
+   "source": "commons",
+   "query": "Raw banana plantain",
+   "min_width": 700
+  },
+  {
+   "id": "matka",
+   "source": "commons",
+   "query": "Matka earthen pot",
+   "min_width": 700
+  },
+  {
+   "id": "surat",
+   "source": "commons",
+   "query": "Surat city",
+   "min_width": 1200
+  },
+  {
+   "id": "rajkot",
+   "source": "commons",
+   "query": "Rajkot city",
+   "min_width": 1200
+  }
+ ],
+ "thumb": {
+  "chip_gu": "સ્વાદની શોધ",
+  "chip_en": "Swad ni Shodh",
+  "gu": "લીલું કે લાલ?",
+  "en": "Surti vs Kathiyawadi undhiyu",
+  "ribbon_gu": "ઊંધિયું",
+  "ribbon_en": "",
+  "art_t": 2.6,
+  "art_clip": [
+   80,
+   700,
+   920,
+   720
+  ]
+ },
+ "lines": [
+  {
+   "id": "s1",
+   "gu": "એક જ ઊંધિયું, પણ સુરતમાં લીલું ને કાઠિયાવાડમાં લાલ!",
+   "en": [
+    "Same undhiyu:",
+    "green in Surat, red in Kathiyawad!"
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "પહેલાં નામની વાત. ઊંધિયું આવ્યું ઊંધું પરથી: માટલું ઊંધું કરીને જમીનમાં, ને આગ ઉપર!",
+   "en": [
+    "First, the name: it comes from 'undhu', upside down.",
+    "The pot went into the ground upside down, fire on top!"
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "સુરતી ઊંધિયું એટલે લીલો મસાલો: કોપરું, કોથમીર, લીલું લસણ, લીલાં મરચાં.",
+   "en": [
+    "Surti undhiyu means green masala:",
+    "coconut, coriander, green garlic, green chilli."
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "ને રીંગણ, બટાકા, કાચાં કેળાંમાં એ મસાલો ભરાય.",
+   "en": [
+    "And brinjal, potato and raw banana",
+    "get stuffed with that masala."
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "કાઠિયાવાડી ઊંધિયું? લાલ મરચું, તીખો સ્વાદ, ને ભર્યા વગરના મોટા ટુકડા.",
+   "en": [
+    "Kathiyawadi undhiyu? Red chilli, more heat,",
+    "and big pieces, nothing stuffed."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "તો તમારી ટીમ કઈ? લીલી કે લાલ? કમેન્ટમાં લખો!",
+   "en": [
+    "So which team are you?",
+    "Green or red? Tell us in the comments!"
+   ]
+  }
+ ],
+ "single_take": true,
+ "score": "otlo"
+}
