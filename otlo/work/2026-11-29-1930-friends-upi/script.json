@@ -1,0 +1,112 @@
+{
+ "voice": "Sulafat",
+ "direction": "",
+ "lines": [
+  {
+   "id": "s0",
+   "gu": "ત્રણસો રૂપિયા માગ્યા, ને આખું ગ્રુપ ગાયબ!",
+   "en": [
+    "Asked for ₹300. The whole group vanished."
+   ],
+   "voice": "Sulafat",
+   "lead": 0.06,
+   "tail": 0.15
+  },
+  {
+   "id": "s1",
+   "gu": "કાલે રાતે 9 વાગ્યે મૂવી? બુકિંગ હું કરું છું 🍿",
+   "en": [],
+   "voice": "Aoede",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s2",
+   "gu": "હું તો આવું જ! 🙋‍♂️",
+   "en": [],
+   "voice": "Puck",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s3",
+   "gu": "મી ટૂ! કોર્નર સીટ મારી!",
+   "en": [],
+   "voice": "Leda",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s4",
+   "gu": "પોપકોર્ન મારા તરફથી!",
+   "en": [],
+   "voice": "Algenib",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s5",
+   "gu": "ડન! ચાર ટિકિટ, બારસો રૂપિયા. બધા ત્રણસો યુપીઆઈ કરો!",
+   "en": [],
+   "voice": "Aoede",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s6",
+   "gu": "અને… કુણાલ ગાયબ!",
+   "en": [],
+   "voice": "Sulafat",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s7",
+   "gu": "અરે નેટવર્ક જ નથી… હલો? હલો?",
+   "en": [],
+   "voice": "Algenib",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s8",
+   "gu": "મમ્મી બોલાવે છે, પછી વાત કરું 🏃‍♀️",
+   "en": [],
+   "voice": "Leda",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s9",
+   "gu": "પોપકોર્ન વાળો પણ ગયો?",
+   "en": [],
+   "voice": "Aoede",
+   "lead": 0.22,
+   "tail": 0.15
+  },
+  {
+   "id": "s10",
+   "gu": "પૈસા આપવાના ટાઇમે કોણ ગાયબ થાય? ટેગ કરો!",
+   "en": [
+    "Tag the friend who vanishes at payment time 👇"
+   ],
+   "voice": "Sulafat",
+   "lead": 0.12
+  }
+ ],
+ "thumb": {
+  "chip_gu": "ફ્રેન્ડ્સ ગ્રુપ",
+  "chip_en": "Friends Group Chat",
+  "gu": "UPI માગ્યા ને…",
+  "en": "Everyone vanished",
+  "ribbon_gu": "ઓળખો છો આવા ફ્રેન્ડને?",
+  "ribbon_en": "Know a friend like this?",
+  "art_t": 9.0,
+  "art_clip": [
+   105,
+   420,
+   870,
+   700
+  ]
+ }
+}

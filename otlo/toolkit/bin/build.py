@@ -112,7 +112,7 @@ async def frames(d, T, only=None):
                   .map(e => { const r = e.getBoundingClientRect(); return {c: e.className, t: (e.innerText||'').slice(0,24), b: r.bottom, r: r.right, top: r.top}; })
                   .filter(o => o.b > 1482 || (o.r > 912 && o.b > 1000) || o.top < 236)
                   .concat([...document.querySelectorAll('.scene')].filter(s => s.style.display !== 'none')
-                  .flatMap(s => [...s.querySelectorAll('.art svg, .art img, img.photo')]).map(e => { const r = e.getBoundingClientRect(); return {c: 'art', t: 'art/image', b: r.bottom, r: r.right, top: r.top}; })
+                  .flatMap(s => [...s.querySelectorAll('.art svg, .art img, img.photo, .art canvas')]).map(e => { const r = (e.closest('.kbframe') || e).getBoundingClientRect(); return {c: 'art', t: 'art/image', b: r.bottom, r: r.right, top: r.top}; })
                   .filter(o => o.b > 1366 && o.top < 1480))''')
                 for o in bad[:3]: warn.append(f"scene {k+1}: '{o['t']}' " + ('runs into the subtitle band (art must end above y 1,366)' if o['c'] == 'art' else 'outside safe zone') + f" (top {o['top']:.0f}, bottom {o['b']:.0f}, right {o['r']:.0f})")
             (d/'safezone.json').write_text(json.dumps(warn))

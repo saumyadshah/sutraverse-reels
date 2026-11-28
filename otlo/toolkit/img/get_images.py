@@ -14,7 +14,8 @@ Movies/events: ALWAYS official artwork first (wiki_poster / og / url); "ai" is f
 never a fake poster, a real person, a logo or text.
 Commons: only CC0 / public domain / CC BY / CC BY-SA files; writes img/credits.json (title, author, licence, url) -> the
 caption must carry the credit line. Gemini: illustrations only (never real people, actors, logos, posters or text).
-Existing files are kept (delete one to regenerate). Never prints the key."""
+Existing files are kept (delete one to regenerate). Repeat an id with another source as a FALLBACK: the second entry
+only runs if the first produced nothing (e.g. wiki_poster first, then og from the District/BookMyShow page). Never prints the key."""
 import os, sys, json, base64, pathlib, re, requests
 d = pathlib.Path(sys.argv[1]); S = json.loads((d/'script.json').read_text()); out = d/'img'; out.mkdir(exist_ok=True)
 key = os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY')
@@ -60,11 +61,20 @@ for im in S.get('images', []):
         url = None
         try:
             if src == 'wiki_poster':
-                q = requests.get("https://en.wikipedia.org/w/api.php", headers=UA, timeout=60, params={
-                    "action": "query", "format": "json", "prop": "pageimages", "piprop": "original", "redirects": 1,
-                    "generator": "search", "gsrsearch": im['page'], "gsrlimit": 1}).json()
-                pg = next(iter(q.get('query', {}).get('pages', {}).values()), {})
-                url = pg.get('original', {}).get('source'); ref = "https://en.wikipedia.org/wiki/" + pg.get('title', '').replace(' ', '_')
+                # posters are non-free files, which the pageimages API ignores: read the infobox "image =" field instead
+                API = "https://en.wikipedia.org/w/api.php"
+                sr = requests.get(API, headers=UA, timeout=60, params={"action": "query", "format": "json", "list": "search",
+                                  "srsearch": im['page'], "srlimit": 1}).json().get('query', {}).get('search', [])
+                title = sr[0]['title'] if sr else im['page']
+                wt = requests.get(API, headers=UA, timeout=60, params={"action": "parse", "format": "json", "page": title,
+                                  "prop": "wikitext", "redirects": 1}).json().get('parse', {}).get('wikitext', {}).get('*', '')
+                m = re.search(r'\|\s*image\s*=\s*(?:\[\[)?(?:File:|Image:)?([^\n|\]]+\.(?:jpe?g|png|webp))', wt, re.I)
+                ref = "https://en.wikipedia.org/wiki/" + title.replace(' ', '_')
+                if m:
+                    fq = requests.get(API, headers=UA, timeout=60, params={"action": "query", "format": "json", "prop": "imageinfo",
+                                      "titles": "File:" + m.group(1).strip(), "iiprop": "url"}).json()
+                    url = next(iter(fq.get('query', {}).get('pages', {}).values()), {}).get('imageinfo', [{}])[0].get('url')
+                print(iid, 'wiki page:', title, '| infobox image:', m.group(1) if m else None)
             elif src == 'og':
                 html = requests.get(im['url'], headers={**UA, "User-Agent": "Mozilla/5.0 (OtloBot)"}, timeout=60).text
                 m = re.search(r'<meta[^>]+property=["\']og:image(?::secure_url)?["\'][^>]+content=["\']([^"\']+)', html) or \

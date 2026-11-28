@@ -1,0 +1,27 @@
+{
+ "group": "Weekend Gang 🍿",
+ "members": "Riya, Kunal, Neha, Dhruv",
+ "clock": "9:41",
+ "caption": {"gu": "UPI માગ્યા ને ગ્રુપ ગાયબ 😶", "en": "Asked for UPI. Group vanished."},
+ "narrator_voice": "Sulafat",
+ "cold_open": {"beat": 5, "gu": "₹300 માગ્યા, ને આખું ગ્રુપ ગાયબ!", "en": "Asked for ₹300. The whole group vanished.", "say": "ત્રણસો રૂપિયા માગ્યા, ને આખું ગ્રુપ ગાયબ!"},
+ "cast": {
+  "Riya": {"label": "Riya", "color": "#C2185B", "voice": "Aoede"},
+  "Kunal": {"label": "Kunal", "color": "#1565C0", "voice": "Puck"},
+  "Neha": {"label": "Neha", "color": "#6A1B9A", "voice": "Leda"},
+  "Dhruv": {"label": "Dhruv", "color": "#2E7D32", "voice": "Algenib"}
+ },
+ "thumb": {"chip_gu": "ફ્રેન્ડ્સ ગ્રુપ", "chip_en": "Friends Group Chat", "gu": "UPI માગ્યા ને…", "en": "Everyone vanished", "ribbon_gu": "ઓળખો છો આવા ફ્રેન્ડને?", "ribbon_en": "Know a friend like this?", "art_t": 9.0, "art_clip": [105, 420, 870, 700]},
+ "beats": [
+  {"from": "Riya", "type": "text", "gu": "કાલે રાતે 9 વાગ્યે મૂવી? બુકિંગ હું કરું છું 🍿", "en": "Movie tomorrow, 9 pm? I'll book 🍿", "time": "8:02 PM"},
+  {"from": "Kunal", "type": "text", "gu": "હું તો આવું જ! 🙋‍♂️", "en": "I'm in!", "time": "8:02 PM", "react": "👍 3"},
+  {"from": "Neha", "type": "text", "gu": "Me too! કોર્નર સીટ મારી 😌", "say": "મી ટૂ! કોર્નર સીટ મારી!", "en": "Me too! Corner seat's mine", "time": "8:03 PM"},
+  {"from": "Dhruv", "type": "text", "gu": "Popcorn મારા તરફથી 😎", "say": "પોપકોર્ન મારા તરફથી!", "en": "Popcorn's on me", "time": "8:03 PM"},
+  {"from": "Riya", "type": "text", "gu": "Done ✅ 4 ટિકિટ, ₹1,200. બધા ₹300 UPI કરો 🙏", "say": "ડન! ચાર ટિકિટ, બારસો રૂપિયા. બધા ત્રણસો યુપીઆઈ કરો!", "en": "Done ✅ 4 tickets, ₹1,200. Everyone UPI ₹300", "time": "8:11 PM"},
+  {"type": "system", "gu": "Kunal left · કુણાલે ગ્રુપ છોડ્યું", "say": "અને… કુણાલ ગાયબ!", "punch": true},
+  {"from": "Dhruv", "type": "voice", "secs": "0:04", "gu": "અરે નેટવર્ક જ નથી… હલો? હલો?", "en": "Arre, no network… hello? hello?", "time": "8:14 PM"},
+  {"from": "Neha", "type": "text", "gu": "મમ્મી બોલાવે છે, પછી વાત કરું 🏃‍♀️", "en": "Mummy's calling, talk later", "time": "8:15 PM"},
+  {"from": "Riya", "type": "text", "gu": "Popcorn વાળો પણ ગયો? 😭", "say": "પોપકોર્ન વાળો પણ ગયો?", "en": "Even the popcorn guy is gone?", "time": "8:16 PM", "punch": true},
+  {"type": "end", "gu": "પૈસા આપવાના ટાઇમે કોણ ગાયબ થાય?", "en": "Tag the friend who vanishes at payment time 👇", "say": "પૈસા આપવાના ટાઇમે કોણ ગાયબ થાય? ટેગ કરો!"}
+ ]
+}

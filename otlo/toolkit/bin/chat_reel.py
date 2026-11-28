@@ -17,7 +17,8 @@ chat.json
  "narrator_voice": "Sulafat"
 }
 Writing rules (RUNBOOK 4B-chat): open on the most dramatic message, not a greeting; every beat must escalate,
-reveal or twist; real chat texture (voice notes from elders, a forward, an emoji reaction, a deleted message,
+reveal or twist (v3: mark it "punch": true, and set "cold_open" so the twist is the hook on frame one);
+Gujarati, Hindi or Hinglish as the people in the story would really type; real chat texture (voice notes from elders, a forward, an emoji reaction, a deleted message,
 someone replying to the wrong message); a payoff in the last two beats; 6-10 beats; 18-35 s in total.
 Invented characters only; generic UI (no real app names or logos).
 """
@@ -71,6 +72,9 @@ def who(b):
 
 def bubble(b, i, beats, t_in=None):
     lab, col, _ = who(b); a = f' a" data-in="{t_in:.2f}" data-pop="1" data-origin="left top' if t_in is not None else ''
+    if b.get('type') == 'system':   # v3: "Kunal left", "Ba added Jay", "Pappa changed the group name"
+        ai = f' a" data-in="{t_in:.2f}" data-pop="1" data-origin="center' if t_in is not None else ''
+        return f'<span class="day sys{ai}" style="font-size:30px;background:#FDE7E4;color:#A8322A;font-weight:700">{e(b["gu"])}</span>'
     inner = f'<div class="n" style="color:{col}">{e(lab)}</div>'
     if b.get('forwarded'): inner += '<div class="fw">↪ Forwarded many times</div>'
     if b.get('reply_to') is not None:
@@ -103,7 +107,22 @@ def phone(s, beats, idx, typing_who=None):
 
 sk = (HERE.parent/'templates'/'reel-skeleton.html').read_text()
 head = sk[:sk.index('<!-- S1: hook -->')].replace('</head>', CSS + '</head>')
-beats = C['beats']; cap = C['caption']; out = []; lines = []; t = 0.0
+beats = C['beats']; cap = C['caption']; out = []; lines = []; t = 0.0; tweens = []
+# v3 (28 Nov): COLD OPEN. The twist is pulled forward as a big hook on frame one, then "⏪ 2 minutes earlier".
+#   "cold_open": {"beat": <index of the twist message>, "gu": "<big hook text>", "en": "...", "say": "<narrator hook line>"}
+co = C.get('cold_open')
+if co:
+    k = co['beat']; s, e_ = 0.0, 2.6; t = e_
+    out.append(f'<div class="scene" data-s="{s}" data-e="{e_}" style="padding:0;background:#1B2A4A">'
+               f'<div style="position:absolute;left:80px;right:80px;top:250px;text-align:center">'
+               f'<div class="gu a" data-in="0" style="font-size:96px;color:#F7EFE0;line-height:1.1">{e(co["gu"])}</div>'
+               f'<div class="en a" data-in="0" style="font-size:66px;color:#E3A21A;margin-top:14px">{e(co.get("en",""))}</div></div>'
+               f'<div id="cobub" style="position:absolute;left:60px;right:60px;top:720px;display:flex;justify-content:center">'
+               f'<div style="display:flex;flex-direction:column;max-width:760px">{bubble(beats[k], k, beats, None)}</div></div>'
+               f'<div class="stamp" data-stamp="1.9" style="position:absolute;left:230px;top:1130px;opacity:0;font:800 60px \'Anek Gujarati\',sans-serif;letter-spacing:0;background:#F7EFE0">⏪ ૨ મિનિટ પહેલાં</div></div>')
+    lines.append({"id": "s0", "gu": co.get('say', co['gu']), "en": [co.get('en', '')], "voice": NARR, "lead": 0.06, "tail": 0.15})
+    sc_ = 2.0 if beats[k].get('type') == 'system' else 1.3
+    tweens.append(f"tl.fromTo('#cobub',{{scale:0.6,opacity:0,rotate:-3}},{{scale:{sc_},opacity:1,rotate:0,duration:0.35,ease:'back.out(2.2)',transformOrigin:'50% 0%'}},0.1);")
 for i, b in enumerate(beats):
     s = round(t, 2); e_ = round(t + 2.4, 2); t = e_
     if b.get('type') == 'end':
@@ -116,16 +135,22 @@ for i, b in enumerate(beats):
         continue
     nxt = beats[i+1] if i+1 < len(beats) and beats[i+1].get('type') != 'end' else None
     typing = who(nxt)[0] if nxt else None
-    out.append(f'<div class="scene" data-s="{s}" data-e="{e_}" style="padding:0">'
+    out.append(f'<div class="scene" id="sc{i}" data-s="{s}" data-e="{e_}" style="padding:0">'
                f'<div class="cap"><div class="g">{e(cap["gu"])}</div><div class="x">{e(cap["en"])}</div></div>'
                f'{phone(s, beats, i, typing)}</div>')
-    say = b.get('say') or (b.get('gu') if b.get('type') != 'deleted' else '')
+    if b.get('punch'):   # v3: the twist beat. Camera punches in on the phone and shakes once.
+        tweens.append(f"tl.fromTo('#sc{i} .phone',{{scale:1}},{{scale:1.1,duration:0.25,ease:'power3.out'}},{s+0.35:.2f});"
+                      f"tl.fromTo('#sc{i} .phone',{{x:-10}},{{x:10,duration:0.05,repeat:5,yoyo:true,ease:'none'}},{s+0.6:.2f});")
+    say = b.get('say') or (b.get('gu') if b.get('type') not in ('deleted', 'system') else '')
     if say:
-        lines.append({"id": f"s{i+1}", "gu": say, "en": [], "voice": who(b)[2], "lead": 0.32, "tail": 0.25})
+        lines.append({"id": f"s{i+1}", "gu": say, "en": [], "voice": (NARR if b.get('type') == 'system' else who(b)[2]), "lead": 0.22, "tail": 0.15})
     else:   # a deleted message with nothing said still needs a short beat: a soft breath line by the narrator
         lines.append({"id": f"s{i+1}", "gu": "હમ્મ…", "en": [], "voice": NARR, "lead": 0.3})
 body = '\n'.join(out)
-(d/'reel.html').write_text(head.replace('<!-- S1: hook -->', '') + body + '\n</div>\n<script src="../../toolkit/runtime/otlo.js"></script>\n</body></html>')
+R = '../../toolkit/runtime/'
+fxs = (f'<script>window.OTLO_TWEENS=[(tl,g)=>{{{"".join(tweens)}}}];</script>'
+       f'<script src="{R}vendor/gsap.min.js"></script><script src="{R}otlo-fx.js"></script>')
+(d/'reel.html').write_text(head.replace('<!-- S1: hook -->', '') + body + '\n</div>\n' + fxs + f'\n<script src="{R}otlo.js"></script>\n</body></html>')
 S = {"voice": NARR, "direction": "", "lines": lines,
      "thumb": C.get('thumb', {"chip_gu": "ફેમિલી ગ્રુપ", "chip_en": "Family Group Chat", "gu": cap['gu'], "en": cap['en'],
                               "art_t": 2.0, "art_clip": [105, 420, 870, 700]})}
