@@ -4,7 +4,14 @@ Usage: python3 otlo/toolkit/img/get_images.py otlo/work/<dir>
 Reads script.json "images": [
   {"id": "father", "source": "gemini", "prompt": "<what to draw>"}                       -> img/father.png
   {"id": "mandvi", "source": "commons", "query": "Mandvi Kutch beach", "min_width": 1200} -> img/mandvi.jpg
+  {"id": "poster", "source": "wiki_poster", "page": "Laalo – Krishna Sada Sahaayate", "credit": "Poster: <studio>"} -> img/poster.jpg
+        official film poster from the film's Wikipedia infobox (the studio's artwork, used for news/commentary with credit)
+  {"id": "poster", "source": "og", "url": "https://<official or ticketing page>", "credit": "..."} -> the page's og:image
+  {"id": "still", "source": "url", "url": "https://<direct official image URL>", "credit": "..."}     -> downloaded as is
+  {"id": "scene", "source": "ai", "prompt": "..."}  -> Gemini first, then the free Pollinations (Flux) API if Gemini fails
 ]
+Movies/events: ALWAYS official artwork first (wiki_poster / og / url); "ai" is for illustrations and mood scenes only,
+never a fake poster, a real person, a logo or text.
 Commons: only CC0 / public domain / CC BY / CC BY-SA files; writes img/credits.json (title, author, licence, url) -> the
 caption must carry the credit line. Gemini: illustrations only (never real people, actors, logos, posters or text).
 Existing files are kept (delete one to regenerate). Never prints the key."""
@@ -21,7 +28,8 @@ OK = re.compile(r'^(cc0|public domain|pd|cc by(-sa)? ?[0-9.]*)', re.I)
 for im in S.get('images', []):
     iid = im['id']
     if list(out.glob(f'{iid}.*')): print(iid, 'exists'); continue
-    if im.get('source') == 'gemini':
+    src = im.get('source')
+    if src in ('gemini', 'ai'):
         if not key: print(iid, 'NO_KEY'); continue
         done = False
         for m in MODELS:
@@ -34,8 +42,47 @@ for im in S.get('images', []):
                 if 'inlineData' in part:
                     (out/f'{iid}.png').write_bytes(base64.b64decode(part['inlineData']['data'])); done = True; break
             if done: print(iid, 'ok via', m); break
-        if not done: print(iid, 'GEMINI FAILED')
-    elif im.get('source') == 'commons':
+        if not done:
+            # free fallback: Pollinations (Flux), no key; 1080x1350 portrait unless told otherwise
+            import urllib.parse
+            w, h = im.get('size', [1080, 1350])
+            u = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(STYLE + im['prompt'])
+                 + f"?width={w}&height={h}&nologo=true&model=flux&seed={im.get('seed', 7)}")
+            try:
+                r = requests.get(u, timeout=240, headers=UA)
+                if r.status_code == 200 and r.headers.get('content-type', '').startswith('image'):
+                    (out/f'{iid}.jpg').write_bytes(r.content); done = True; print(iid, 'ok via pollinations')
+                    credits.append({"id": iid, "title": "AI illustration", "author": "Otlo (generated)", "licence": "generated", "url": ""})
+                else: print(iid, 'POLLINATIONS HTTP', r.status_code)
+            except Exception as e: print(iid, 'POLLINATIONS', type(e).__name__)
+        if not done: print(iid, 'AI IMAGE FAILED')
+    elif src in ('wiki_poster', 'og', 'url'):
+        url = None
+        try:
+            if src == 'wiki_poster':
+                q = requests.get("https://en.wikipedia.org/w/api.php", headers=UA, timeout=60, params={
+                    "action": "query", "format": "json", "prop": "pageimages", "piprop": "original", "redirects": 1,
+                    "generator": "search", "gsrsearch": im['page'], "gsrlimit": 1}).json()
+                pg = next(iter(q.get('query', {}).get('pages', {}).values()), {})
+                url = pg.get('original', {}).get('source'); ref = "https://en.wikipedia.org/wiki/" + pg.get('title', '').replace(' ', '_')
+            elif src == 'og':
+                html = requests.get(im['url'], headers={**UA, "User-Agent": "Mozilla/5.0 (OtloBot)"}, timeout=60).text
+                m = re.search(r'<meta[^>]+property=["\']og:image(?::secure_url)?["\'][^>]+content=["\']([^"\']+)', html) or \
+                    re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+property=["\']og:image', html)
+                url = m and m.group(1); ref = im['url']
+            else:
+                url = im['url']; ref = im.get('page', url)
+            if url:
+                r = requests.get(url, headers=UA, timeout=120)
+                if r.status_code == 200 and len(r.content) > 5000:
+                    from PIL import Image; import io
+                    Image.open(io.BytesIO(r.content)).convert('RGB').save(out/f'{iid}.jpg', quality=95)
+                    credits.append({"id": iid, "title": im.get('credit', 'Official artwork'), "author": im.get('credit', ''), "licence": "official promotional artwork, used with credit for news/commentary", "url": ref})
+                    print(iid, 'ok', src, url[:90])
+                else: print(iid, src, 'HTTP', r.status_code)
+            else: print(iid, src, 'NO IMAGE FOUND')
+        except Exception as e: print(iid, src, 'ERROR', type(e).__name__, str(e)[:120])
+    elif src == 'commons':
         q = requests.get("https://commons.wikimedia.org/w/api.php", headers=UA, timeout=60, params={
             "action": "query", "format": "json", "generator": "search", "gsrsearch": im['query'] + " filetype:bitmap",
             "gsrnamespace": 6, "gsrlimit": 15, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 1600}).json()

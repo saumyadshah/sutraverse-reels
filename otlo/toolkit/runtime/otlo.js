@@ -23,6 +23,7 @@
         else if(el.dataset.rise){el.style.transform=`translateY(${(1-ease((t-i)/0.5))*(+el.dataset.rise)}px)`}
         else el.style.transform=`translateY(${(1-ease(p))*40}px)`;}
     });
+    if(window.OTLOFX) window.OTLOFX.update(t);
     if(window.extra) window.extra(t);
   };
   window.renderTimed=function(t,starts,ends){let i=starts.length-1;for(let k=0;k<starts.length;k++){if(t>=starts[k]&&t<ends[k]){i=k;break}}

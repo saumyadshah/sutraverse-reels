@@ -18,3 +18,10 @@ body{margin:0;background:var(--ivory)}
 .art{position:absolute;left:0;right:0;bottom:540px;display:flex;justify-content:center}
 .photo{display:block;border-radius:28px;object-fit:cover;box-shadow:0 10px 30px rgba(27,42,74,.25)}
 /* keep the bottom ~260px of the stage clear of text: subtitles live there */
+
+/* FX layer helpers (28 Nov) */
+.kbframe{overflow:hidden;display:inline-block;border-radius:18px;border:8px solid #F7EFE0;box-shadow:0 14px 40px rgba(0,0,0,.35);line-height:0}
+.kbframe img.photo{border:0;box-shadow:none;border-radius:0;display:block}
+canvas.fx3d{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none;z-index:0}
+canvas.fx3d.inbox{position:static;width:auto;height:auto}
+.stamp{display:inline-block;border:10px solid #A8322A;color:#A8322A;font-family:'Bebas Neue',sans-serif;font-size:96px;padding:6px 30px;border-radius:14px;letter-spacing:4px;background:rgba(247,239,224,.85)}

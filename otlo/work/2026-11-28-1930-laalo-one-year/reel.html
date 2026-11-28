@@ -1,0 +1,102 @@
+<!doctype html><html lang="gu"><head><meta charset="utf-8">
+<!-- Otlo Reel: Laalo, one year since the first ₹100 crore Gujarati film (28 Nov 2026, 19:30). FX layer v1: GSAP + Three.js. -->
+<link rel="stylesheet" href="../../toolkit/runtime/otlo.css">
+<style>
+.scene{padding-top:270px!important;gap:16px}
+.scene>*:not(canvas){z-index:1}
+.big{font-weight:800;font-size:150px;line-height:1;color:var(--indigo)}
+.arrow{font-size:110px;color:var(--red);font-weight:800;line-height:1}
+.bar{position:absolute;bottom:0;width:190px;border-radius:14px 14px 0 0;transform-origin:50% 100%}
+.lbl{position:absolute;width:300px;text-align:center;font-weight:800;font-stretch:75%;font-size:40px;text-transform:uppercase;color:var(--indigo)}
+.seat{fill:#C9B48C}
+</style></head><body>
+<div id="stage">
+<svg class="band" style="top:0" viewBox="0 0 1080 36"><defs><pattern id="pt" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#1B2A4A"/><path d="M18 4 L32 18 L18 32 L4 18 Z" fill="#A8322A"/><path d="M18 11 L25 18 L18 25 L11 18 Z" fill="#E3A21A"/></pattern></defs><rect width="1080" height="36" fill="url(#pt)"/></svg>
+<svg class="band" style="bottom:0" viewBox="0 0 1080 36"><rect width="1080" height="36" fill="url(#pt)"/></svg>
+<img id="posterImg" src="img/poster.jpg" style="display:none" alt="">
+
+<!-- S1 hook: the number, and the real poster swinging in in 3D -->
+<div class="scene" data-s="0" data-e="4.2"><canvas class="fx3d" data-fx="bokeh"></canvas>
+ <span class="chip a" data-in="0">ગુજરાતી સિનેમા · Gujarati cinema</span>
+ <div class="a" data-in="0" style="display:flex;align-items:baseline;gap:26px"><span class="big" style="font-size:104px;white-space:nowrap">₹50 લાખ</span><span class="arrow" style="font-size:90px">→</span><span class="big" style="font-size:104px;white-space:nowrap;color:var(--red)">₹100 કરોડ</span></div>
+ <div class="en a" data-in="0" style="font-size:74px">A ₹50 lakh film crossed ₹100 crore</div>
+ <div class="art" style="bottom:560px"><canvas class="fx3d inbox" data-fx="poster" data-img="#posterImg" width="480" height="580"></canvas></div>
+</div>
+
+<!-- S2: one year ago this week; the poster, Ken Burns -->
+<div class="scene" data-s="4.2" data-e="9"><span class="kick a" data-in="4.3" style="font-size:50px">૩૦ નવેમ્બર ૨૦૨૫ · 30 Nov 2025</span>
+ <div class="gu" data-kinetic="words" data-at="4.4" style="font-size:104px">એક વર્ષ પહેલાં</div>
+ <div class="en a" data-in="4.9" style="font-size:78px">One year ago this week</div>
+ <div class="art a" data-in="5.0" data-rise="160" style="bottom:560px"><div class="kbframe"><img class="photo" src="img/poster.jpg" data-kb="in" data-kb-amt="0.14" style="width:400px;height:520px;object-fit:cover;object-position:50% 20%"></div></div>
+ <div class="stamp" data-stamp="6.2" style="position:absolute;left:640px;top:880px;opacity:0;font-size:72px">LAALO</div>
+</div>
+
+<!-- S3: no stars, a first-time director -->
+<div class="scene" data-s="9" data-e="13.5"><span class="kick a" data-in="9.1" style="font-size:50px">ના સ્ટાર, ના મોટું બજેટ · No stars, tiny budget</span>
+ <div class="gu" data-kinetic="words" data-at="9.2" style="font-size:108px">કોઈ મોટો સ્ટાર નહીં</div>
+ <div class="en a" data-in="9.8" style="font-size:72px">First-time director Ankit Sakhiya</div>
+ <div class="art a" data-in="9.6" data-rise="180" style="bottom:560px"><svg width="620" height="560" viewBox="-310 -280 620 560">
+  <ellipse cx="0" cy="250" rx="250" ry="22" fill="#1B2A4A" opacity=".12"/>
+  <g id="chair"><path d="M-150,-40 L150,-40 L150,10 L-150,10 Z" fill="#1B2A4A"/><path d="M-160,-230 L160,-230 L160,-120 L-160,-120 Z" fill="#A8322A"/>
+  <text x="0" y="-160" text-anchor="middle" font-family="Fira Sans" font-weight="800" font-size="46" fill="#F7EFE0" letter-spacing="6">DIRECTOR</text>
+  <path d="M-150,-120 L-150,-40 M150,-120 L150,-40" stroke="#8A4B2A" stroke-width="18"/>
+  <path d="M-140,10 L120,250 M140,10 L-120,250" stroke="#8A4B2A" stroke-width="18" stroke-linecap="round"/>
+  <path d="M-170,-60 L-170,-80 M170,-60 L170,-80" stroke="#8A4B2A" stroke-width="22" stroke-linecap="round"/></g>
+  <g id="spot" opacity=".0"><polygon points="-60,-280 60,-280 260,260 -260,260" fill="#E3A21A" opacity=".22"/></g>
+ </svg></div>
+</div>
+
+<!-- S4: empty hall fills up -->
+<div class="scene" data-s="13.5" data-e="18.5"><span class="kick a" data-in="13.6" style="font-size:50px">પહેલો શો · Opening day</span>
+ <div class="gu a" data-in="13.7" style="font-size:100px">થિયેટર લગભગ ખાલી…</div>
+ <div class="en" data-kinetic="words" data-at="15.6" style="font-size:86px;color:var(--red)">then the tide turned</div>
+ <div class="art a" data-in="13.9" data-rise="160" style="bottom:560px"><svg width="760" height="520" viewBox="0 0 760 520">
+  <rect x="80" y="0" width="600" height="150" rx="10" fill="#F7EFE0" stroke="#1B2A4A" stroke-width="6"/>
+  <text x="380" y="92" text-anchor="middle" font-family="Anek Gujarati" font-weight="800" font-size="60" fill="#A8322A">લાલો</text>
+  <g id="seats"></g><g id="heads"></g>
+ </svg></div>
+</div>
+
+<!-- S5: ₹100 crore in 51 days, record broken -->
+<div class="scene" data-s="18.5" data-e="23.5"><canvas class="fx3d" data-fx="bokeh"></canvas>
+ <span class="kick a" data-in="18.6" style="font-size:50px">૫૧ દિવસ · 51 days</span>
+ <div class="big a" data-in="18.7" style="color:var(--red)"><span data-count="100" data-at="18.8" data-dur="1.4" data-prefix="₹" data-suffix=" કરોડ">₹0</span></div>
+ <div class="en a" data-in="19.2" style="font-size:66px">The new all-time record</div>
+ <div class="art a" data-in="19.0" data-rise="120" style="bottom:560px"><div style="position:relative;width:760px;height:500px">
+  <div class="bar" id="b1" style="left:150px;height:230px;background:#C9B48C"></div>
+  <div class="bar" id="b2" style="left:420px;height:440px;background:var(--red)"></div>
+  <div class="lbl" style="left:95px;top:510px">Chaal Jeevi Laiye<br>~₹52 Cr</div>
+  <div class="lbl" style="left:365px;top:510px;color:var(--red)">Laalo<br>₹100 Cr+</div>
+  <div class="stamp" data-stamp="20.6" style="position:absolute;left:330px;top:-40px;opacity:0;font-size:70px">RECORD!</div>
+ </div></div>
+</div>
+
+<!-- S6: ask -->
+<div class="scene" data-s="23.5" data-e="28"><canvas class="fx3d" data-fx="confetti"></canvas>
+ <span class="kick a" data-in="23.6" style="font-size:50px">તમારો વારો · Your turn</span>
+ <div class="box a" data-in="23.7" data-pop="1" style="background:var(--haldi)"><div class="gu" style="font-size:82px">હવે પછીની ‘લાલો’?</div><div class="en" style="font-size:60px">Which film is the next Laalo?</div></div>
+ <div class="en" data-kinetic="words" data-at="24.6" style="font-size:64px;color:var(--red)">Tell us in the comments 👇</div>
+ <div class="kick a" data-in="25.2" style="font-size:44px">@otlo.gujarat · ગુજરાતની વાતો, ઓટલા પર</div>
+</div>
+</div>
+<script>
+// S4: build a cinema hall; seats fill row by row as the tide turns (GSAP, absolute Reel seconds)
+(function(){const s=document.getElementById('seats'),h=document.getElementById('heads');let k=0;
+ for(let r=0;r<5;r++)for(let c=0;c<9;c++){const x=120+c*64+(r%2)*16,y=210+r*62;
+  s.insertAdjacentHTML('beforeend',`<rect class="seat" x="${x-24}" y="${y}" width="48" height="40" rx="8"/>`);
+  const filled=(r*9+c)%11===0;  // a handful of people on day one
+  h.insertAdjacentHTML('beforeend',`<circle class="${filled?'early':'late'}" cx="${x}" cy="${y-6}" r="17" fill="${['#1B2A4A','#A8322A','#C2185B','#8A4B2A'][(k++)%4]}" opacity="${filled?1:0}"/>`);}})();
+window.OTLO_TWEENS=[(tl,g)=>{
+  tl.fromTo('#heads .late',{opacity:0,y:20},{opacity:1,y:0,duration:0.25,stagger:{each:0.04,from:'random'},ease:'back.out(3)'},15.7);
+  tl.fromTo('#b1',{scaleY:0},{scaleY:1,duration:0.6,ease:'power2.out'},19.0);
+  tl.fromTo('#b2',{scaleY:0},{scaleY:1,duration:1.1,ease:'power3.out'},19.3);
+  tl.fromTo('#spot',{opacity:0},{opacity:1,duration:0.4},10.4);
+  tl.fromTo('#chair',{rotate:-4,transformOrigin:'50% 100%'},{rotate:4,duration:0.6,repeat:5,yoyo:true,ease:'sine.inOut'},9.6);
+}];
+</script>
+<script src="../../toolkit/runtime/vendor/gsap.min.js"></script>
+<script src="../../toolkit/runtime/vendor/SplitText.min.js"></script>
+<script src="../../toolkit/runtime/otlo-fx.js"></script>
+<script src="../../toolkit/runtime/otlo.js"></script>
+<script type="module" src="../../toolkit/runtime/otlo-3d.js"></script>
+</body></html>

@@ -70,12 +70,34 @@ def timing(d, S):
         starts.append(round(t, 3)); vo.append({"file": str(p), "at": round(t+lead-on, 3), "on": on, "off": off}); t += L; ends.append(round(t, 3))
     T = {"starts": starts, "ends": ends, "vo": vo}; (d/'timing.json').write_text(json.dumps(T, indent=1)); return T
 
+
+# --- local http server so ES modules (Three.js) load; file:// blocks module imports (28 Nov) ---
+_SRV = None
+def page_url(path):
+    global _SRV
+    import threading, functools, http.server, socketserver
+    root = pathlib.Path(__file__).resolve().parents[3]
+    if _SRV is None:
+        class Q(http.server.SimpleHTTPRequestHandler):
+            def log_message(self, *a): pass
+        h = functools.partial(Q, directory=str(root))
+        _SRV = socketserver.ThreadingTCPServer(('127.0.0.1', 0), h); _SRV.daemon_threads = True
+        threading.Thread(target=_SRV.serve_forever, daemon=True).start()
+    return f"http://127.0.0.1:{_SRV.server_address[1]}/" + str(pathlib.Path(path).resolve().relative_to(root))
+CHROME_ARGS = ['--enable-unsafe-swiftshader', '--use-angle=swiftshader', '--ignore-gpu-blocklist', '--enable-webgl']
+async def wait_ready(pg):
+    await pg.evaluate("document.fonts.ready")
+    await pg.wait_for_timeout(600)
+    if await pg.evaluate("!!document.querySelector('canvas.fx3d')"):
+        await pg.wait_for_function("window.OTLO3D_READY === true", timeout=20000)
+        await pg.evaluate("window.render(0)")
+
 async def frames(d, T, only=None):
     from playwright.async_api import async_playwright
     out = d/'frames'; out.mkdir(exist_ok=True)
     async with async_playwright() as p:
-        b = await p.chromium.launch(); pg = await b.new_page(viewport={'width': 1080, 'height': 1920})
-        await pg.goto((d/'reel.html').resolve().as_uri()); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(600)
+        b = await p.chromium.launch(args=CHROME_ARGS); pg = await b.new_page(viewport={'width': 1080, 'height': 1920})
+        await pg.goto(page_url(d/'reel.html')); await wait_ready(pg)
         if only:
             for s in only:
                 await pg.evaluate(f"window.render({s})"); await pg.screenshot(path=str(d/f'still_{s}.jpg'), type='jpeg', quality=88)
@@ -203,12 +225,12 @@ async def thumbnail(d, S):
     if not th.get('gu'): th['gu'] = S['lines'][0]['gu'][:24]
     t = float(th.get('art_t', 3.0)); clip = th.get('art_clip', [0, 820, 1080, 1060])
     async with async_playwright() as p:
-        b = await p.chromium.launch(); pg = await b.new_page(viewport={'width': 1080, 'height': 1920})
-        await pg.goto((d/'reel.html').resolve().as_uri()); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(600)
+        b = await p.chromium.launch(args=CHROME_ARGS); pg = await b.new_page(viewport={'width': 1080, 'height': 1920})
+        await pg.goto(page_url(d/'reel.html')); await wait_ready(pg)
         await pg.evaluate(f"window.render({t})"); await pg.wait_for_timeout(100)
         await pg.screenshot(path=str(d/'thumb_art.png'), type='png', clip={'x': clip[0], 'y': clip[1], 'width': clip[2], 'height': clip[3]})
-        await pg.goto((HERE.parent/'templates'/'thumb.html').resolve().as_uri()); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(400)
-        th['art'] = (d/'thumb_art.png').resolve().as_uri()
+        await pg.goto(page_url(HERE.parent/'templates'/'thumb.html')); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(400)
+        th['art'] = page_url(d/'thumb_art.png')
         await pg.evaluate("d=>window.fill(d)", th); await pg.wait_for_timeout(500)
         await pg.screenshot(path=str(d/'thumb.png'), type='png')
         await b.close()
@@ -267,8 +289,8 @@ async def carousel(d):
     from PIL import Image
     for old in d.glob('slide_*'): old.unlink()
     async with async_playwright() as p:
-        b = await p.chromium.launch(); pg = await b.new_page(viewport={'width': 1080, 'height': 1350})
-        await pg.goto((d/'carousel.html').resolve().as_uri()); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(700)
+        b = await p.chromium.launch(args=CHROME_ARGS); pg = await b.new_page(viewport={'width': 1080, 'height': 1350})
+        await pg.goto(page_url(d/'carousel.html')); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(700)
         els = await pg.query_selector_all('section.slide')
         for i, el in enumerate(els, 1):
             await el.screenshot(path=str(d/f'slide_{i:02d}.png'), type='png')
