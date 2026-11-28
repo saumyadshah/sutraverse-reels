@@ -39,9 +39,29 @@ Read `{"kind":"readCells","sheet":"Calendar","range":"A1:H120"}`. Write
 `{"kind":"applyEdits","base":<revision>,"edits":[{"kind":"writeCells","sheet":"Calendar","topLeft":"G<row>","rows":[["<notes>","Posted"]]}]}`
 (call the Docs `guide` with `topic.sheets` first if unsure).
 
-## Creative standard v2 (from the 26 Nov audit: 66–89% of viewers swiped away in the first seconds)
+## Creative standard v3 (Saumya's 28 Nov brief: "a professionally managed Gujarati entertainment and lifestyle media brand")
 
-Every post must meet all of these; the review in Step 6 checks each one.
+**What the data says (28 Nov audit, last 12 Reels):** the two posts on real, timely subjects with real visuals won by
+about 10×. *Ruff & Tuff Kanya* (official poster, a named filmmaker's quote, posted the week of release) got 1,473 plays,
+6 shares and 3 comments. *Pol maze* (a "that's not a mistake, it's design" reveal) got 1,145 plays and the best skip rate (57%).
+Everything generic or evergreen stalled at about 120 plays, and chat Reels skipped 72–89%. So:
+- **Timely beats evergreen.** At least 1 of the 2 daily posts is tied to something happening now: a release, a
+  box-office number, an announcement, an anniversary this week, an upcoming event, a festival, the weather.
+- **Real visuals beat drawings for real subjects.** Films → the official poster/artwork; events → official event
+  artwork; places/food → licensed photos or AniDoodle illustrations; stories → illustration and motion.
+- **Named people and numbers travel.** "₹50 lakh → ₹100 crore", "Hansal Mehta said…" beat abstract claims.
+- **Every Reel has a reason to exist**: write it in one line in the ready file ("why would someone send this?").
+  If the answer is weak, change the angle or replace the idea. Never post filler to fill a slot (a stronger
+  backup from the Idea bank beats a weak planned post).
+
+**Motion standard (FX layer v1, see `otlo/toolkit/TOOLS.md`).** Every Reel uses at least two of: kinetic type
+(`data-kinetic`), a count-up (`data-count`), a stamp (`data-stamp`), a highlighter sweep (`data-sweep`), Ken Burns on
+photos (automatic on `img.photo`, wrap in `.kbframe`), a 3D poster card or a bokeh/confetti layer (`canvas.fx3d`),
+custom GSAP tweens (`window.OTLO_TWEENS`). Include the FX scripts (see the Laalo example
+`otlo/work/2026-11-28-1930-laalo-one-year/reel.html`). Motion must serve the story (reveal, emphasise, pay off),
+never decorate it.
+
+Every post must also meet all of these; the review in Step 6 checks each one.
 1. **Hook in frame one.** The first spoken line (≤ 60 Gujarati characters) and its on-screen text start at once:
    no title card, no greeting, no "today we'll see". Open on a surprise, a rivalry, a number, a feeling or the most
    dramatic message. Write 3 hooks (viral-hook-writer), pick one (ab-hook-tester), log the other two.
@@ -55,8 +75,11 @@ Every post must meet all of these; the review in Step 6 checks each one.
 5. **Subtitles and safe zones**: subtitles are automatic (large, white on indigo, about y 1,380–1,480). All other
    text stays between **y 240 and 1,480**, and **left of x 912 below y 1,000** (Instagram's buttons). The 3:4
    profile grid shows y 240–1,680: the hook must read there too. The builder fails any text outside these zones.
-6. **Art must show the real subject** and fill its space (inline SVG, brand palette); no clip art, no stock, no
-   film stills or posters, no real people.
+6. **Visuals must show the real subject** and fill their space. Pick per topic (Saumya, 28 Nov): films → the
+   official poster/promotional artwork (`wiki_poster` / `og` / `url` sources in `script.json` `images`, credit in
+   the caption); events → official event artwork; food/places → Commons photos (licensed) or AniDoodle/AI
+   illustrations; stories/explainers → illustration, motion graphics, 3D. Never a fake AI poster when the real
+   one exists, never AI images of real people, no clip art. Art and images end above y 1,366.
 7. **Cover**: the designed thumbnail is frame one only (Instagram uses it as the cover); frame two is the hook.
 8. **Shareability test** before building: would a Gujarati viewer send this to their family group, save it, or
    comment? If none, change the angle (rivalry, surprise, nostalgia, a "that's my Ba" moment, a useful list).
@@ -69,15 +92,25 @@ Every post must meet all of these; the review in Step 6 checks each one.
    independent reliable sources found today with WebSearch/WebFetch (start from column G). Drop any claim you
    cannot confirm. If the topic's core cannot be confirmed, mark the row `Skipped` with the reason and post nothing.
    Religious practice is described as belief/tradition ("it is believed", "many families"), never as fact or advice.
-3. **Cinema.** No film clips, stills, posters, trailers, logos or actors' faces, ever. *Loko Shu Kahe Chhe?*
-   reports what named critics and audiences said (attributed); Otlo gives **no verdict of its own**. Box office
-   numbers only with a named source, labelled "reported"/"estimated".
+3. **Cinema (updated 28 Nov).** Official posters, promotional artwork and official stills from the production
+   house, distributor or the film's official listings ARE allowed, credited in the caption ("Poster: <studio>,
+   official"), used to report on the film. Still no film/trailer video clips, no song audio, no film dialogue, no
+   fan edits. *Loko Shu Kahe Chhe?* reports what named critics and audiences said (attributed); Otlo gives **no
+   verdict on a film it has not watched**. Box office numbers only with a named source, labelled
+   "reported"/"estimated". Tag the official accounts (studio, production house, director, cast) when posting.
 4. **People and communities.** No real private individuals. No caste, communal, political or religious
    ridicule; no stereotypes beyond gentle, affectionate food rivalry. *Family Group Chat* is original comedy with
    invented characters (Ba, Mummy, Pappa, Fai, the NRI cousin).
-5. **Copyright.** No song lyrics, film dialogue, or third-party images/audio. All art is our own inline SVG.
+5. **Copyright.** No song lyrics, film dialogue or third-party audio. Third-party images only as rule 3/6 allow
+   (official promotional artwork with credit; Commons with an open licence and credit). Everything else is ours:
+   SVG, AniDoodle, AI-generated illustration, GSAP/Three.js motion. Never copy another creator's post; take the
+   format or idea and make an original Otlo version.
 6. **Images must match the subject.** Khaman must look like khaman, a kite like a kite. Draw it carefully.
-7. **No sponsored content, no paid links, no replies/DMs, no deleting posts.**
+7. **Partnerships (28 Nov).** Otlo invites collaborations (see `otlo/PLANNING.md` → *Collaboration formats*), but
+   no paid or sponsored post is ever made without Saumya confirming the deal in chat. A paid post is labelled
+   in the first caption line ("Paid partnership with …" / #ad) and uses Instagram's paid-partnership label.
+   Editorial posts never take money and say so when the subject could look promotional ("Not sponsored").
+   Still no automated replies/DMs and no deleting posts.
 8. **Mandatory for every post: highest-quality export, a designed thumbnail/cover, the full caption formula
    (with the [keywords] block and exactly 5 hashtags), and the skills listed below.** A post missing any of these is not posted.
 9. **When in doubt, skip the topic, not the slot** (Saumya, 22 Nov: a slot must not stay empty). If this slot's
@@ -105,6 +138,8 @@ if a skill says otherwise). If a skill is not available in the run, apply its id
 | Carousel (4C) | `anthropic-skills:carousel-builder`, `anthropic-skills:frontend-design`; `anthropic-skills:viral-carousel` only in the weekly plan (it spends vidIQ credits) |
 | Caption (7) | `anthropic-skills:caption-and-hashtags`, `anthropic-skills:hashtag-keyword-research` (keywords block + the 5 hashtags) |
 | Research (3) | `anthropic-skills:content-research` / `anthropic-skills:trend-spotter` for angles (free tools only in daily runs) |
+| Motion and visuals (4B) | `otlo/toolkit/TOOLS.md` (read it): GSAP docs `otlo/toolkit/skills-ref/gsap/`, Three.js docs `otlo/toolkit/skills-ref/threejs/`, art-motion grammar `otlo/toolkit/skills-ref/huashu-art-motion/`, illustrations `otlo/toolkit/anidoodle/SKILL.md` |
+| Series and formats | `anthropic-skills:series-planner` (weekly plan), the series bible in `otlo/PLANNING.md` |
 
 Not used, because they break Otlo rules: `comment-responder`, `dm-script-writer`, `content-factory` (auto-DMs and
 3 posts a day), `collab-outreach` / `creator-outreach` / `influencer-partnerships` / `ugc-creator-brief` (no
@@ -166,10 +201,24 @@ the format; example `otlo/work/2026-11-26-1930-family-group-invite/`.
   "Forwarded many times", an emoji reaction, a deleted message someone replies to, a reply to the wrong
   message); payoff in the last two beats; 6–10 beats. A pinned caption at the top sets it up for silent viewers.
 - No polite, explanatory or greeting messages. If a beat could be cut without losing the joke, cut it.
+- **v3 (28 Nov; chat Reels had the worst skip rates, 72–89%):** always set `"cold_open"` (the twist message as
+  a big hook on frame one, then "⏪ 2 minutes earlier") and mark the twist beat(s) `"punch": true` (camera
+  punch-in + shake). Use `"type": "system"` for "X left / X added Y / X changed the group name" moments.
+  Mix the cast and the setting: family group, friends' group, office group, society/building group, cousins,
+  in-laws, a couple. Language as people really type: Gujarati, Gujlish or Hinglish, with English words left in
+  English. The premise must be instantly recognisable ("this happens in my family/group!"), escalate, and land a
+  real punchline or reversal; no predictable endings. At most 2 chat Reels a week; keep the one that performs
+  and change the format of the one that doesn't. Example: `otlo/work/2026-11-29-1930-friends-upi/chat.json`.
 
-### 4C. Carousel slot → swipe-style Reel (`carousel.html` + `script.json`)
-Saumya's choice (21 Nov): carousel slots are posted as **swipe-style Reels** (vidIQ needs a manual approval
-for true carousels, so those never run unattended). Make the slides exactly as a carousel, then voice them:
+### 4C. Carousel ideas → multi-scene explainer Reels (Saumya, 28 Nov: no static carousels)
+Carousel concepts (lists, comparisons, cheat sheets, rankings, watchlists) are now built as **animated
+explainer Reels with 4A/4B** (`reel.html`), not as slides: one scene per item, each with a strong visual (poster,
+photo, illustration), kinetic type, a count/number or stamp, and a transition. Keep the carousel's save-value:
+the second-to-last scene is the summary people screenshot; the last is one ask. 25–40 s; if a list has more
+than 6 items, cut it to the best 5 or split it into two Reels on different days. The old swipe-style path below
+stays only for emergencies (a build failure an hour before the slot).
+
+(Old path, emergencies only.) Carousel slot → swipe-style Reel (`carousel.html` + `script.json`):
 - `carousel.html` from `otlo/toolkit/templates/carousel-skeleton.html`: 6–9 slides, 1080×1350:
   cover (hook + big bilingual title + subject art; it is also the Reel's cover, so design it as the thumbnail)
   → one idea per slide (number, Gujarati + English headline, 1–2 short lines, art) → second-to-last: the summary
@@ -205,7 +254,21 @@ Swipe-style Reels: same video settings; slides rendered 1080×1350 lossless.
   line, re-queue. Layout problems: fix the HTML, re-queue (voice is reused).
 - At most 2 rebuilds. Still failing → row `Skipped`, log, stop.
 
-### 7. Caption → `caption.txt` (≤ 2,200 characters) — the Otlo formula
+### 7. Caption → `caption.txt` (≤ 2,200 characters) — the Otlo formula v3 (28 Nov)
+- **Line 1 is a second hook**, not a summary: a number, a contradiction or a question the video raises but the
+  first line doesn't answer. It must make "…more" worth tapping.
+- **Context, not a transcript**: 2–3 lines that add what the Reel couldn't (a date, a name, a "why"), never a
+  retelling of every scene.
+- **One specific, natural ask** that fits this post (vary them: a one-word answer, "tag the friend who…",
+  "send it to your family group", "save it for Sunday"), never the same CTA two posts in a row, never "like and
+  share", never desperate.
+- **Credits**: sources; official artwork credit; "Not sponsored" when the subject could look promotional; the
+  paid-partnership line first when it is one.
+- **Tags**: for films/events/businesses, list the official handles to tag in the ready file (verified with
+  `vidiq_ig_profile`, or seen tagged on the official account's own posts) and @mention one or two in the caption
+  where natural (the studio, the director).
+- `[keywords]`: 8–12 real search phrases, English + Gujarati script, comma-separated, in square brackets.
+- **Exactly 5 hashtags**, all about this subject.
 Built from the reference accounts (Dukaan Didi, Balakheji, Manka Daily): a one-line hook above the fold, a
 two-to-three-line mini story with the "why", one takeaway, one specific ask, sources inline.
 ```
@@ -229,6 +292,9 @@ Follow @otlo.gujarat · ગુજરાતની વાતો, ઓટલા પ�
 is usually "Save it" or "Send it to the family group".
 
 ### 8-PREP. Ready it and send the content email (PREP runs)
+- **Already readied in advance** (the slot's row is `Ready` and `otlo/ready/<date>-<HHMM>.json` exists, e.g. made
+  in chat): don't make a new post. Pull, open the files, re-check QA, `thumb.jpg` and `contact_safezones.jpg`, and that
+  the topic is still current, then send the email package below for it.
 - Write `otlo/ready/<YYYY-MM-DD>-<HHMM>.json`: `{"dir": "otlo/work/<dir>", "time": "<YYYY-MM-DD>T<HH:MM>+05:30",
   "caption_file": "otlo/work/<dir>/caption.txt", "row": <calendar row>}`; set the calendar Status to `Ready`;
   commit and push.

@@ -130,7 +130,7 @@ for i, b in enumerate(beats):
                    f'<div class="cap"><div class="g">{e(cap["gu"])}</div><div class="x">{e(cap["en"])}</div></div>'
                    f'<div class="endq"><div class="gu a" data-in="{s+0.05:.2f}" data-pop="1" data-origin="center" style="font-size:96px;color:var(--indigo)">{e(b["gu"])}</div>'
                    f'<div class="en a" data-in="{s+0.35:.2f}" style="font-size:70px;color:var(--red);margin-top:16px">{e(b.get("en",""))}</div>'
-                   f'<div class="kick a" data-in="{s+0.6:.2f}" style="font-size:44px;margin-top:34px">@otlo.gujarat · ગુજરાતની વાતો, ઓટલા પર</div></div></div>')
+                   f'<div class="kick a" data-in="{s+0.6:.2f}" style="font-size:42px;margin-top:34px;max-width:740px">@otlo.gujarat<br>ગુજરાતની વાતો, ઓટલા પર</div></div></div>')
         lines.append({"id": f"s{i+1}", "gu": b.get('say', b['gu']), "en": [b.get('en', '')], "voice": NARR, "lead": 0.12})
         continue
     nxt = beats[i+1] if i+1 < len(beats) and beats[i+1].get('type') != 'end' else None

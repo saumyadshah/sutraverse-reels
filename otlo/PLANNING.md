@@ -66,3 +66,51 @@ Same exclusions and rule precedence as the RUNBOOK. Note in the plan which skill
   every post of the past week (title, format, plays, skip %, watched %, shares, saves, comments, follows), the 3
   lessons, the change in followers, the week's 14 planned posts (date, time, format, topic) and the 2 formats
   being tested. Also save it as `otlo/plans/<monday>-report.md`.
+
+## Added 28 Nov (Saumya's brief: complete content strategy overhaul). This section wins over older lines above.
+**Pattern change:** no static carousel slots. Both daily slots (10:00 and 19:30) are Reels; carousel ideas become
+multi-scene explainer Reels (RUNBOOK 4C). **Mix rule:** every day has ≥ 1 *timely* post (release, number,
+announcement, anniversary this week, upcoming event, festival, weather); every week ≥ 4 entertainment/cinema
+posts (Gujarati first, Bollywood with a Gujarat/Gujarati angle), ≥ 2 events, ≥ 2 food/discoveries, ≤ 2 chat
+Reels (v3), ≥ 1 business/creator feature format (see below), ≥ 1 curiosity explainer (the Pol-maze pattern).
+
+### Daily research routine (runs inside every PREP run, ~10 minutes, before writing)
+1. **Entertainment now:** WebSearch for this week's Gujarati releases and announcements ("Gujarati film
+   trailer", "Gujarati film release date announced", Sacnilk Gujarati box office, the 2026 Gujarati films list
+   on Wikipedia), Bollywood headlines of the day, OTT drops this Friday.
+2. **Official accounts:** for any film/event chosen, find its official Instagram/X handles and official artwork
+   (production house, distributor, District/BookMyShow page) and record them in the ready file.
+3. **Events:** District, ahmedabad2go, eventsaroundme, AMC and Gujarat Tourism listings for the next 14 days.
+4. **Food and city:** new openings, seasonal dishes (winter: undhiyu, adadiya, chikki; Uttarayan in January),
+   viral food spots in Ahmedabad, Surat, Vadodara and Rajkot (two sources; never invent a review).
+5. **What audiences respond to:** free vidIQ `vidiq_instagram_owner_insights` for our posts. Paid tools
+   (`vidiq_instagram_tiktok_outlier_search`, `vidiq_ig_profile_reels` of Gujarati pages) only in the weekly plan,
+   ≤ 15 credits a week. Take the **format** that works, never the content.
+6. Log the 3 best opportunities found (with sources) in `otlo/logs/<date>.md` even if not used today; add them
+   to the Idea bank.
+
+### Series bible (recurring, named, recognisable; each has its own chip colour and hook shape)
+| Series | Pillar | Promise / format | Hook shape | Visuals |
+|---|---|---|---|---|
+| **Loko Shu Kahe Chhe?** (લોકો શું કહે છે?) | Cinema | What critics, filmmakers and audiences said about a film this week, attributed | a named person + a strong word | official poster (3D card), quote cards, stamps |
+| **Box Office no Hisaab** (બોક્સ ઓફિસનો હિસાબ) | Cinema | One number story: budget vs collection, a record, a turnaround | "₹X → ₹Y" | count-ups, growing bars, poster |
+| **Friday ni Film** (શુક્રવારની ફિલ્મ) | Cinema/OTT | What's releasing this Friday in Gujarati (+ 1 Hindi) and on OTT | "This Friday: N films, one surprise" | official posters, Ken Burns, stamps |
+| **Amdavad ma Aa Weekend** (આ વીકએન્ડ ક્યાં?) | Events | 4–5 verified events this weekend/fortnight: date, venue, price | "N plans for this weekend" | official event artwork, map pins, dates |
+| **Swad ni Shodh** (સ્વાદની શોધ) | Food/discoveries | A dish, street-food spot or new opening, with its story | a price, an age, a secret | licensed photos / AniDoodle food art |
+| **Ae Kem?** (એ કેમ?) | Culture explainer | "That's not a mistake, it's design": why something Gujarati is the way it is | a paradox | AniDoodle illustration, 3D, maps |
+| **Group ma Dhamaal** (ગ્રુપમાં ધમાલ) | Relatable comedy | Chat v3: family/friends/office/society groups, twist and punchline | the twist as cold open | chat engine v3 |
+| **Gujlish Shabdkosh** | Language | One word/phrase, how people really use it, a funny example | "You say it daily, but…" | kinetic type |
+| **Otlo Spotlight** | Promotional showcase | A local business, artist, creator or film team, told as a story | the founder's moment/number | their footage/photos (video-effects), credited |
+
+### Collaboration formats (make Otlo the page businesses want to be on)
+- **Otlo Spotlight** (above) is the showcase: a 25–35 s story Reel about one business/artist/project. Until
+  paid deals exist, pick genuinely notable subjects (verified with two sources), label it "Not sponsored", and
+  tag the business. It shows prospective partners what a feature looks like.
+- **Event highlights** (Amdavad ma Aa Weekend) and **Friday ni Film** show event organisers and producers the
+  promotional value without being ads.
+- **Collaboration CTA** (at most once a week, at the end of a Spotlight or an events Reel, never on comedy):
+  "Restaurant, event, film or brand? Feature with Otlo: DM 'FEATURE'" (EN) / "તમારો બિઝનેસ, ઇવેન્ટ કે ફિલ્મ
+  ઓટલા પર લાવવી છે? 'FEATURE' DM કરો". Saumya handles DMs personally; runs never reply or DM.
+- **Paid posts** follow RUNBOOK hard rule 7 (Saumya confirms; disclosed; paid-partnership label).
+- The weekly plan proposes 1 potential partner a week to Saumya (a business/film/event that fits a series), with
+  why it fits; it never contacts anyone.

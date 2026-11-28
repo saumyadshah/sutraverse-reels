@@ -49,7 +49,8 @@ function poster(cv){
   const cam = new THREE.PerspectiveCamera(32, w / h, 1, 100); cam.position.set(0, 0, 12);
   const tex = new THREE.Texture(img); tex.needsUpdate = true; tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 8;
   const aspect = (img.naturalWidth || 3) / (img.naturalHeight || 4);
-  const ph = 2 * Math.tan(THREE.MathUtils.degToRad(16)) * 12 * 0.86, pw = ph * aspect;
+  const vh = 2 * Math.tan(THREE.MathUtils.degToRad(16)) * 12, vw = vh * (w / h);
+  let ph = vh * 0.9, pw = ph * aspect; if (pw > vw * 0.9) { pw = vw * 0.9; ph = pw / aspect; }
   const card = new THREE.Mesh(new THREE.BoxGeometry(pw, ph, 0.06), [
     new THREE.MeshStandardMaterial({color: 0xF7EFE0}), new THREE.MeshStandardMaterial({color: 0xF7EFE0}),
     new THREE.MeshStandardMaterial({color: 0xF7EFE0}), new THREE.MeshStandardMaterial({color: 0xF7EFE0}),

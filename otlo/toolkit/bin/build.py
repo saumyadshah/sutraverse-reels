@@ -274,7 +274,7 @@ def qa(d, T, S):
     dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(d/'reel.mp4')], capture_output=True, text=True).stdout)
     chars = [len(l['gu']) for l in S['lines']]; speech = [c['off']-c['on'] for c in T['vo']]
     rate = [round(c/s, 1) for c, s in zip(chars, speech)]
-    warn = [f"{l['id']}: {r} chars/s (normal 10-14) - possible leaked instruction or truncation, LISTEN" for l, r in zip(S['lines'], rate) if r < 8.5 or r > 17]
+    warn = [f"{l['id']}: {r} chars/s (normal 10-14) - possible leaked instruction or truncation, LISTEN" for l, r in zip(S['lines'], rate) if (r < 8.5 or r > 17) and len(l['gu']) >= 25]   # very short chat lines ("હું તો આવું જ!") naturally run fast/slow
     vs = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,codec_name,profile,bit_rate,r_frame_rate,pix_fmt", "-of", "json", str(d/'reel.mp4')], capture_output=True, text=True).stdout)["streams"][0]
     if (vs.get("width"), vs.get("height")) != (1080, 1920): warn.append(f"resolution {vs.get('width')}x{vs.get('height')}, expected 1080x1920")
     if dur > 40: warn.append(f"duration {dur:.0f}s: over the 40 s ceiling (target 18-35 s)")
