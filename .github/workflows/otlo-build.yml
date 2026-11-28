@@ -23,7 +23,7 @@ jobs:
       - name: Install tools
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-color-emoji > /dev/null
-          pip install --quiet requests numpy pillow playwright
+          pip install --quiet requests numpy pillow playwright cairosvg
           python -m playwright install --with-deps chromium > /dev/null
           (cd otlo/toolkit && npm install --silent)
       - name: Voice + render

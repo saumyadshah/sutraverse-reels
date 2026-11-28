@@ -59,10 +59,10 @@ for im in S.get('images', []):
                 else: print(iid, 'POLLINATIONS HTTP', r.status_code)
             except Exception as e: print(iid, 'POLLINATIONS', type(e).__name__)
         if not done: print(iid, 'AI IMAGE FAILED')
-    elif src in ('wiki_poster', 'og', 'url'):
+    elif src in ('wiki_poster', 'wiki_logo', 'og', 'url'):
         url = None
         try:
-            if src == 'wiki_poster':
+            if src in ('wiki_poster', 'wiki_logo'):
                 # posters are non-free files, which the pageimages API ignores: read the infobox "image =" field instead
                 API = "https://en.wikipedia.org/w/api.php"
                 sr = requests.get(API, headers=UA, timeout=60, params={"action": "query", "format": "json", "list": "search",
@@ -70,7 +70,8 @@ for im in S.get('images', []):
                 title = sr[0]['title'] if sr else im['page']
                 wt = requests.get(API, headers=UA, timeout=60, params={"action": "parse", "format": "json", "page": title,
                                   "prop": "wikitext", "redirects": 1}).json().get('parse', {}).get('wikitext', {}).get('*', '')
-                m = re.search(r'\|\s*image\s*=\s*(?:\[\[)?(?:File:|Image:)?([^\n|\]]+\.(?:jpe?g|png|webp))', wt, re.I)
+                fld = 'logo' if src == 'wiki_logo' else 'image'
+                m = re.search(r'\|\s*' + fld + r'\s*=\s*(?:\[\[)?(?:File:|Image:)?([^\n|\]]+\.(?:jpe?g|png|webp|svg))', wt, re.I)
                 ref = "https://en.wikipedia.org/wiki/" + title.replace(' ', '_')
                 if m:
                     fq = requests.get(API, headers=UA, timeout=60, params={"action": "query", "format": "json", "prop": "imageinfo",
@@ -88,7 +89,15 @@ for im in S.get('images', []):
                 r = requests.get(url, headers=UA, timeout=120)
                 if r.status_code == 200 and len(r.content) > 5000:
                     from PIL import Image; import io
-                    Image.open(io.BytesIO(r.content)).convert('RGB').save(out/f'{iid}.jpg', quality=95)
+                    if url.lower().endswith('.svg'):
+                        (out/f'{iid}.svg').write_bytes(r.content)
+                        try:
+                            import cairosvg; cairosvg.svg2png(bytestring=r.content, write_to=str(out/f'{iid}.png'), output_width=1200)
+                        except Exception as e: print(iid, 'svg->png', e)
+                    elif src == 'wiki_logo':
+                        Image.open(io.BytesIO(r.content)).convert('RGBA').save(out/f'{iid}.png')
+                    else:
+                        Image.open(io.BytesIO(r.content)).convert('RGB').save(out/f'{iid}.jpg', quality=95)
                     credits.append({"id": iid, "title": im.get('credit', 'Official artwork'), "author": im.get('credit', ''), "licence": "official promotional artwork, used with credit for news/commentary", "url": ref})
                     print(iid, 'ok', src, url[:90])
                 else: print(iid, src, 'HTTP', r.status_code)

@@ -1,61 +1,28 @@
 {
  "voice": "Sulafat",
  "direction": "",
- "speed": 1.17,
+ "speed": 1.08,
  "images": [
   {
-   "id": "still",
-   "source": "og",
-   "url": "https://www.festival-cannes.com/en/2024/manthan-the-power-of-the-collective/",
-   "credit": "Manthan (1976), restored by Film Heritage Foundation · via Festival de Cannes"
+   "id": "logo_amul",
+   "source": "wiki_logo",
+   "page": "Amul"
   },
   {
-   "id": "still",
-   "source": "og",
-   "url": "https://filmheritagefoundation.co.in/film-heritage-foundation-restores-shyam-benegals-acclaimed-hindi-film-manthan-1976/",
-   "credit": "Manthan (1976), restored by Film Heritage Foundation"
+   "id": "logo_cannes",
+   "source": "wiki_logo",
+   "page": "Cannes Film Festival"
   },
   {
-   "id": "fhf",
+   "id": "logo_fhf",
+   "source": "wiki_logo",
+   "page": "Film Heritage Foundation"
+  },
+  {
+   "id": "logo_fhf",
    "source": "og",
-   "url": "https://filmheritagefoundation.co.in/film-heritage-foundation-restores-shyam-benegals-acclaimed-hindi-film-manthan-1976/",
+   "url": "https://filmheritagefoundation.co.in/",
    "credit": "Film Heritage Foundation"
-  },
-  {
-   "id": "kurien",
-   "source": "commons",
-   "query": "Verghese Kurien",
-   "min_width": 400
-  },
-  {
-   "id": "benegal",
-   "source": "commons",
-   "query": "Shyam Benegal",
-   "min_width": 500
-  },
-  {
-   "id": "palais",
-   "source": "commons",
-   "query": "Palais des Festivals Cannes red carpet",
-   "min_width": 1600
-  },
-  {
-   "id": "palais",
-   "source": "commons",
-   "query": "Palais des Festivals et des Congrès Cannes",
-   "min_width": 1600
-  },
-  {
-   "id": "milk",
-   "source": "commons",
-   "query": "milk cans Gujarat dairy",
-   "min_width": 1000
-  },
-  {
-   "id": "milk",
-   "source": "commons",
-   "query": "milk collection centre India cooperative",
-   "min_width": 1000
   }
  ],
  "thumb": {
@@ -76,59 +43,61 @@
  "lines": [
   {
    "id": "s1",
-   "gu": "આ ફિલ્મના પ્રોડ્યુસર કોઈ સ્ટુડિયો નહોતા. પાંચ લાખ ગુજરાતી ખેડૂતો હતા!",
+   "gu": "આ ફિલ્મનો પ્રોડ્યુસર કોઈ સ્ટુડિયો નહોતો. પ્રોડ્યુસર હતા, પાંચ લાખ ગુજરાતી ખેડૂતો!",
    "en": [
     "This film's producer wasn't a studio.",
-    "It was five lakh Gujarati farmers!"
+    "Its producers were five lakh Gujarati farmers!"
    ]
   },
   {
    "id": "s2",
-   "gu": "વાત આણંદની દૂધ સહકારી ચળવળની, ને એના સૂત્રધાર ડૉક્ટર વર્ગીસ કુરિયનની.",
+   "gu": "વાત છે આણંદની. જ્યાં ડૉક્ટર વર્ગીસ કુરિયનની આગેવાનીમાં, અમૂલ બન્યું ખેડૂતોની તાકાત.",
    "en": [
-    "It's the story of Anand's milk cooperatives,",
-    "and the man behind them, Dr Verghese Kurien."
+    "This is Anand,",
+    "where, led by Dr Verghese Kurien,",
+    "Amul became the farmers' strength."
    ]
   },
   {
    "id": "s3",
-   "gu": "કુરિયન ને શ્યામ બેનેગલ આ વાર્તા પરદે લાવવા માગતા હતા. પણ પૈસા ક્યાંથી?",
+   "gu": "કુરિયન ને શ્યામ બેનેગલ, આ વાર્તા મોટા પરદે લાવવા માગતા હતા. સવાલ એક જ: પૈસા કોણ આપે?",
    "en": [
-    "Kurien and Shyam Benegal wanted it on screen.",
-    "But who would pay?"
+    "Kurien and Shyam Benegal wanted this story on the big screen.",
+    "One question: who would pay?"
    ]
   },
   {
    "id": "s4",
-   "gu": "જવાબ: દરેક સભ્ય ખેડૂતના બે રૂપિયા. પાંચ લાખ ખેડૂતો, એટલે દસ લાખ રૂપિયા!",
+   "gu": "જવાબ આપ્યો ખેડૂતોએ. દરેકના બે રૂપિયા. પાંચ લાખ ખેડૂતો, એટલે દસ લાખ, લગભગ આખું બજેટ!",
    "en": [
-    "The answer: ₹2 from every member farmer.",
-    "Five lakh farmers. ₹10 lakh."
+    "The farmers answered. ₹2 each.",
+    "Five lakh farmers: ₹10 lakh, almost the whole budget!"
    ]
   },
   {
    "id": "s5",
-   "gu": "એટલે જ ફિલ્મ ખૂલે છે આ લાઇનથી: પાંચ લાખ ગુજરાતી ખેડૂતો રજૂ કરે છે.",
+   "gu": "એટલે જ, ફિલ્મનું પહેલું જ ટાઇટલ છે: પાંચ લાખ ગુજરાતી ખેડૂતો રજૂ કરે છે.",
    "en": [
-    "That's why the film opens with:",
+    "That's why the very first title reads:",
     "'500,000 farmers of Gujarat present'."
    ]
   },
   {
    "id": "s6",
-   "gu": "ખેડૂતો ટ્રકો ભરીને પોતાની ફિલ્મ જોવા આવ્યા. ને બે હજાર ચોવીસમાં, મંથન પહોંચી કાન!",
+   "gu": "ગામેગામથી ખેડૂતો ટ્રકો ભરીને પોતાની ફિલ્મ જોવા આવ્યા. ને અડતાળીસ વર્ષ પછી, મંથન પહોંચી કાન!",
    "en": [
     "Farmers came by the truckload to see their film.",
-    "And in 2024, Manthan reached Cannes!"
+    "And 48 years later, Manthan reached Cannes!"
    ]
   },
   {
    "id": "s7",
    "gu": "ભારતની પહેલી ક્રાઉડફંડેડ ફિલ્મ, ગુજરાતના ખેડૂતોની. આ વાત કોને મોકલશો?",
    "en": [
-    "India's first crowdfunded film, by Gujarat's farmers.",
+    "India's first crowdfunded film, made by Gujarat's farmers.",
     "Who are you sending this to?"
    ]
   }
- ]
+ ],
+ "single_take": true
 }
