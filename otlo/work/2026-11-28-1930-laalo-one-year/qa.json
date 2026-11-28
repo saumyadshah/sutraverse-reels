@@ -1,0 +1,25 @@
+{
+ "video": {
+  "codec_name": "h264",
+  "profile": "High",
+  "width": 1080,
+  "height": 1920,
+  "pix_fmt": "yuv420p",
+  "r_frame_rate": "30/1",
+  "bit_rate": "11959304"
+ },
+ "duration": 29.0,
+ "lufs": -13.7,
+ "chars_per_sec": [
+  12.3,
+  11.9,
+  12.4,
+  11.9,
+  11.9,
+  13.3
+ ],
+ "warnings": [
+  "scene 2: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 767, bottom 1378, right 775)"
+ ],
+ "ok": false
+}

@@ -1,0 +1,27 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,18,0,2,90,170,450,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.06,0:00:01.78,Sub,,0,0,0,,A ₹50 lakh Gujarati film
+Dialogue: 0,0:00:01.81,0:00:03.56,Sub,,0,0,0,,that crossed ₹100 crore!
+Dialogue: 0,0:00:04.04,0:00:05.98,Sub,,0,0,0,,One year ago this week.
+Dialogue: 0,0:00:06.01,0:00:08.55,Sub,,0,0,0,,The film: Laalo – Krishna Sada
+Dialogue: 0,0:00:08.58,0:00:09.44,Sub,,0,0,0,,Sahaayate.
+Dialogue: 0,0:00:09.92,0:00:11.07,Sub,,0,0,0,,No big stars.
+Dialogue: 0,0:00:11.10,0:00:13.61,Sub,,0,0,0,,A first-time director, Ankit
+Dialogue: 0,0:00:13.64,0:00:14.37,Sub,,0,0,0,,Sakhiya.
+Dialogue: 0,0:00:14.85,0:00:17.42,Sub,,0,0,0,,Almost no takers when it opened.
+Dialogue: 0,0:00:17.45,0:00:19.15,Sub,,0,0,0,,Then the tide turned!
+Dialogue: 0,0:00:19.63,0:00:21.41,Sub,,0,0,0,,₹100 crore in 51 days,
+Dialogue: 0,0:00:21.44,0:00:23.72,Sub,,0,0,0,,breaking Chaal Jeevi Laiye's
+Dialogue: 0,0:00:23.75,0:00:24.33,Sub,,0,0,0,,record!
+Dialogue: 0,0:00:24.81,0:00:26.59,Sub,,0,0,0,,Which film is the next Laalo?
+Dialogue: 0,0:00:26.62,0:00:28.11,Sub,,0,0,0,,Tell us in the comments!
