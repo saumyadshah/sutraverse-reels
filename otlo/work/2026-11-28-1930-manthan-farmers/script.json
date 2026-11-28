@@ -1,0 +1,22 @@
+{
+ "voice": "Sulafat",
+ "direction": "",
+ "images": [
+  {"id": "poster", "source": "wiki_poster", "page": "Manthan 1976 film Shyam Benegal", "credit": "Official poster, Manthan (1976)"},
+  {"id": "farmers", "source": "ai", "style": "photo", "prompt": "1970s Gujarat village at dawn, a long queue of farmers in white dhotis and turbans and women in saris carrying steel and brass milk cans at a small village milk cooperative collection centre, buffaloes nearby, warm sunrise light, vintage 1970s colour film documentary photograph", "size": [1080, 1920], "seed": 21},
+  {"id": "coins", "source": "ai", "style": "photo", "prompt": "Close-up of weathered farmer's hands holding two old Indian one-rupee coins from the 1970s over a dark wooden table, warm side light, shallow depth of field, documentary still life", "size": [1080, 1920], "seed": 5},
+  {"id": "trucks", "source": "ai", "style": "photo", "prompt": "1970s small-town Gujarat, open trucks packed with excited villagers in white clothes and colourful saris arriving outside a single-screen cinema hall with a hand-painted film banner (no readable text), evening light, crowd, vintage 1970s colour film documentary photograph", "size": [1080, 1920], "seed": 9},
+  {"id": "cannes", "source": "commons", "query": "Palais des Festivals Cannes red carpet steps", "min_width": 1600},
+  {"id": "dairy", "source": "commons", "query": "Amul dairy Anand Gujarat", "min_width": 1200}
+ ],
+ "thumb": {"chip_gu": "ગુજરાતી ખેડૂતોની ફિલ્મ", "chip_en": "Made by farmers", "gu": "₹2 × 5 લાખ ખેડૂત", "en": "The film that reached Cannes", "ribbon_gu": "ભારતની પહેલી ક્રાઉડફંડેડ ફિલ્મ", "ribbon_en": "India's first crowdfunded film", "art_t": 5.6, "art_clip": [140, 600, 800, 780]},
+ "lines": [
+  {"id": "s1", "gu": "પાંચ લાખ ગુજરાતી ખેડૂતો. દરેકે આપ્યા માત્ર બે રૂપિયા. ને બની એક ફિલ્મ, જે કાન સુધી પહોંચી!", "en": ["5 lakh Gujarati farmers. ₹2 each.", "And a film that reached Cannes!"]},
+  {"id": "s2", "gu": "ફિલ્મ હતી મંથન. ઓગણીસો છોંતેરની, શ્યામ બેનેગલની.", "en": ["The film: Manthan, 1976,", "directed by Shyam Benegal."]},
+  {"id": "s3", "gu": "વાર્તા ગુજરાતની દૂધ સહકારી ચળવળની, ડૉક્ટર વર્ગીસ કુરિયનથી પ્રેરિત.", "en": ["The story of Gujarat's milk cooperatives,", "inspired by Dr Verghese Kurien."]},
+  {"id": "s4", "gu": "પાંચ લાખ ગુણ્યા બે રૂપિયા, એટલે દસ લાખ. ને ફિલ્મનું બજેટ હતું લગભગ એટલું જ!", "en": ["5 lakh × ₹2 = ₹10 lakh.", "Roughly the film's whole budget!"]},
+  {"id": "s5", "gu": "ટાઇટલમાં લખાયું, પાંચ લાખ ગુજરાતી ખેડૂતો રજૂ કરે છે. ને ખેડૂતો ટ્રકો ભરીને પોતાની ફિલ્મ જોવા આવ્યા!", "en": ["The titles read: '500,000 farmers of Gujarat present'.", "And farmers came by the truckload to see their film!"]},
+  {"id": "s6", "gu": "ને બે હજાર ચોવીસમાં, ફોરકે રિસ્ટોરેશન સાથે, કાન ફિલ્મ ફેસ્ટિવલમાં વર્લ્ડ પ્રીમિયર!", "en": ["And in 2024, restored in 4K,", "a world premiere at the Cannes Film Festival!"]},
+  {"id": "s7", "gu": "ભારતની પહેલી ક્રાઉડફંડેડ ફિલ્મ, ગુજરાતના ખેડૂતોની. આ વાત કોને મોકલશો?", "en": ["India's first crowdfunded film, by Gujarat's farmers.", "Who are you sending this to?"]}
+ ]
+}
