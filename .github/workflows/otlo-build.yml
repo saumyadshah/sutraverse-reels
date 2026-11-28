@@ -30,21 +30,23 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          while read -r wd <&3; do
+          while read -r wd mode <&3; do
             [ -z "$wd" ] && continue
             : > "$wd/build.log"
             if [ -f "$wd/carousel.html" ] && [ ! -f "$wd/script.json" ]; then
               if python3 otlo/toolkit/bin/build.py carousel "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
               tail -20 "$wd/build.log"; continue
             fi
-            if grep -q '"images"' "$wd/script.json" 2>/dev/null; then python3 otlo/toolkit/img/get_images.py "$wd" >> "$wd/build.log" 2>&1 || echo "IMAGES FAILED" >> "$wd/build.log"; fi
+            if grep -q '"images"' "$wd/script.json" 2>/dev/null; then timeout 420 python3 otlo/toolkit/img/get_images.py "$wd" >> "$wd/build.log" 2>&1 || echo "IMAGES FAILED OR TIMED OUT" >> "$wd/build.log"; fi
             mkdir -p "$wd/vo"
             n=$(python3 -c "import json;print(len(json.load(open('$wd/script.json'))['lines']))")
             have=$(ls "$wd"/vo/s*.wav 2>/dev/null | wc -l)
             if [ "$have" -lt "$n" ]; then
               if [ -z "$GEMINI_API_KEY" ]; then echo "NO_KEY (GitHub secret GEMINI_API_KEY missing)" >> "$wd/build.log"; continue; fi
-              python3 otlo/toolkit/vo/make_vo.py "$wd/script.json" "$wd/vo" >> "$wd/build.log" 2>&1 || echo "VOICE FAILED" >> "$wd/build.log"
+              timeout 600 python3 otlo/toolkit/vo/make_vo.py "$wd/script.json" "$wd/vo" >> "$wd/build.log" 2>&1 || echo "VOICE FAILED OR TIMED OUT" >> "$wd/build.log"
             fi
+            # "<dir> assets" in queue.txt: fetch images + voice only (render happens in the session)
+            if [ "$mode" = "assets" ]; then echo "ASSETS OK" >> "$wd/build.log"; tail -30 "$wd/build.log"; continue; fi
             if timeout 1200 python3 -u otlo/toolkit/bin/build.py render "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
             tail -40 "$wd/build.log"
           done 3< otlo/toolkit/queue.txt
