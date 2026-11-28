@@ -31,9 +31,15 @@
       const mode = el.dataset.kinetic === 'chars' ? 'chars' : 'words';
       let parts;
       if (mode === 'chars' && window.SplitText) { parts = new SplitText(el, {type: 'words,chars'}).chars; }
-      else { const ws = el.textContent.trim().split(/\s+/);
-        el.innerHTML = ws.map((w, i) => `<span style="display:inline-block;margin-right:${i < ws.length - 1 ? '0.26em' : '0'}">${w}</span>`).join('');
-        parts = el.querySelectorAll('span'); }
+      else { // split into words but keep inline markup (<em>, <i>, <b>) around the words it wrapped
+        const words = [];
+        const walk = (node, wrap) => { node.childNodes.forEach(c => {
+          if (c.nodeType === 3) c.textContent.split(/\s+/).filter(Boolean).forEach(w => words.push({w, wrap}));
+          else if (c.nodeType === 1) walk(c, c.tagName.toLowerCase()); }); };
+        walk(el, null);
+        el.innerHTML = words.map((o, i) => { const inner = o.wrap ? `<${o.wrap}>${o.w}</${o.wrap}>` : o.w;
+          return `<span style="display:inline-block;margin-right:${i < words.length - 1 ? '0.26em' : '0'}">${inner}</span>`; }).join('');
+        parts = el.querySelectorAll(':scope > span'); }
       G.set(parts, {display: 'inline-block'});
       tl.fromTo(parts, {y: 70, opacity: 0, rotate: 4}, {y: 0, opacity: 1, rotate: 0, duration: 0.45, ease: 'back.out(2)',
         stagger: mode === 'chars' ? 0.018 : 0.07}, at);
