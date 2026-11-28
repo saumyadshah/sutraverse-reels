@@ -71,8 +71,7 @@ Same exclusions and rule precedence as the RUNBOOK. Note in the plan which skill
 **Pattern change:** no static carousel slots. Both daily slots (10:00 and 19:30) are Reels; carousel ideas become
 multi-scene explainer Reels (RUNBOOK 4C). **Mix rule:** every day has ≥ 1 *timely* post (release, number,
 announcement, anniversary this week, upcoming event, festival, weather); every week ≥ 4 entertainment/cinema
-posts (Gujarati first, Bollywood with a Gujarat/Gujarati angle), ≥ 2 events, ≥ 2 food/discoveries, ≤ 2 chat
-Reels (v3), ≥ 1 business/creator feature format (see below), ≥ 1 curiosity explainer (the Pol-maze pattern).
+posts (Gujarati first, Bollywood with a Gujarat/Gujarati angle), ≥ 2 events, ≥ 2 food/discoveries, 0 chat Reels (discontinued 28 Nov), ≥ 1 business/creator feature format (see below), ≥ 1 curiosity explainer (the Pol-maze pattern).
 
 ### Daily research routine (runs inside every PREP run, ~10 minutes, before writing)
 1. **Entertainment now:** WebSearch for this week's Gujarati releases and announcements ("Gujarati film
@@ -98,7 +97,7 @@ Reels (v3), ≥ 1 business/creator feature format (see below), ≥ 1 curiosity e
 | **Amdavad ma Aa Weekend** (આ વીકએન્ડ ક્યાં?) | Events | 4–5 verified events this weekend/fortnight: date, venue, price | "N plans for this weekend" | official event artwork, map pins, dates |
 | **Swad ni Shodh** (સ્વાદની શોધ) | Food/discoveries | A dish, street-food spot or new opening, with its story | a price, an age, a secret | licensed photos / AniDoodle food art |
 | **Ae Kem?** (એ કેમ?) | Culture explainer | "That's not a mistake, it's design": why something Gujarati is the way it is | a paradox | AniDoodle illustration, 3D, maps |
-| **Group ma Dhamaal** (ગ્રુપમાં ધમાલ) | Relatable comedy | Chat v3: family/friends/office/society groups, twist and punchline | the twist as cold open | chat engine v3 |
+| **Aapde Aavā J Chhie** (આપણે આવા જ છીએ) | Relatable observation | Narrated observational humour about Gujarati habits (no chat format) | a universal habit, named | documentary/illustration, kinetic type |
 | **Gujlish Shabdkosh** | Language | One word/phrase, how people really use it, a funny example | "You say it daily, but…" | kinetic type |
 | **Otlo Spotlight** | Promotional showcase | A local business, artist, creator or film team, told as a story | the founder's moment/number | their footage/photos (video-effects), credited |
 
@@ -114,3 +113,27 @@ Reels (v3), ≥ 1 business/creator feature format (see below), ≥ 1 curiosity e
 - **Paid posts** follow RUNBOOK hard rule 7 (Saumya confirms; disclosed; paid-partnership label).
 - The weekly plan proposes 1 potential partner a week to Saumya (a business/film/event that fits a series), with
   why it fits; it never contacts anyone.
+
+## Added 28 Nov, second brief ("Complete Content Strategy Overhaul, Weekly Planning and Immediate Reel Production")
+This section wins over everything above.
+- **No chat Reels, ever.** Formats: cinematic storytelling, documentary explainers, unknown facts, movie and
+  entertainment stories, historical timelines and visual breakdowns, comparisons, relatable narrated observation,
+  short news and event explainers.
+- **Weekly, not monthly.** Every Saturday the plan covers next Mon–Sun, 2 Reels a day (10:00, 19:30). Prepare ahead,
+  keep 2 reserve concepts, and swap in breaking entertainment news or events when they are genuinely bigger.
+- **Each planned Reel is a full package** in `otlo/plans/<monday>.md` (and a short form in the Calendar row): specific
+  topic and creative concept; the exact hook; the complete Gujarati voice-over script with English subtitles; the
+  duration; scene-by-scene visual direction (which real images/official artwork/AI reconstructions, which motion);
+  research sources with URLs; editing and motion plan (GSAP/Three.js/Manim/Remotion/Lemo style); the complete caption;
+  verified Instagram tags (checked with `vidiq_ig_profile` or seen tagged on the official account); [keywords];
+  hashtags; CTA; publishing time. PREP runs then build exactly that package (re-verifying facts the same day).
+- **Look back first:** before planning, read last week's insights (plays, skip %, watched %, shares, saves, comments,
+  follows) and write what to repeat and what to drop.
+- **Topic test (all six must have answers):** What is happening? Why should the audience care? What is the most
+  unexpected angle? What will viewers learn that they didn't know? What is the visual storytelling opportunity?
+  Why would someone share, save or comment?
+- **Quality review (answer in the ready file; any "no" → improve or replace before scheduling):** interesting and
+  original? Hook stops the scroll? Reveals something surprising/informative/entertaining/relatable? Script concise?
+  Images realistic and relevant? Motion professional and appropriate? Voice natural and consistent? Subtitles in safe
+  zones? Correct in 9:16 and 3:4? Thumbnail appealing? Caption structured? Handles verified and relevant? Facts,
+  sources and copyright checked? Would someone genuinely share it?

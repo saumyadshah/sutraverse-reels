@@ -97,7 +97,7 @@ for im in S.get('images', []):
     elif src == 'commons':
         q = requests.get("https://commons.wikimedia.org/w/api.php", headers=UA, timeout=60, params={
             "action": "query", "format": "json", "generator": "search", "gsrsearch": im['query'] + " filetype:bitmap",
-            "gsrnamespace": 6, "gsrlimit": 15, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 1600}).json()
+            "gsrnamespace": 6, "gsrlimit": 40, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 1600}).json()
         pages = sorted(q.get('query', {}).get('pages', {}).values(), key=lambda p: p.get('index', 99))
         used = {c.get('title') for c in credits}
         pages = [p for p in pages if p['title'] not in used]

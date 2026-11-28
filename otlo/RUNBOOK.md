@@ -113,12 +113,11 @@ Every post must also meet all of these; the review in Step 6 checks each one.
    Still no automated replies/DMs and no deleting posts.
 8. **Mandatory for every post: highest-quality export, a designed thumbnail/cover, the full caption formula
    (with the [keywords] block and exactly 5 hashtags), and the skills listed below.** A post missing any of these is not posted.
-9. **When in doubt, skip the topic, not the slot** (Saumya, 22 Nov: a slot must not stay empty). If this slot's
-   topic fails rule 2, 3 or 4, mark its row `Skipped` with the reason and make a **backup** for the same slot:
-   (a) a *Family Group Chat* Reel (original comedy, invented characters, no facts to check) on a seasonal or
-   topical everyday moment, or (b) an `Idea bank` row whose sources you CAN confirm today. Add the backup as a new
-   calendar row (same date and time, Status `Posted` once live) and post it, even if it goes out up to 60 minutes
-   late. Never publish a backup that fails any hard rule; never post twice in one slot. Log both.
+9. **When in doubt, skip the topic, not the slot** (Saumya, 22 Nov), **but never post weak content** (28 Nov). If this
+   slot's topic fails rule 2, 3 or 4, mark its row `Skipped` with the reason and make a **backup** from the weekly
+   plan's reserve list or the `Idea bank`: a fact-based documentary Reel whose sources you CAN confirm today. Add it
+   as a new calendar row (same date and time) and post it, even up to 60 minutes late. **Never use a chat Reel as a
+   backup (chat Reels are discontinued).** If no backup meets the quality review, leave the slot empty and say why.
 10. **Language posts (Gujlish Shabdkosh, Shabdkosh Cards):** the two sources may be one Gujarati dictionary
    (GujaratiLexicon, Bhagavadgomandal, Rekhta Gujarati) plus one published usage example from a reputable
    Gujarati outlet or book; say "commonly used to mean" rather than claiming a dictionary definition you could
@@ -140,6 +139,7 @@ if a skill says otherwise). If a skill is not available in the run, apply its id
 | Research (3) | `anthropic-skills:content-research` / `anthropic-skills:trend-spotter` for angles (free tools only in daily runs) |
 | Motion and visuals (4B) | `otlo/toolkit/TOOLS.md` (read it): GSAP docs `otlo/toolkit/skills-ref/gsap/`, Three.js docs `otlo/toolkit/skills-ref/threejs/`, art-motion grammar `otlo/toolkit/skills-ref/huashu-art-motion/`, illustrations `otlo/toolkit/anidoodle/SKILL.md` |
 | Series and formats | `anthropic-skills:series-planner` (weekly plan), the series bible in `otlo/PLANNING.md` |
+| Quality review (6) | Saumya's 13 questions (PLANNING.md → Quality review), answered in the ready file |
 
 Not used, because they break Otlo rules: `comment-responder`, `dm-script-writer`, `content-factory` (auto-DMs and
 3 posts a day), `collab-outreach` / `creator-outreach` / `influencer-partnerships` / `ugc-creator-brief` (no
@@ -190,25 +190,21 @@ indigo #1B2A4A, red #A8322A, haldi #E3A21A, rani #C2185B sparingly, leaf #3C7A3A
 Gujarati headline + English headline + optional short body + SVG art of the real subject. Keep the bottom 260 px
 free (subtitles). Quality bar: `otlo/toolkit/examples/2026-11-21-tulsi-vivah/`.
 
-### 4B-chat. Chat-style Reels (Family Group Chat etc.): v2, mandatory
-Write `chat.json` and run `python3 otlo/toolkit/bin/chat_reel.py otlo/work/<dir>`: it writes `reel.html` AND
-`script.json` (one beat = one message = one voiced line, in that character's own voice). See the docstring for
-the format; example `otlo/work/2026-11-26-1930-family-group-invite/`.
-- Cast voices (keep them consistent across Reels): Ba `Gacrux` · Mummy `Aoede` · Pappa `Algenib` · Fai `Leda` ·
-  Jay (cousin abroad) `Puck` · narrator `Sulafat` (final ask only).
-- Writing: open on the most dramatic message (a voice note from Ba, a forwarded alarm, a one-word bombshell);
-  every beat escalates, reveals or twists; use real chat texture (voice notes with transcripts from elders, a
-  "Forwarded many times", an emoji reaction, a deleted message someone replies to, a reply to the wrong
-  message); payoff in the last two beats; 6–10 beats. A pinned caption at the top sets it up for silent viewers.
-- No polite, explanatory or greeting messages. If a beat could be cut without losing the joke, cut it.
-- **v3 (28 Nov; chat Reels had the worst skip rates, 72–89%):** always set `"cold_open"` (the twist message as
-  a big hook on frame one, then "⏪ 2 minutes earlier") and mark the twist beat(s) `"punch": true` (camera
-  punch-in + shake). Use `"type": "system"` for "X left / X added Y / X changed the group name" moments.
-  Mix the cast and the setting: family group, friends' group, office group, society/building group, cousins,
-  in-laws, a couple. Language as people really type: Gujarati, Gujlish or Hinglish, with English words left in
-  English. The premise must be instantly recognisable ("this happens in my family/group!"), escalate, and land a
-  real punchline or reversal; no predictable endings. At most 2 chat Reels a week; keep the one that performs
-  and change the format of the one that doesn't. Example: `otlo/work/2026-11-29-1930-friends-upi/chat.json`.
+### 4B-chat. DISCONTINUED (Saumya, 28 Nov 2026)
+**No chat-style Reels, WhatsApp/message-exchange formats or artificial conversations, in any slot, as a backup or
+in the weekly plan.** `bin/chat_reel.py` stays in the repo only so old work dirs can be rebuilt. Relatable humour is
+done as narrated observational Reels instead.
+
+### 4B-doc. Documentary look (default for facts, history, cinema, food origins, places)
+`<body class="doc">` + `runtime/doc.css`: real photographs full-bleed (`<div class="docbg"><img class="kb" src="img/<id>.jpg"></div>`,
+`.shade`, `.grain`), gold kicker, white Gujarati headline, gold English line, GSAP motion (kinetic words, count-ups,
+timelines, stamps) and Three.js where it earns it (3D poster card, card flip). Images from `script.json` `images`:
+official artwork first, then Commons photos, then photoreal AI (`"source":"ai","style":"photo"`) only for scenes no
+photograph shows, **always labelled on screen** ("Illustrative reconstruction (AI)") and in the caption. Lemo
+Opuscar styles (`setup_extras.sh lemo`; dark-documentary, archive-lighttable, map-explainer, newsreel) are the
+visual-grammar reference. Examples: `otlo/work/2026-11-28-1230-rani-ki-vav-note/`, `otlo/work/2026-11-28-1930-manthan-farmers/`.
+Fast path: queue `"<dir> assets"` (cloud fetches images + voice), pull, then render in the session with
+`python3 otlo/toolkit/bin/build.py render <dir>` and commit the outputs.
 
 ### 4C. Carousel ideas → multi-scene explainer Reels (Saumya, 28 Nov: no static carousels)
 Carousel concepts (lists, comparisons, cheat sheets, rankings, watchlists) are now built as **animated

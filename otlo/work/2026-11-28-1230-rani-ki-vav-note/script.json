@@ -2,21 +2,134 @@
  "voice": "Sulafat",
  "direction": "",
  "images": [
-  {"id": "wide", "source": "commons", "query": "Rani ki vav Patan stepwell view", "min_width": 1600},
-  {"id": "carving", "source": "commons", "query": "Rani ki vav wall decorations", "min_width": 1600},
-  {"id": "sculpture", "source": "commons", "query": "Rani ki vav sculpture Vishnu", "min_width": 1200},
-  {"id": "pillars", "source": "commons", "query": "Rani ki vav pillars corridor", "min_width": 1400},
-  {"id": "buried", "source": "ai", "style": "photo", "prompt": "A reconstruction: an ancient ornately carved sandstone stepwell in Gujarat, its upper carved walls just visible while the lower levels are buried under thick layers of brown river silt and sand, a dry riverbank, golden late-afternoon light, dust in the air, documentary photograph", "size": [1080, 1920], "seed": 11},
-  {"id": "shaft", "source": "commons", "query": "Rani ki vav well shaft", "min_width": 1000}
+  {
+   "id": "carving",
+   "source": "commons",
+   "query": "Rani ki vav",
+   "min_width": 1000
+  },
+  {
+   "id": "carving",
+   "source": "commons",
+   "query": "Rani ki vav Patan",
+   "min_width": 1000
+  },
+  {
+   "id": "pillars",
+   "source": "commons",
+   "query": "Rani ki vav",
+   "min_width": 1000
+  },
+  {
+   "id": "pillars",
+   "source": "commons",
+   "query": "Patan stepwell",
+   "min_width": 1000
+  },
+  {
+   "id": "buried",
+   "source": "commons",
+   "query": "Rani ki vav 19th century photograph",
+   "min_width": 600
+  },
+  {
+   "id": "buried",
+   "source": "commons",
+   "query": "Rani ki vav excavation",
+   "min_width": 600
+  },
+  {
+   "id": "buried",
+   "source": "commons",
+   "query": "Rani ki vav",
+   "min_width": 1000
+  },
+  {
+   "id": "shaft",
+   "source": "commons",
+   "query": "Rani ki vav well",
+   "min_width": 1000
+  },
+  {
+   "id": "shaft",
+   "source": "commons",
+   "query": "Rani ki vav",
+   "min_width": 1000
+  }
  ],
- "thumb": {"chip_gu": "₹100ની નોટ", "chip_en": "Your ₹100 note", "gu": "નોટ પલટાવો!", "en": "A lost wonder on your ₹100", "ribbon_gu": "સદીઓ સુધી જમીનમાં દટાયેલી", "ribbon_en": "Buried for centuries", "art_t": 2.6, "art_clip": [60, 640, 960, 760]},
+ "thumb": {
+  "chip_gu": "₹100ની નોટ",
+  "chip_en": "Your ₹100 note",
+  "gu": "નોટ પલટાવો!",
+  "en": "A lost wonder on your ₹100",
+  "ribbon_gu": "સદીઓ સુધી જમીનમાં દટાયેલી",
+  "ribbon_en": "Buried for centuries",
+  "art_t": 2.6,
+  "art_clip": [
+   60,
+   640,
+   960,
+   760
+  ]
+ },
  "lines": [
-  {"id": "s1", "gu": "ખિસ્સામાં સોની નોટ છે? પલટાવો! પાછળ જે છે, એ સદીઓ સુધી જમીનમાં દટાયેલું હતું.", "en": ["Got a ₹100 note? Flip it.", "What's on the back was buried for centuries."]},
-  {"id": "s2", "gu": "આ છે પાટણની રાણકી વાવ. અગિયારમી સદીમાં રાણી ઉદયમતીએ પતિ ભીમદેવની યાદમાં બંધાવી.", "en": ["This is Rani ki Vav, in Patan.", "Built in the 11th century by Queen Udayamati,", "in memory of her husband, King Bhima I."]},
-  {"id": "s3", "gu": "સામાન્ય રીતે રાજા રાણીની યાદમાં સ્મારક બનાવે. અહીં ઊલટું!", "en": ["Usually a king builds a memorial for his queen.", "Here, it's the other way round!"]},
-  {"id": "s4", "gu": "ને એ બનાવી ઊંધા મંદિર જેવી. સાત માળ નીચે ઊતરો, ને દીવાલે દીવાલે મૂર્તિઓ.", "en": ["Designed like an upside-down temple:", "seven storeys down, sculptures on every wall."]},
-  {"id": "s5", "gu": "પછી સરસ્વતીનાં પૂર આવ્યાં, ને આખી વાવ કાંપ નીચે દટાઈ ગઈ.", "en": ["Then the Saraswati flooded,", "and the whole stepwell vanished under silt."]},
-  {"id": "s6", "gu": "પણ એ જ કાંપે એને બચાવી! ચાલીસના દાયકામાં ફરી મળી, ને 2014માં યુનેસ્કો હેરિટેજ.", "en": ["But that silt preserved it!", "Found again in the 1940s,", "a UNESCO World Heritage Site since 2014."]},
-  {"id": "s7", "gu": "હવે સોની નોટ આપો, તો એક વાર પાછળ જોજો. તમે રાણકી વાવ જોઈ છે?", "en": ["Next time you pay with ₹100, flip it.", "Have you been to Rani ki Vav?"]}
+  {
+   "id": "s1",
+   "gu": "ખિસ્સામાં સોની નોટ છે? પલટાવો! પાછળ જે છે, એ સદીઓ સુધી જમીનમાં દટાયેલું હતું.",
+   "en": [
+    "Got a ₹100 note? Flip it.",
+    "What's on the back was buried for centuries."
+   ]
+  },
+  {
+   "id": "s2",
+   "gu": "આ છે પાટણની રાણકી વાવ. અગિયારમી સદીમાં રાણી ઉદયમતીએ પતિ ભીમદેવની યાદમાં બંધાવી.",
+   "en": [
+    "This is Rani ki Vav, in Patan.",
+    "Built in the 11th century by Queen Udayamati,",
+    "in memory of her husband, King Bhima I."
+   ]
+  },
+  {
+   "id": "s3",
+   "gu": "સામાન્ય રીતે રાજા રાણીની યાદમાં સ્મારક બનાવે. અહીં ઊલટું!",
+   "en": [
+    "Usually a king builds a memorial for his queen.",
+    "Here, it's the other way round!"
+   ]
+  },
+  {
+   "id": "s4",
+   "gu": "ને એ બનાવી ઊંધા મંદિર જેવી. સાત માળ નીચે ઊતરો, ને દીવાલે દીવાલે મૂર્તિઓ.",
+   "en": [
+    "Designed like an upside-down temple:",
+    "seven storeys down, sculptures on every wall."
+   ]
+  },
+  {
+   "id": "s5",
+   "gu": "પછી સરસ્વતીનાં પૂર આવ્યાં, ને આખી વાવ કાંપ નીચે દટાઈ ગઈ.",
+   "en": [
+    "Then the Saraswati flooded,",
+    "and the whole stepwell vanished under silt."
+   ]
+  },
+  {
+   "id": "s6",
+   "gu": "પણ એ જ કાંપે એને બચાવી! ચાલીસના દાયકામાં ફરી મળી, ને 2014માં યુનેસ્કો હેરિટેજ.",
+   "en": [
+    "But that silt preserved it!",
+    "Found again in the 1940s,",
+    "a UNESCO World Heritage Site since 2014."
+   ]
+  },
+  {
+   "id": "s7",
+   "gu": "હવે સોની નોટ આપો, તો એક વાર પાછળ જોજો. તમે રાણકી વાવ જોઈ છે?",
+   "en": [
+    "Next time you pay with ₹100, flip it.",
+    "Have you been to Rani ki Vav?"
+   ]
+  }
  ]
 }
