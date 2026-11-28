@@ -6,6 +6,14 @@ Posts: Reels (Gujarati voice-over, English subtitles, bilingual on-screen text) 
 nothing. Each run handles **one slot**: the calendar row whose Date is today (Asia/Kolkata) and whose
 Time (IST) is the run's slot (`13:00` = midday run, `19:30` = evening run).
 
+
+> ## ⛔ HOLD (Saumya, 28 Nov 2026 12:08 IST): NO NEW REELS, NO PUBLISHING UNTIL SHE APPROVES THE OTLO BRAND STANDARD
+> Saumya is reviewing a remake of the Manthan/Amul Reel that sets the new OTLO visual identity. Until
+> `otlo/BRAND_APPROVED` exists in the repo: PREP runs build nothing and email one line ("OTLO on hold: awaiting
+> brand-standard approval"); PUBLISH runs publish nothing (recover nothing new either) and finish with that line;
+> the weekly plan may research and write the plan note and calendar rows but must say visuals follow the brand
+> standard once approved. Never publish `otlo/work/2026-11-28-1930-*` or the remake without her explicit approval in chat.
+
 ## Schedule (Saumya, 26 Nov 2026 overhaul): prepared in advance, two posts every day
 
 Two posts every day, weekends included: **Morning 10:00 IST** and **Evening 19:30 IST**. Days alternate
