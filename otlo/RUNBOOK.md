@@ -270,7 +270,7 @@ Swipe-style Reels: same video settings; slides rendered 1080×1350 lossless.
   share", never desperate.
 - **Credits**: sources; official artwork credit; "Not sponsored" when the subject could look promotional; the
   paid-partnership line first when it is one.
-- **Tags**: for films/events/businesses, list the official handles to tag in the ready file (verified with
+- **Tags**: first check `otlo/handles.md` (handles Saumya supplied; treat as verified, never guess one). For films/events/businesses, list the official handles to tag in the ready file (verified with
   `vidiq_ig_profile`, or seen tagged on the official account's own posts) and @mention one or two in the caption
   where natural (the studio, the director).
 - `[keywords]`: 8–12 real search phrases, English + Gujarati script, comma-separated, in square brackets.
