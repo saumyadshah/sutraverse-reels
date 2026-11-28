@@ -158,13 +158,17 @@ def music(d, T):
         s0 = int(x0*SR); n = min(int(.06*SR), N-s0)
         out[s0:s0+n] += .05*rng.standard_normal(n)*np.exp(-np.arange(n)/SR*60); x0 += 60/84/2
     out *= np.minimum(1, np.minimum(t/.15, (DUR-t)/1.0)); out /= np.max(np.abs(out))*1.15; out *= .5
+    brand = json.loads((d/'script.json').read_text()).get('score') == 'otlo'
+    if brand:   # OTLO brand standard: the composed score (bin/score.py) replaces the generic bed
+        import sys as _s; _s.path.insert(0, str(HERE)); from score import score as _score
+        sc_ = _score(T, SR); sc_ = sc_[:N] if len(sc_) >= N else np.pad(sc_, (0, N-len(sc_))); out = sc_*.5
     for kind, at in sfx_events(d, T):                    # sound design: whoosh on cuts, pop on reveals, ping on messages
         s0 = int(at*SR)
         if s0 >= N: continue
         if kind == 'whoosh':
             n = min(int(.32*SR), N-s0); x = np.arange(n)/SR; nz = rng.standard_normal(n)
             env_ = np.sin(np.pi*np.clip(x/.32, 0, 1))**2; nz = np.convolve(nz, np.ones(12)/12, 'same')
-            out[s0:s0+n] += .55*nz*env_
+            out[s0:s0+n] += (.22 if brand else .55)*nz*env_   # brand: a soft air swell under the dissolve
         elif kind == 'pop':
             n = min(int(.09*SR), N-s0); x = np.arange(n)/SR
             out[s0:s0+n] += .35*np.sin(2*np.pi*(900-5000*x)*x)*np.exp(-x*45)
