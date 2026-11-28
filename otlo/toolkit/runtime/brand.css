@@ -79,7 +79,7 @@ body.otlo .scene{padding:0!important}
 
 /* press seal / stamp */
 .o-seal{position:absolute;z-index:6;width:230px;height:230px;border-radius:50%;border:8px solid var(--o-verm);display:flex;align-items:center;justify-content:center;text-align:center;
-  font:800 34px/1.05 'Fira Sans',sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--o-verm);background:rgba(251,246,236,.9);opacity:0}
+  font:800 34px/1.08 'Fira Sans','Anek Gujarati',sans-serif;letter-spacing:0;text-transform:uppercase;color:var(--o-verm);background:rgba(251,246,236,.9);opacity:0}
 .o-seal::after{content:"";position:absolute;inset:10px;border-radius:50%;border:2px dashed var(--o-verm)}
 
 /* end slate */

@@ -231,6 +231,13 @@ async def thumbnail(d, S):
     th = dict(S.get('thumb') or {})
     if not th.get('gu'): th['gu'] = S['lines'][0]['gu'][:24]
     t = float(th.get('art_t', 3.0)); clip = th.get('art_clip', [0, 820, 1080, 1060])
+    if (d/'cover.html').exists():   # brand standard: a designed cover page (1080x1920) wins over the generic template
+        async with async_playwright() as p:
+            b = await p.chromium.launch(args=CHROME_ARGS); pg = await b.new_page(viewport={'width': 1080, 'height': 1920})
+            await pg.goto(page_url(d/'cover.html')); await pg.evaluate("document.fonts.ready"); await pg.wait_for_timeout(900)
+            await pg.screenshot(path=str(d/'thumb.png'), type='png'); await b.close()
+        from PIL import Image
+        Image.open(d/'thumb.png').convert('RGB').save(d/'thumb.jpg', quality=95, subsampling=0); return
     async with async_playwright() as p:
         b = await p.chromium.launch(args=CHROME_ARGS); pg = await b.new_page(viewport={'width': 1080, 'height': 1920})
         await pg.goto(page_url(d/'reel.html')); await wait_ready(pg)
