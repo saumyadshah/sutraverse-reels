@@ -26,3 +26,12 @@
 | Weekend watchlist (swipe-style) | 6 (lagging?) | 75 | 32.7 | 0 | 0 | 0 |
 Lesson: timely subjects with real visuals and named people beat evergreen explainers and chat Reels by about 10×. Test next:
 chat v3 (cold open), FX-layer motion Reels, official-artwork film posts, events roundups.
+
+## Weekly plan look-back, 28 Nov (lifetime, read 28 Nov evening)
+| Reel | Plays | Skip % | Watched % | Shares | Saves | Comments |
+|---|---|---|---|---|---|---|
+| Ruff & Tuff Kanya | 1,473 | 62.5 | 23.7 | 6 | 2 | 3 |
+| Pol maze | 1,152 | 56.8 | 22.5 | 4 | 1 | 0 |
+| Rani ki Vav ₹100 note (day 1) | 122 | 61.5 | 16.1 | 0 | 0 | 0 |
+| Chaniya choli chat v2 (day 1) | 117 | 54.6 | 29.2 | 0 | 0 | 0 |
+Account 22–28 Nov: 3,792 views, 3,269 reached, 4 followers. Lessons for w/c 30 Nov: timely cinema + official poster + named person; "it's design / it's wrong" reveal hooks; 25–30 s; no chat, no swipe carousels.
