@@ -1,7 +1,7 @@
-# OTLO brand standard v1: "Kankotri Press" (draft for Saumya's approval, 28 Nov 2026)
+# OTLO brand standard v1.1: "Kankotri Press" (approved by Saumya, 28 Nov 2026)
 
 Pilot: `otlo/work/2026-11-28-amul-manthan-v2/` (Manthan / Amul). Kit: `runtime/brand.css` + `runtime/brand.js`.
-Status: **approved in principle by Saumya (28 Nov 16:07) with improvements; v2 delivered for final sign-off.** When she approves, create `otlo/BRAND_APPROVED`; from then on every Reel uses this standard.
+Status: **APPROVED by Saumya, 28 Nov 2026 17:28 IST (v1.1: realistic toran, cinematic dissolves, single-take voice, OTLO score, official logos). Mandatory for every Reel.** Reference: `otlo/work/2026-11-28-amul-manthan-v2`.
 
 ## The idea
 An OTLO feature looks like a beautifully printed Gujarati invitation (kankotri): ivory card stock, letterpress vermilion

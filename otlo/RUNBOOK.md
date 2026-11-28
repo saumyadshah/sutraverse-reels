@@ -7,12 +7,14 @@ nothing. Each run handles **one slot**: the calendar row whose Date is today (As
 Time (IST) is the run's slot (`13:00` = midday run, `19:30` = evening run).
 
 
-> ## ⛔ HOLD (Saumya, 28 Nov 2026 12:08 IST): NO NEW REELS, NO PUBLISHING UNTIL SHE APPROVES THE OTLO BRAND STANDARD
-> Saumya is reviewing a remake of the Manthan/Amul Reel that sets the new OTLO visual identity. Until
-> `otlo/BRAND_APPROVED` exists in the repo: PREP runs build nothing and email one line ("OTLO on hold: awaiting
-> brand-standard approval"); PUBLISH runs publish nothing (recover nothing new either) and finish with that line;
-> the weekly plan may research and write the plan note and calendar rows but must say visuals follow the brand
-> standard once approved. Never publish `otlo/work/2026-11-28-1930-*` or the remake without her explicit approval in chat.
+> ## ✅ OTLO BRAND STANDARD v1.1 APPROVED (Saumya, 28 Nov 2026 17:28 IST): MANDATORY FOR EVERY REEL
+> Every Reel is built with the brand kit in `otlo/toolkit/BRAND.md` (`body.otlo`, `brand.css`/`brand.js`): toran,
+> cinematic dissolves, `"single_take": true` voice, `"score": "otlo"` music, official logos where the story names an
+> organisation, real posters/photos with cutouts, maps and infographics. The reference is
+> `otlo/work/2026-11-28-amul-manthan-v2` (copy its `reel.html`, `cover.html` and `script.json` structure, never its
+> content). Every Reel must look like an officially produced OTLO feature; if a build can't reach that bar, make
+> the backup, don't publish a weaker look. Chat Reels and static carousels stay discontinued. Never publish
+> `otlo/work/2026-11-28-1930-*` (the superseded draft).
 
 ## Schedule (Saumya, 26 Nov 2026 overhaul): prepared in advance, two posts every day
 
