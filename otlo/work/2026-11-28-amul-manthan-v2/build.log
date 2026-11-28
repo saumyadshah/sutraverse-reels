@@ -12,12 +12,7 @@ s2 kept (existing clip)
 s4 kept (existing clip)
 s5 kept (existing clip)
 s7 kept (existing clip)
-s3 gemini-3.8-flash-tts HTTP 429
-s3 gemini-3.1-flash-tts-preview HTTP 429
-s3 gemini-2.5-flash-preview-tts HTTP 429
-s3 FAILED
+s3 ok via gemini-3.8-flash-tts
 s6 gemini-3.8-flash-tts HTTP 429
-s6 gemini-3.1-flash-tts-preview HTTP 429
-s6 gemini-2.5-flash-preview-tts HTTP 429
-s6 FAILED
+s6 ok via gemini-3.1-flash-tts-preview
 ASSETS OK
