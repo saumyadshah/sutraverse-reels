@@ -5,42 +5,59 @@
 //   .o-progress                 progress beads: one bead per scene, the current one lit in vermilion
 //   [data-in] on .o-plate/.o-cut/.o-lower/.o-invite/.o-seal  entrance at that second (each kind has its own motion)
 //   .o-layer[data-par="40"]     parallax drift (px) across its scene on a wrapper; foreground layers use larger values
-//   #o-wipe                     created here: a toran band sweeps down at every cut after the first (chapter turn)
+//   cuts                        cinematic dissolve + light leak, done in otlo.js when <body class="otlo">
 //   .o-badge-end                the Toran badge stamps in like a press seal
 (function(){
   const PAL = ['#C2185B', '#E3A21A'];
   const NS = 'http://www.w3.org/2000/svg';
   function toranSVG(w, n, h){
-    const step = w / n; let s = `<svg xmlns="${NS}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">`;
-    s += `<path class="tstring" d="M0,14 Q${w/2},34 ${w},14" stroke="#1B2A4A" stroke-width="3" fill="none"/>`;
+    // A Gujarati toran: a straight embroidered band (vermilion, haldi borders, zigzag stitch, mirror-work) with
+    // evenly spaced hangings alternating fabric pennants (rani / haldi, embroidered edge, mirror, tassel bead) and
+    // mango leaves (ashopallav). Each hanging pivots at the band, so the sway looks physical. Shadow falls on the card.
+    const uid = 't' + Math.random().toString(36).slice(2, 7);
+    const step = w / n, bandH = 30, hang = h - bandH - 6;
+    let s = `<svg xmlns="${NS}" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="overflow:visible">
+<defs>
+ <filter id="${uid}sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#3A2410" flood-opacity=".35"/></filter>
+ <linearGradient id="${uid}band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8443A"/><stop offset=".55" stop-color="#A8322A"/><stop offset="1" stop-color="#7E221C"/></linearGradient>
+ <linearGradient id="${uid}rani" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E0457F"/><stop offset=".6" stop-color="#C2185B"/><stop offset="1" stop-color="#8E1043"/></linearGradient>
+ <linearGradient id="${uid}haldi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6C24A"/><stop offset=".6" stop-color="#E3A21A"/><stop offset="1" stop-color="#B57A0C"/></linearGradient>
+ <linearGradient id="${uid}leaf" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4F8F3A"/><stop offset=".5" stop-color="#3C7A2E"/><stop offset="1" stop-color="#2B5E22"/></linearGradient>
+ <radialGradient id="${uid}mir" cx=".35" cy=".35" r=".7"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#DCE3EA"/><stop offset="1" stop-color="#8C98A6"/></radialGradient>
+</defs><g filter="url(#${uid}sh)">`;
+    // hangings first (behind the band)
     for (let i = 0; i < n; i++){
-      const x = i * step + step / 2, t = (x / w), y = 14 + 20 * 4 * t * (1 - t) * 1.0;
-      const leaf = i % 3 === 1;
-      s += leaf
-        ? `<g class="flag" transform="translate(${x},${y})"><path d="M0,0 C14,18 12,46 0,62 C-12,46 -14,18 0,0Z" fill="#3C7A3A"/><path d="M0,4 L0,58" stroke="#2C5C2B" stroke-width="2"/></g>`
-        : `<g class="flag" transform="translate(${x},${y})"><polygon points="${-step*0.42},0 ${step*0.42},0 0,${h*0.56}" fill="${PAL[(i>>1)%2]}"/><circle cx="0" cy="${h*0.56+8}" r="6" fill="#E3A21A"/></g>`;
+      const x = i * step + step / 2;
+      if (i % 3 === 2){
+        const L = hang * 0.92, W = step * 0.36;
+        s += `<g class="flag" transform="translate(${x},${bandH - 4})"><path d="M0,0 C${W},${L*0.25} ${W*0.9},${L*0.7} 0,${L} C${-W*0.9},${L*0.7} ${-W},${L*0.25} 0,0Z" fill="url(#${uid}leaf)"/>
+          <path d="M0,4 L0,${L-6}" stroke="#25501D" stroke-width="2"/>${[0.3,0.5,0.7].map(t=>`<path d="M0,${L*t} L${W*0.55},${L*t-10} M0,${L*t} L${-W*0.55},${L*t-10}" stroke="#2B5E22" stroke-width="1.4" opacity=".7"/>`).join('')}</g>`;
+      } else {
+        const col = (i % 3 === 0) ? 'rani' : 'haldi', Wd = step * 0.84, L = hang;
+        s += `<g class="flag" transform="translate(${x},${bandH - 4})"><path d="M${-Wd/2},0 L${Wd/2},0 L0,${L*0.86}Z" fill="url(#${uid}${col})"/>
+          <path d="M${-Wd/2+7},5 L${Wd/2-7},5 L0,${L*0.86-12}Z" fill="none" stroke="${col === 'rani' ? '#F6C24A' : '#A8322A'}" stroke-width="2" stroke-dasharray="5 4"/>
+          <circle cx="0" cy="${L*0.3}" r="${Math.min(9, Wd*0.16)}" fill="url(#${uid}mir)" stroke="${col === 'rani' ? '#F6C24A' : '#7E221C'}" stroke-width="2.5"/>
+          <path d="M0,${L*0.86} L0,${L*0.86+8}" stroke="#7E221C" stroke-width="2"/><circle cx="0" cy="${L*0.86+13}" r="6" fill="${col === 'rani' ? '#E3A21A' : '#C2185B'}"/>
+          <path d="M-3,${L*0.86+18} L-5,${L} M0,${L*0.86+18} L0,${L+2} M3,${L*0.86+18} L5,${L}" stroke="${col === 'rani' ? '#E3A21A' : '#C2185B'}" stroke-width="2"/></g>`;
+      }
     }
-    return s + '</svg>';
+    // the band
+    s += `<rect x="0" y="0" width="${w}" height="${bandH}" fill="url(#${uid}band)"/>
+      <rect x="0" y="2" width="${w}" height="4" fill="#E3A21A"/><rect x="0" y="${bandH-6}" width="${w}" height="4" fill="#E3A21A"/>
+      <path d="${Array.from({length: Math.ceil(w/18)}, (_, k) => `${k?'L':'M'}${k*18},${k%2?11:21}`).join(' ')}" fill="none" stroke="#F4EAD7" stroke-width="2" stroke-dasharray="3 3" opacity=".8"/>`;
+    for (let x = step / 2; x < w; x += step) s += `<circle cx="${x}" cy="${bandH/2}" r="5" fill="url(#${uid}mir)" stroke="#E3A21A" stroke-width="1.5"/>`;
+    return s + '</g></svg>';
   }
   function build(){
     document.querySelectorAll('.o-toran').forEach(el => { if (!el.innerHTML.trim()) el.innerHTML = toranSVG(1012, 23, 120); });
     const scenes = [...document.querySelectorAll('.scene')];
     document.querySelectorAll('.o-progress').forEach(el => {
       const k = scenes.indexOf(el.closest('.scene')); const n = scenes.length;
-      let s = `<svg width="260" height="44" viewBox="0 0 260 44"><path d="M4,10 Q130,30 256,10" stroke="#1B2A4A" stroke-opacity=".5" stroke-width="2" fill="none"/>`;
-      for (let i = 0; i < n; i++){ const x = 12 + i * (236 / (n - 1)), t = x / 260, y = 10 + 20 * 4 * t * (1 - t) * 0.5;
-        s += `<polygon class="${i === k ? 'now' : ''}" points="${x-9},${y} ${x+9},${y} ${x},${y+20}" fill="${i < k ? '#E3A21A' : i === k ? '#B8322A' : 'none'}" stroke="${i <= k ? 'none' : '#1B2A4A'}" stroke-opacity=".45" stroke-width="2"/>`; }
+      let s = `<svg width="260" height="44" viewBox="0 0 260 44"><rect x="2" y="6" width="256" height="5" rx="2" fill="#A8322A" opacity=".85"/>`;
+      for (let i = 0; i < n; i++){ const x = 14 + i * (232 / (n - 1));
+        s += `<polygon class="${i === k ? 'now' : ''}" points="${x-11},11 ${x+11},11 ${x},33" fill="${i < k ? '#E3A21A' : i === k ? '#C2185B' : '#F4EAD7'}" stroke="${i <= k ? 'none' : '#A8322A'}" stroke-opacity=".6" stroke-width="1.5"/>`; }
       el.innerHTML = s + '</svg>';
     });
-    if (!document.getElementById('o-wipe')){
-      // page turn: a full sheet of OTLO card stock with a vermilion rule and a toran hem slides down over the cut
-      const w = document.createElement('div'); w.id = 'o-wipe';
-      w.style.cssText = 'position:absolute;left:0;top:0;width:1080px;height:1980px;z-index:50;pointer-events:none;transform:translateY(-2100px);'
-        + 'background:#F4EAD7;box-shadow:0 30px 60px rgba(60,40,10,.35);border-bottom:10px solid #B8322A';
-      w.innerHTML = `<div style="position:absolute;left:0;bottom:-130px;width:1080px">${toranSVG(1080, 24, 120)}</div>`
-        + `<div style="position:absolute;left:0;right:0;top:880px;text-align:center;font:700 44px 'Anek Gujarati',sans-serif;letter-spacing:10px;color:#B8322A;opacity:.55">ઓટલો</div>`;
-      document.getElementById('stage').appendChild(w);
-    }
   }
   window.OTLO_TWEENS = window.OTLO_TWEENS || [];
   window.OTLO_TWEENS.unshift((tl, g) => {
@@ -49,14 +66,11 @@
     const span = el => { const s = el.closest('.scene'); return s ? [+s.dataset.s, +s.dataset.e] : [0, 1]; };
     // brand sting: toran flags drop in on frame 0-0.5
     const first = scenes[0] && scenes[0].querySelectorAll('.o-toran .flag');
-    if (first && first.length) tl.fromTo(first, {y: -70, opacity: 0}, {y: 0, opacity: 1, duration: 0.42, ease: 'back.out(2.4)', stagger: 0.012}, 0.0);
+    if (first && first.length) tl.fromTo(first, {scaleY: 0.05, transformOrigin: '50% 0%'}, {scaleY: 1, duration: 0.55, ease: 'elastic.out(1, 0.55)', stagger: {each: 0.012, from: 'center'}}, 0.0);
     // toran in later scenes: gentle sway (alive, not static)
-    scenes.slice(1).forEach(sc => { const fl = sc.querySelectorAll('.o-toran .flag'); if (fl.length)
-      tl.fromTo(fl, {rotate: -4, transformOrigin: '50% 0%'}, {rotate: 3, duration: 1.6, ease: 'sine.inOut', yoyo: true, repeat: 3, stagger: 0.02}, +sc.dataset.s); });
-    // chapter wipe at each cut: a vermilion sheet with a toran hem passes top to bottom
-    scenes.slice(1).forEach(sc => { const s = +sc.dataset.s;
-      if (sc.dataset.wipe === 'none') return;
-      tl.fromTo('#o-wipe', {y: -2100}, {y: 2100, duration: 0.6, ease: 'power3.inOut'}, s - 0.3); });
+    scenes.forEach(sc => { sc.querySelectorAll('.o-toran .flag').forEach((f, i) => {   // cloth sway, each flag its own phase
+      const amp = 1.6 + (i % 4) * 0.5, per = 1.7 + (i % 5) * 0.23, len = (+sc.dataset.e) - (+sc.dataset.s) + 0.6;
+      tl.fromTo(f, {rotate: -amp, transformOrigin: '50% 0%'}, {rotate: amp, duration: per, ease: 'sine.inOut', yoyo: true, repeat: Math.ceil(len / per)}, +sc.dataset.s + (i % 7) * 0.09); }); });
     // progress: current bead pops
     document.querySelectorAll('.o-progress polygon.now').forEach(p => { const [s] = span(p);
       tl.fromTo(p, {scale: 0.2, transformOrigin: '50% 0%'}, {scale: 1, duration: 0.35, ease: 'back.out(3)'}, s + 0.25); });

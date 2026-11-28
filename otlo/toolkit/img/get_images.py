@@ -89,7 +89,7 @@ for im in S.get('images', []):
                 r = requests.get(url, headers=UA, timeout=120)
                 if r.status_code == 200 and len(r.content) > 5000:
                     from PIL import Image; import io
-                    if url.lower().endswith('.svg'):
+                    if '.svg' in url.lower().split('?')[0][-6:]:
                         (out/f'{iid}.svg').write_bytes(r.content)
                         try:
                             import cairosvg; cairosvg.svg2png(bytestring=r.content, write_to=str(out/f'{iid}.png'), output_width=1200)

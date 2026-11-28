@@ -10,12 +10,27 @@
   const scenes=[...document.querySelectorAll('.scene')];
   window.ORIG=scenes.map(s=>[+s.dataset.s,+s.dataset.e]);
   window.render=function(t){
+    const cine=document.body.classList.contains('otlo'), D=0.55;      // brand standard: cinematic dissolves
+    let leak=0;
     scenes.forEach((sc,si)=>{const s=+sc.dataset.s,e=+sc.dataset.e;
-      const vis=t>=s-0.01&&t<e;sc.style.display=vis?'flex':'none';if(!vis)return;
+      const vis=t>=s-0.01&&t<e;
+      const out=cine&&si<scenes.length-1&&t>=e&&t<e+D;                // outgoing scene stays on during the dissolve
+      sc.style.display=(vis||out)?'flex':'none';if(!(vis||out))return;
       const local=t-s, len=e-s;
+      if(cine){
+        if(out){const p=ease((t-e)/D);                                  // drifts forward, softens, fades
+          sc.style.zIndex=1;sc.style.opacity=1-p;sc.style.filter=`blur(${(p*7).toFixed(2)}px)`;
+          sc.style.transform=`scale(${(1.035+0.05*p).toFixed(4)})`;sc.style.transformOrigin='50% 40%';}
+        else{const p=si===0?1:ease(local/D);                            // settles in from a slight zoom
+          sc.style.zIndex=2;sc.style.opacity=p;sc.style.filter=p<1?`blur(${((1-p)*5).toFixed(2)}px)`:'none';
+          const zoom=(1+0.06*(1-p))*(1+0.035*clamp(local/Math.max(len,0.5)));
+          sc.style.transform=`scale(${zoom.toFixed(4)})`;sc.style.transformOrigin='50% 40%';
+          if(si>0&&local<D)leak=Math.sin(Math.PI*clamp(local/D));}
+      }else{
       const slide=si===0?0:(1-ease(local/0.22))*120;                 // quick slide-in on the cut
       const zoom=1+0.035*clamp(local/Math.max(len,0.5));             // slow push-in
-      sc.style.opacity=1; sc.style.transform=`translateX(${slide}px) scale(${zoom})`; sc.style.transformOrigin='50% 40%';
+      sc.style.opacity=1; sc.style.transform=`translateX(${slide}px) scale(${zoom})`; sc.style.transformOrigin='50% 40%';}
+      if(out)return;
       for(const el of sc.querySelectorAll('.a')){const i=+el.dataset.in;
         if(si===0&&i<=s+0.3){el.style.opacity=1;el.style.transform=`scale(${1+0.06*(1-ease(local/0.3))})`;el.style.transformOrigin=el.dataset.origin||'left center';continue;}
         const p=(t-i)/0.28; el.style.opacity=ease(p);
@@ -23,6 +38,11 @@
         else if(el.dataset.rise){el.style.transform=`translateY(${(1-ease((t-i)/0.5))*(+el.dataset.rise)}px)`}
         else el.style.transform=`translateY(${(1-ease(p))*40}px)`;}
     });
+    if(cine){let L=document.getElementById('o-leak');
+      if(!L){L=document.createElement('div');L.id='o-leak';L.style.cssText='position:absolute;inset:0;z-index:40;pointer-events:none;mix-blend-mode:screen;'
+        +'background:radial-gradient(80% 60% at 85% 20%,rgba(255,196,90,.9),rgba(227,162,26,.35) 45%,rgba(0,0,0,0) 75%),radial-gradient(60% 50% at 10% 90%,rgba(194,24,91,.5),rgba(0,0,0,0) 70%)';
+        document.getElementById('stage').appendChild(L);}
+      L.style.opacity=(leak*0.55).toFixed(3);}
     if(window.OTLOFX) window.OTLOFX.update(t);
     if(window.extra) window.extra(t);
   };
