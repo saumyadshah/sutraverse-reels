@@ -1,7 +1,16 @@
-logo_amul wiki page: Amul | infobox image: Amul official logo.svg
-logo_amul ok wiki_logo https://upload.wikimedia.org/wikipedia/commons/4/41/Amul_official_logo.svg?utm_source=en.w
-logo_cannes wiki page: Cannes Film Festival | infobox image: Palme d'Or gold silhouette.svg
-logo_cannes ok wiki_logo https://upload.wikimedia.org/wikipedia/commons/a/aa/Palme_d%27Or_gold_silhouette.svg?utm_s
+logo_amul exists
+logo_cannes exists
 logo_fhf exists
 logo_fhf exists
+take 0 gemini-2.5-pro-preview-tts 429
+take 0 gemini-3.8-flash-tts 200
+SINGLE TAKE OK gemini-3.8-flash-tts 38.4 s, cuts [4.87, 10.02, 16.3, 22.59, 27.81, 34.26]
+s1 kept (existing clip)
+s2 kept (existing clip)
+s3 kept (existing clip)
+s4 kept (existing clip)
+s5 kept (existing clip)
+s6 kept (existing clip)
+s7 kept (existing clip)
+
 ASSETS OK
