@@ -65,7 +65,14 @@ def timing(d, S):
     if len(orig) != n: sys.exit(f"QA FAIL: {len(orig)} scenes in reel.html but {n} voice lines")
     starts, ends, vo, t = [], [], [], 0.0
     for i, ln in enumerate(S['lines']):
-        p = d/'vo'/f"{ln['id']}.wav"; on, off = speech_bounds(p); lead = 0.06 if i == 0 else float(ln.get('lead', 0.18))
+        p = d/'vo'/f"{ln['id']}.wav"
+        sp = float(S.get('speed', 1.0))
+        if abs(sp - 1.0) > 0.01:   # pitch-preserving tempo change (ffmpeg atempo), cached in vo_fast/; keep 1.0-1.2
+            q = d/'vo_fast'/f"{ln['id']}.wav"; q.parent.mkdir(exist_ok=True)
+            if not q.exists() or q.stat().st_mtime < p.stat().st_mtime:
+                subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(p), "-filter:a", f"atempo={sp}", str(q)], check=True)
+            p = q
+        on, off = speech_bounds(p); lead = 0.06 if i == 0 else float(ln.get('lead', 0.18))
         L = float(max(1.6, lead + (off-on) + (0.9 if i == n-1 else float(ln.get('tail', 0.3)))))
         starts.append(round(t, 3)); vo.append({"file": str(p), "at": round(t+lead-on, 3), "on": on, "off": off}); t += L; ends.append(round(t, 3))
     T = {"starts": starts, "ends": ends, "vo": vo}; (d/'timing.json').write_text(json.dumps(T, indent=1)); return T

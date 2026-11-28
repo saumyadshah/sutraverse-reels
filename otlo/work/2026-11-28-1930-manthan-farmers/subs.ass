@@ -1,0 +1,29 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,18,0,2,90,170,450,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.06,0:00:02.75,Sub,,0,0,0,,5 lakh Gujarati farmers. ₹2
+Dialogue: 0,0:00:02.78,0:00:03.26,Sub,,0,0,0,,each.
+Dialogue: 0,0:00:03.29,0:00:06.41,Sub,,0,0,0,,And a film that reached Cannes!
+Dialogue: 0,0:00:06.89,0:00:08.80,Sub,,0,0,0,,The film: Manthan, 1976,
+Dialogue: 0,0:00:08.83,0:00:10.94,Sub,,0,0,0,,directed by Shyam Benegal.
+Dialogue: 0,0:00:11.42,0:00:13.54,Sub,,0,0,0,,5 lakh × ₹2 = ₹10 lakh.
+Dialogue: 0,0:00:13.57,0:00:16.57,Sub,,0,0,0,,Roughly the film's whole budget!
+Dialogue: 0,0:00:17.05,0:00:18.58,Sub,,0,0,0,,The titles read: '500,000
+Dialogue: 0,0:00:18.61,0:00:20.33,Sub,,0,0,0,,farmers of Gujarat present'.
+Dialogue: 0,0:00:20.36,0:00:21.77,Sub,,0,0,0,,And farmers came by the
+Dialogue: 0,0:00:21.80,0:00:23.55,Sub,,0,0,0,,truckload to see their film!
+Dialogue: 0,0:00:24.03,0:00:26.06,Sub,,0,0,0,,And in 2024, restored in 4K,
+Dialogue: 0,0:00:26.09,0:00:28.27,Sub,,0,0,0,,a world premiere at the Cannes
+Dialogue: 0,0:00:28.30,0:00:29.33,Sub,,0,0,0,,Film Festival!
+Dialogue: 0,0:00:29.81,0:00:31.78,Sub,,0,0,0,,India's first crowdfunded film,
+Dialogue: 0,0:00:31.81,0:00:33.13,Sub,,0,0,0,,by Gujarat's farmers.
+Dialogue: 0,0:00:33.16,0:00:34.96,Sub,,0,0,0,,Who are you sending this to?

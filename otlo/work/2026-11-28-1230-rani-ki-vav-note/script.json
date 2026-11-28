@@ -91,14 +91,6 @@
    ]
   },
   {
-   "id": "s3",
-   "gu": "સામાન્ય રીતે રાજા રાણીની યાદમાં સ્મારક બનાવે. અહીં ઊલટું!",
-   "en": [
-    "Usually a king builds a memorial for his queen.",
-    "Here, it's the other way round!"
-   ]
-  },
-  {
    "id": "s4",
    "gu": "ને એ બનાવી ઊંધા મંદિર જેવી. સાત માળ નીચે ઊતરો, ને દીવાલે દીવાલે મૂર્તિઓ.",
    "en": [
@@ -131,5 +123,6 @@
     "Have you been to Rani ki Vav?"
    ]
   }
- ]
+ ],
+ "speed": 1.17
 }

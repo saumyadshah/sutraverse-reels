@@ -80,14 +80,14 @@
   "chip_en": "Made by farmers",
   "gu": "₹2 × 5 લાખ ખેડૂત",
   "en": "The film that reached Cannes",
-  "ribbon_gu": "ભારતની પહેલી ક્રાઉડફંડેડ ફિલ્મ",
-  "ribbon_en": "India's first crowdfunded film",
-  "art_t": 5.6,
+  "ribbon_gu": "પહેલી ક્રાઉડફંડેડ ફિલ્મ",
+  "ribbon_en": "India's first",
+  "art_t": 8.8,
   "art_clip": [
-   140,
-   600,
-   800,
-   780
+   200,
+   640,
+   680,
+   760
   ]
  },
  "lines": [
@@ -105,14 +105,6 @@
    "en": [
     "The film: Manthan, 1976,",
     "directed by Shyam Benegal."
-   ]
-  },
-  {
-   "id": "s3",
-   "gu": "વાર્તા ગુજરાતની દૂધ સહકારી ચળવળની, ડૉક્ટર વર્ગીસ કુરિયનથી પ્રેરિત.",
-   "en": [
-    "The story of Gujarat's milk cooperatives,",
-    "inspired by Dr Verghese Kurien."
    ]
   },
   {
@@ -147,5 +139,6 @@
     "Who are you sending this to?"
    ]
   }
- ]
+ ],
+ "speed": 1.15
 }

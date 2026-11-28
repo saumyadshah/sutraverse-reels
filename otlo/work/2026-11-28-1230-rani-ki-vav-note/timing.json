@@ -1,0 +1,56 @@
+{
+ "starts": [
+  0.0,
+  6.11,
+  12.39,
+  19.17,
+  24.0,
+  30.43
+ ],
+ "ends": [
+  6.11,
+  12.39,
+  19.17,
+  24.0,
+  30.43,
+  36.11
+ ],
+ "vo": [
+  {
+   "file": "/home/claude/sutraverse-reels/otlo/work/2026-11-28-1230-rani-ki-vav-note/vo_fast/s1.wav",
+   "at": -0.19,
+   "on": 0.25,
+   "off": 6.0
+  },
+  {
+   "file": "/home/claude/sutraverse-reels/otlo/work/2026-11-28-1230-rani-ki-vav-note/vo_fast/s2.wav",
+   "at": 6.09,
+   "on": 0.2,
+   "off": 6.0
+  },
+  {
+   "file": "/home/claude/sutraverse-reels/otlo/work/2026-11-28-1230-rani-ki-vav-note/vo_fast/s4.wav",
+   "at": 12.37,
+   "on": 0.2,
+   "off": 6.5
+  },
+  {
+   "file": "/home/claude/sutraverse-reels/otlo/work/2026-11-28-1230-rani-ki-vav-note/vo_fast/s5.wav",
+   "at": 19.1,
+   "on": 0.25,
+   "off": 4.6000000000000005
+  },
+  {
+   "file": "/home/claude/sutraverse-reels/otlo/work/2026-11-28-1230-rani-ki-vav-note/vo_fast/s6.wav",
+   "at": 23.93,
+   "on": 0.25,
+   "off": 6.2
+  },
+  {
+   "file": "/home/claude/sutraverse-reels/otlo/work/2026-11-28-1230-rani-ki-vav-note/vo_fast/s7.wav",
+   "at": 30.36,
+   "on": 0.25,
+   "off": 4.8500000000000005
+  }
+ ]
+}

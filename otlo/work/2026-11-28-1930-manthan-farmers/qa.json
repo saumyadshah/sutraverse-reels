@@ -1,0 +1,23 @@
+{
+ "video": {
+  "codec_name": "h264",
+  "profile": "High",
+  "width": 1080,
+  "height": 1920,
+  "pix_fmt": "yuv420p",
+  "r_frame_rate": "30/1",
+  "bit_rate": "12001889"
+ },
+ "duration": 35.9,
+ "lufs": -13.8,
+ "chars_per_sec": [
+  14.2,
+  11.9,
+  14.6,
+  15.2,
+  15.5,
+  13.4
+ ],
+ "warnings": [],
+ "ok": true
+}
