@@ -32,6 +32,7 @@ jobs:
         run: |
           while read -r wd mode <&3; do
             [ -z "$wd" ] && continue
+            case "$wd" in \#*) continue;; esac
             : > "$wd/build.log"
             if [ -f "$wd/carousel.html" ] && [ ! -f "$wd/script.json" ]; then
               if python3 otlo/toolkit/bin/build.py carousel "$wd" >> "$wd/build.log" 2>&1; then echo "BUILD OK" >> "$wd/build.log"; else echo "BUILD FAILED" >> "$wd/build.log"; fi
