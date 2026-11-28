@@ -1,0 +1,34 @@
+still og ERROR ConnectionError HTTPSConnectionPool(host='d27csu38upkiqd.cloudfront.net', port=443): Max retries exceeded with url: /eyJidWNrZXQiOiJmZGM
+still og NO IMAGE FOUND
+fhf og NO IMAGE FOUND
+kurien ok File:Former Prime Minister Rajiv Gandhi and 'Father of the White Revolution' Verghese Kurien in IRMA Campus.jpg CC BY-SA 4.0
+benegal ok File:Shyam Benegal Indian director and screenwriter at International Film Festival of Kerala 2016 02.jpg CC BY-SA 4.0
+palais ok File:Palais des Festivals Cannes red carpet stairs 2026.JPG CC BY-SA 4.0
+palais exists
+milk ok File:Homemade Mithai with only 3 ingredients - Gujarat - SHAILI 017.jpg CC BY-SA 4.0
+milk exists
+s1 gemini-3.8-flash-tts HTTP 429
+s1 gemini-3.1-flash-tts-preview HTTP 429
+s1 ok via gemini-2.5-flash-preview-tts
+s2 gemini-3.8-flash-tts HTTP 429
+s2 ok via gemini-3.1-flash-tts-preview
+s3 gemini-3.8-flash-tts HTTP 429
+s3 gemini-3.1-flash-tts-preview HTTP 429
+s3 gemini-2.5-flash-preview-tts HTTP 429
+s3 FAILED
+s4 gemini-3.8-flash-tts HTTP 429
+s4 gemini-3.1-flash-tts-preview HTTP 429
+s4 gemini-2.5-flash-preview-tts HTTP 429
+s4 FAILED
+s5 gemini-3.8-flash-tts HTTP 429
+s5 gemini-3.1-flash-tts-preview HTTP 429
+s5 ok via gemini-2.5-flash-preview-tts
+s6 gemini-3.8-flash-tts HTTP 429
+s6 gemini-3.1-flash-tts-preview HTTP 429
+s6 gemini-2.5-flash-preview-tts HTTP 429
+s6 FAILED
+s7 gemini-3.8-flash-tts HTTP 429
+s7 gemini-3.1-flash-tts-preview HTTP 429
+s7 gemini-2.5-flash-preview-tts HTTP 429
+s7 FAILED
+ASSETS OK
