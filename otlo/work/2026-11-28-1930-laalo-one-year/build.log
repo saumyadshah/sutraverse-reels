@@ -1,15 +1,6 @@
-poster wiki_poster NO IMAGE FOUND
-s1 gemini-3.8-flash-tts HTTP 429
-s1 ok via gemini-3.1-flash-tts-preview
-s2 gemini-3.8-flash-tts HTTP 429
-s2 gemini-3.1-flash-tts-preview HTTP 429
-s2 ok via gemini-2.5-flash-preview-tts
-s3 gemini-3.8-flash-tts HTTP 429
-s3 ok via gemini-3.1-flash-tts-preview
-s4 ok via gemini-3.8-flash-tts
-s5 gemini-3.8-flash-tts HTTP 429
-s5 ok via gemini-3.1-flash-tts-preview
-s6 ok via gemini-3.8-flash-tts
+poster wiki page: Laalo – Krishna Sada Sahaayate | infobox image: Laalo - Krishna Sada Sahaayate Poster.jpg
+poster ok wiki_poster https://upload.wikimedia.org/wikipedia/en/2/29/Laalo_-_Krishna_Sada_Sahaayate_Poster.jpg?u
+poster exists
 scenes [0.0, 3.86, 9.74, 14.67, 19.45, 24.63] [3.86, 9.74, 14.67, 19.45, 24.63, 29.01]
 {
  "video": {
@@ -19,7 +10,7 @@ scenes [0.0, 3.86, 9.74, 14.67, 19.45, 24.63] [3.86, 9.74, 14.67, 19.45, 24.63, 
   "height": 1920,
   "pix_fmt": "yuv420p",
   "r_frame_rate": "30/1",
-  "bit_rate": "11959304"
+  "bit_rate": "11959280"
  },
  "duration": 29.0,
  "lufs": -13.7,
@@ -31,9 +22,7 @@ scenes [0.0, 3.86, 9.74, 14.67, 19.45, 24.63] [3.86, 9.74, 14.67, 19.45, 24.63, 
   11.9,
   13.3
  ],
- "warnings": [
-  "scene 2: 'art/image' runs into the subtitle band (art must end above y 1,366) (top 767, bottom 1378, right 775)"
- ],
- "ok": false
+ "warnings": [],
+ "ok": true
 }
 BUILD OK

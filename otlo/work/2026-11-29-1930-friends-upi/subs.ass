@@ -1,0 +1,16 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 0
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0,0,0,100,100,0,0,3,18,0,2,90,170,450,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.06,0:00:02.16,Sub,,0,0,0,,Asked for ₹300. The whole group
+Dialogue: 0,0:00:02.19,0:00:02.81,Sub,,0,0,0,,vanished.
+Dialogue: 0,0:00:26.69,0:00:29.08,Sub,,0,0,0,,Tag the friend who vanishes at
+Dialogue: 0,0:00:29.11,0:00:30.24,Sub,,0,0,0,,payment time 👇
