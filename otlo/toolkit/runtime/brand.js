@@ -33,9 +33,12 @@
       el.innerHTML = s + '</svg>';
     });
     if (!document.getElementById('o-wipe')){
+      // page turn: a full sheet of OTLO card stock with a vermilion rule and a toran hem slides down over the cut
       const w = document.createElement('div'); w.id = 'o-wipe';
-      w.style.cssText = 'position:absolute;left:0;top:-260px;width:1080px;height:240px;z-index:50;pointer-events:none;background:#B8322A;';
-      w.innerHTML = `<div style="position:absolute;left:0;bottom:-118px;width:1080px">${toranSVG(1080, 24, 120)}</div>`;
+      w.style.cssText = 'position:absolute;left:0;top:0;width:1080px;height:1980px;z-index:50;pointer-events:none;transform:translateY(-2100px);'
+        + 'background:#F4EAD7;box-shadow:0 30px 60px rgba(60,40,10,.35);border-bottom:10px solid #B8322A';
+      w.innerHTML = `<div style="position:absolute;left:0;bottom:-130px;width:1080px">${toranSVG(1080, 24, 120)}</div>`
+        + `<div style="position:absolute;left:0;right:0;top:880px;text-align:center;font:700 44px 'Anek Gujarati',sans-serif;letter-spacing:10px;color:#B8322A;opacity:.55">ઓટલો</div>`;
       document.getElementById('stage').appendChild(w);
     }
   }
@@ -53,7 +56,7 @@
     // chapter wipe at each cut: a vermilion sheet with a toran hem passes top to bottom
     scenes.slice(1).forEach(sc => { const s = +sc.dataset.s;
       if (sc.dataset.wipe === 'none') return;
-      tl.fromTo('#o-wipe', {y: 0}, {y: 2260, duration: 0.55, ease: 'power2.inOut'}, s - 0.28); });
+      tl.fromTo('#o-wipe', {y: -2100}, {y: 2100, duration: 0.6, ease: 'power3.inOut'}, s - 0.3); });
     // progress: current bead pops
     document.querySelectorAll('.o-progress polygon.now').forEach(p => { const [s] = span(p);
       tl.fromTo(p, {scale: 0.2, transformOrigin: '50% 0%'}, {scale: 1, duration: 0.35, ease: 'back.out(3)'}, s + 0.25); });

@@ -68,7 +68,7 @@ def timing(d, S):
         p = d/'vo'/f"{ln['id']}.wav"
         sp = float(S.get('speed', 1.0))
         if abs(sp - 1.0) > 0.01:   # pitch-preserving tempo change (ffmpeg atempo), cached in vo_fast/; keep 1.0-1.2
-            q = d/'vo_fast'/f"{ln['id']}.wav"; q.parent.mkdir(exist_ok=True)
+            q = d/f'vo_fast_{sp:.2f}'/f"{ln['id']}.wav"; q.parent.mkdir(exist_ok=True)
             if not q.exists() or q.stat().st_mtime < p.stat().st_mtime:
                 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(p), "-filter:a", f"atempo={sp}", str(q)], check=True)
             p = q
