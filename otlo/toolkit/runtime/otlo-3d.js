@@ -67,9 +67,37 @@ function poster(cv){
     r.render(sc, cam); };
 }
 
+
+function flip(cv){
+  // a card that flips over at data-at: front = data-front <img>, back = data-back <img>; cinematic key light sweep
+  const A = document.querySelector(cv.dataset.front), B = document.querySelector(cv.dataset.back);
+  const [r, w, h] = mkRenderer(cv); const sc = new THREE.Scene();
+  const cam = new THREE.PerspectiveCamera(30, w / h, 1, 100); cam.position.set(0, 0, 12);
+  const aspect = +(cv.dataset.aspect || 2.15);
+  const tex = im => { // cover-crop the image onto a canvas of the card's aspect, so photos never stretch
+    const c = document.createElement('canvas'); c.width = 1400; c.height = Math.round(1400 / aspect); const g = c.getContext('2d');
+    const iw = im.naturalWidth || im.width, ih = im.naturalHeight || im.height, sc_ = Math.max(c.width / iw, c.height / ih);
+    g.drawImage(im, (c.width - iw * sc_) / 2, (c.height - ih * sc_) / 2, iw * sc_, ih * sc_);
+    const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; return t; };
+  const vh = 2 * Math.tan(THREE.MathUtils.degToRad(15)) * 12, vw = vh * (w / h); let cw = vw * 0.92, ch = cw / aspect;
+  const edge = new THREE.MeshStandardMaterial({color: 0xd9cfe6});
+  const card = new THREE.Mesh(new THREE.BoxGeometry(cw, ch, 0.03), [edge, edge, edge, edge,
+    new THREE.MeshStandardMaterial({map: tex(A), roughness: 0.55}), new THREE.MeshStandardMaterial({map: tex(B), roughness: 0.55})]);
+  sc.add(card); sc.add(new THREE.AmbientLight(0xffffff, 1.7));
+  const key = new THREE.PointLight(0xfff0dc, 70, 40); sc.add(key);
+  const [s0] = sceneSpan(cv); const at = +(cv.dataset.at ?? s0 + 1.2);
+  return t => { const u = t - s0; const f = ease((t - at) / 0.8);
+    card.rotation.y = Math.PI * f + Math.sin(u * 0.8) * 0.06;
+    card.rotation.x = -0.12 + Math.sin(u * 0.6) * 0.04;
+    card.rotation.z = -0.05;
+    card.position.set(0, Math.sin(u * 1.1) * 0.06, -0.6 + Math.min(u, 3) * 0.15);
+    key.position.set(-5 + Math.min(u, 4) * 2.6, 2.5, 6);
+    r.render(sc, cam); };
+}
+
 document.querySelectorAll('canvas.fx3d').forEach(cv => {
   const k = cv.dataset.fx; let f = null;
-  try { f = k === 'poster' ? poster(cv) : bokeh(cv, k === 'confetti'); } catch (e) { console.error('otlo-3d', k, e); }
+  try { f = k === 'poster' ? poster(cv) : k === 'flip' ? flip(cv) : bokeh(cv, k === 'confetti'); } catch (e) { console.error('otlo-3d', k, e); }
   if (f) fx.push([cv, f]);
 });
 window.OTLO3D = t => { for (const [cv, f] of fx) { const [s, e] = sceneSpan(cv); if (t >= s - 0.05 && t < e + 0.05) f(t); } };

@@ -22,6 +22,8 @@ key = os.getenv('GEMINI_API_KEY') or os.getenv('GOOGLE_API_KEY')
 STYLE = ("Flat editorial illustration in a warm Indian heritage style; palette ivory #F3E9D6, indigo #1B2A4A, "
          "deep red #A8322A, turmeric #E3A21A, small touches of pink #C2185B; clean shapes, soft grain, plain ivory "
          "background, no text, no letters, no logos, no real or famous people. ")
+PHOTO = ("Photorealistic cinematic documentary photograph, natural light, shallow depth of field, rich but true colours, "
+         "35mm film look, high detail, no text, no letters, no logos, no watermark, no famous or identifiable real people. ")
 MODELS = ["gemini-2.5-flash-image", "gemini-2.5-flash-image-preview", "gemini-3-pro-image-preview"]
 credits = json.loads((out/'credits.json').read_text()) if (out/'credits.json').exists() else []
 UA = {"User-Agent": "OtloBot/1.0 (https://instagram.com/otlo.gujarat; saumyadshah@users.noreply.github.com)"}
@@ -36,7 +38,7 @@ for im in S.get('images', []):
         for m in MODELS:
             r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent",
                               headers={"x-goog-api-key": key},
-                              json={"contents": [{"parts": [{"text": STYLE + im['prompt']}]}],
+                              json={"contents": [{"parts": [{"text": (PHOTO if im.get('style') == 'photo' else STYLE) + im['prompt']}]}],
                                     "generationConfig": {"responseModalities": ["TEXT", "IMAGE"]}}, timeout=180)
             if r.status_code != 200: print(iid, m, 'HTTP', r.status_code); continue
             for part in r.json().get('candidates', [{}])[0].get('content', {}).get('parts', []):
@@ -47,7 +49,7 @@ for im in S.get('images', []):
             # free fallback: Pollinations (Flux), no key; 1080x1350 portrait unless told otherwise
             import urllib.parse
             w, h = im.get('size', [1080, 1350])
-            u = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote(STYLE + im['prompt'])
+            u = ("https://image.pollinations.ai/prompt/" + urllib.parse.quote((PHOTO if im.get('style') == 'photo' else STYLE) + im['prompt'])
                  + f"?width={w}&height={h}&nologo=true&model=flux&seed={im.get('seed', 7)}")
             try:
                 r = requests.get(u, timeout=240, headers=UA)
@@ -97,6 +99,8 @@ for im in S.get('images', []):
             "action": "query", "format": "json", "generator": "search", "gsrsearch": im['query'] + " filetype:bitmap",
             "gsrnamespace": 6, "gsrlimit": 15, "prop": "imageinfo", "iiprop": "url|extmetadata|size", "iiurlwidth": 1600}).json()
         pages = sorted(q.get('query', {}).get('pages', {}).values(), key=lambda p: p.get('index', 99))
+        used = {c.get('title') for c in credits}
+        pages = [p for p in pages if p['title'] not in used]
         got = False
         for p in pages:
             ii = (p.get('imageinfo') or [{}])[0]; md = ii.get('extmetadata', {})
