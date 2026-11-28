@@ -9,17 +9,15 @@ milk COMMONS: no freely licensed match
 milk COMMONS: no freely licensed match
 s1 kept (existing clip)
 s2 kept (existing clip)
+s4 kept (existing clip)
 s5 kept (existing clip)
+s7 kept (existing clip)
 s3 gemini-3.8-flash-tts HTTP 429
 s3 gemini-3.1-flash-tts-preview HTTP 429
 s3 gemini-2.5-flash-preview-tts HTTP 429
 s3 FAILED
-s4 gemini-3.8-flash-tts HTTP 429
-s4 gemini-3.1-flash-tts-preview HTTP 429
-s4 ok via gemini-2.5-flash-preview-tts
 s6 gemini-3.8-flash-tts HTTP 429
 s6 gemini-3.1-flash-tts-preview HTTP 429
 s6 gemini-2.5-flash-preview-tts HTTP 429
 s6 FAILED
-s7 ok via gemini-3.8-flash-tts
 ASSETS OK
