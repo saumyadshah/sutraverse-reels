@@ -25,7 +25,7 @@ def orig_scenes(d):
     if is_slideshow(d):
         n = len(sorted(d.glob('slide_*.png'))); return [(i*4.5, (i+1)*4.5) for i in range(n)]
     html = (d/'reel.html').read_text()
-    return [(float(s), float(e)) for s, e in re.findall(r'class="scene"[^>]*data-s="([\d.]+)"\s+data-e="([\d.]+)"', html)]
+    return [(float(s), float(e)) for s, e in re.findall(r'class="scene\b[^"]*"[^>]*data-s="([\d.]+)"\s+data-e="([\d.]+)"', html)]
 
 def is_slideshow(d):
     return (d/'carousel.html').exists() and not (d/'reel.html').exists()
@@ -168,6 +168,12 @@ def music(d, T):
         elif kind == 'pop':
             n = min(int(.09*SR), N-s0); x = np.arange(n)/SR
             out[s0:s0+n] += .35*np.sin(2*np.pi*(900-5000*x)*x)*np.exp(-x*45)
+        elif kind == 'paper':      # soft card slide: band-passed noise, quick in, slow out
+            n = min(int(.22*SR), N-s0); x = np.arange(n)/SR; nz = np.convolve(rng.standard_normal(n), np.ones(6)/6, 'same')
+            out[s0:s0+n] += .22*nz*np.minimum(1, x/.02)*np.exp(-x*16)
+        elif kind == 'stamp':      # letterpress thump: low sine drop + short noise click
+            n = min(int(.28*SR), N-s0); x = np.arange(n)/SR
+            out[s0:s0+n] += .55*np.sin(2*np.pi*(140-260*x)*x)*np.exp(-x*18) + .12*rng.standard_normal(n)*np.exp(-x*120)
         elif kind == 'ping':
             n = min(int(.35*SR), N-s0); x = np.arange(n)/SR
             out[s0:s0+n] += .30*(np.sin(2*np.pi*1568*x)+.5*np.sin(2*np.pi*2093*x))*np.exp(-x*14)
@@ -178,14 +184,19 @@ def sfx_events(d, T):
     import re
     if is_slideshow(d): return [('whoosh', THUMB_LEAD*0+s) for s in T['starts'][1:]]
     html = (d/'reel.html').read_text(); orig = orig_scenes(d); ev = [('whoosh', s) for s in T['starts'][1:]]
-    for i, m in enumerate(re.finditer(r'class="scene"[^>]*data-s="([\d.]+)"\s+data-e="([\d.]+)"', html)):
+    for i, m in enumerate(re.finditer(r'class="scene\b[^"]*"[^>]*data-s="([\d.]+)"\s+data-e="([\d.]+)"', html)):
         if i >= len(T['starts']): break
-        seg_end = html.find('class="scene"', m.end()); seg = html[m.end(): seg_end if seg_end > 0 else len(html)]
+        nxt = re.search(r'class="scene\b', html[m.end():]); seg = html[m.end(): m.end() + nxt.start() if nxt else len(html)]
         os_, oe = orig[i]; ol = oe-os_; nl = T['ends'][i]-T['starts'][i]; k = nl/ol if nl < ol else 1.0
         for cls, tin in re.findall(r'class="([^"]*\ba\b[^"]*)"[^>]*data-in="([\d.]+)"', seg):
             at = T['starts'][i] + (float(tin)-os_)*k
             if at < T['starts'][i] + 0.12 and i > 0: continue
             ev.append(('ping' if re.search(r'\bm\b', cls) else 'pop', max(0.0, at)))
+        # brand kit elements (brand.js): paper slide for plates/cards/lower thirds, press thump for seals and the end badge
+        for cls, tin in re.findall(r'class="([^"]*\bo-(?:plate|cut|lower|invite|seal|badge-end)\b[^"]*)"[^>]*data-in="([\d.]+)"', seg):
+            at = T['starts'][i] + (float(tin)-os_)*k
+            if at < T['starts'][i] + 0.12 and i > 0: continue
+            ev.append(('stamp' if re.search(r'o-(seal|badge-end)', cls) else 'paper', max(0.0, at)))
     return ev
 
 def mix(d, T, m):
