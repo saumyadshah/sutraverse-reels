@@ -1,20 +1,5 @@
-s1 gemini-3.8-flash-tts HTTP 429
-s1 ok via gemini-3.1-flash-tts-preview
-s2 gemini-3.8-flash-tts HTTP 429
-s2 ok via gemini-3.1-flash-tts-preview
-s3 gemini-3.8-flash-tts HTTP 429
-s3 ok via gemini-3.1-flash-tts-preview
-s4 gemini-3.8-flash-tts HTTP 429
-s4 gemini-3.1-flash-tts-preview HTTP 429
-s4 ok via gemini-2.5-flash-preview-tts
 s5 gemini-3.8-flash-tts HTTP 429
 s5 gemini-3.1-flash-tts-preview HTTP 429
-s5 gemini-2.5-flash-preview-tts HTTP 429
-s5 FAILED
+s5 ok via gemini-2.5-flash-preview-tts
 s6 gemini-3.8-flash-tts HTTP 429
-s6 gemini-3.1-flash-tts-preview HTTP 429
-s6 gemini-2.5-flash-preview-tts HTTP 429
-s6 FAILED
-s7 gemini-3.8-flash-tts HTTP 429
-s7 gemini-3.1-flash-tts-preview HTTP 429
-s7 ok via gemini-2.5-flash-preview-tts
+s6 ok via gemini-3.1-flash-tts-preview

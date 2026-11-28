@@ -1,40 +1,25 @@
-poster wiki page: Manthan | infobox image: Manthan poster.jpg
-poster ok wiki_poster https://upload.wikimedia.org/wikipedia/en/f/fc/Manthan_poster.jpg?utm_source=en.wikipedia.
-farmers gemini-2.5-flash-image HTTP 429
-farmers gemini-2.5-flash-image-preview HTTP 404
-farmers gemini-3-pro-image-preview HTTP 429
-farmers POLLINATIONS HTTP 402
-farmers AI IMAGE FAILED
-coins gemini-2.5-flash-image HTTP 429
-coins gemini-2.5-flash-image-preview HTTP 404
-coins gemini-3-pro-image-preview HTTP 429
-coins POLLINATIONS HTTP 402
-coins AI IMAGE FAILED
-trucks gemini-2.5-flash-image HTTP 429
-trucks gemini-2.5-flash-image-preview HTTP 404
-trucks gemini-3-pro-image-preview HTTP 429
-trucks POLLINATIONS HTTP 402
-trucks AI IMAGE FAILED
-cannes COMMONS: no freely licensed match
+farmers ok File:Utarsandha.jpg CC BY-SA 4.0
+farmers exists
+farmers exists
+coins ok File:An Indian two rupee coin minted in honour of Louis Braille's 200th birth anniversary (1809-2009).jpg CC BY-SA 4.0
+coins exists
+trucks ok File:Alka Talkies - an iconic single screen cinema in Pune.jpg CC BY 4.0
+trucks exists
+cannes ok File:Cannes Palais des Festivals et des Congrès.jpg Public domain
+cannes exists
 dairy COMMONS: no freely licensed match
-s1 gemini-3.8-flash-tts HTTP 429
-s1 ok via gemini-3.1-flash-tts-preview
-s2 gemini-3.8-flash-tts HTTP 429
-s2 gemini-3.1-flash-tts-preview HTTP 429
-s2 ok via gemini-2.5-flash-preview-tts
-s3 ok via gemini-3.8-flash-tts
+dairy ok File:Amul Plant at Anand.jpg CC BY-SA 3.0
+dairy exists
+s1 kept (existing clip)
+s2 kept (existing clip)
+s3 kept (existing clip)
+s5 kept (existing clip)
 s4 gemini-3.8-flash-tts HTTP 429
 s4 gemini-3.1-flash-tts-preview HTTP 429
-s4 gemini-2.5-flash-preview-tts HTTP 429
-s4 FAILED
-s5 gemini-3.8-flash-tts HTTP 429
-s5 ok via gemini-3.1-flash-tts-preview
+s4 ok via gemini-2.5-flash-preview-tts
 s6 gemini-3.8-flash-tts HTTP 429
 s6 gemini-3.1-flash-tts-preview HTTP 429
-s6 gemini-2.5-flash-preview-tts HTTP 429
-s6 FAILED
+s6 ok via gemini-2.5-flash-preview-tts
 s7 gemini-3.8-flash-tts HTTP 429
-s7 gemini-3.1-flash-tts-preview HTTP 429
-s7 gemini-2.5-flash-preview-tts HTTP 429
-s7 FAILED
+s7 ok via gemini-3.1-flash-tts-preview
 ASSETS OK
