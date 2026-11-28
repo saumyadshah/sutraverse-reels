@@ -10,7 +10,7 @@
   const scenes=[...document.querySelectorAll('.scene')];
   window.ORIG=scenes.map(s=>[+s.dataset.s,+s.dataset.e]);
   window.render=function(t){
-    const cine=document.body.classList.contains('otlo'), D=0.55;      // brand standard: cinematic dissolves
+    const cine=document.body.classList.contains("otlo"), D=0.75;      // brand standard: cinematic dissolves
     let leak=0;
     scenes.forEach((sc,si)=>{const s=+sc.dataset.s,e=+sc.dataset.e;
       const vis=t>=s-0.01&&t<e;

@@ -197,10 +197,10 @@ def sfx_events(d, T):
             if at < T['starts'][i] + 0.12 and i > 0: continue
             ev.append(('ping' if re.search(r'\bm\b', cls) else 'pop', max(0.0, at)))
         # brand kit elements (brand.js): paper slide for plates/cards/lower thirds, press thump for seals and the end badge
-        for cls, tin in re.findall(r'class="([^"]*\bo-(?:plate|cut|lower|invite|seal|badge-end)\b[^"]*)"[^>]*data-in="([\d.]+)"', seg):
+        for cls, tin in re.findall(r'class="([^"]*\bo-(?:plate|cut|lower|invite|seal|badge-end|logo|logocard|credit)\b[^"]*)"[^>]*data-in="([\d.]+)"', seg):
             at = T['starts'][i] + (float(tin)-os_)*k
             if at < T['starts'][i] + 0.12 and i > 0: continue
-            ev.append(('stamp' if re.search(r'o-(seal|badge-end)', cls) else 'paper', max(0.0, at)))
+            ev.append(('stamp' if re.search(r'o-(seal|badge-end|logo)\b', cls) else 'paper', max(0.0, at)))
     return ev
 
 def mix(d, T, m):

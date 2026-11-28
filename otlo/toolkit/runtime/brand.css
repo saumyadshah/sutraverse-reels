@@ -90,3 +90,18 @@ body.otlo .scene{padding:0!important}
 /* source line printed at the foot of a frame (inside safe zone) */
 .o-src{position:absolute;left:96px;right:200px;top:1326px;z-index:3;font:500 italic 20px 'Fira Sans',sans-serif;color:var(--o-grey)}
 .scene.night .o-src{color:rgba(244,234,215,.6)}
+
+/* official logos: always on a clean disc or card, never recoloured or distorted (brand standard) */
+.o-logo{position:absolute;z-index:5;width:230px;height:230px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 6px #F4EAD7,0 0 0 9px var(--o-haldi),0 18px 34px rgba(60,40,10,.3)}
+.o-logo img{max-width:74%;max-height:62%;object-fit:contain}
+.o-logo .cap{position:absolute;top:248px;left:-60px;right:-60px;text-align:center;font:700 22px 'Fira Sans',sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--o-verm)}
+.o-logocard{position:absolute;z-index:5;background:#FFFFFF;padding:16px 22px;display:flex;align-items:center;gap:16px;box-shadow:0 12px 26px rgba(60,40,10,.25);border-left:8px solid var(--o-verm)}
+.o-logocard img{height:64px;object-fit:contain}
+.o-logocard .t{font:700 20px/1.25 'Fira Sans',sans-serif;letter-spacing:3px;text-transform:uppercase;color:var(--o-grey)}
+/* film credit slip with an animated strike-through */
+.o-credit{position:absolute;z-index:5;background:#FBF6EC;border:2px solid var(--o-ink);padding:18px 26px 16px;box-shadow:0 12px 26px rgba(60,40,10,.22)}
+.o-credit .sm{font:700 20px 'Fira Sans',sans-serif;letter-spacing:6px;color:var(--o-grey)}
+.o-credit .no{position:relative;display:inline-block;font-family:'Fraunces',serif;font-weight:600;font-size:46px;color:var(--o-ink);opacity:.75;margin-top:4px}
+.o-credit .no::after{content:"";position:absolute;left:-6px;right:-6px;top:52%;height:6px;background:var(--o-verm);transform:scaleX(var(--k,0));transform-origin:0 50%}
+.o-credit .who{font:700 52px 'Rasa','Anek Gujarati',serif;color:var(--o-verm);margin-top:2px;line-height:1.1}

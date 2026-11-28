@@ -10,27 +10,27 @@ Style: Sub,Fira Sans SemiBold,58,&H00FFFFFF,&H00FFFFFF,&H004A2A1B,&H004A2A1B,0,0
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.06,0:00:02.03,Sub,,0,0,0,,This film's producer wasn't a
-Dialogue: 0,0:00:02.06,0:00:02.51,Sub,,0,0,0,,studio.
-Dialogue: 0,0:00:02.54,0:00:04.23,Sub,,0,0,0,,It was five lakh Gujarati
-Dialogue: 0,0:00:04.26,0:00:04.81,Sub,,0,0,0,,farmers!
-Dialogue: 0,0:00:05.29,0:00:07.00,Sub,,0,0,0,,It's the story of Anand's milk
-Dialogue: 0,0:00:07.03,0:00:07.76,Sub,,0,0,0,,cooperatives,
-Dialogue: 0,0:00:07.79,0:00:09.33,Sub,,0,0,0,,and the man behind them, Dr
-Dialogue: 0,0:00:09.36,0:00:10.29,Sub,,0,0,0,,Verghese Kurien.
-Dialogue: 0,0:00:10.77,0:00:12.92,Sub,,0,0,0,,Kurien and Shyam Benegal wanted
-Dialogue: 0,0:00:12.95,0:00:13.83,Sub,,0,0,0,,it on screen.
-Dialogue: 0,0:00:13.86,0:00:15.12,Sub,,0,0,0,,But who would pay?
-Dialogue: 0,0:00:15.60,0:00:17.79,Sub,,0,0,0,,The answer: ₹2 from every member
-Dialogue: 0,0:00:17.82,0:00:18.28,Sub,,0,0,0,,farmer.
-Dialogue: 0,0:00:18.31,0:00:20.25,Sub,,0,0,0,,Five lakh farmers. ₹10 lakh.
-Dialogue: 0,0:00:20.73,0:00:22.83,Sub,,0,0,0,,That's why the film opens with:
-Dialogue: 0,0:00:22.86,0:00:24.68,Sub,,0,0,0,,'500,000 farmers of Gujarat
-Dialogue: 0,0:00:24.71,0:00:25.33,Sub,,0,0,0,,present'.
-Dialogue: 0,0:00:25.81,0:00:28.10,Sub,,0,0,0,,Farmers came by the truckload to
-Dialogue: 0,0:00:28.13,0:00:29.19,Sub,,0,0,0,,see their film.
-Dialogue: 0,0:00:29.22,0:00:31.22,Sub,,0,0,0,,And in 2024, Manthan reached
-Dialogue: 0,0:00:31.25,0:00:31.76,Sub,,0,0,0,,Cannes!
-Dialogue: 0,0:00:32.24,0:00:34.26,Sub,,0,0,0,,India's first crowdfunded film,
-Dialogue: 0,0:00:34.29,0:00:35.66,Sub,,0,0,0,,by Gujarat's farmers.
-Dialogue: 0,0:00:35.69,0:00:37.54,Sub,,0,0,0,,Who are you sending this to?
+Dialogue: 0,0:00:00.06,0:00:01.86,Sub,,0,0,0,,This film's producer wasn't a
+Dialogue: 0,0:00:01.89,0:00:02.30,Sub,,0,0,0,,studio.
+Dialogue: 0,0:00:02.33,0:00:03.88,Sub,,0,0,0,,It was five lakh Gujarati
+Dialogue: 0,0:00:03.91,0:00:04.41,Sub,,0,0,0,,farmers!
+Dialogue: 0,0:00:04.89,0:00:06.72,Sub,,0,0,0,,This is Anand, where, led by Dr
+Dialogue: 0,0:00:06.75,0:00:07.13,Sub,,0,0,0,,Kurien,
+Dialogue: 0,0:00:07.16,0:00:08.57,Sub,,0,0,0,,Amul became the farmers'
+Dialogue: 0,0:00:08.60,0:00:09.14,Sub,,0,0,0,,strength.
+Dialogue: 0,0:00:09.62,0:00:12.37,Sub,,0,0,0,,Kurien and Shyam Benegal wanted
+Dialogue: 0,0:00:12.39,0:00:13.53,Sub,,0,0,0,,it on screen.
+Dialogue: 0,0:00:13.56,0:00:15.17,Sub,,0,0,0,,But who would pay?
+Dialogue: 0,0:00:15.65,0:00:17.16,Sub,,0,0,0,,The farmers! ₹2 each.
+Dialogue: 0,0:00:17.19,0:00:19.21,Sub,,0,0,0,,Five lakh farmers, ₹10 lakh:
+Dialogue: 0,0:00:19.24,0:00:21.00,Sub,,0,0,0,,almost the whole budget!
+Dialogue: 0,0:00:21.48,0:00:23.11,Sub,,0,0,0,,That's why the first title
+Dialogue: 0,0:00:23.14,0:00:23.50,Sub,,0,0,0,,reads:
+Dialogue: 0,0:00:23.53,0:00:25.22,Sub,,0,0,0,,'500,000 farmers of Gujarat
+Dialogue: 0,0:00:25.25,0:00:25.83,Sub,,0,0,0,,present'.
+Dialogue: 0,0:00:26.31,0:00:28.28,Sub,,0,0,0,,Farmers came by the truckload to
+Dialogue: 0,0:00:28.31,0:00:29.21,Sub,,0,0,0,,see their film.
+Dialogue: 0,0:00:29.24,0:00:30.89,Sub,,0,0,0,,And 48 years later, Manthan
+Dialogue: 0,0:00:30.92,0:00:31.86,Sub,,0,0,0,,reached Cannes!
+Dialogue: 0,0:00:32.34,0:00:34.23,Sub,,0,0,0,,India's first crowdfunded film.
+Dialogue: 0,0:00:34.26,0:00:35.99,Sub,,0,0,0,,Who are you sending this to?

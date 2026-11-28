@@ -82,6 +82,8 @@
     ent('.o-lower', el => ({x: -720, opacity: 1}), el => ({x: 0, duration: 0.55, ease: 'power4.out'}));
     ent('.o-invite', el => ({scale: 0.86, opacity: 0, rotate: -2}), el => ({scale: 1, opacity: 1, rotate: 0, ease: 'back.out(1.8)'}));
     ent('.o-seal', el => ({scale: 1.8, opacity: 0, rotate: -24}), el => ({scale: 1, opacity: 1, rotate: -10, duration: 0.32, ease: 'power4.in'}));
+    ent('.o-logo', el => ({scale: 0.3, opacity: 0, rotate: -20}), el => ({scale: 1, opacity: 1, rotate: 0, duration: 0.55, ease: 'back.out(2.2)'}));
+    ent('.o-logocard', el => ({x: 260, opacity: 0}), el => ({x: 0, opacity: 1, duration: 0.5}));
     ent('.o-fade', el => ({opacity: 0, y: 24}), el => ({opacity: 1, y: 0, duration: 0.5}));
     ent('.o-badge-end', el => ({scale: 2.2, opacity: 0, rotate: -30}), el => ({scale: 1, opacity: 1, rotate: 0, duration: 0.4, ease: 'power4.in'}));
     // parallax: layers drift at different speeds across their scene

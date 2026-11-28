@@ -6,18 +6,18 @@
   "height": 1920,
   "pix_fmt": "yuv420p",
   "r_frame_rate": "30/1",
-  "bit_rate": "12024742"
+  "bit_rate": "12004087"
  },
- "duration": 38.5,
+ "duration": 36.9,
  "lufs": -14.0,
  "chars_per_sec": [
-  14.5,
-  13.8,
-  16.1,
+  15.6,
   15.3,
-  14.3,
+  12.6,
   13.6,
-  13.0
+  15.6,
+  14.6,
+  13.7
  ],
  "warnings": [],
  "ok": true
